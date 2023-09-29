@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct bitesizeApp: App {
     //set up firebase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var firestoreManager = FirestoreManager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(firestoreManager)
         }
     }
 }
