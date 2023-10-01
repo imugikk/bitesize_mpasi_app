@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */; };
+		8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */; };
+		8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */; };
+		8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C592AC98E4A003F4C6F /* LMSWeightGirls.swift */; };
+		8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthGirls.swift; sourceTree = "<group>"; };
+		8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreCalculator.swift; sourceTree = "<group>"; };
+		8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthBoys.swift; sourceTree = "<group>"; };
+		8B7B2C592AC98E4A003F4C6F /* LMSWeightGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSWeightGirls.swift; sourceTree = "<group>"; };
+		8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSWeightBoys.swift; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -157,6 +167,10 @@
 			children = (
 				F12E59AC2AC33AEA0073FB1A /* Babies.swift */,
 				F12E59B92AC341F90073FB1A /* Users.swift */,
+				8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */,
+				8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */,
+				8B7B2C592AC98E4A003F4C6F /* LMSWeightGirls.swift */,
+				8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +180,7 @@
 			children = (
 				F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */,
 				F12E59A32AC299E90073FB1A /* FirestoreManager.swift */,
+				8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -322,11 +337,16 @@
 			files = (
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
+				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
+				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
+				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
+				8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
+				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
