@@ -26,5 +26,13 @@ let lmsDataLeghthGirls: [LMSLengthGirls] = [
     LMSLengthGirls(month: 12, l: 1.0, m: 74.0150, s: 0.03479)
 ]
 
-// You can add more data rows as needed
+// Create a function to find LMS values based on the month
+func findLMSGirlL(month: Int) -> [Double]? {
+    for lms in lmsDataLeghthGirls {
+        if lms.month == month {
+            return [lms.l, lms.m, lms.s]
+        }
+    }
+    return nil // Month not found
+}
 

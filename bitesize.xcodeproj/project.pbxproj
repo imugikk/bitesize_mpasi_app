@@ -12,6 +12,7 @@
 		8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */; };
 		8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C592AC98E4A003F4C6F /* LMSWeightGirls.swift */; };
 		8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */; };
+		8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -55,6 +56,7 @@
 		8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthBoys.swift; sourceTree = "<group>"; };
 		8B7B2C592AC98E4A003F4C6F /* LMSWeightGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSWeightGirls.swift; sourceTree = "<group>"; };
 		8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSWeightBoys.swift; sourceTree = "<group>"; };
+		8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSData.swift; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */,
 				8B7B2C592AC98E4A003F4C6F /* LMSWeightGirls.swift */,
 				8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */,
+				8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
+				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,

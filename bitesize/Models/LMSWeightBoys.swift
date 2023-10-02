@@ -27,3 +27,13 @@ let lmsDataWeightBoys: [LMSWeightBoys] = [
 ]
 
 // You can add more data rows as needed
+
+// Create a function to find LMS values based on the month
+func findLMSBoyW(month: Int) -> [Double]? {
+    for lms in lmsDataWeightBoys {
+        if lms.month == month {
+            return [lms.l, lms.m, lms.s]
+        }
+    }
+    return nil // Month not found
+}

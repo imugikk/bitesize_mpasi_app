@@ -18,6 +18,8 @@ struct ContentView: View {
     @State private var gender = ""
     @State private var dob = Date.now
     
+    let zscore = ZScoreCalculator()
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -30,7 +32,7 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Button("Skip"){
-                        
+                        zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
                     }
                     Spacer()
                     
