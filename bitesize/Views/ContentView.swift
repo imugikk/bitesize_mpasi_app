@@ -31,9 +31,9 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Button("Skip"){
-                        var zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
+                        let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
                     
-                        var zScoreData = ZScoreResult(zScore: zscorecalculate!)
+                        let zScoreData = ZScoreResult(zScore: zscorecalculate!)
 
                         firestoreManager.createZScore(zscore: zScoreData)
                     }
