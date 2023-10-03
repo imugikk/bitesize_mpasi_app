@@ -100,4 +100,18 @@ class FirestoreManager: ObservableObject {
             print(error)
         }
     }
+    
+    //create z-score
+    func createZScore(zscore: ZScoreResult) {
+        let docRef = db.collection("ZScore")
+        
+        do {
+            let newDocRef = try docRef.addDocument(from: zscore)
+            print("Baby's z-score data stored with new document reference: \(newDocRef)")
+        }
+        catch {
+            print(error)
+        }
+
+    }
 }

@@ -13,20 +13,16 @@ class ZScoreCalculator {
         var lmsDataW = LMSData(weight: weight, height: height)
         var lmsDataH = LMSData(weight: weight, height: height)
         var gender = "female"
-//        // Find the LMS data for the given month
-//        guard let lmsData = findLMSData(month: month) else {
-//            return nil // Data not found for the given month
-//        }
 
         switch gender {
             case "female":
-            lmsDataH.LMS = findLMSGirlL(month: month)!
-            lmsDataW.LMS = findLMSGirlW(month: month)!
+                lmsDataH.LMS = findLMSGirlL(month: month)!
+                lmsDataW.LMS = findLMSGirlW(month: month)!
             case "male":
-            lmsDataH.LMS = findLMSBoyL(month: month)!
-            lmsDataW.LMS = findLMSBoyW(month: month)!
-        default:
-            print("no data")
+                lmsDataH.LMS = findLMSBoyL(month: month)!
+                lmsDataW.LMS = findLMSBoyW(month: month)!
+            default:
+                print("no data")
         }
 
         // Extract L, M, and S values from the LMS data

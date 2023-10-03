@@ -13,7 +13,6 @@ struct ContentView: View {
     
     var baby: Babies = Babies(name: "Ratna Sari Putra Reggae", gender: "Female", dob: Date(), weight: 65.4, height: 175.2, hc: 43.8, userId: "user_1")
     
-    
     @State private var name = ""
     @State private var gender = ""
     @State private var dob = Date.now
@@ -32,8 +31,14 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Button("Skip"){
-                        zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
+                        var zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
+                    
+                        var zScoreData = ZScoreResult(zScore: zscorecalculate!)
+
+                        firestoreManager.createZScore(zscore: zScoreData)
                     }
+//                    Text("Weight Z-Score: \(viewModel.weightZScore)")
+//                    Text("Height Z-Score: \(viewModel.heightZScore)")
                     Spacer()
                     
                     NavigationLink{
