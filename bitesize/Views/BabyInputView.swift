@@ -20,33 +20,40 @@ struct BabyInputView: View {
     @State private var time_measured = Date.now
     
     var body: some View {
-        VStack(alignment: .leading){
-            Spacer()
-            
-            Text("Weight")
-            TextField("weight", value: $weight, format: .number)
-            Text("Height")
-            TextField("weight", value: $height, format: .number)
-            Text("Head Circumference")
-            TextField("weight", value: $hc, format: .number)
-            DatePicker(selection: $time_measured, in: ...Date.now, displayedComponents: .date){
-                Text("Date of Birth")
-            }
-            
-            Spacer()
-            
-            HStack{
-                Button("Skip"){
-                    
-                }
+        NavigationView{
+            VStack(alignment: .leading){
                 Spacer()
                 
-                Button("Next"){
-                    var babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1")
-                    firestoreManager.createBaby(baby: babyData)
+                Text("Weight")
+                TextField("weight", value: $weight, format: .number)
+                Text("Height")
+                TextField("weight", value: $height, format: .number)
+                Text("Head Circumference")
+                TextField("weight", value: $hc, format: .number)
+                DatePicker(selection: $time_measured, in: ...Date.now, displayedComponents: .date){
+                    Text("Date of Birth")
                 }
-            }
-        }.padding()
+                
+                Spacer()
+                
+                HStack{
+                    Button("Skip"){
+                        
+                    }
+                    Spacer()
+                    
+                    
+                    Button{
+                        let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1")
+                        firestoreManager.createBaby(baby: babyData)
+                    } label: {
+                        NavigationLink(destination: SomesView()) {
+                            Text("Next")
+                        }
+                    }
+                }
+            }.padding()
+        }.navigationBarBackButtonHidden()
     }
 }
 

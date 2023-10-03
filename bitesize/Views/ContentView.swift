@@ -7,42 +7,64 @@
 
 import SwiftUI
 
+enum Gender: CaseIterable{
+    case male
+    case female
+    
+    var id: Self { self }
+    
+    func stringGender() -> String {
+        switch (self) {
+        case .male:
+            return "Male"
+        case .female:
+            return "Female"
+        }
+    }
+}
+
 struct ContentView: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
     
-    var baby: Babies = Babies(name: "Ratna Sari Putra Reggae", gender: "Female", dob: Date(), weight: 65.4, height: 175.2, hc: 43.8, userId: "user_1")
-    
-    
+    @State private var selection: Gender = .male
     @State private var name = ""
     @State private var gender = ""
     @State private var dob = Date.now
     
     var body: some View {
         NavigationView{
-            VStack {
+            VStack (alignment: .leading){
                 Spacer()
                 TextField("Name", text: $name)
-                TextField("Gender", text: $gender)
+                Picker("Select Gender", selection: $selection) {
+                    ForEach(Gender.allCases, id: \.self) { option in
+                        Text(option.stringGender())
+                    }.onChange(of: selection) { newValue in
+                        gender = newValue.stringGender()
+                    }
+                }
                 DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){
                     Text("Date of Birth")
                 }
                 Spacer()
                 HStack{
                     Button("Skip"){
-                        
+                        print(gender)
                     }
                     Spacer()
                     
-                    NavigationLink{
-                        BabyInputView(name: $name, dob: $dob, gender: $gender)
+                    Button {
+    
                     } label: {
-                        Text("Next")
-                    }.navigationBarBackButtonHidden()
+                        NavigationLink(destination: BabyInputView(name: $name, dob: $dob, gender: $gender)){
+                            Text("Next")
+                        }
+                    }
                 }
             }
             .padding()
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
