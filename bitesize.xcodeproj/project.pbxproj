@@ -26,6 +26,13 @@
 		F1ABDF802AC28CA9005AAEC3 /* bitesizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF7F2AC28CA9005AAEC3 /* bitesizeUITests.swift */; };
 		F1ABDF822AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF812AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift */; };
 		F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E51BF62ACBBFDA0083F06A /* GraphView.swift */; };
+		F1E51C002ACBC4B20083F06A /* b_age_length.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E51BFA2ACBC4B20083F06A /* b_age_length.csv */; };
+		F1E51C012ACBC4B20083F06A /* b_age_weight.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E51BFB2ACBC4B20083F06A /* b_age_weight.csv */; };
+		F1E51C022ACBC4B20083F06A /* g_age_headc.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E51BFC2ACBC4B20083F06A /* g_age_headc.csv */; };
+		F1E51C032ACBC4B20083F06A /* g_age_length.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E51BFD2ACBC4B20083F06A /* g_age_length.csv */; };
+		F1E51C042ACBC4B20083F06A /* b_age_headc.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E51BFE2ACBC4B20083F06A /* b_age_headc.csv */; };
+		F1E51C052ACBC4B20083F06A /* g_age_weight.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E51BFF2ACBC4B20083F06A /* g_age_weight.csv */; };
+		F1E51C072ACBC4F10083F06A /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E51C062ACBC4F10083F06A /* CSV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,13 @@
 		F1ABDF7F2AC28CA9005AAEC3 /* bitesizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeUITests.swift; sourceTree = "<group>"; };
 		F1ABDF812AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F1E51BF62ACBBFDA0083F06A /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		F1E51BFA2ACBC4B20083F06A /* b_age_length.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = b_age_length.csv; sourceTree = "<group>"; };
+		F1E51BFB2ACBC4B20083F06A /* b_age_weight.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = b_age_weight.csv; sourceTree = "<group>"; };
+		F1E51BFC2ACBC4B20083F06A /* g_age_headc.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_age_headc.csv; sourceTree = "<group>"; };
+		F1E51BFD2ACBC4B20083F06A /* g_age_length.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_age_length.csv; sourceTree = "<group>"; };
+		F1E51BFE2ACBC4B20083F06A /* b_age_headc.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = b_age_headc.csv; sourceTree = "<group>"; };
+		F1E51BFF2ACBC4B20083F06A /* g_age_weight.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = g_age_weight.csv; sourceTree = "<group>"; };
+		F1E51C062ACBC4F10083F06A /* CSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +132,7 @@
 		F1ABDF632AC28CA8005AAEC3 /* bitesize */ = {
 			isa = PBXGroup;
 			children = (
+				F1E51BF92ACBC4940083F06A /* Resources */,
 				F1ABDF8E2AC28CC1005AAEC3 /* Models */,
 				F1ABDF902AC28CE3005AAEC3 /* Views */,
 				F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */,
@@ -159,6 +174,7 @@
 			children = (
 				F12E59AC2AC33AEA0073FB1A /* Babies.swift */,
 				F12E59B92AC341F90073FB1A /* Users.swift */,
+				F1E51C062ACBC4F10083F06A /* CSV.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +196,19 @@
 				F1E51BF62ACBBFDA0083F06A /* GraphView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F1E51BF92ACBC4940083F06A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1E51BFE2ACBC4B20083F06A /* b_age_headc.csv */,
+				F1E51BFA2ACBC4B20083F06A /* b_age_length.csv */,
+				F1E51BFB2ACBC4B20083F06A /* b_age_weight.csv */,
+				F1E51BFC2ACBC4B20083F06A /* g_age_headc.csv */,
+				F1E51BFD2ACBC4B20083F06A /* g_age_length.csv */,
+				F1E51BFF2ACBC4B20083F06A /* g_age_weight.csv */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +325,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E51C012ACBC4B20083F06A /* b_age_weight.csv in Resources */,
+				F1E51C052ACBC4B20083F06A /* g_age_weight.csv in Resources */,
 				F1ABDF6C2AC28CA9005AAEC3 /* Preview Assets.xcassets in Resources */,
+				F1E51C002ACBC4B20083F06A /* b_age_length.csv in Resources */,
+				F1E51C042ACBC4B20083F06A /* b_age_headc.csv in Resources */,
+				F1E51C032ACBC4B20083F06A /* g_age_length.csv in Resources */,
 				F1ABDF692AC28CA9005AAEC3 /* Assets.xcassets in Resources */,
+				F1E51C022ACBC4B20083F06A /* g_age_headc.csv in Resources */,
 				F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +363,7 @@
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
+				F1E51C072ACBC4F10083F06A /* CSV.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,

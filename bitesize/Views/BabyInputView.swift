@@ -40,14 +40,14 @@ struct BabyInputView: View {
                     Button("Skip"){
                         
                     }
-                    Spacer()
                     
+                    Spacer()
                     
                     Button{
                         let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1")
                         firestoreManager.createBaby(baby: babyData)
                     } label: {
-                        NavigationLink(destination: SomesView()) {
+                        NavigationLink(destination: GraphView()) {
                             Text("Next")
                         }
                     }

@@ -49,8 +49,14 @@ struct ContentView: View {
                 }
                 Spacer()
                 HStack{
-                    Button("Skip"){
-                        print(gender)
+                    Button {
+                        
+                    } label: {
+                        Text("Skip")
+//                        NavigationLink(destination: GraphView()) {
+//                            Text("Skip")
+//                        }
+                        
                     }
                     Spacer()
                     
