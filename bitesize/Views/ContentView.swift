@@ -31,12 +31,16 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Button("Skip"){
-                        let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
-                    
-                        let zScoreData = ZScoreResult(zScore: zscorecalculate!)
-
-                        firestoreManager.createZScore(zscore: zScoreData)
+//                        let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
+//
+//                        let zScoreData = ZScoreResult(zScore: zscorecalculate!)
+//
+//                        firestoreManager.createZScore(zscore: zScoreData)
+                        
+                        print(zscore.statusZscoreHeight(zscore: 2.5).rawValue)
+                        print(zscore.statusZscoreWeight(zscore: -3.5).rawValue)
                     }
+                    
 //                    Text("Weight Z-Score: \(viewModel.weightZScore)")
 //                    Text("Height Z-Score: \(viewModel.heightZScore)")
                     Spacer()

@@ -7,7 +7,22 @@
 
 import Foundation
 
+enum ZScoreCategoryHeight: String {
+    case reallyShort = "Sangat Pendek"
+    case short = "Pendek"
+    case normal = "Normal"
+    case tall = "Tinggi"
+}
+
+enum ZScoreCategoryWeight: String {
+    case reallyUnderweight = "Berat Badan Sangat Kurang"
+    case underweight = "Berat Badan Kurang"
+    case normal = "Berat Badan Normal"
+    case overweight = "Resiko Berat Badan Lebih"
+}
+
 class ZScoreCalculator {
+    
     func calculateZScore(month: Int, weight: Double, height: Double) -> [Double]? {
 
         var lmsDataW = LMSData(weight: weight, height: height)
@@ -54,6 +69,30 @@ class ZScoreCalculator {
         // For demonstration purposes, I'll return a sample LMS data for month 6.
         let sampleData = LMSWeightGirls(month: 6, l: 1.0, m: 65.7311, s: 0.03448)
         return sampleData
+    }
+    
+    func statusZscoreWeight(zscore: Double) -> ZScoreCategoryWeight {
+        if zscore < -3 {
+            return .reallyUnderweight
+        } else if zscore >= -3 && zscore < -2 {
+            return .underweight
+        } else if zscore >= -2 && zscore <= 1 {
+            return .normal
+        } else {
+            return .overweight
+        }
+    }
+    
+    func statusZscoreHeight(zscore: Double) -> ZScoreCategoryHeight {
+        if zscore < -3 {
+            return .reallyShort
+        } else if zscore >= -3 && zscore < -2 {
+            return .short
+        } else if zscore >= -2 && zscore <= 3 {
+            return .normal
+        } else {
+            return .tall
+        }
     }
 }
 
