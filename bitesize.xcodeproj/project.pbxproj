@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C632ACD1C58003F4C6F /* InformationView.swift */; };
+		8B7B2C662ACD25E8003F4C6F /* NameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */; };
+		8B7B2C682ACD2A05003F4C6F /* GenderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */; };
+		8B7B2C6A2ACD715A003F4C6F /* DateOfBirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -46,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B7B2C632ACD1C58003F4C6F /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextView.swift; sourceTree = "<group>"; };
+		8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTextView.swift; sourceTree = "<group>"; };
+		8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirthView.swift; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -178,6 +186,10 @@
 				F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */,
 				F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */,
 				F1E51BF62ACBBFDA0083F06A /* GraphView.swift */,
+				8B7B2C632ACD1C58003F4C6F /* InformationView.swift */,
+				8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */,
+				8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */,
+				8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,14 +335,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7B2C682ACD2A05003F4C6F /* GenderTextView.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
+				8B7B2C662ACD25E8003F4C6F /* NameTextView.swift in Sources */,
+				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
+				8B7B2C6A2ACD715A003F4C6F /* DateOfBirthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

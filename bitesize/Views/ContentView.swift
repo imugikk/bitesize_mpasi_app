@@ -34,38 +34,125 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            VStack (alignment: .leading){
-                Spacer()
-                TextField("Name", text: $name)
-                Picker("Select Gender", selection: $selection) {
-                    ForEach(Gender.allCases, id: \.self) { option in
-                        Text(option.stringGender())
-                    }.onChange(of: selection) { newValue in
-                        gender = newValue.stringGender()
+            VStack {
+                InformationView()
+                    .edgesIgnoringSafeArea(.horizontal)
+                
+                VStack (alignment: .leading){
+                    NameTextView()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    HStack {
+                        Spacer(minLength: 16) // Left padding
+                        TextField("Name", text: $name)
+                            .padding(12)
+                            .frame(width: 360, alignment: .leading)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .inset(by: 0.5)
+                                    .stroke(Color(red: 0.69, green: 0.69, blue: 0.71), lineWidth: 1)
+                            )
+                        Spacer(minLength: 16) // Right padding
+                    }.edgesIgnoringSafeArea(.all)
+                    
+                    GenderTextView()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    
+                    HStack {
+                        Spacer(minLength: 16) // Left padding
+                                Button(action: {
+                                    selection = .male
+                                }) {
+                                    Text("Male")
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 8)
+                                        .frame(width: 180, alignment: .center)
+                                        .background(selection == .male ? Color(red: 0.23, green: 0, blue: 0.9) : Color(red: 0.97, green: 0.96, blue: 1))
+                                        .cornerRadius(8)
+                                        .font(
+                                        Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                        )
+                                        .kerning(0.6)
+                                        .foregroundColor(selection == .male ? Color.white : Color(red: 0.23, green: 0, blue: 0.9))
+                                }
+
+                                Button(action: {
+                                    selection = .female
+                                }) {
+                                    Text("Female")
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 8)
+                                        .frame(width: 180, alignment: .center)
+                                        .background(selection == .female ? Color(red: 0.23, green: 0, blue: 0.9) : Color(red: 0.97, green: 0.96, blue: 1))
+                                        .cornerRadius(8)
+                                        .font(
+                                        Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                        )
+                                        .kerning(0.6)
+                                        .foregroundColor(selection == .female ? Color.white : Color(red: 0.23, green: 0, blue: 0.9))
+                                }
+                        
+                        Spacer(minLength: 16) // Right padding
+                            }
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    HStack {
+                        DateOfBirthView()
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}
                     }
-                }
-                DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){
-                    Text("Date of Birth")
-                }
-                Spacer()
-                HStack{
-                    Button("Skip"){
-                        print(gender)
-                    }
+                    
                     Spacer()
                     
-                    Button {
-    
-                    } label: {
-                        NavigationLink(destination: BabyInputView(name: $name, dob: $dob, gender: $gender)){
-                            Text("Next")
+                    HStack{
+                        Button(action: {
+                            print(gender)
+                        }){
+                            Text("Skip")
+                                .font(
+                                    Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.6)
+                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
                         }
-                    }
+                        
+                        Spacer()
+                        
+                        Button {
+        
+                        } label: {
+                            NavigationLink(destination: BabyInputView(name: $name, dob: $dob, gender: $gender)){
+                                
+                                Text("Next")
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .frame(width: 148, alignment: .center)
+                                    .background(Color(red: 0.23, green: 0, blue: 0.9))
+                                    .cornerRadius(8)
+                                    .font(
+                                    Font.custom("Work Sans", size: 12)
+                                    .weight(.medium)
+                                    )
+                                    .kerning(0.6)
+                                    .foregroundColor(Constants.BGWhite)
+                            }
+                        }
+                    }.padding(.horizontal, 38)// Left padding
                 }
+                
             }
-            .padding()
         }.navigationBarBackButtonHidden()
     }
+}
+
+struct Constants {
+    static let BGWhite: Color = .white
 }
 
 struct ContentView_Previews: PreviewProvider {
