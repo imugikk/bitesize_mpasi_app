@@ -114,4 +114,26 @@ class FirestoreManager: ObservableObject {
         }
 
     }
+    
+    //read baby's data
+    func getBabiesData(forUserId userId: String, completion: @escaping ([Babies]) -> Void) {
+        db.collection("Babies")
+            .whereField("userId", isEqualTo: userId)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching data: \(error.localizedDescription)")
+                    completion([])
+                    return
+                }
+
+                var babies: [Babies] = []
+                for document in snapshot!.documents {
+                    if let baby = try? document.data(as: Babies.self) {
+                        babies.append(baby)
+                    }
+                }
+
+                completion(babies)
+            }
+    }
 }

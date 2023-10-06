@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
+    @State private var babies: [Babies] = []
     
-    var baby: Babies = Babies(name: "Ratna Sari Putra Reggae", gender: "Female", dob: Date(), weight: 65.4, height: 175.2, hc: 43.8, userId: "user_1")
+//    var baby: Babies = Babies(name: "Ratna Sari Putra Reggae", gender: "Female", dob: Date(), weight: 65.4, height: 175.2, hc: 43.8, userId: "user_1")
     
     @State private var name = ""
     @State private var gender = ""
@@ -28,21 +29,26 @@ struct ContentView: View {
                 DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){
                     Text("Date of Birth")
                 }
+                
                 Spacer()
                 HStack{
                     Button("Skip"){
-//                        let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
-//
-//                        let zScoreData = ZScoreResult(zScore: zscorecalculate!)
-//
-//                        firestoreManager.createZScore(zscore: zScoreData)
+                        //                        let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
+                        //
+                        //                        let zScoreData = ZScoreResult(zScore: zscorecalculate!)
+                        //
+                        //                        firestoreManager.createZScore(zscore: zScoreData)
                         
                         print(zscore.statusZscoreHeight(zscore: 2.5).rawValue)
                         print(zscore.statusZscoreWeight(zscore: -3.5).rawValue)
+                        
+                        firestoreManager.getBabiesData(forUserId: "user_1"){ fetchBabies in
+                            self.babies = fetchBabies
+                        }
                     }
                     
-//                    Text("Weight Z-Score: \(viewModel.weightZScore)")
-//                    Text("Height Z-Score: \(viewModel.heightZScore)")
+                    //                    Text("Weight Z-Score: \(viewModel.weightZScore)")
+                    //                    Text("Height Z-Score: \(viewModel.heightZScore)")
                     Spacer()
                     
                     NavigationLink{
