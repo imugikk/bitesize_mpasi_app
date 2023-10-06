@@ -14,6 +14,8 @@
 		8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */; };
 		8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */; };
 		8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5F2ACB10F1003F4C6F /* ZScoreResult.swift */; };
+		8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */; };
+		8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -59,6 +61,8 @@
 		8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSWeightBoys.swift; sourceTree = "<group>"; };
 		8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSData.swift; sourceTree = "<group>"; };
 		8B7B2C5F2ACB10F1003F4C6F /* ZScoreResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreResult.swift; sourceTree = "<group>"; };
+		8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesNeededResult.swift; sourceTree = "<group>"; };
+		8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesNeededCalculator.swift; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				8B7B2C5B2AC99033003F4C6F /* LMSWeightBoys.swift */,
 				8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */,
 				8B7B2C5F2ACB10F1003F4C6F /* ZScoreResult.swift */,
+				8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */,
 				F12E59A32AC299E90073FB1A /* FirestoreManager.swift */,
 				8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */,
+				8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -347,9 +353,11 @@
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
+				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
+				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
 				8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */,

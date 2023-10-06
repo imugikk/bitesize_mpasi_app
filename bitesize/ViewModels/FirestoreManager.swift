@@ -136,4 +136,18 @@ class FirestoreManager: ObservableObject {
                 completion(babies)
             }
     }
+    
+    //create calories needed
+    func createCaloriesNeeded(caloriesneeded: CaloriesNeededResult) {
+        let docRef = db.collection("Calories")
+        
+        do {
+            let newDocRef = try docRef.addDocument(from: caloriesneeded)
+            print("Baby's calories data stored with new document reference: \(newDocRef)")
+        }
+        catch {
+            print(error)
+        }
+
+    }
 }
