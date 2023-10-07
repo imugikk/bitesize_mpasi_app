@@ -34,26 +34,28 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Button("Skip"){
-                        //                        let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0)
-                        //
-                        //                        let zScoreData = ZScoreResult(zScore: zscorecalculate!)
-                        //
-                        //                        firestoreManager.createZScore(zscore: zScoreData)
+//                                                let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0, head:42.0)
+//
+//                                                let zScoreData = ZScoreResult(zScore: zscorecalculate!)
+//
+//                                                firestoreManager.createZScore(zscore: zScoreData)
                         
                         print(zscore.statusZscoreHeight(zscore: 2.5).rawValue)
                         print(zscore.statusZscoreWeight(zscore: -3.5).rawValue)
+                        print(zscore.statusZscoreHead(zscore: 2.5).rawValue)
+                        
                         
                         var weight: Double?
                         var dob: Date?
                         var caloriesNeeded: Double? // Define caloriesNeeded at a higher scope
-                        
+
                         if let baby = babies.first {
                             weight = baby.weight
                             dob = baby.dob
-                            
+
                             print("Weight: \(weight ?? 0.0)")
                             print("Date of Birth: \(dob ?? Date())")
-                            
+
                             if let weight = weight, let dob = dob {
                                 caloriesNeeded = calculator.calculateCaloriesNeeded(dob: dob, weight: weight)
                             } else {
@@ -62,10 +64,10 @@ struct ContentView: View {
                         } else {
                             print("Baby data not available.")
                         }
-                        
+
                         if let caloriesNeeded = caloriesNeeded {
                             let caloriesResult = CaloriesNeededResult(caloriesNeeded: caloriesNeeded)
-                            
+
                             // Now you can pass caloriesResult to Firestore
                             firestoreManager.createCaloriesNeeded(caloriesneeded: caloriesResult)
                         } else {

@@ -21,21 +21,30 @@ enum ZScoreCategoryWeight: String {
     case overweight = "Resiko Berat Badan Lebih"
 }
 
+enum ZScoreCategoryHead: String {
+    case microcephaly = "Mikrosefali"
+    case normal = "Normal"
+    case macrocephaly = "Makrosefali"
+}
+
 class ZScoreCalculator {
     
-    func calculateZScore(month: Int, weight: Double, height: Double) -> [Double]? {
+    func calculateZScore(month: Int, weight: Double, height: Double, head: Double) -> [Double]? {
 
-        var lmsDataW = LMSData(weight: weight, height: height)
-        var lmsDataH = LMSData(weight: weight, height: height)
+        var lmsDataW = LMSData(weight: weight, height: height, head: head)
+        var lmsDataH = LMSData(weight: weight, height: height, head: head)
+        var lmsDataHead = LMSData(weight: weight, height: height, head: head)
         var gender = "female"
 
         switch gender {
             case "female":
                 lmsDataH.LMS = findLMSGirlL(month: month)!
                 lmsDataW.LMS = findLMSGirlW(month: month)!
+                lmsDataHead.LMS = findLMSGirlH(month: month)!
             case "male":
                 lmsDataH.LMS = findLMSBoyL(month: month)!
                 lmsDataW.LMS = findLMSBoyW(month: month)!
+                lmsDataHead.LMS = findLMSBoyH(month: month)!
             default:
                 print("no data")
         }
@@ -49,15 +58,22 @@ class ZScoreCalculator {
         let lw = lmsDataW.LMS[0]
         let mw = lmsDataW.LMS[1]
         let sw = lmsDataW.LMS[2]
+        
+        // Extract L, M, and S values from the LMS data
+        let lhead = lmsDataHead.LMS[0]
+        let mhead = lmsDataHead.LMS[1]
+        let shead = lmsDataHead.LMS[2]
 
         // Calculate the z-score using the formula
         let zScoreh = ((pow((height / mh), lh) - 1) / (lh * sh))
         let zScorew = ((pow((weight / mw), lw) - 1) / (lw * sw))
+        let zScorehead = ((pow((head / mhead), lhead) - 1) / (lhead * shead))
 
         print(zScoreh)
         print(zScorew)
+        print(zScorehead)
 
-        return [zScorew, zScoreh]
+        return [zScorew, zScoreh, zScorehead]
     }
 
     // Helper function to find LMS data for a given month
@@ -92,6 +108,16 @@ class ZScoreCalculator {
             return .normal
         } else {
             return .tall
+        }
+    }
+    
+    func statusZscoreHead(zscore: Double) -> ZScoreCategoryHead {
+        if zscore < -2 {
+            return .microcephaly
+        } else if zscore >= -2 && zscore <= 2 {
+            return .normal
+        } else {
+            return .macrocephaly
         }
     }
 }

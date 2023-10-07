@@ -15,10 +15,26 @@ class CaloriesNeededCalculator {
         // Calculate calories based on age
         var caloriesNeeded: Double?
         
-        if ageInMonths >= 4 && ageInMonths <= 6 {
-            caloriesNeeded = (89 * weight - 100) + 56
-        } else if ageInMonths >= 7 && ageInMonths <= 12 {
-            caloriesNeeded = (89 * weight - 100) + 22
+        if ageInMonths >= 4 && ageInMonths < 6 {
+            caloriesNeeded = 0
+        }
+        else if ageInMonths >= 6 && ageInMonths < 7 {
+            caloriesNeeded = 0.3 * ((89 * weight - 100) + 56)
+        }
+        else if ageInMonths >= 7 && ageInMonths <= 8 {
+            caloriesNeeded = 0.3 * ((89 * weight - 100) + 22)
+        }
+        else if ageInMonths >= 9 && ageInMonths <= 11 {
+            caloriesNeeded = 0.5 * ((89 * weight - 100) + 22)
+        }
+        else if ageInMonths >= 12 && ageInMonths <= 12 {
+            caloriesNeeded = 0.7 * ((89 * weight - 100) + 22)
+        }
+        else if ageInMonths >= 13 && ageInMonths <= 24 {
+            caloriesNeeded = 0.7 * ((89 * weight - 100) + 20)
+        }
+        else if ageInMonths >= 24 && ageInMonths <= 35 {
+            caloriesNeeded = (89 * weight - 100) + 20
         }
         
         return caloriesNeeded
