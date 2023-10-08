@@ -20,33 +20,100 @@ struct BabyInputView: View {
     @State private var time_measured = Date.now
     
     var body: some View {
-        VStack(alignment: .leading){
-            Spacer()
-            
-            Text("Weight")
-            TextField("weight", value: $weight, format: .number)
-            Text("Height")
-            TextField("weight", value: $height, format: .number)
-            Text("Head Circumference")
-            TextField("weight", value: $hc, format: .number)
-            DatePicker(selection: $time_measured, in: ...Date.now, displayedComponents: .date){
-                Text("Date of Birth")
-            }
-            
-            Spacer()
-            
-            HStack{
-                Button("Skip"){
-                    
-                }
-                Spacer()
+        NavigationView{
+            VStack {
+                InformationView()
+                    .edgesIgnoringSafeArea(.horizontal)
                 
-                Button("Next"){
-                    var babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1")
-                    firestoreManager.createBaby(baby: babyData)
+                VStack(alignment: .leading){
+                
+                    VStack {
+                        Text("Weights")
+                            .font(
+                                Font.custom("Work Sans", size: 16)
+                                    .weight(.medium)
+                            )
+                            .kerning(0.2)
+                            .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        TextField("weight", value: $weight, format: .number)
+                        
+                        Text("Heights")
+                            .font(
+                                Font.custom("Work Sans", size: 16)
+                                    .weight(.medium)
+                            )
+                            .kerning(0.2)
+                            .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        TextField("weight", value: $height, format: .number)
+                        
+                        Text("Head")
+                            .font(
+                                Font.custom("Work Sans", size: 16)
+                                    .weight(.medium)
+                            )
+                            .kerning(0.2)
+                            .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        TextField("weight", value: $hc, format: .number)
+                        
+                        DatePicker(selection: $time_measured, in: ...Date.now, displayedComponents: .date){
+                            Text("Time Measured")
+                                .font(
+                                    Font.custom("Work Sans", size: 16)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.2)
+                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }.padding(.horizontal, 16)
+                    
+                    Spacer()
+                    
+                    HStack{
+                        
+                        Button(action: {
+                            
+                        }){
+                            Text("Skip")
+                                .font(
+                                    Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.6)
+                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                        }
+                        
+                        Spacer()
+                        
+                        
+                        Button{
+                            let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1")
+                            firestoreManager.createBaby(baby: babyData)
+                        } label: {
+                            NavigationLink(destination: GraphView()) {
+                                Text("Next")
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .frame(width: 148, alignment: .center)
+                                    .background(Color(red: 0.23, green: 0, blue: 0.9))
+                                    .cornerRadius(8)
+                                    .font(
+                                    Font.custom("Work Sans", size: 12)
+                                    .weight(.medium)
+                                    )
+                                    .kerning(0.6)
+                                    .foregroundColor(Constants.BGWhite)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 38)// Left padding
                 }
             }
-        }.padding()
+        }.navigationBarBackButtonHidden()
     }
 }
 

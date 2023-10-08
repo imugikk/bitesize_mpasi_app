@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+enum Gender: CaseIterable{
+    case male
+    case female
+    
+    var id: Self { self }
+    
+    func stringGender() -> String {
+        switch (self) {
+        case .male:
+            return "Male"
+        case .female:
+            return "Female"
+        }
+    }
+}
+
 struct ContentView: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
@@ -14,6 +30,7 @@ struct ContentView: View {
     
     //    var baby: Babies = Babies(name: "Ratna Sari Putra Reggae", gender: "Female", dob: Date(), weight: 65.4, height: 175.2, hc: 43.8, userId: "user_1")
     
+    @State private var selection: Gender = .male
     @State private var name = ""
     @State private var gender = ""
     @State private var dob = Date.now
@@ -24,81 +41,128 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack {
-                Spacer()
-                TextField("Name", text: $name)
-                TextField("Gender", text: $gender)
-                DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){
-                    Text("Date of Birth")
-                }
+                InformationView()
+                    .edgesIgnoringSafeArea(.horizontal)
                 
-                Spacer()
-                HStack{
-                    Button("Skip"){
-//                                                let zscorecalculate = zscore.calculateZScore(month: 5, weight: 8.0, height:72.0, head:42.0)
-//
-//                                                let zScoreData = ZScoreResult(zScore: zscorecalculate!)
-//
-//                                                firestoreManager.createZScore(zscore: zScoreData)
-                        
-                        print(zscore.statusZscoreHeight(zscore: 2.5).rawValue)
-                        print(zscore.statusZscoreWeight(zscore: -3.5).rawValue)
-                        print(zscore.statusZscoreHead(zscore: 2.5).rawValue)
-                        
-                        
-                        var weight: Double?
-                        var dob: Date?
-                        var caloriesNeeded: Double? // Define caloriesNeeded at a higher scope
+                VStack (alignment: .leading){
+                    NameTextView()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    HStack {
+                        Spacer(minLength: 16) // Left padding
+                        TextField("Name", text: $name)
+                            .padding(12)
+                            .frame(width: 360, alignment: .leading)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .inset(by: 0.5)
+                                    .stroke(Color(red: 0.69, green: 0.69, blue: 0.71), lineWidth: 1)
+                            )
+                        Spacer(minLength: 16) // Right padding
+                    }.edgesIgnoringSafeArea(.all)
+                    
+                    GenderTextView()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    
+                    HStack {
+                        Spacer(minLength: 16) // Left padding
+                                Button(action: {
+                                    selection = .male
+                                }) {
+                                    Text("Male")
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 8)
+                                        .frame(width: 180, alignment: .center)
+                                        .background(selection == .male ? Color(red: 0.23, green: 0, blue: 0.9) : Color(red: 0.97, green: 0.96, blue: 1))
+                                        .cornerRadius(8)
+                                        .font(
+                                        Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                        )
+                                        .kerning(0.6)
+                                        .foregroundColor(selection == .male ? Color.white : Color(red: 0.23, green: 0, blue: 0.9))
+                                }
 
-                        if let baby = babies.first {
-                            weight = baby.weight
-                            dob = baby.dob
-
-                            print("Weight: \(weight ?? 0.0)")
-                            print("Date of Birth: \(dob ?? Date())")
-
-                            if let weight = weight, let dob = dob {
-                                caloriesNeeded = calculator.calculateCaloriesNeeded(dob: dob, weight: weight)
-                            } else {
-                                print("Weight or date of birth is not available.")
+                                Button(action: {
+                                    selection = .female
+                                }) {
+                                    Text("Female")
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 8)
+                                        .frame(width: 180, alignment: .center)
+                                        .background(selection == .female ? Color(red: 0.23, green: 0, blue: 0.9) : Color(red: 0.97, green: 0.96, blue: 1))
+                                        .cornerRadius(8)
+                                        .font(
+                                        Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                        )
+                                        .kerning(0.6)
+                                        .foregroundColor(selection == .female ? Color.white : Color(red: 0.23, green: 0, blue: 0.9))
+                                }
+                        
+                        Spacer(minLength: 16) // Right padding
                             }
-                        } else {
-                            print("Baby data not available.")
-                        }
-
-                        if let caloriesNeeded = caloriesNeeded {
-                            let caloriesResult = CaloriesNeededResult(caloriesNeeded: caloriesNeeded)
-
-                            // Now you can pass caloriesResult to Firestore
-                            firestoreManager.createCaloriesNeeded(caloriesneeded: caloriesResult)
-                        } else {
-                            print("Unable to calculate calories needed.")
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    HStack {
+                        DateOfBirthView()
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}
+                    }
+                    
+                    Spacer()
+                    
+                    HStack{
+                        Button(action: {
+                            print(gender)
+                        }){
+                            Text("Skip")
+                                .font(
+                                    Font.custom("Work Sans", size: 12)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.6)
+                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
                         }
                         
-                        
-                        //                    Text("Weight Z-Score: \(viewModel.weightZScore)")
-                        //                    Text("Height Z-Score: \(viewModel.heightZScore)")
                         Spacer()
                         
-                        NavigationLink{
-                            BabyInputView(name: $name, dob: $dob, gender: $gender)
+                        Button {
+        
                         } label: {
-                            Text("Next")
-                        }.navigationBarBackButtonHidden()
-                    }
+                            NavigationLink(destination: BabyInputView(name: $name, dob: $dob, gender: $gender)){
+                                
+                                Text("Next")
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 8)
+                                    .frame(width: 148, alignment: .center)
+                                    .background(Color(red: 0.23, green: 0, blue: 0.9))
+                                    .cornerRadius(8)
+                                    .font(
+                                    Font.custom("Work Sans", size: 12)
+                                    .weight(.medium)
+                                    )
+                                    .kerning(0.6)
+                                    .foregroundColor(Constants.BGWhite)
+                            }
+                        }
+                    }.padding(.horizontal, 38)// Left padding
                 }
-                .padding()
-                .onAppear{
-                    firestoreManager.getBabiesData(forUserId: "user_1"){ fetchBabies in
-                        self.babies = fetchBabies
-                    }
-                }
+                
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView().environmentObject(FirestoreManager())
-        }
+}
+
+struct Constants {
+    static let BGWhite: Color = .white
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView().environmentObject(FirestoreManager())
     }
 }

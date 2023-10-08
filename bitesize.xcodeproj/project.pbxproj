@@ -18,6 +18,10 @@
 		8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */; };
 		8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C752AD176C5003F4C6F /* LMSHeadGirls.swift */; };
 		8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C772AD17833003F4C6F /* LMSHeadBoys.swift */; };
+		8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C632ACD1C58003F4C6F /* InformationView.swift */; };
+		8B7B2C662ACD25E8003F4C6F /* NameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */; };
+		8B7B2C682ACD2A05003F4C6F /* GenderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */; };
+		8B7B2C6A2ACD715A003F4C6F /* DateOfBirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -37,6 +41,7 @@
 		F1ABDF802AC28CA9005AAEC3 /* bitesizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF7F2AC28CA9005AAEC3 /* bitesizeUITests.swift */; };
 		F1ABDF822AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF812AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift */; };
 		F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA470F2AD2B95A008BE71D /* Bahan.swift */; };
+		F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E51BF62ACBBFDA0083F06A /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,10 @@
 		8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesNeededCalculator.swift; sourceTree = "<group>"; };
 		8B7B2C752AD176C5003F4C6F /* LMSHeadGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSHeadGirls.swift; sourceTree = "<group>"; };
 		8B7B2C772AD17833003F4C6F /* LMSHeadBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSHeadBoys.swift; sourceTree = "<group>"; };
+		8B7B2C632ACD1C58003F4C6F /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextView.swift; sourceTree = "<group>"; };
+		8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTextView.swift; sourceTree = "<group>"; };
+		8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirthView.swift; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -85,6 +94,7 @@
 		F1ABDF7F2AC28CA9005AAEC3 /* bitesizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeUITests.swift; sourceTree = "<group>"; };
 		F1ABDF812AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F1DA470F2AD2B95A008BE71D /* Bahan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bahan.swift; sourceTree = "<group>"; };
+		F1E51BF62ACBBFDA0083F06A /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +221,11 @@
 			children = (
 				F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */,
 				F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */,
+				F1E51BF62ACBBFDA0083F06A /* GraphView.swift */,
+				8B7B2C632ACD1C58003F4C6F /* InformationView.swift */,
+				8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */,
+				8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */,
+				8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,8 +372,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
+				8B7B2C682ACD2A05003F4C6F /* GenderTextView.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
+				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
@@ -371,10 +388,13 @@
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,
+				8B7B2C662ACD25E8003F4C6F /* NameTextView.swift in Sources */,
+				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
 				8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
+				8B7B2C6A2ACD715A003F4C6F /* DateOfBirthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
