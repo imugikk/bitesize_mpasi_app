@@ -148,6 +148,44 @@ class FirestoreManager: ObservableObject {
         catch {
             print(error)
         }
-
+    }
+    
+    //create bahan
+    func createCarbo(bahan: [Bahan]) {
+        for i in bahan {
+            
+            let docRef = db.collection("Ingridients").document(i.id)
+                        
+            // Check if the document with the specified ID exists
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    // Document exists, update the "sumber" field by adding new data to the array
+                    let currentSumber = document.data()?["Sumber"] as? [String] ?? []
+                    print(currentSumber)
+                    var updatedSumber = currentSumber
+                    if let newSumber = i.Sumber as? [String] {
+                        updatedSumber.append(contentsOf: newSumber)
+                    }
+                    
+                    // Update the document with the new "sumber" array
+                    docRef.updateData(["Sumber": updatedSumber]) { error in
+                        if let error = error {
+                            print("Error updating document: \(error)")
+                        } else {
+                            print("Document successfully updated!")
+                        }
+                    }
+                } else {
+                    // Document doesn't exist, create a new document with the provided data
+                    docRef.setData(["Berat": i.Berat, "Kalori": i.Kalori, "Kalori/g": i.KaloriG, "Protein": i.Protein, "Protein/g": i.ProteinG, "Karbo": i.Karbo, "Karbo/g": i.KarboG,"Lemak": i.Lemak, "Lemak/g": i.LemakG, "Sumber": i.Sumber]) { error in
+                        if let error = error {
+                            print("Error creating document: \(error)")
+                        } else {
+                            print("Document successfully created!")
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -36,6 +36,7 @@
 		F1ABDF762AC28CA9005AAEC3 /* bitesizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF752AC28CA9005AAEC3 /* bitesizeTests.swift */; };
 		F1ABDF802AC28CA9005AAEC3 /* bitesizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF7F2AC28CA9005AAEC3 /* bitesizeUITests.swift */; };
 		F1ABDF822AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF812AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift */; };
+		F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA470F2AD2B95A008BE71D /* Bahan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		F1ABDF7B2AC28CA9005AAEC3 /* bitesizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bitesizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1ABDF7F2AC28CA9005AAEC3 /* bitesizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeUITests.swift; sourceTree = "<group>"; };
 		F1ABDF812AC28CA9005AAEC3 /* bitesizeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F1DA470F2AD2B95A008BE71D /* Bahan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bahan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */,
 				8B7B2C5F2ACB10F1003F4C6F /* ZScoreResult.swift */,
 				8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */,
+				F1DA470F2AD2B95A008BE71D /* Bahan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
