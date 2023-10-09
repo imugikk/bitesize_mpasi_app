@@ -28,15 +28,10 @@ struct ContentView: View {
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var babies: [Babies] = []
     
-    //    var baby: Babies = Babies(name: "Ratna Sari Putra Reggae", gender: "Female", dob: Date(), weight: 65.4, height: 175.2, hc: 43.8, userId: "user_1")
-    
     @State private var selection: Gender = .male
     @State private var name = ""
     @State private var gender = ""
     @State private var dob = Date.now
-    
-    let zscore = ZScoreCalculator()
-    let calculator = CaloriesNeededCalculator()
     
     var body: some View {
         NavigationView{
@@ -70,6 +65,7 @@ struct ContentView: View {
                         Spacer(minLength: 16) // Left padding
                                 Button(action: {
                                     selection = .male
+                                    gender = selection.stringGender()
                                 }) {
                                     Text("Male")
                                         .padding(.horizontal, 12)
@@ -87,6 +83,7 @@ struct ContentView: View {
 
                                 Button(action: {
                                     selection = .female
+                                    gender = selection.stringGender()
                                 }) {
                                     Text("Female")
                                         .padding(.horizontal, 12)
@@ -117,7 +114,7 @@ struct ContentView: View {
                     
                     HStack{
                         Button(action: {
-                            print(gender)
+                            
                         }){
                             Text("Skip")
                                 .font(

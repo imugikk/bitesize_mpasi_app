@@ -33,7 +33,7 @@ class CaloriesNeededCalculator {
         else if ageInMonths >= 13 && ageInMonths <= 24 {
             caloriesNeeded = 0.7 * ((89 * weight - 100) + 20)
         }
-        else if ageInMonths >= 24 && ageInMonths <= 35 {
+        else if ageInMonths >= 25 && ageInMonths <= 35 {
             caloriesNeeded = (89 * weight - 100) + 20
         }
         
