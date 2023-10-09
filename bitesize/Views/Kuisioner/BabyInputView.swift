@@ -10,6 +10,10 @@ import SwiftUI
 struct BabyInputView: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
+    let zscore = ZScoreCalculator()
+    let nutrition = CaloriesNeededCalculator()
+    @State private var zscoreResult: [Double] = []
+    @State private var nutritionResult: Double = 0
     
     @Binding var name: String
     @Binding var dob: Date
@@ -19,8 +23,10 @@ struct BabyInputView: View {
     @State private var hc: Double = 0.0
     @State private var time_measured = Date.now
     
+    @State private var isTap: Bool = false
+    
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack {
                 InformationView()
                     .edgesIgnoringSafeArea(.horizontal)
@@ -91,27 +97,37 @@ struct BabyInputView: View {
                         
                         
                         Button{
-                            let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1")
+                            let diffs = Calendar.current.dateComponents([.month], from: self.dob, to: Date.now)
+
+                            zscoreResult = zscore.calculateZScore(month: diffs.month ?? 0, weight: self.weight, height: self.height, head: self.hc) ?? []
+                            
+                            nutritionResult = nutrition.calculateCaloriesNeeded(dob: self.dob, weight: self.weight) ?? 0
+                            
+                            let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: "user_1", zscore: zscoreResult, nutrition: nutritionResult, timeMeasure: self.time_measured)
+                            
                             firestoreManager.createBaby(baby: babyData)
+                            
+                            isTap = true
                         } label: {
-                            NavigationLink(destination: GraphView()) {
-                                Text("Next")
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 8)
-                                    .frame(width: 148, alignment: .center)
-                                    .background(Color(red: 0.23, green: 0, blue: 0.9))
-                                    .cornerRadius(8)
-                                    .font(
-                                    Font.custom("Work Sans", size: 12)
-                                    .weight(.medium)
-                                    )
-                                    .kerning(0.6)
-                                    .foregroundColor(Constants.BGWhite)
-                            }
+                            Text("Next")
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                                .frame(width: 148, alignment: .center)
+                                .background(Color(red: 0.23, green: 0, blue: 0.9))
+                                .cornerRadius(8)
+                                .font(
+                                Font.custom("Work Sans", size: 12)
+                                .weight(.medium)
+                                )
+                                .kerning(0.6)
+                                .foregroundColor(Constants.BGWhite)
                         }
                     }
                     .padding(.horizontal, 38)// Left padding
                 }
+            }
+            .navigationDestination(isPresented: $isTap){
+                HomeView()
             }
         }.navigationBarBackButtonHidden()
     }

@@ -7,10 +7,12 @@
 
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class FirestoreManager: ObservableObject {
     let db = Firestore.firestore()
     @Published var user: String = ""
+    var items: [Babies] = []
     
     init(){
         fetchAllUsers()
@@ -137,6 +139,33 @@ class FirestoreManager: ObservableObject {
             }
     }
     
+    //read baby's data
+    func getMenuesData(completion: @escaping ([String]) -> Void) {
+        let docRef = db.collection("Menu").whereField("Kategori", isEqualTo: "Makanan Utama")
+        docRef.getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching data: \(error.localizedDescription)")
+                completion([])
+                return
+            }
+
+            var menues: [String] = []
+//            for document in snapshot!.documents {
+//                if let menu = try? document.data(as: Menu.self) {
+//                    menues.append(menu)
+//                }
+//            }
+            
+            for document in snapshot!.documents {
+//                print("\(document.documentID): \(document.data())")
+                let data = document.data()
+                menues.append(data["Name"] as! String)
+            }
+            print(menues)
+            completion(menues)
+        }
+    }
+    
     //create calories needed
     func createCaloriesNeeded(caloriesneeded: CaloriesNeededResult) {
         let docRef = db.collection("Calories")
@@ -184,6 +213,20 @@ class FirestoreManager: ObservableObject {
                             print("Document successfully created!")
                         }
                     }
+                }
+            }
+        }
+    }
+    
+    func createMenu(menu: [Menu]){
+        for i in menu {
+            let docRef = db.collection("Menu")
+            
+            docRef.addDocument(data: ["Name": i.name, "Bahan": i.bahan, "Steps": i.step, "Kategori": i.kategori]) { error in
+                if let error = error {
+                    print("Error creating document: \(error)")
+                } else {
+                    print("Document successfully created!")
                 }
             }
         }

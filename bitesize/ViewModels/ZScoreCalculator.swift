@@ -34,14 +34,14 @@ class ZScoreCalculator {
         var lmsDataW = LMSData(weight: weight, height: height, head: head)
         var lmsDataH = LMSData(weight: weight, height: height, head: head)
         var lmsDataHead = LMSData(weight: weight, height: height, head: head)
-        var gender = "female"
+        var gender = "Female"
 
         switch gender {
-            case "female":
-                lmsDataH.LMS = findLMSGirlL(month: month)!
-                lmsDataW.LMS = findLMSGirlW(month: month)!
-                lmsDataHead.LMS = findLMSGirlH(month: month)!
-            case "male":
+            case "Female":
+                lmsDataH.LMS = findLMSGirlL(month: month) ?? []
+                lmsDataW.LMS = findLMSGirlW(month: month) ?? []
+                lmsDataHead.LMS = findLMSGirlH(month: month) ?? []
+            case "Male":
                 lmsDataH.LMS = findLMSBoyL(month: month)!
                 lmsDataW.LMS = findLMSBoyW(month: month)!
                 lmsDataHead.LMS = findLMSBoyH(month: month)!
