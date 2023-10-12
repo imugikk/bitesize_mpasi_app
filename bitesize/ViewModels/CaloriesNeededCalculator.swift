@@ -10,7 +10,6 @@ import Foundation
 class CaloriesNeededCalculator {
     func calculateCaloriesNeeded(dob: Date, weight: Double) -> Double? {
         // Calculate the age in months
-        // testing
         let ageInMonths = calculateMonthsSinceBirth(dob: dob)
         
         // Calculate calories based on age
