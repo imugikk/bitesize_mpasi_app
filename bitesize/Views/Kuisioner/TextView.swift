@@ -1,16 +1,22 @@
 //
-//  NameTextView.swift
+//  TextView.swift
 //  bitesize
 //
-//  Created by Michelle Annice on 04/10/23.
+//  Created by Michelle Annice on 12/10/23.
 //
 
 import SwiftUI
 
-struct NameTextView: View {
+struct TextView: View {
+    let labelText: String
+
+    init(labelText: String) {
+        self.labelText = labelText
+    }
+
     var body: some View {
         HStack {
-            Text("Name")
+            Text(labelText)
                 .font(
                 Font.custom("Work Sans", size: 16)
                 .weight(.medium)
@@ -23,8 +29,8 @@ struct NameTextView: View {
     }
 }
 
-struct NameTextView_Previews: PreviewProvider {
+struct TextView_Previews: PreviewProvider {
     static var previews: some View {
-        NameTextView()
+        TextView(labelText: "Custom Text")
     }
 }

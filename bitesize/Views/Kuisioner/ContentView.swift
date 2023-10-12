@@ -40,7 +40,8 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.horizontal)
                 
                 VStack (alignment: .leading){
-                    NameTextView()
+                    
+                    TextView(labelText: "Name")
                         .edgesIgnoringSafeArea(.all)
                     
                     HStack {
@@ -57,7 +58,7 @@ struct ContentView: View {
                         Spacer(minLength: 16) // Right padding
                     }.edgesIgnoringSafeArea(.all)
                     
-                    GenderTextView()
+                    TextView(labelText: "Gender")
                         .edgesIgnoringSafeArea(.all)
                     
                     
@@ -104,7 +105,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                     
                     HStack {
-                        DateOfBirthView()
+                        TextView(labelText: "Date of Birth")
                             .edgesIgnoringSafeArea(.all)
                         
                         DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}

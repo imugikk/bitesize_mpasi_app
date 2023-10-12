@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */; };
 		8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */; };
 		8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */; };
@@ -15,9 +16,6 @@
 		8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */; };
 		8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C5F2ACB10F1003F4C6F /* ZScoreResult.swift */; };
 		8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C632ACD1C58003F4C6F /* InformationView.swift */; };
-		8B7B2C662ACD25E8003F4C6F /* NameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */; };
-		8B7B2C682ACD2A05003F4C6F /* GenderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */; };
-		8B7B2C6A2ACD715A003F4C6F /* DateOfBirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */; };
 		8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */; };
 		8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */; };
 		8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C752AD176C5003F4C6F /* LMSHeadGirls.swift */; };
@@ -64,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthGirls.swift; sourceTree = "<group>"; };
 		8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreCalculator.swift; sourceTree = "<group>"; };
 		8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthBoys.swift; sourceTree = "<group>"; };
@@ -72,9 +71,6 @@
 		8B7B2C5D2ACA635F003F4C6F /* LMSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSData.swift; sourceTree = "<group>"; };
 		8B7B2C5F2ACB10F1003F4C6F /* ZScoreResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreResult.swift; sourceTree = "<group>"; };
 		8B7B2C632ACD1C58003F4C6F /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextView.swift; sourceTree = "<group>"; };
-		8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTextView.swift; sourceTree = "<group>"; };
-		8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirthView.swift; sourceTree = "<group>"; };
 		8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesNeededResult.swift; sourceTree = "<group>"; };
 		8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesNeededCalculator.swift; sourceTree = "<group>"; };
 		8B7B2C752AD176C5003F4C6F /* LMSHeadGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSHeadGirls.swift; sourceTree = "<group>"; };
@@ -237,9 +233,7 @@
 				F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */,
 				F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */,
 				8B7B2C632ACD1C58003F4C6F /* InformationView.swift */,
-				8B7B2C652ACD25E8003F4C6F /* NameTextView.swift */,
-				8B7B2C672ACD2A05003F4C6F /* GenderTextView.swift */,
-				8B7B2C692ACD715A003F4C6F /* DateOfBirthView.swift */,
+				8B3194B32AD79DCF001DD2A1 /* TextView.swift */,
 			);
 			path = Kuisioner;
 			sourceTree = "<group>";
@@ -402,7 +396,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
-				8B7B2C682ACD2A05003F4C6F /* GenderTextView.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
@@ -419,14 +412,13 @@
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,
-				8B7B2C662ACD25E8003F4C6F /* NameTextView.swift in Sources */,
 				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
 				8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */,
 				F1DA471A2AD30383008BE71D /* Menu.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
+				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
-				8B7B2C6A2ACD715A003F4C6F /* DateOfBirthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
