@@ -37,6 +37,10 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    func fetchUserId() -> String {
+        return Auth.auth().currentUser?.uid ?? ""
+    }
+    
     //read
     func fetchAllUsers() {
         db.collection("Users").getDocuments() { (querySnapshot, error) in
@@ -118,7 +122,8 @@ class FirestoreManager: ObservableObject {
     }
     
     //read baby's data
-    func getBabiesData(forUserId userId: String, completion: @escaping ([Babies]) -> Void) {
+    func getBabiesData(completion: @escaping ([Babies]) -> Void) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
         db.collection("Babies")
             .whereField("userId", isEqualTo: userId)
             .getDocuments { snapshot, error in
@@ -139,7 +144,7 @@ class FirestoreManager: ObservableObject {
             }
     }
     
-    //read baby's data
+    //read menu's data
     func getMenuesData(completion: @escaping ([String]) -> Void) {
         let docRef = db.collection("Menu").whereField("Kategori", isEqualTo: "Makanan Utama")
         docRef.getDocuments { snapshot, error in

@@ -72,7 +72,7 @@ struct HomeView: View {
             }
         }.navigationBarBackButtonHidden()
         .onAppear{
-            firestoreManager.getBabiesData(forUserId: "user_1"){ fetchBabies in
+            firestoreManager.getBabiesData(){ fetchBabies in
                 self.babies = fetchBabies
             }
         }
