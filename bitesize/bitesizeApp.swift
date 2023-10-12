@@ -16,7 +16,8 @@ struct bitesizeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+//            HomeView()
+            GraphView()
                 .environmentObject(firestoreManager)
         }
     }

@@ -41,6 +41,7 @@
 		F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA470F2AD2B95A008BE71D /* Bahan.swift */; };
 		F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47112AD2DBBB008BE71D /* HomeView.swift */; };
 		F1DA471A2AD30383008BE71D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47192AD30383008BE71D /* Menu.swift */; };
+		F1E49C6A2AD7B38A0074DEB4 /* b_age_headc.csv in Resources */ = {isa = PBXBuildFile; fileRef = F1E49C692AD7B38A0074DEB4 /* b_age_headc.csv */; };
 		F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E51BF62ACBBFDA0083F06A /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		F1DA470F2AD2B95A008BE71D /* Bahan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bahan.swift; sourceTree = "<group>"; };
 		F1DA47112AD2DBBB008BE71D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DA47192AD30383008BE71D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F1E49C692AD7B38A0074DEB4 /* b_age_headc.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = b_age_headc.csv; sourceTree = "<group>"; };
 		F1E51BF62ACBBFDA0083F06A /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 		F1ABDF632AC28CA8005AAEC3 /* bitesize */ = {
 			isa = PBXGroup;
 			children = (
+				F1E49C562AD7A9370074DEB4 /* Resources */,
 				F1ABDF8E2AC28CC1005AAEC3 /* Models */,
 				F1ABDF902AC28CE3005AAEC3 /* Views */,
 				F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */,
@@ -252,6 +255,14 @@
 				F1E51BF62ACBBFDA0083F06A /* GraphView.swift */,
 			);
 			path = Graph;
+			sourceTree = "<group>";
+		};
+		F1E49C562AD7A9370074DEB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1E49C692AD7B38A0074DEB4 /* b_age_headc.csv */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +382,7 @@
 				F1ABDF6C2AC28CA9005AAEC3 /* Preview Assets.xcassets in Resources */,
 				F1ABDF692AC28CA9005AAEC3 /* Assets.xcassets in Resources */,
 				F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */,
+				F1E49C6A2AD7B38A0074DEB4 /* b_age_headc.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
