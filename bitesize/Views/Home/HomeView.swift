@@ -19,7 +19,7 @@ struct HomeView: View {
     
     
     var body: some View {
-        let nutrition = babies.first?.nutrition ?? 0.0
+        let nutrition = babies.last?.nutrition ?? 0.0
         let lowerBoundCarbs = String(format: "%.1f", nutrition * 0.35)
         let upperBoundCarbs = String(format: "%.1f", nutrition * 0.60)
         let resultTextCarbs = "\(lowerBoundCarbs)~\(upperBoundCarbs)g"
@@ -55,7 +55,7 @@ struct HomeView: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             
                             HStack{
-                                Text(String(format: "%.2f", babies.first?.nutrition ?? 0))
+                                Text(String(format: "%.2f", babies.last?.nutrition ?? 0))
                                     .font(
                                         Font.custom("Nunito", size: 48)
                                             .weight(.bold)
@@ -278,8 +278,13 @@ struct HomeView: View {
                         
                         Spacer().frame(height: 8)
                         
-//                        RecommendationTabView()
-                        RecommendationItemView()
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 20) {
+                                ForEach(menu, id: \.self) { menuItem in
+                                    RecommendationItemView(name: menuItem)
+                                }
+                            }
+                        }.padding(.horizontal, 16)
                         
                         Spacer().frame(height: 20)
                         
@@ -328,14 +333,6 @@ struct HomeView: View {
                         Spacer()
                         VStack{
                             Button{
-                                firestoreManager.getMenuesData(){ fetchMenu in
-                                    self.menu = fetchMenu
-                                }
-                            } label: {
-                                Text("Rekomendasi Menu")
-                            }.padding()
-                            
-                            Button{
                                 
                             } label: {
                                 NavigationLink(destination: ContentView()){
@@ -350,6 +347,10 @@ struct HomeView: View {
                         firestoreManager.getBabiesData(){ fetchBabies in
                             self.babies = fetchBabies
                         }
+                        
+                        firestoreManager.getMenuRecommendation() { fetchMenu in
+                            self.menu = fetchMenu
+                        }
                     }
             }
             .tabItem{
@@ -357,10 +358,10 @@ struct HomeView: View {
                 Text("Summary")
             }
             
-            Text("My Menu")
-                            .tabItem {
-                                Image(systemName: "star")
-                                Text("My Menu")
+            MenuView()
+                .tabItem {
+                    Image(systemName: "star")
+                    Text("My Menu")
             }
             
             Text("Progress")
@@ -375,6 +376,7 @@ struct HomeView: View {
                                 Text("Profile")
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

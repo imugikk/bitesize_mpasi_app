@@ -29,6 +29,10 @@
 		F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59AC2AC33AEA0073FB1A /* Babies.swift */; };
 		F12E59BA2AC341F90073FB1A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59B92AC341F90073FB1A /* Users.swift */; };
 		F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */; };
+		F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2E92AEA0CD800CDA921 /* MenuView.swift */; };
+		F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2EB2AEA12B700CDA921 /* HeaderView.swift */; };
+		F174A2EF2AEA135E00CDA921 /* WeekStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2EE2AEA135E00CDA921 /* WeekStore.swift */; };
+		F174A2F12AEA139000CDA921 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2F02AEA139000CDA921 /* Week.swift */; };
 		F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF642AC28CA8005AAEC3 /* bitesizeApp.swift */; };
 		F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */; };
 		F1ABDF692AC28CA9005AAEC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1ABDF682AC28CA9005AAEC3 /* Assets.xcassets */; };
@@ -93,6 +97,10 @@
 		F12E59AC2AC33AEA0073FB1A /* Babies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Babies.swift; sourceTree = "<group>"; };
 		F12E59B92AC341F90073FB1A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInputView.swift; sourceTree = "<group>"; };
+		F174A2E92AEA0CD800CDA921 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		F174A2EB2AEA12B700CDA921 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F174A2EE2AEA135E00CDA921 /* WeekStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStore.swift; sourceTree = "<group>"; };
+		F174A2F02AEA139000CDA921 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		F1ABDF612AC28CA8005AAEC3 /* bitesize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitesize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1ABDF642AC28CA8005AAEC3 /* bitesizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitesizeApp.swift; sourceTree = "<group>"; };
 		F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +153,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F174A2E82AEA0CAE00CDA921 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F174A2E92AEA0CD800CDA921 /* MenuView.swift */,
+				F174A2EB2AEA12B700CDA921 /* HeaderView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		F174A2ED2AEA132D00CDA921 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F174A2EE2AEA135E00CDA921 /* WeekStore.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		F1ABDF582AC28CA8005AAEC3 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +245,7 @@
 				8B7B2C6F2ACFB29E003F4C6F /* CaloriesNeededResult.swift */,
 				F1DA470F2AD2B95A008BE71D /* Bahan.swift */,
 				F1DA47192AD30383008BE71D /* Menu.swift */,
+				F174A2F02AEA139000CDA921 /* Week.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +253,7 @@
 		F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F174A2ED2AEA132D00CDA921 /* Menu */,
 				F1CBBF4F2ADD6B0B003A6B81 /* Akun */,
 				F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */,
 				F12E59A32AC299E90073FB1A /* FirestoreManager.swift */,
@@ -240,6 +267,7 @@
 		F1ABDF902AC28CE3005AAEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F174A2E82AEA0CAE00CDA921 /* Menu */,
 				F1CBBF362ADD6200003A6B81 /* Akun */,
 				F1DA47162AD2DD08008BE71D /* Graph */,
 				F1DA47142AD2DBE6008BE71D /* Home */,
@@ -441,10 +469,13 @@
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */,
+				F174A2EF2AEA135E00CDA921 /* WeekStore.swift in Sources */,
 				8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */,
+				F174A2F12AEA139000CDA921 /* Week.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
+				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
@@ -460,6 +491,7 @@
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
+				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
 				F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,

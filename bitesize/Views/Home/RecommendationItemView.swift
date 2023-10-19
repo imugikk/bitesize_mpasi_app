@@ -9,6 +9,12 @@ import SwiftUI
 
 struct RecommendationItemView: View {
     
+    let name: String
+
+    init(name: String) {
+        self.name = name
+    }
+    
     var body: some View {
         ZStack (alignment: .top){
             Rectangle()
@@ -36,7 +42,7 @@ struct RecommendationItemView: View {
                 HStack{
                     Spacer().frame(width: 8)
                     
-                    Text("Makanan Pagi")
+                    Text(name)
                         .font(
                             Font.custom("Inter", size: 16)
                                 .weight(.semibold)
@@ -79,5 +85,5 @@ struct RecommendationItemView: View {
 }
 
 #Preview {
-    RecommendationItemView()
+    RecommendationItemView(name: "Makanan Pagi")
 }

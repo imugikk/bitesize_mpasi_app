@@ -223,6 +223,7 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    //create menu
     func createMenu(menu: [Menu]){
         for i in menu {
             let docRef = db.collection("Menu")
@@ -233,6 +234,34 @@ class FirestoreManager: ObservableObject {
                 } else {
                     print("Document successfully created!")
                 }
+            }
+        }
+    }
+    
+    //get menu
+    func getMenuRecommendation(completion: @escaping ([String]) -> Void) {
+        getBabiesData() { fetchBabies in
+            self.items = fetchBabies
+            
+            let docRef = self.db.collection("Menu")
+                .whereField("Kategori", isEqualTo: "Makanan Utama")
+                .whereField("Calories", isGreaterThanOrEqualTo: 150)
+                .whereField("Calories", isLessThanOrEqualTo: 200)
+            
+            docRef.getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching data: \(error.localizedDescription)")
+                    completion([])
+                    return
+                }
+
+                var menues: [String] = []
+                
+                for document in snapshot!.documents {
+                    let data = document.data()
+                    menues.append(data["Name"] as! String)
+                }
+                completion(menues)
             }
         }
     }
