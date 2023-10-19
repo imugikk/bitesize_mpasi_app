@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
+		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
+		8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */; };
+		8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */; };
 		8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */; };
 		8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */; };
 		8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */; };
@@ -69,6 +72,9 @@
 
 /* Begin PBXFileReference section */
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
+		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
+		8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthGirls.swift; sourceTree = "<group>"; };
 		8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreCalculator.swift; sourceTree = "<group>"; };
 		8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthBoys.swift; sourceTree = "<group>"; };
@@ -275,6 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				F1DA47112AD2DBBB008BE71D /* HomeView.swift */,
+				8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */,
+				8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */,
+				8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -432,14 +441,17 @@
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */,
+				8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
+				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
+				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
 				8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */,
