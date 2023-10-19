@@ -11,6 +11,10 @@
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
 		8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */; };
 		8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */; };
+		8B3E1CF92AE63EDA002B5BC6 /* CategoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E1CF82AE63EDA002B5BC6 /* CategoryTabView.swift */; };
+		8B3E1CFB2AE6401C002B5BC6 /* SummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E1CFA2AE6401C002B5BC6 /* SummaryCardView.swift */; };
+		8B3E1CFD2AE6B609002B5BC6 /* RecommendationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E1CFC2AE6B609002B5BC6 /* RecommendationTabView.swift */; };
+		8B3E1D002AE6D8DE002B5BC6 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E1CFF2AE6D8DE002B5BC6 /* MenuView.swift */; };
 		8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */; };
 		8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */; };
 		8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */; };
@@ -75,6 +79,10 @@
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
 		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
 		8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		8B3E1CF82AE63EDA002B5BC6 /* CategoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabView.swift; sourceTree = "<group>"; };
+		8B3E1CFA2AE6401C002B5BC6 /* SummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCardView.swift; sourceTree = "<group>"; };
+		8B3E1CFC2AE6B609002B5BC6 /* RecommendationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationTabView.swift; sourceTree = "<group>"; };
+		8B3E1CFF2AE6D8DE002B5BC6 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8B7B2C532AC68855003F4C6F /* LMSLengthGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthGirls.swift; sourceTree = "<group>"; };
 		8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreCalculator.swift; sourceTree = "<group>"; };
 		8B7B2C572AC97E4F003F4C6F /* LMSLengthBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSLengthBoys.swift; sourceTree = "<group>"; };
@@ -145,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B3E1CFE2AE6D8C8002B5BC6 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8B3E1CFF2AE6D8DE002B5BC6 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		F1ABDF582AC28CA8005AAEC3 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +256,7 @@
 		F1ABDF902AC28CE3005AAEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E1CFE2AE6D8C8002B5BC6 /* Menu */,
 				F1CBBF362ADD6200003A6B81 /* Akun */,
 				F1DA47162AD2DD08008BE71D /* Graph */,
 				F1DA47142AD2DBE6008BE71D /* Home */,
@@ -282,8 +299,11 @@
 			children = (
 				F1DA47112AD2DBBB008BE71D /* HomeView.swift */,
 				8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */,
+				8B3E1CFC2AE6B609002B5BC6 /* RecommendationTabView.swift */,
 				8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */,
 				8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */,
+				8B3E1CF82AE63EDA002B5BC6 /* CategoryTabView.swift */,
+				8B3E1CFA2AE6401C002B5BC6 /* SummaryCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -439,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
+				8B3E1CFD2AE6B609002B5BC6 /* RecommendationTabView.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
 				F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */,
 				8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */,
@@ -449,6 +470,8 @@
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
+				8B3E1CF92AE63EDA002B5BC6 /* CategoryTabView.swift in Sources */,
+				8B3E1D002AE6D8DE002B5BC6 /* MenuView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
@@ -462,6 +485,7 @@
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
+				8B3E1CFB2AE6401C002B5BC6 /* SummaryCardView.swift in Sources */,
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,
 				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
