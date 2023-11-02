@@ -28,6 +28,9 @@
 		8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */; };
 		8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C752AD176C5003F4C6F /* LMSHeadGirls.swift */; };
 		8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B2C772AD17833003F4C6F /* LMSHeadBoys.swift */; };
+		8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E7D2AF89DF400420C25 /* DescriptionView.swift */; };
+		8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E7F2AF89F2200420C25 /* IngredientsView.swift */; };
+		8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E812AF89F3200420C25 /* HowToMakeView.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -101,6 +104,9 @@
 		8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesNeededCalculator.swift; sourceTree = "<group>"; };
 		8B7B2C752AD176C5003F4C6F /* LMSHeadGirls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSHeadGirls.swift; sourceTree = "<group>"; };
 		8B7B2C772AD17833003F4C6F /* LMSHeadBoys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSHeadBoys.swift; sourceTree = "<group>"; };
+		8BD66E7D2AF89DF400420C25 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		8BD66E7F2AF89F2200420C25 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		8BD66E812AF89F3200420C25 /* HowToMakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToMakeView.swift; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -179,6 +185,9 @@
 				8B3E1D012AEF54C8002B5BC6 /* MealItemView.swift */,
 				8B3E1D062AF1F0CF002B5BC6 /* MenuDetailView.swift */,
 				8B3E1D0A2AF20164002B5BC6 /* MenuDetailTabView.swift */,
+				8BD66E7D2AF89DF400420C25 /* DescriptionView.swift */,
+				8BD66E7F2AF89F2200420C25 /* IngredientsView.swift */,
+				8BD66E812AF89F3200420C25 /* HowToMakeView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -501,9 +510,11 @@
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
+				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
+				8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
@@ -528,6 +539,7 @@
 				F1DA471A2AD30383008BE71D /* Menu.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
 				8B3E1D052AF1E9B1002B5BC6 /* ProgressView.swift in Sources */,
+				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
 			);

@@ -72,14 +72,19 @@ struct ContentView: View {
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 8)
                                         .frame(width: 180, alignment: .center)
-                                        .background(selection == .male ? Color(red: 0.23, green: 0, blue: 0.9) : Color(red: 0.97, green: 0.96, blue: 1))
+                                        .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                        .inset(by: 0.5)
+                                        .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
+                                        )
+                                        .background(selection == .male ? Color(red: 0.18, green: 0.56, blue: 0.42) : Color.white)
                                         .cornerRadius(8)
                                         .font(
                                         Font.custom("Work Sans", size: 12)
                                         .weight(.medium)
                                         )
                                         .kerning(0.6)
-                                        .foregroundColor(selection == .male ? Color.white : Color(red: 0.23, green: 0, blue: 0.9))
+                                        .foregroundColor(selection == .male ? Color.white : Color(red: 0.16, green: 0.49, blue: 0.36))
                                 }
 
                                 Button(action: {
@@ -90,14 +95,19 @@ struct ContentView: View {
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 8)
                                         .frame(width: 180, alignment: .center)
-                                        .background(selection == .female ? Color(red: 0.23, green: 0, blue: 0.9) : Color(red: 0.97, green: 0.96, blue: 1))
+                                        .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                        .inset(by: 0.5)
+                                        .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
+                                        )
+                                        .background(selection == .female ? Color(red: 0.18, green: 0.56, blue: 0.42) : Color.white)
                                         .cornerRadius(8)
                                         .font(
                                         Font.custom("Work Sans", size: 12)
                                         .weight(.medium)
                                         )
                                         .kerning(0.6)
-                                        .foregroundColor(selection == .female ? Color.white : Color(red: 0.23, green: 0, blue: 0.9))
+                                        .foregroundColor(selection == .female ? Color.white : Color(red: 0.16, green: 0.49, blue: 0.36))
                                 }
                         
                         Spacer(minLength: 16) // Right padding

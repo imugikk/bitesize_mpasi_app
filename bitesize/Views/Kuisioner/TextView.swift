@@ -18,11 +18,11 @@ struct TextView: View {
         HStack {
             Text(labelText)
                 .font(
-                Font.custom("Work Sans", size: 16)
-                .weight(.medium)
+                Font.custom("Inter", size: 16)
+                .weight(.semibold)
                 )
-                .kerning(0.2)
-                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                .kerning(0.16)
+                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(16)

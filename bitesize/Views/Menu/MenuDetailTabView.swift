@@ -13,13 +13,14 @@ struct MenuDetailTabView: View {
         Image("menudetail")
             .resizable()
             .scaledToFill()
-//            .frame(height: 200)
         Image("menudetail")
-//            .resizable()
+            .resizable()
+            .scaledToFill()
         Image("menudetail")
-//            .resizable()
+            .resizable()
+            .scaledToFill()
     } //: TAB
-    .frame(height: 200)
+    .frame(height: 342)
     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
   }
 }
