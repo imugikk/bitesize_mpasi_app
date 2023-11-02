@@ -69,10 +69,6 @@ class ZScoreCalculator {
         let zScorew = ((pow((weight / mw), lw) - 1) / (lw * sw))
         let zScorehead = ((pow((head / mhead), lhead) - 1) / (lhead * shead))
 
-        print(zScoreh)
-        print(zScorew)
-        print(zScorehead)
-
         return [zScorew, zScoreh, zScorehead]
     }
 

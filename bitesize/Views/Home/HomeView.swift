@@ -15,7 +15,6 @@ struct HomeView: View {
     
     @State private var babies: [Babies] = []
     @State private var menu: [String] = []
-    @State private var zScoreView: [Double] = []
     
     
     var body: some View {

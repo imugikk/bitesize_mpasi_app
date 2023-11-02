@@ -13,6 +13,7 @@ class FirestoreManager: ObservableObject {
     let db = Firestore.firestore()
     @Published var user: String = ""
     var items: [Babies] = []
+    var zscore: [Double] = []
     
     init(){
         fetchAllUsers()
@@ -243,25 +244,65 @@ class FirestoreManager: ObservableObject {
         getBabiesData() { fetchBabies in
             self.items = fetchBabies
             
-            let docRef = self.db.collection("Menu")
-                .whereField("Kategori", isEqualTo: "Makanan Utama")
-                .whereField("Calories", isGreaterThanOrEqualTo: 150)
-                .whereField("Calories", isLessThanOrEqualTo: 200)
+            self.zscore = self.items.first?.zscore ?? []
             
-            docRef.getDocuments { snapshot, error in
-                if let error = error {
-                    print("Error fetching data: \(error.localizedDescription)")
-                    completion([])
-                    return
-                }
-
-                var menues: [String] = []
+            if self.zscore[0] < -2 {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Standar")
                 
-                for document in snapshot!.documents {
-                    let data = document.data()
-                    menues.append(data["Name"] as! String)
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
                 }
-                completion(menues)
+            } else if self.zscore[1] < -2 {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Tinggi Protein")
+                
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
+                }
+            } else if self.zscore[2] < -2 {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Tinggi Lemak")
+                
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
+                }
             }
         }
     }
