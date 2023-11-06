@@ -217,7 +217,7 @@ struct HomeView: View {
                                 Text("Progress")
             }
             
-            Text("Profile")
+            ProfileView()
                             .tabItem {
                                 Image(systemName: "star")
                                 Text("Profile")

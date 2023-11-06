@@ -16,7 +16,7 @@ struct Babies: Codable {
     var weight: Double
     var height: Double
     var hc: Double
-    var userId: String
+    var userEmail: String
     var zscore: [Double]
     var nutrition: Double
     var timeMeasure: Date

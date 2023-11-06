@@ -94,6 +94,20 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    //apple ID
+    func createAppleUser(email: String, completion: @escaping () -> Void) {
+        let docRef = db.collection("User Apple ID").document(email)
+        
+        docRef.setData(["email": email]){ error in
+            if let error = error {
+                print("Error writing documents: \(error)")
+            } else {
+                print("Document successfully written!")
+                completion()
+            }
+        }
+    }
+    
     //create baby's data
     func createBaby(baby: Babies) {
         let docRef = db.collection("Babies")
@@ -125,7 +139,7 @@ class FirestoreManager: ObservableObject {
     func getBabiesData(completion: @escaping ([Babies]) -> Void) {
         let userId = Auth.auth().currentUser?.uid ?? ""
         db.collection("Babies")
-            .whereField("userId", isEqualTo: userId)
+            .whereField("userEmail", isEqualTo: userId)
             .getDocuments { snapshot, error in
                 if let error = error {
                     print("Error fetching data: \(error.localizedDescription)")

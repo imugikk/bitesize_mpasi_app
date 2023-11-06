@@ -25,6 +25,8 @@ struct BabyInputView: View {
     
     @State private var isTap: Bool = false
     
+    @AppStorage("email") var email: String = ""
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -103,7 +105,7 @@ struct BabyInputView: View {
                             
                             nutritionResult = nutrition.calculateCaloriesNeeded(dob: self.dob, weight: self.weight) ?? 0.0
                             
-                            let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userId: firestoreManager.fetchUserId(), zscore: zscoreResult, nutrition: nutritionResult, timeMeasure: self.time_measured)
+                            let babyData = Babies(name: self.name, gender: self.gender, dob: self.dob, weight: self.weight, height: self.height, hc: self.hc, userEmail: email, zscore: zscoreResult, nutrition: nutritionResult, timeMeasure: self.time_measured)
                             
                             firestoreManager.createBaby(baby: babyData)
                             

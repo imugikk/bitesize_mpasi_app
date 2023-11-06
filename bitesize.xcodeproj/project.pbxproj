@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
 		8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */; };
@@ -31,6 +32,12 @@
 		8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E7D2AF89DF400420C25 /* DescriptionView.swift */; };
 		8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E7F2AF89F2200420C25 /* IngredientsView.swift */; };
 		8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E812AF89F3200420C25 /* HowToMakeView.swift */; };
+		8BD66E842AF9E12300420C25 /* TextAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E832AF9E12300420C25 /* TextAccountView.swift */; };
+		8BD66E862AF9FB9300420C25 /* SecuredTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E852AF9FB9300420C25 /* SecuredTextFieldView.swift */; };
+		8BD66E882AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E872AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift */; };
+		8BD66E8A2AFBC4C300420C25 /* RequirementsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E892AFBC4C300420C25 /* RequirementsPickerView.swift */; };
+		8BD66E8C2AFBC4FC00420C25 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E8B2AFBC4FC00420C25 /* CheckboxToggleStyle.swift */; };
+		8BD66E902AFBC55200420C25 /* AutheticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD66E8F2AFBC55200420C25 /* AutheticationViewModel.swift */; };
 		F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */; };
 		F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */; };
 		F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59A32AC299E90073FB1A /* FirestoreManager.swift */; };
@@ -83,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
 		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
@@ -107,6 +115,13 @@
 		8BD66E7D2AF89DF400420C25 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		8BD66E7F2AF89F2200420C25 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		8BD66E812AF89F3200420C25 /* HowToMakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToMakeView.swift; sourceTree = "<group>"; };
+		8BD66E832AF9E12300420C25 /* TextAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAccountView.swift; sourceTree = "<group>"; };
+		8BD66E852AF9FB9300420C25 /* SecuredTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuredTextFieldView.swift; sourceTree = "<group>"; };
+		8BD66E872AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldParentProtocol.swift; sourceTree = "<group>"; };
+		8BD66E892AFBC4C300420C25 /* RequirementsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsPickerView.swift; sourceTree = "<group>"; };
+		8BD66E8B2AFBC4FC00420C25 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
+		8BD66E8F2AFBC55200420C25 /* AutheticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutheticationViewModel.swift; sourceTree = "<group>"; };
+		8BD66E912AFBFD6700420C25 /* bitesize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bitesize.entitlements; sourceTree = "<group>"; };
 		F12E599F2AC294C40073FB1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F12E59A32AC299E90073FB1A /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -169,6 +184,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B01397A2AFC9EE7001FE3DE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		8B3E1D032AF1E82E002B5BC6 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +246,7 @@
 		F1ABDF632AC28CA8005AAEC3 /* bitesize */ = {
 			isa = PBXGroup;
 			children = (
+				8BD66E912AFBFD6700420C25 /* bitesize.entitlements */,
 				F1ABDF8E2AC28CC1005AAEC3 /* Models */,
 				F1ABDF902AC28CE3005AAEC3 /* Views */,
 				F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */,
@@ -297,6 +321,7 @@
 		F1ABDF902AC28CE3005AAEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B01397A2AFC9EE7001FE3DE /* Profile */,
 				8B3E1D032AF1E82E002B5BC6 /* Progress */,
 				F174A2E82AEA0CAE00CDA921 /* Menu */,
 				F1CBBF362ADD6200003A6B81 /* Akun */,
@@ -312,6 +337,12 @@
 			children = (
 				F1CBBF392ADD621C003A6B81 /* RegisterView.swift */,
 				F1CBBF3B2ADD622B003A6B81 /* LoginView.swift */,
+				8BD66E832AF9E12300420C25 /* TextAccountView.swift */,
+				8BD66E852AF9FB9300420C25 /* SecuredTextFieldView.swift */,
+				8BD66E872AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift */,
+				8BD66E892AFBC4C300420C25 /* RequirementsPickerView.swift */,
+				8BD66E8B2AFBC4FC00420C25 /* CheckboxToggleStyle.swift */,
+				8BD66E8F2AFBC55200420C25 /* AutheticationViewModel.swift */,
 			);
 			path = Akun;
 			sourceTree = "<group>";
@@ -511,18 +542,22 @@
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
+				8BD66E882AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
+				8BD66E902AFBC55200420C25 /* AutheticationViewModel.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
 				8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
+				8BD66E8C2AFBC4FC00420C25 /* CheckboxToggleStyle.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
 				8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */,
+				8BD66E842AF9E12300420C25 /* TextAccountView.swift in Sources */,
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
@@ -531,10 +566,13 @@
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
 				F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */,
+				8BD66E862AF9FB9300420C25 /* SecuredTextFieldView.swift in Sources */,
+				8BD66E8A2AFBC4C300420C25 /* RequirementsPickerView.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,
 				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
+				8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */,
 				8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */,
 				F1DA471A2AD30383008BE71D /* Menu.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
@@ -697,6 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bitesize/bitesize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bitesize/Preview Content\"";
@@ -726,6 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bitesize/bitesize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"bitesize/Preview Content\"";
