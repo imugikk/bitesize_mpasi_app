@@ -63,6 +63,7 @@
 		F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47112AD2DBBB008BE71D /* HomeView.swift */; };
 		F1DA471A2AD30383008BE71D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47192AD30383008BE71D /* Menu.swift */; };
 		F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E51BF62ACBBFDA0083F06A /* GraphView.swift */; };
+		F1F269BB2AFB2C0600D7868D /* ProgressGrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		F1DA47112AD2DBBB008BE71D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DA47192AD30383008BE71D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		F1E51BF62ACBBFDA0083F06A /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressGrowthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				8B3E1D042AF1E9B1002B5BC6 /* ProgressView.swift */,
+				F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
+				F1F269BB2AFB2C0600D7868D /* ProgressGrowthView.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
