@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B01397E2AFD25A5001FE3DE /* ZScoreSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397D2AFD25A5001FE3DE /* ZScoreSheetView.swift */; };
+		8B0139822AFDDABD001FE3DE /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139812AFDDABD001FE3DE /* WeightView.swift */; };
+		8B0139842AFDDAC4001FE3DE /* HeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139832AFDDAC4001FE3DE /* HeadView.swift */; };
+		8B0139862AFDDACD001FE3DE /* HeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139852AFDDACD001FE3DE /* HeightView.swift */; };
+		8B0139882AFE0883001FE3DE /* ZScoreSheetHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139872AFE0883001FE3DE /* ZScoreSheetHeadView.swift */; };
+		8B01398A2AFE0D58001FE3DE /* ZScoreSheetHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139892AFE0D58001FE3DE /* ZScoreSheetHeightView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
 		8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */; };
@@ -63,6 +69,7 @@
 		F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47112AD2DBBB008BE71D /* HomeView.swift */; };
 		F1DA471A2AD30383008BE71D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47192AD30383008BE71D /* Menu.swift */; };
 		F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E51BF62ACBBFDA0083F06A /* GraphView.swift */; };
+		F1F269BB2AFB2C0600D7868D /* ProgressGrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +90,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B01397D2AFD25A5001FE3DE /* ZScoreSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetView.swift; sourceTree = "<group>"; };
+		8B0139812AFDDABD001FE3DE /* WeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
+		8B0139832AFDDAC4001FE3DE /* HeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadView.swift; sourceTree = "<group>"; };
+		8B0139852AFDDACD001FE3DE /* HeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightView.swift; sourceTree = "<group>"; };
+		8B0139872AFE0883001FE3DE /* ZScoreSheetHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeadView.swift; sourceTree = "<group>"; };
+		8B0139892AFE0D58001FE3DE /* ZScoreSheetHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeightView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
 		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
@@ -136,6 +149,7 @@
 		F1DA47112AD2DBBB008BE71D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DA47192AD30383008BE71D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		F1E51BF62ACBBFDA0083F06A /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressGrowthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +187,13 @@
 			isa = PBXGroup;
 			children = (
 				8B3E1D042AF1E9B1002B5BC6 /* ProgressView.swift */,
+				F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */,
+				8B01397D2AFD25A5001FE3DE /* ZScoreSheetView.swift */,
+				8B0139812AFDDABD001FE3DE /* WeightView.swift */,
+				8B0139832AFDDAC4001FE3DE /* HeadView.swift */,
+				8B0139852AFDDACD001FE3DE /* HeightView.swift */,
+				8B0139872AFE0883001FE3DE /* ZScoreSheetHeadView.swift */,
+				8B0139892AFE0D58001FE3DE /* ZScoreSheetHeightView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -510,7 +531,9 @@
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
+				8B01397E2AFD25A5001FE3DE /* ZScoreSheetView.swift in Sources */,
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
+				8B0139822AFDDABD001FE3DE /* WeightView.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
@@ -518,7 +541,9 @@
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
+				8B0139842AFDDAC4001FE3DE /* HeadView.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
+				8B0139882AFE0883001FE3DE /* ZScoreSheetHeadView.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
@@ -526,9 +551,12 @@
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
+				F1F269BB2AFB2C0600D7868D /* ProgressGrowthView.swift in Sources */,
+				8B0139862AFDDACD001FE3DE /* HeightView.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
+				8B01398A2AFE0D58001FE3DE /* ZScoreSheetHeightView.swift in Sources */,
 				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
 				F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
