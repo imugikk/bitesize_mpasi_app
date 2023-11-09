@@ -9,111 +9,131 @@ import SwiftUI
 
 struct MealItemView: View {
     
-    let name: String
+    var menuName: String
+    var menuCalories: String
+    var menuType: [String]
+    var menuId: String
 
-    init(name: String) {
-        self.name = name
+
+    init(menuName: String, menuCalories: String, menuType: [String], menuId: String) {
+        self.menuName = menuName
+        self.menuCalories = menuCalories
+        self.menuType = menuType
+        self.menuId = menuId
     }
     
     var body: some View {
-        VStack{
-            ZStack (alignment: .top){
-                Rectangle()
-                    .fill(Color(red: 0.94, green: 0.94, blue: 0.94))
-                    .frame(width: 310, height: 230.79)
-                    .cornerRadius(8)
-                
-                VStack (alignment: .leading){
-                    Spacer().frame(height: 8)
+            VStack{
+                ZStack (alignment: .top){
+                    Rectangle()
+                        .fill(Color(red: 0.94, green: 0.94, blue: 0.94))
+                        .frame(width: 310, height: 230.79)
+                        .cornerRadius(8)
                     
-                    ZStack (alignment: .topLeading){
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
-                            .background(
-                                Image("pasta")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 294, height: 151.51553)
-                                    .clipped()
-                                    .cornerRadius(8)
-                            ).padding(.top, 8)
+                    VStack (alignment: .leading){
+                        Spacer().frame(height: 8)
                         
-                        HStack(alignment: .center, spacing: 10) {
-                            Text("Low Protein")
-                                .font(
-                                    Font.custom("Inter", size: 12)
-                                        .weight(.medium)
-                                )
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                        ZStack (alignment: .topLeading){
+                            Rectangle()
+                                .foregroundColor(.clear)
+                                .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+                                .background(
+                                    Image("pasta")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 294, height: 151.51553)
+                                        .clipped()
+                                        .cornerRadius(8)
+                                ).padding(.top, 8)
+                            
+                            HStack(alignment: .center, spacing: 10) {
+                                Text(menuType[0])
+                                    .font(
+                                        Font.custom("Inter", size: 12)
+                                            .weight(.medium)
+                                    )
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 4)
+                            .frame(height: 22.08996, alignment: .center)
+                            .background(Color(red: 0.69, green: 0.92, blue: 0.83))
+                            
+                            .cornerRadius(12)
+                            .shadow(color: Color(red: 0.18, green: 0.56, blue: 0.42).opacity(0.25), radius: 2, x: 0, y: 0)
+                            
+                            .padding(.leading, 16)
+                            .padding(.top, 4)
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 4)
-                        .frame(height: 22.08996, alignment: .center)
-                        .background(Color(red: 0.69, green: 0.92, blue: 0.83))
                         
-                        .cornerRadius(12)
-                        .shadow(color: Color(red: 0.18, green: 0.56, blue: 0.42).opacity(0.25), radius: 2, x: 0, y: 0)
+                        Spacer().frame(height: 8)
                         
-                        .padding(.leading, 16)
-                        .padding(.top, 4)
+                        HStack{
+                            Spacer().frame(width: 8)
+                            
+                            Text(menuName)
+                                .font(
+                                    Font.custom("Inter", size: 16)
+                                        .weight(.semibold)
+                                )
+                                .kerning(0.16)
+                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            
+                            Text("\(menuCalories) kcal")
+                                .font(Font.custom("Inter", size: 14))
+                                .kerning(0.08)
+                                .multilineTextAlignment(.trailing)
+                                .foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
+                            
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            
+                            Spacer().frame(width: 8)
+                        }.padding(.top, 8)
+                        
+                        HStack{
+                            HStack (spacing: 8){
+                                Circle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.blue)
+                                
+                                Circle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.blue)
+                                
+                                Circle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.blue)
+                                
+                                Circle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.blue)
+                                
+                                Circle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.blue)
+                            }
+                            Spacer()
+                            NavigationLink(destination: MenuDetailView(menuId: menuId)){
+                                Text("See Detail")
+                                .font(
+                                    Font.custom("Inter", size: 14)
+                                    .weight(.medium)
+                                )
+                                .kerning(0.4)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                            }
+                        }.padding(.horizontal, 10)
                     }
-                    
-                    Spacer().frame(height: 8)
-                    
-                    HStack{
-                        Spacer().frame(width: 8)
-                        
-                        Text(name)
-                            .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
-                            )
-                            .kerning(0.16)
-                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        
-                        Text("200 ccal")
-                            .font(Font.custom("Inter", size: 14))
-                            .kerning(0.08)
-                            .multilineTextAlignment(.trailing)
-                            .foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
-                        
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                        
-                        Spacer().frame(width: 8)
-                    }.padding(.top, 8)
-                    
-                    HStack (spacing: 8){
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.blue)
-                        
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.blue)
-                        
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.blue)
-                        
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.blue)
-                        
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color.blue)
-                    }.padding(.horizontal, 10)
+                    .frame(width: 310, height: 230.79)
                 }
-                .frame(width: 310, height: 230.79)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.25), radius: 3, x: 0, y: 0)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.25), radius: 3, x: 0, y: 0)
-        }
     }
 }
 
-#Preview {
-    MealItemView(name: "Food Name")
-}
+//#Preview {
+//    MealItemView(name: "Food Name")
+//}

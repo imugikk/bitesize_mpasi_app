@@ -10,7 +10,12 @@ import SwiftUI
 struct MenuView: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
-    @State private var menu: [String] = []
+    @State private var menuUtama: [Any] = []
+    @State private var cemilan: [Any] = []
+    @State private var babies: [Babies] = []
+    
+    @State private var selectedCards: Set<String> = Set()
+    @State private var totalCalories: Double = 0
     
     var body: some View {
         //        NavigationView{
@@ -34,15 +39,15 @@ struct MenuView: View {
                 HStack(alignment: .center, spacing: 8) {
                     Text("Calories Count")
                         .font(
-                            Font.custom("Nunito", size: 24)
+                            Font.custom("Nunito", size: 20)
                                 .weight(.semibold)
                         )
                         .kerning(0.24)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
-                    Text("210/200")
+                    Text("\(String(format: "%.2f", totalCalories))/\(String(format: "%.2f", babies.first?.nutrition ?? 0))")
                         .font(
-                            Font.custom("Nunito", size: 28)
+                            Font.custom("Nunito", size: 24)
                                 .weight(.bold)
                         )
                         .kerning(0.28)
@@ -80,8 +85,14 @@ struct MenuView: View {
                     
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
-                            ForEach(menu, id: \.self) { menuItem in
-                                MealItemView(name: menuItem)
+                            ForEach(menuUtama.indices, id: \.self) { index in
+                                if let menuItem = menuUtama[index] as? [Any], menuItem.count == 4 {
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: "\(menuItem[1])", menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                        .onTapGesture {
+                                            handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
+                                        }
+                                        .shadow(radius: selectedCards.contains(menuItem[3] as! String) ? 5 : 0)
+                                }
                             }
                         }
                     }.padding(.horizontal, 16)
@@ -104,48 +115,77 @@ struct MenuView: View {
                     
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
-                            ForEach(menu, id: \.self) { menuItem in
-                                MealItemView(name: menuItem)
+                            ForEach(cemilan.indices, id: \.self) { index in
+                                if let menuItem = cemilan[index] as? [Any], menuItem.count == 4 {
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: "\(menuItem[1])", menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                        .onTapGesture {
+                                            handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
+                                        }
+                                        .shadow(radius: selectedCards.contains(menuItem[3] as! String) ? 5 : 0)
+                                }
                             }
                         }
                     }.padding(.horizontal, 16)
                         .padding(.top, 8)
                     
                     
-                    HStack(alignment: .center, spacing: 86) {
-                        Button(action: {}){
-                            HStack(alignment: .top, spacing: 4) {
-                                Text("Purchase Meal")
-                                    .font(
-                                        Font.custom("Inter", size: 14)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.4)
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
-                            }
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 8)
-                            .frame(width: 357, height: 36, alignment: .top)
-                            .background(Color(red: 0.18, green: 0.56, blue: 0.42))
-                            .cornerRadius(8)
-                        }
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 0)
-                    .frame(width: 389, height: 56, alignment: .center)
-                    .background(.white)
-                    .cornerRadius(8)
-                    .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.05), radius: 2.5, x: 0, y: -3)
+//                    HStack(alignment: .center, spacing: 86) {
+//                        Button(action: {}){
+//                            HStack(alignment: .top, spacing: 4) {
+//                                Text("Purchase Meal")
+//                                    .font(
+//                                        Font.custom("Inter", size: 14)
+//                                            .weight(.medium)
+//                                    )
+//                                    .kerning(0.4)
+//                                    .multilineTextAlignment(.center)
+//                                    .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+//                            }
+//                            .padding(.horizontal, 24)
+//                            .padding(.vertical, 8)
+//                            .frame(width: 357, height: 36, alignment: .top)
+//                            .background(Color(red: 0.18, green: 0.56, blue: 0.42))
+//                            .cornerRadius(8)
+//                        }
+//                    }
+//                    .padding(.horizontal, 16)
+//                    .padding(.vertical, 0)
+//                    .frame(width: 389, height: 56, alignment: .center)
+//                    .background(.white)
+//                    .cornerRadius(8)
+//                    .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.05), radius: 2.5, x: 0, y: -3)
                 }
             }
             .navigationBarBackButtonHidden()
             .onAppear{
-                firestoreManager.getMenuRecommendation() { fetchMenu in
-                    self.menu = fetchMenu
+                firestoreManager.getMenuesData() { fetchMenu in
+                    self.menuUtama = fetchMenu
+                }
+                
+                firestoreManager.getMenuCemilanData() { fetchMenu in
+                    self.cemilan = fetchMenu
+                }
+                
+                firestoreManager.getBabiesData(){ fetchBabies in
+                    self.babies = fetchBabies
                 }
             }
         }
+    
+    private func handleCardSelection(menuId: String, calories: Double) {
+        if selectedCards.contains(menuId) {
+            // Deselect card
+            selectedCards.remove(menuId)
+            totalCalories -= calories
+            if totalCalories < 0 {
+                totalCalories = 0
+            }
+        } else {
+            // Select card
+            selectedCards.insert(menuId)
+            totalCalories += calories
+        }
+    }
 }
 
 //#Preview {

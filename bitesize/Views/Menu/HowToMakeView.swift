@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct HowToMakeView: View {
+    
+    var step: [String]
+    
     var body: some View {
-        Text("How to make")
+        VStack{
+            ForEach(step, id: \.self) { step in
+                Text(step)
+            }
+        }
     }
 }
 
-#Preview {
-    HowToMakeView()
-}
+//#Preview {
+//    HowToMakeView()
+//}

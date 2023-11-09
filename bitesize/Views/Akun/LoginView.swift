@@ -13,9 +13,11 @@ struct LoginView: View {
     
     @State private var isPresented = false
     @State private var isActive = false
+    @State private var isLogin = false
+    @State private var isLoading = false
     
     @State private var isRegister = false
-    @ObservedObject private var loginVM = LoginManager()
+    @EnvironmentObject var firestoreManager: FirestoreManager
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -42,7 +44,7 @@ struct LoginView: View {
                     TextAccountView(labelText: "Email")
                         .edgesIgnoringSafeArea(.all)
                     
-                    TextField("Email", text: $loginVM.email)
+                    TextField("Email", text: $firestoreManager.email)
                         .padding(.leading, 16)
                         .padding(.vertical, 13)
                         .frame(width: 358, height: 50, alignment: .leading)
@@ -59,7 +61,7 @@ struct LoginView: View {
                     TextAccountView(labelText: "Password")
                         .edgesIgnoringSafeArea(.all)
                     
-                    SecureField("Password", text: $loginVM.password)
+                    SecureField("Password", text: $firestoreManager.password)
                         .padding(.leading, 16)
                         .padding(.vertical, 13)
                         .frame(width: 358, height: 50, alignment: .leading)
@@ -76,8 +78,16 @@ struct LoginView: View {
                     Spacer()
                     
                     Button{
-                        loginVM.login {
-                            isActive = true
+                        guard !firestoreManager.email.isEmpty, !firestoreManager.password.isEmpty else {
+                            return
+                        }
+                        
+                        isLogin = true
+                        isLoading = true
+                        firestoreManager.login { shouldNavigateToHome in
+                            print(isActive)
+                            isActive = shouldNavigateToHome
+                            isLoading = false
                         }
                     } label: {
                         HStack(alignment: .center, spacing: 4) {
@@ -159,18 +169,15 @@ struct LoginView: View {
                     }
                     
                 }.padding()
-                //                .sheet(isPresented: $isPresented, content: {
-                //                    RegisterView()
-                //                })
-                    .navigationDestination(isPresented: $isActive){
-                        
-                            if isRegister {
-                                ContentView()
-                            } else {
-                                
-                                HomeView()
-                            }
+                .navigationDestination(isPresented: $isLogin){
+                    if isLoading {
+                        Text("Logging in...").navigationBarHidden(true)
+                    } else if isActive {
+                        HomeView()
+                    } else {
+                        ContentView()
                     }
+                }
             }
         }
         else {

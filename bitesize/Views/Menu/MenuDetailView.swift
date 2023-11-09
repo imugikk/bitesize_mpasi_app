@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MenuDetailView: View {
     @State private var selectedOption = 0
-    @State private var selectedSegment: Int?
+    @State private var selectedSegment: Int = 0
+    @State private var detailMenu: Menu?
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
+    var menuId: String
 
     var body: some View {
         ScrollView {
@@ -17,7 +21,7 @@ struct MenuDetailView: View {
                 .cornerRadius(8)
 
             HStack {
-                Text("Puree Mushroom")
+                Text(detailMenu?.name ?? "")
                 .font(
                 Font.custom("Nunito", size: 28)
                     .weight(.semibold)
@@ -27,7 +31,7 @@ struct MenuDetailView: View {
 
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 
-                Text("High Protein")
+                Text(detailMenu?.jenis[0] ?? "")
                 .font(
                 Font.custom("Inter", size: 16)
                 .weight(.semibold)
@@ -82,16 +86,20 @@ struct MenuDetailView: View {
                 
                 // Add views based on the selected segment
                 if selectedSegment == 0 {
-                    DescriptionView()
+                    DescriptionView(desc: detailMenu?.desc ?? "")
                 } else if selectedSegment == 1 {
-                    IngredientsView()
+                    IngredientsView(bahan: detailMenu?.bahan ?? [:])
                 } else if selectedSegment == 2 {
-                    HowToMakeView()
+                    HowToMakeView(step: detailMenu?.step ?? [])
                 }
             }
             
             
             
+        }.onAppear{
+            firestoreManager.getDetailMenu(menuId: menuId) { fetchMenu in
+                self.detailMenu = fetchMenu
+            }
         }
         .edgesIgnoringSafeArea(.top)
     }
@@ -115,8 +123,8 @@ struct TextButtonStyle: ViewModifier {
 }
 
 
-#Preview {
-    MenuDetailView()
-}
+//#Preview {
+//    MenuDetailView()
+//}
 
 
