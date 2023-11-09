@@ -103,6 +103,7 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                 
                 Button("Sign Up"){
                     registerVM.register {
+                        email = registerVM.email
                         isRegister = true
                         isRegistrationSuccessful = true
                         //                        presentationMode.wrappedValue.dismiss()
