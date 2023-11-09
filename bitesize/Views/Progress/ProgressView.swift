@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ProgressView: View {
     
@@ -51,6 +52,26 @@ struct ProgressView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 4)
             .frame(maxWidth: .infinity, alignment: .center)
+            
+            Chart(babies) { item in
+
+                ForEach(item.weight.indices, id: \.self) {index in
+                    LineMark(x: .value("Time Measured", item.timeMeasure[index]), y: .value("Weight", item.weight[index]))
+                }
+            }
+            .chartXAxis {
+                AxisMarks(values: .stride(by: .month)) { value in
+                    AxisGridLine()
+                    AxisValueLabel(format: .dateTime.month(.defaultDigits))
+                }
+            }.padding()
+            
+            Spacer()
+        }.onAppear{
+            firestoreManager.getBabiesData(){ fetchBabies in
+                self.babies = fetchBabies
+                print(self.babies)
+            }
         }
     }
 }

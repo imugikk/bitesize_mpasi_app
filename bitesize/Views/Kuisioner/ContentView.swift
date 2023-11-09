@@ -32,6 +32,10 @@ struct ContentView: View {
     @State private var name = ""
     @State private var gender = ""
     @State private var dob = Date.now
+    @State private var weight: Double = 0.0
+    
+    @State private var integerPart: Int = 0
+    @State private var decimalPart: Int = 0
     
     var body: some View {
         NavigationView{
@@ -40,9 +44,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.horizontal)
                 
                 VStack (alignment: .leading){
-                    
                     TextView(labelText: "Name")
-                        .edgesIgnoringSafeArea(.all)
                     
                     HStack {
                         Spacer(minLength: 16) // Left padding
@@ -114,54 +116,89 @@ struct ContentView: View {
                             }
                     .edgesIgnoringSafeArea(.all)
                     
-                    HStack {
-                        TextView(labelText: "Date of Birth")
-                            .edgesIgnoringSafeArea(.all)
-                        
+                    TextView(labelText: "Date of Birth")
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    HStack{
+                        Spacer()
                         DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}
+                            .datePickerStyle(WheelDatePickerStyle())
+                            .labelsHidden()
+                        Spacer()
                     }
+                    
+                    TextView(labelText: "Weight")
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    HStack {
+                        Spacer()
+                        Picker("", selection: $integerPart) {
+                            ForEach(0..<100) { index in
+                                Text("\(index)")
+                            }
+                        }
+                        .labelsHidden()
+                        .frame(width: 80)
+                        .clipped()
+
+                        Text(",")
+
+                        Picker("", selection: $decimalPart) {
+                            ForEach(0..<10) { index in
+                                Text("\(index)")
+                            }
+                        }
+                        .labelsHidden()
+                        .frame(width: 80)
+                        .clipped()
+                        
+                        Text("kg")
+                        Spacer()
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    
+//                    TextField("weight", value: $weight, formatter: numberFormatter)
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Spacer()
                     
-                    HStack{
-                        Button(action: {
-                            
-                        }){
-                            Text("Skip")
-                                .font(
-                                    Font.custom("Work Sans", size: 12)
-                                        .weight(.medium)
-                                )
-                                .kerning(0.6)
-                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+                    Button {
+    
+                    } label: {
+                        NavigationLink(destination: BabyInputView(
+                            name: $name,
+                            dob: $dob,
+                            gender: $gender,
+                            weight: Binding<[Double]>(
+                                get: { [Double(integerPart).addingDecimalPart(decimalPart)]},
+                                set: { _ in }
+                            )
+                        )){
+                            Text("Next")
+                                .padding(.horizontal, 24)
+                                .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 50, alignment: .center)
+                                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                .cornerRadius(12)
                         }
-                        
-                        Spacer()
-                        
-                        Button {
-        
-                        } label: {
-                            NavigationLink(destination: BabyInputView(name: $name, dob: $dob, gender: $gender)){
-                                
-                                Text("Next")
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 8)
-                                    .frame(width: 148, alignment: .center)
-                                    .background(Color(red: 0.23, green: 0, blue: 0.9))
-                                    .cornerRadius(8)
-                                    .font(
-                                    Font.custom("Work Sans", size: 12)
-                                    .weight(.medium)
-                                    )
-                                    .kerning(0.6)
-                                    .foregroundColor(Constants.BGWhite)
-                            }
-                        }
-                    }.padding(.horizontal, 38)// Left padding
+                    }.padding()
                 }
-                
             }
         }.navigationBarBackButtonHidden()
+    }
+    
+    private var numberFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
+        return formatter
+    }
+}
+
+extension Double {
+    func addingDecimalPart(_ decimalPart: Int) -> Double {
+        let decimalValue = Double(decimalPart) / 10.0
+        return self + decimalValue
     }
 }
 

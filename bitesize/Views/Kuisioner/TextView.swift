@@ -25,7 +25,8 @@ struct TextView: View {
                 .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(16)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 }
 

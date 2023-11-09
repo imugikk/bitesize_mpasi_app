@@ -18,7 +18,7 @@ struct SummaryCardView: View {
     @State private var zScoreView: [Double] = []
     
     var body: some View {
-        let nutrition = babies.first?.nutrition ?? 0.0
+        let nutrition = babies.first?.nutrition.last ?? 0
         let lowerBoundCarbs = String(format: "%.1f", nutrition * 0.35 / 4)
         let upperBoundCarbs = String(format: "%.1f", nutrition * 0.60 / 4)
         let resultTextCarbs = "\(lowerBoundCarbs)~\(upperBoundCarbs)g"
@@ -50,7 +50,7 @@ struct SummaryCardView: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             
                             HStack{
-                                Text(String(format: "%.2f", babies.first?.nutrition ?? 0))
+                                Text(String(format: "%.2f", babies.first?.nutrition.last ?? 0))
                                     .font(
                                         Font.custom("Nunito", size: 48)
                                             .weight(.bold)

@@ -8,16 +8,16 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Babies: Codable {    
+struct Babies: Codable, Identifiable {    
     @DocumentID var id: String?
     var name: String
     var gender: String
     var dob: Date
-    var weight: Double
-    var height: Double
-    var hc: Double
-    var userEmail: String
+    var weight: [Double]
+    var height: [Double]
+    var hc: [Double]
+    var userId: String
     var zscore: [Double]
-    var nutrition: Double
-    var timeMeasure: Date
+    var nutrition: [Double]
+    var timeMeasure: [Date]
 }

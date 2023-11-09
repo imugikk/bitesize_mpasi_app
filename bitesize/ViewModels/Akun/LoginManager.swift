@@ -13,15 +13,17 @@ class LoginManager: ObservableObject {
     var email: String = ""
     var password: String = ""
     
-    func login(completion: @escaping () -> Void) {
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                completion()
-            }
-        }
-        
-    }
+//    func login(completion: @escaping (Bool) -> Void) {
+//        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            } else {
+//                getBabiesData { babies in
+//                    // Check if there are babies associated with the logged-in user
+//                    let hasBabies = !babies.isEmpty
+//                    completion(hasBabies)
+//                }
+//            }
+//        }
+//    }
 }
