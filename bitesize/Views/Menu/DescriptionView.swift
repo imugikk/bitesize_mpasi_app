@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct DescriptionView: View {
+    
+    var desc: String
+    
     var body: some View {
-        Text("Description")
+        VStack{
+            Text(desc)
+        }
     }
 }
 
-#Preview {
-    DescriptionView()
-}
+//#Preview {
+//    DescriptionView()
+//}

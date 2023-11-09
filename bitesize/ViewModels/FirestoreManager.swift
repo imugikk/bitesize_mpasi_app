@@ -12,10 +12,28 @@ import FirebaseFirestoreSwift
 class FirestoreManager: ObservableObject {
     let db = Firestore.firestore()
     @Published var user: String = ""
+    var zscore: [Double] = []
     var items: [Babies] = []
     
     init(){
         fetchAllUsers()
+    }
+    
+    var email: String = ""
+    var password: String = ""
+    
+    func login(completion: @escaping (Bool) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                self.getBabiesData { babies in
+                    // Check if there are babies associated with the logged-in user
+                    let hasBabies = !babies.isEmpty
+                    completion(hasBabies)
+                }
+            }
+        }
     }
     
     func fetchUser() {
@@ -139,7 +157,7 @@ class FirestoreManager: ObservableObject {
     func getBabiesData(completion: @escaping ([Babies]) -> Void) {
         let userId = Auth.auth().currentUser?.uid ?? ""
         db.collection("Babies")
-            .whereField("userEmail", isEqualTo: userId)
+            .whereField("userId", isEqualTo: userId)
             .getDocuments { snapshot, error in
                 if let error = error {
                     print("Error fetching data: \(error.localizedDescription)")
@@ -159,7 +177,7 @@ class FirestoreManager: ObservableObject {
     }
     
     //read menu's data
-    func getMenuesData(completion: @escaping ([String]) -> Void) {
+    func getMenuesData(completion: @escaping ([[Any]]) -> Void) {
         let docRef = db.collection("Menu").whereField("Kategori", isEqualTo: "Makanan Utama")
         docRef.getDocuments { snapshot, error in
             if let error = error {
@@ -168,22 +186,80 @@ class FirestoreManager: ObservableObject {
                 return
             }
 
-            var menues: [String] = []
-//            for document in snapshot!.documents {
-//                if let menu = try? document.data(as: Menu.self) {
-//                    menues.append(menu)
-//                }
-//            }
-            
+            var menues: [[Any]] = []
             for document in snapshot!.documents {
 //                print("\(document.documentID): \(document.data())")
                 let data = document.data()
-                menues.append(data["Name"] as! String)
+                let menuId = document.documentID as! String
+                let menuName = data["Name"] as! String
+                let menuCalories = data["Calories"] as! Double
+                let menuType = data["Jenis"] as? [String]
+                
+                menues.append([menuName, menuCalories, menuType, menuId])
+//                menues.append(data["Name"] as! String)
             }
             print(menues)
             completion(menues)
         }
     }
+    
+    //read menu's data
+    func getMenuCemilanData(completion: @escaping ([[Any]]) -> Void) {
+        let docRef = db.collection("Menu").whereField("Kategori", isEqualTo: "Cemilan")
+        docRef.getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching data: \(error.localizedDescription)")
+                completion([])
+                return
+            }
+
+            var menues: [[Any]] = []
+            for document in snapshot!.documents {
+//                print("\(document.documentID): \(document.data())")
+                let data = document.data()
+                let menuId = document.documentID as! String
+                let menuName = data["Name"] as! String
+                let menuCalories = data["Calories"] as! Double
+                let menuType = data["Jenis"] as! [String]
+                
+                menues.append([menuName, menuCalories, menuType, menuId])
+//                menues.append(data["Name"] as! String)
+            }
+            print(menues)
+            completion(menues)
+        }
+    }
+    
+    //read detail Menu
+    func getDetailMenu(menuId: String, completion: @escaping (Menu?) -> Void) {
+        let docRef = db.collection("Menu").document(menuId)
+        
+        docRef.getDocument{ (document, error) in
+            guard error == nil else {
+                print("error", error ?? "")
+                return
+            }
+            
+            if let document = document, document.exists {
+                let data = document.data()
+                if let data = data {
+                    let desc = data["Desc"] as! String
+                    let bahan = data["Bahan"] as! [String:[String:String]]
+                    let step = data["Steps"] as! [String]
+                    let kalori = data["Calories"] as! Double
+                    let nutrisi = data["Nutrisi"] as! [String: Double]
+                    let name = data["Name"] as! String
+                    let usia = data["Usia"] as! Int
+                    let jenis = data["Jenis"] as! [String]
+                    
+                    let menu = Menu(name: name, desc: desc, step: step, nutrisi: nutrisi, kalori: kalori, bahan: bahan, usia: usia, jenis: jenis)
+                                    
+                    completion(menu)
+                }
+            }
+        }
+    }
+    
     
     //create calories needed
     func createCaloriesNeeded(caloriesneeded: CaloriesNeededResult) {
@@ -237,45 +313,70 @@ class FirestoreManager: ObservableObject {
         }
     }
     
-    //create menu
-    func createMenu(menu: [Menu]){
-        for i in menu {
-            let docRef = db.collection("Menu")
-            
-            docRef.addDocument(data: ["Name": i.name, "Bahan": i.bahan, "Steps": i.step, "Kategori": i.kategori]) { error in
-                if let error = error {
-                    print("Error creating document: \(error)")
-                } else {
-                    print("Document successfully created!")
-                }
-            }
-        }
-    }
-    
-    //get menu
+    //get menu recommendation
     func getMenuRecommendation(completion: @escaping ([String]) -> Void) {
         getBabiesData() { fetchBabies in
             self.items = fetchBabies
             
-            let docRef = self.db.collection("Menu")
-                .whereField("Kategori", isEqualTo: "Makanan Utama")
-                .whereField("Calories", isGreaterThanOrEqualTo: 150)
-                .whereField("Calories", isLessThanOrEqualTo: 200)
+            self.zscore = self.items.first?.zscore ?? []
             
-            docRef.getDocuments { snapshot, error in
-                if let error = error {
-                    print("Error fetching data: \(error.localizedDescription)")
-                    completion([])
-                    return
-                }
-
-                var menues: [String] = []
+            if self.zscore[0] < -2 {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Standar")
                 
-                for document in snapshot!.documents {
-                    let data = document.data()
-                    menues.append(data["Name"] as! String)
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
                 }
-                completion(menues)
+            } else if self.zscore[1] < -2 {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Tinggi Protein")
+                
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
+                }
+            } else if self.zscore[2] < -2 {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Tinggi Lemak")
+                
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
+                }
             }
         }
     }

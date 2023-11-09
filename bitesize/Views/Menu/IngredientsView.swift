@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct IngredientsView: View {
+    
+    var bahan: [String : [String : String]]
+    
     var body: some View {
-        Text("Ingredients")
+        VStack{
+            ForEach(bahan.sorted(by: { $0.key < $1.key }), id: \.key) { ingredient, properties in
+                VStack(alignment: .leading) {
+                    Text("Ingredient: \(ingredient)")
+                        .font(.headline)
+                    
+                    ForEach(properties.sorted(by: { $0.key < $1.key }), id: \.key) { property, value in
+                        HStack {
+                            Text("\(property):")
+                                .font(.subheadline)
+                            Text(value)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    IngredientsView()
-}
+//#Preview {
+//    IngredientsView()
+//}
