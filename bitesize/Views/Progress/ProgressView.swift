@@ -22,6 +22,7 @@ struct ProgressView: View {
     
     @State var preselectedIndex = 0
     
+
     @State private var showingSheet = false
     
     var body: some View {
@@ -187,6 +188,7 @@ struct ProgressView: View {
                 selectedSegment = 0
             }
             }
+
         }
     }
 }

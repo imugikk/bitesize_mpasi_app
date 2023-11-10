@@ -14,8 +14,6 @@ struct ProgressGrowthView: View {
     var tabMenu = ["Growth Chart", "History"]
     @State var tabIndex = 0
     let color = Color(red: 0.16, green: 0.49, blue: 0.36)
-    
-    
     var body: some View {
         return ScrollView{
             VStack{
@@ -23,8 +21,8 @@ struct ProgressGrowthView: View {
                     ForEach(tabMenu.indices, id:\.self) { index in
                         let selectedIndex = tabIndex == index
                         ZStack{
-//                            Rectangle()
-//                                .fill(color.opacity(0))
+                            Rectangle()
+                                .fill(color.opacity(0))
                             
                             Rectangle()
                                 .fill(color)
@@ -67,12 +65,10 @@ struct ProgressGrowthView: View {
 }
 
 var AddDataButton: some View {
-    
     HStack {
         Button(action: {}) {
             Text("Add Data")
         }
-        
 //        Button {
 //            showingSheet.toggle()
 //        } label: {

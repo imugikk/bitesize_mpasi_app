@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B01397E2AFD25A5001FE3DE /* ZScoreSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397D2AFD25A5001FE3DE /* ZScoreSheetView.swift */; };
-		8B0139822AFDDABD001FE3DE /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139812AFDDABD001FE3DE /* WeightView.swift */; };
-		8B0139842AFDDAC4001FE3DE /* HeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139832AFDDAC4001FE3DE /* HeadView.swift */; };
-		8B0139862AFDDACD001FE3DE /* HeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139852AFDDACD001FE3DE /* HeightView.swift */; };
-		8B0139882AFE0883001FE3DE /* ZScoreSheetHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139872AFE0883001FE3DE /* ZScoreSheetHeadView.swift */; };
-		8B01398A2AFE0D58001FE3DE /* ZScoreSheetHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139892AFE0D58001FE3DE /* ZScoreSheetHeightView.swift */; };
+		8B01398D2AFE1691001FE3DE /* HeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01398B2AFE1691001FE3DE /* HeadView.swift */; };
+		8B01398E2AFE1691001FE3DE /* HeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01398C2AFE1691001FE3DE /* HeightView.swift */; };
+		8B0139932AFE169A001FE3DE /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01398F2AFE1699001FE3DE /* WeightView.swift */; };
+		8B0139942AFE169A001FE3DE /* ZScoreSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139902AFE1699001FE3DE /* ZScoreSheetView.swift */; };
+		8B0139952AFE169A001FE3DE /* ZScoreSheetHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139912AFE1699001FE3DE /* ZScoreSheetHeightView.swift */; };
+		8B0139962AFE169A001FE3DE /* ZScoreSheetHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139922AFE1699001FE3DE /* ZScoreSheetHeadView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
 		8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */; };
@@ -90,12 +90,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B01397D2AFD25A5001FE3DE /* ZScoreSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetView.swift; sourceTree = "<group>"; };
-		8B0139812AFDDABD001FE3DE /* WeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
-		8B0139832AFDDAC4001FE3DE /* HeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadView.swift; sourceTree = "<group>"; };
-		8B0139852AFDDACD001FE3DE /* HeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightView.swift; sourceTree = "<group>"; };
-		8B0139872AFE0883001FE3DE /* ZScoreSheetHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeadView.swift; sourceTree = "<group>"; };
-		8B0139892AFE0D58001FE3DE /* ZScoreSheetHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeightView.swift; sourceTree = "<group>"; };
+		8B01398B2AFE1691001FE3DE /* HeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadView.swift; sourceTree = "<group>"; };
+		8B01398C2AFE1691001FE3DE /* HeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightView.swift; sourceTree = "<group>"; };
+		8B01398F2AFE1699001FE3DE /* WeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
+		8B0139902AFE1699001FE3DE /* ZScoreSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZScoreSheetView.swift; sourceTree = "<group>"; };
+		8B0139912AFE1699001FE3DE /* ZScoreSheetHeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeightView.swift; sourceTree = "<group>"; };
+		8B0139922AFE1699001FE3DE /* ZScoreSheetHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeadView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
 		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
@@ -186,14 +186,14 @@
 		8B3E1D032AF1E82E002B5BC6 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				8B01398F2AFE1699001FE3DE /* WeightView.swift */,
+				8B0139922AFE1699001FE3DE /* ZScoreSheetHeadView.swift */,
+				8B0139912AFE1699001FE3DE /* ZScoreSheetHeightView.swift */,
+				8B0139902AFE1699001FE3DE /* ZScoreSheetView.swift */,
+				8B01398B2AFE1691001FE3DE /* HeadView.swift */,
+				8B01398C2AFE1691001FE3DE /* HeightView.swift */,
 				8B3E1D042AF1E9B1002B5BC6 /* ProgressView.swift */,
 				F1F269BA2AFB2C0600D7868D /* ProgressGrowthView.swift */,
-				8B01397D2AFD25A5001FE3DE /* ZScoreSheetView.swift */,
-				8B0139812AFDDABD001FE3DE /* WeightView.swift */,
-				8B0139832AFDDAC4001FE3DE /* HeadView.swift */,
-				8B0139852AFDDACD001FE3DE /* HeightView.swift */,
-				8B0139872AFE0883001FE3DE /* ZScoreSheetHeadView.swift */,
-				8B0139892AFE0D58001FE3DE /* ZScoreSheetHeightView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -527,23 +527,22 @@
 				8B3E1D0B2AF20164002B5BC6 /* MenuDetailTabView.swift in Sources */,
 				F174A2EF2AEA135E00CDA921 /* WeekStore.swift in Sources */,
 				8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */,
+				8B0139942AFE169A001FE3DE /* ZScoreSheetView.swift in Sources */,
 				F174A2F12AEA139000CDA921 /* Week.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
-				8B01397E2AFD25A5001FE3DE /* ZScoreSheetView.swift in Sources */,
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
-				8B0139822AFDDABD001FE3DE /* WeightView.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
+				8B01398E2AFE1691001FE3DE /* HeightView.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
+				8B01398D2AFE1691001FE3DE /* HeadView.swift in Sources */,
 				8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
-				8B0139842AFDDAC4001FE3DE /* HeadView.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
-				8B0139882AFE0883001FE3DE /* ZScoreSheetHeadView.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
@@ -551,12 +550,13 @@
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
+				8B0139932AFE169A001FE3DE /* WeightView.swift in Sources */,
 				F1F269BB2AFB2C0600D7868D /* ProgressGrowthView.swift in Sources */,
-				8B0139862AFDDACD001FE3DE /* HeightView.swift in Sources */,
+				8B0139952AFE169A001FE3DE /* ZScoreSheetHeightView.swift in Sources */,
+				8B0139962AFE169A001FE3DE /* ZScoreSheetHeadView.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
-				8B01398A2AFE0D58001FE3DE /* ZScoreSheetHeightView.swift in Sources */,
 				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
 				F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
