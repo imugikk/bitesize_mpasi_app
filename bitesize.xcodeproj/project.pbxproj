@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
+		8B0139982AFE8779001FE3DE /* TermsandConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0139972AFE8779001FE3DE /* TermsandConditionsView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
 		8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8B0139972AFE8779001FE3DE /* TermsandConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsandConditionsView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
 		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				8BD66E892AFBC4C300420C25 /* RequirementsPickerView.swift */,
 				8BD66E8B2AFBC4FC00420C25 /* CheckboxToggleStyle.swift */,
 				8BD66E8F2AFBC55200420C25 /* AutheticationViewModel.swift */,
+				8B0139972AFE8779001FE3DE /* TermsandConditionsView.swift */,
 			);
 			path = Akun;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				8B3E1D092AF1FAD3002B5BC6 /* SummaryCardView.swift in Sources */,
 				F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */,
 				8B3E1D0B2AF20164002B5BC6 /* MenuDetailTabView.swift in Sources */,
+				8B0139982AFE8779001FE3DE /* TermsandConditionsView.swift in Sources */,
 				F174A2EF2AEA135E00CDA921 /* WeekStore.swift in Sources */,
 				8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */,
 				F174A2F12AEA139000CDA921 /* Week.swift in Sources */,

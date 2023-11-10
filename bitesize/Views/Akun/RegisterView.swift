@@ -25,6 +25,8 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
     
     @State private var isPressed = false
     
+    @State private var showingSheet = false
+    
     @Binding var isRegister : Bool
     
     private var isSignedIn: Bool {
@@ -119,15 +121,27 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                     
                     HStack {
                         Text("I agree with")
-                            .foregroundColor(.black)
+                            .font(Font.custom("Inter", size: 14))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                                 
-                        Button(action: {
-                                    // Handle button tap, you can open the sheet here if needed
-                            }) {
-                                Text("terms and conditions")
-                                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-                                }
+                        
+                        Button {
+                            showingSheet.toggle()
+                        } label: {
+                            Text("terms and conditions")
+                                .font(Font.custom("Inter", size: 14))
+                                .kerning(0.4)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                        }
+                            .sheet(isPresented: $showingSheet) {
+                                TermsandConditionsView()
+                                    .presentationDragIndicator(.visible)
                             }
+                    }
+                    
+                    
                 }
                 .padding(0)
                 .padding(.bottom, 16)
@@ -136,13 +150,30 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                 Spacer()
                 
                 
-                Button("Sign Up"){
+                Button{
                     registerVM.register {
                         email = registerVM.email
                         isRegister = true
                         isRegistrationSuccessful = true
-                        //                        presentationMode.wrappedValue.dismiss()
                     }
+                } label: {
+                    HStack(alignment: .center, spacing: 4) {
+                        Text("Sign Up")
+                            .font(
+                                Font.custom("Inter", size: 16)
+                                    .weight(.medium)
+                            )
+                            .kerning(0.2)
+                            .foregroundColor(isPressed ? Color(red: 0.93, green: 0.98, blue: 0.96) : Color(red: 0.5, green: 0.53, blue: 0.53))
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 8)
+                    .frame(maxWidth: .infinity, minHeight: 50, maxHeight: 50, alignment: .center)
+                    .background(isPressed ? Color(red: 0.18, green: 0.56, blue: 0.42) : Color(red: 0.96, green: 0.96, blue: 0.96))
+                    .cornerRadius(12)
+                    
+                    .padding(.horizontal, 16)
+                    
                 }
                 
                 HStack(alignment: .center, spacing: 12) {
