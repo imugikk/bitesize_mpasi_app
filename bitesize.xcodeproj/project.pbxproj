@@ -96,6 +96,9 @@
 		8B0139902AFE1699001FE3DE /* ZScoreSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZScoreSheetView.swift; sourceTree = "<group>"; };
 		8B0139912AFE1699001FE3DE /* ZScoreSheetHeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeightView.swift; sourceTree = "<group>"; };
 		8B0139922AFE1699001FE3DE /* ZScoreSheetHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeadView.swift; sourceTree = "<group>"; };
+		8B01399A2AFF248C001FE3DE /* Inter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inter.ttf; sourceTree = "<group>"; };
+		8B01399B2AFF275E001FE3DE /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		8B01399C2AFF2763001FE3DE /* Nunito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito.ttf; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
 		8B3194D12ADCFCDA001DD2A1 /* RecommendationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationItemView.swift; sourceTree = "<group>"; };
@@ -183,6 +186,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0139992AFF247C001FE3DE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8B01399A2AFF248C001FE3DE /* Inter.ttf */,
+				8B01399B2AFF275E001FE3DE /* Nunito-Italic.ttf */,
+				8B01399C2AFF2763001FE3DE /* Nunito.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		8B3E1D032AF1E82E002B5BC6 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +257,7 @@
 		F1ABDF632AC28CA8005AAEC3 /* bitesize */ = {
 			isa = PBXGroup;
 			children = (
+				8B0139992AFF247C001FE3DE /* Fonts */,
 				F1ABDF8E2AC28CC1005AAEC3 /* Models */,
 				F1ABDF902AC28CE3005AAEC3 /* Views */,
 				F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */,
