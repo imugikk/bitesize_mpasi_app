@@ -6,33 +6,73 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditProfileView: View {
+    @StateObject var viewModel = ProfileViewModel()
+    let user: User
+    
+    
     var body: some View {
         @State var babyName = ""
         @State var babyAge = ""
         @State var babyGender = ""
         @State var showingActionSheet = false
        
-            Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 100, height: 100)
-                .background(
-                    Image("PATH_TO_IMAGE")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipped()
-                        .opacity(0.4)
-                )
-                .cornerRadius(100)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 100)
-                        .inset(by: 0.25)
-                        .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
+        PhotosPicker(selection: $viewModel.selectedItem) {
+            if let profileImage = viewModel.profileImage{
+                profileImage
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
                     
-                )
+                
+            } else {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 100, height: 100)
+                    .background(
+                        Image("ProfilePicture")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100)
+                            .clipped()
+                            .opacity(0.4)
+                    )
+                    .cornerRadius(100)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 100)
+                            .inset(by: 0.25)
+                            .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
+                        
+                    )
+                        
+                    
+            }
+            
+        }
         
+        
+//            Rectangle()
+//                .foregroundColor(.clear)
+//                .frame(width: 100, height: 100)
+//                .background(
+//                    Image("PATH_TO_IMAGE")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .frame(width: 100, height: 100)
+//                        .clipped()
+//                        .opacity(0.4)
+//                )
+//                .cornerRadius(100)
+//                .overlay(
+//                    RoundedRectangle(cornerRadius: 100)
+//                        .inset(by: 0.25)
+//                        .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
+//                    
+//                )
+//        
             Text("Add Photo")
                 .font(
                     Font.custom("Inter", size: 16)
@@ -136,5 +176,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView()
+    EditProfileView(user: User.MOCK_USER)
 }

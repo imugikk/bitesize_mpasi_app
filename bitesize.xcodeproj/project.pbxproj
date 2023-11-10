@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		420D0F6E2AFDDCC8004A4594 /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F6D2AFDDCC8004A4594 /* UserProfileCard.swift */; };
 		420D0F702AFDE217004A4594 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F6F2AFDE217004A4594 /* EditProfileView.swift */; };
+		420D0F762AFE5A95004A4594 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F752AFE5A95004A4594 /* ProfileViewModel.swift */; };
+		420D0F782AFE614D004A4594 /* BabyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F772AFE614D004A4594 /* BabyUser.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -94,6 +96,8 @@
 /* Begin PBXFileReference section */
 		420D0F6D2AFDDCC8004A4594 /* UserProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCard.swift; sourceTree = "<group>"; };
 		420D0F6F2AFDE217004A4594 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		420D0F752AFE5A95004A4594 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		420D0F772AFE614D004A4594 /* BabyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUser.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -188,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420D0F742AFE5A72004A4594 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				420D0F752AFE5A95004A4594 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		8B01397A2AFC9EE7001FE3DE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +318,7 @@
 				F1DA470F2AD2B95A008BE71D /* Bahan.swift */,
 				F1DA47192AD30383008BE71D /* Menu.swift */,
 				F174A2F02AEA139000CDA921 /* Week.swift */,
+				420D0F772AFE614D004A4594 /* BabyUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +326,7 @@
 		F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				420D0F742AFE5A72004A4594 /* Profile */,
 				F174A2ED2AEA132D00CDA921 /* Menu */,
 				F1CBBF4F2ADD6B0B003A6B81 /* Akun */,
 				F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */,
@@ -548,6 +562,7 @@
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
+				420D0F782AFE614D004A4594 /* BabyUser.swift in Sources */,
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
 				8BD66E882AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
@@ -565,6 +580,7 @@
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
 				8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */,
 				8BD66E842AF9E12300420C25 /* TextAccountView.swift in Sources */,
+				420D0F762AFE5A95004A4594 /* ProfileViewModel.swift in Sources */,
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UserProfileCard: View {
+    @State private var user = User.MOCK_USER
+    
     var body: some View {
         
         HStack(alignment: .top, spacing: 10) {
@@ -16,7 +18,7 @@ struct UserProfileCard: View {
                   .foregroundColor(.clear)
                   .frame(width: 100, height: 100)
                   .background(
-                    Image("PATH_TO_IMAGE")
+                    Image(user.profileImageURL ?? "")
                       .resizable()
                       .aspectRatio(contentMode: .fill)
                       .frame(width: 100, height: 100)
@@ -32,7 +34,7 @@ struct UserProfileCard: View {
             }
             
             VStack {
-                Text("Brianna")
+                Text(user.babyName)
                   .font(
                     Font.custom("Inter", size: 22)
                       .weight(.medium)
@@ -60,85 +62,33 @@ struct UserProfileCard: View {
                   .padding(.leading, 10)
                   
             }
-            
-            VStack{
-                
-                Text("Edit")
-                  .font(
-                    Font.custom("Inter", size: 14)
-                      .weight(.medium)
-                  )
-                  .kerning(0.4)
-                  .multilineTextAlignment(.trailing)
-                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
-                  .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .trailing)
+                VStack{
+                    NavigationLink(value: user) {
+                        Text("Edit")
+                            .kerning(0.4)
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                            .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .trailing)
+                            .opacity(1)
+                            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                        
+                    }
+                }
             }
+           
+                
+                .multilineTextAlignment(.trailing)
+                .frame(maxWidth: 50, minHeight: 30, maxHeight: 30, alignment: .trailing)
+                .opacity(1)
+            
+            
+                
         }
+       
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .top)
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         .cornerRadius(8)
-//      HStack  {
-//            Rectangle()
-//              .foregroundColor(.clear)
-//              .frame(width: 100, height: 100)
-//              .background(
-//                Image("PATH_TO_IMAGE")
-//                  .resizable()
-//                  .aspectRatio(contentMode: .fill)
-//                  .frame(width: 100, height: 100)
-//                  .clipped()
-//                  .opacity(0.4)
-//              )
-//              .cornerRadius(100)
-//              .overlay(
-//                RoundedRectangle(cornerRadius: 100)
-//                  .inset(by: 0.25)
-//                  .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
-//              )
-//            VStack {
-//                Text("Brianna")
-//                  .font(
-//                    Font.custom("Inter", size: 22)
-//                      .weight(.medium)
-//                  )
-//                  .kerning(0.088)
-//                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-//              .frame(maxWidth: .infinity, alignment: .leading)
-//                
-//                Text("8 Bulan")
-//                  .font(Font.custom("Inter", size: 14))
-//                  .kerning(0.08)
-//                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-//              .frame(maxWidth: .infinity, alignment: .leading)
-//                
-//                Text("Perempuan")
-//                  .font(Font.custom("Inter", size: 14))
-//                  .kerning(0.08)
-//                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-//                  .frame(maxWidth: .infinity, alignment: .leading)
-//            }
-//           
-//            // HIGH FIDELITY/Label Medium
-//            HStack {
-//                Text("Edit")
-//                  .font(
-//                    Font.custom("Inter", size: 14)
-//                      .weight(.medium)
-//                  )
-//                  .kerning(0.4)
-//                  .multilineTextAlignment(.trailing)
-//                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
-//              .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .trailing)
-//            }
-//           
-//            
-//        }
-//      .padding(10)
-//      .frame(maxWidth: .infinity, alignment: .top)
-//      .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-//
-//      .cornerRadius(8)
     }
 }
 
