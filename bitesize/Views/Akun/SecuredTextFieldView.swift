@@ -19,9 +19,9 @@ enum UserFormType {
     var title: String {
         switch self {
         case .password:
-            return "Password"
+            return "Input your password"
         case .repeatPassword:
-            return "Repeat Password"
+            return "Retype your Password"
         }
     }
 }
