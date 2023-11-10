@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TermsView: View {
+    
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
     var body: some View {
         
         NavigationStack{
@@ -108,6 +111,24 @@ struct TermsView: View {
                     }.padding(.top, 16)
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("Terms & Condition")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                                Text("Close")
+                            .font(Font.custom("Inter", size: 16))
+                            .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                        
+                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
+                    })
+                }
+            })
+            .navigationBarTitleDisplayMode(.inline)
+            .presentationDragIndicator(.visible)
+            
         }
     }
 }

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct YourAccountView: View {
+    //Custom Toolbar Wrapper
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
+    //Custom Toolbar Wrapper
     @State private var selectedOption = 0
     @State private var selectedSegment: Int = 0
     @State private var detailMenu: Menu?
@@ -15,59 +19,6 @@ struct YourAccountView: View {
         
     var body: some View {
         NavigationStack{
-//            HStack(alignment: .center, spacing: 0) {
-//                NavigationLink(destination: ProfileView()) {
-//                    HStack(alignment: .center, spacing: 5) {
-//                        Image("BackIcon")
-//                            .frame(width: 18, height: 24)
-//                        Text("Profile")
-//                            .font(Font.custom("Inter", size: 16))
-//                            .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-//                        
-//                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
-//                    }
-//                    .padding(.leading, 7)
-//                }
-//                
-//                
-//                
-//                HStack(alignment: .center, spacing: 0) {
-//                    
-//                    Text("Your Account")
-//                        .font(
-//                            Font.custom("Inter", size: 16)
-//                                .weight(.semibold)
-//                        )
-//                        .kerning(0.16)
-//                        .multilineTextAlignment(.center)
-//                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-//                    
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                    
-//                    
-//                    
-//                    
-//                }
-//                
-//                .padding(.horizontal, 0)
-//                .padding(.vertical, 9)
-//                .frame(maxWidth: .infinity, alignment: .center)
-//                
-//                HStack(alignment: .center, spacing: 0) {
-//                    
-//                    Text("Save")
-//                }
-//                .padding(.leading, 9)
-//                .padding(.trailing, 16)
-//                .padding(.vertical, 9)
-//                .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
-//                
-//                
-//                
-//                
-//            }
-//            .padding(0)
-//            .frame(width: 390, height: 42, alignment: .center)
             VStack {
                 LazyHStack(spacing: 0){
                     Button(action: {
@@ -108,30 +59,47 @@ struct YourAccountView: View {
             
             Spacer()
         }
-        .navigationBarBackButtonHidden(false)
-        .navigationTitle("Your Account")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar{
-            Button(action: {
-                print("save")
-            }, label: {
-                HStack(alignment: .center, spacing: 0) {
+    // CUSTOM NAVIGATION TOOLBAR
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle("Edit Baby Profile")
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("BackIcon")
+                        .frame(width: 18, height: 24)
+                            Text("Profile")
+                        .font(Font.custom("Inter", size: 16))
+                        .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     
-                    Text("Save")
-                }
-                .padding(.leading, 9)
-                .padding(.trailing, 16)
-                .padding(.vertical, 9)
-                .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
-            })
+                        .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
+                })
+            }
+        })
+        .toolbar{
+            Button{
+                print("save")
+            } label: {
+                HStack(alignment: .center, spacing: 0) {
+                                    Text("Done")
+                    
+                                }
+            }
             .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+            .padding(.leading, 9)
+            .padding(.trailing, 16)
+            .padding(.vertical, 9)
+            .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
 
         }
-        }
-    
-
-    
+        .navigationBarTitleDisplayMode(.inline)
     }
+        
+    
+
+    
+}
 
 //page personal info
 struct personalInformation: View {

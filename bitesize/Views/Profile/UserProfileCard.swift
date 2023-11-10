@@ -67,13 +67,8 @@ struct UserProfileCard: View {
                     VStack{
                         NavigationLink("Edit") {
                             EditProfileView(user: User.MOCK_USER)
-                                .navigationTitle("Profile")
-                                .navigationBarBackButtonHidden(false)
-//                                .navigationTitle("Edit Baby Profile")
-//                                .toolbar{
-//                                    
-//                                }
-//                                .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.automatic/*@END_MENU_TOKEN@*/)
+                            
+//
                                 
                         }.kerning(0.4)
                             .multilineTextAlignment(.trailing)

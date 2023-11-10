@@ -9,6 +9,10 @@ import SwiftUI
 import PhotosUI
 
 struct EditProfileView: View {
+    //Custom Toolbar Wrapper
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
+    //
     @StateObject var viewModel = ProfileViewModel()
     let user: User
     
@@ -20,60 +24,6 @@ struct EditProfileView: View {
         @State var showingActionSheet = false
        
         NavigationStack{
-            
-//            HStack(alignment: .center, spacing: 0) {
-//                NavigationLink(destination: ProfileView()) {
-//                    HStack(alignment: .center, spacing: 5) {
-//                        Image("BackIcon")
-//                            .frame(width: 18, height: 24)
-//                        Text("Profile")
-//                            .font(Font.custom("Inter", size: 16))
-//                            .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-//
-//                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
-//                    }
-//                    .padding(.leading, 7)
-//                }
-//
-//                
-//                
-//                HStack(alignment: .center, spacing: 0) {
-//                    
-//                    Text("Edit Baby Profile")
-//                        .font(
-//                        Font.custom("Inter", size: 16)
-//                        .weight(.semibold)
-//                        )
-//                        .kerning(0.16)
-//                        .multilineTextAlignment(.center)
-//                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-//
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                       
-//
-//                    
-//                    
-//                }
-//                
-//                .padding(.horizontal, 0)
-//                .padding(.vertical, 9)
-//                .frame(maxWidth: .infinity, alignment: .center)
-//                
-//                HStack(alignment: .center, spacing: 0) {
-//                
-//                    Text("Done")
-//                }
-//                .padding(.leading, 9)
-//                .padding(.trailing, 16)
-//                .padding(.vertical, 9)
-//                .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
-//                
-//                   
-//        
-//                
-//            }
-//            .padding(0)
-//            .frame(width: 390, height: 42, alignment: .center)
             
             PhotosPicker(selection: $viewModel.selectedItem) {
                 if let profileImage = viewModel.profileImage{
@@ -130,37 +80,6 @@ struct EditProfileView: View {
                 }
                 
             }
-            
-            
-            //            Rectangle()
-            //                .foregroundColor(.clear)
-            //                .frame(width: 100, height: 100)
-            //                .background(
-            //                    Image("PATH_TO_IMAGE")
-            //                        .resizable()
-            //                        .aspectRatio(contentMode: .fill)
-            //                        .frame(width: 100, height: 100)
-            //                        .clipped()
-            //                        .opacity(0.4)
-            //                )
-            //                .cornerRadius(100)
-            //                .overlay(
-            //                    RoundedRectangle(cornerRadius: 100)
-            //                        .inset(by: 0.25)
-            //                        .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
-            //
-            //                )
-            //
-            //            Text("Add Photo")
-            //                .font(
-            //                    Font.custom("Inter", size: 16)
-            //                        .weight(.semibold)
-            //                )
-            //                .kerning(0.16)
-            //                .multilineTextAlignment(.center)
-            //                .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
-            //                .frame(width: 86, height: 30, alignment: .center)
-            
             
             VStack(alignment: .leading, spacing: 0) {
                 
@@ -250,10 +169,25 @@ struct EditProfileView: View {
             .padding(.horizontal, 16)
             
             
-
+//custom navigation bar
         
-               
+            .navigationBarBackButtonHidden(true)
             .navigationTitle("Edit Baby Profile")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image("BackIcon")
+                            .frame(width: 18, height: 24)
+                                Text("Profile")
+                            .font(Font.custom("Inter", size: 16))
+                            .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                        
+                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
+                    })
+                }
+            })
             .toolbar{
                 Button{
                     print("save")
@@ -262,12 +196,6 @@ struct EditProfileView: View {
                                         Text("Done")
                         
                                     }
-//                                    .padding(.leading, 9)
-//                                    .padding(.trailing, 16)
-//                                    .padding(.vertical, 9)
-//                                    .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
-                    
-                    
                 }
                 .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                 .padding(.leading, 9)

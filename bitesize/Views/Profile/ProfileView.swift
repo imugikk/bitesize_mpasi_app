@@ -41,19 +41,14 @@ struct ProfileView: View {
           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
           .frame(maxWidth: .infinity, alignment: .leading)
           .padding(.horizontal, 16)
-//          .padding(.top, 12)
           .padding(.bottom, 8)
 
         
         UserProfileCard()
             .padding(.horizontal, 16)
             
-//            .navigationTitle("Profile")
-//            .navigationBarTitleDisplayMode(.automatic)
-            
-            
             VStack{
-                NavigationLink(destination: YourAccountView().navigationBarBackButtonHidden(false)) {
+                NavigationLink(destination: YourAccountView()) {
                     HStack {
                         Image("Profiles")
                             .frame(width: 24, height: 24)
@@ -82,28 +77,35 @@ struct ProfileView: View {
                
                 Divider()
                     .padding(.leading, 76)
-                HStack {
-                    Image("Group")
-                        .frame(width: 24, height: 24)
-                    
-                    Text("Saved Menu")
-                        .font(Font.custom("Inter", size: 16))
-                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
-                        .padding(.leading, 16)
-                    
-                    Text("􀆊")
-                        .font(
-                            Font.custom("SF Pro", size: 17)
-                                .weight(.semibold)
-                        )
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
-                        .padding(.trailing, 32)
-                    
+                
+                NavigationLink {
+                    SavedMenuView()
+                } label: {
+                    HStack {
+                        Image("Group")
+                            .frame(width: 24, height: 24)
+                        
+                        Text("Saved Menu")
+                            .font(Font.custom("Inter", size: 16))
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
+                            .padding(.leading, 16)
+                        
+                        Text("􀆊")
+                            .font(
+                                Font.custom("SF Pro", size: 17)
+                                    .weight(.semibold)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
+                            .padding(.trailing, 32)
+                        
+                    }
+                    .padding(.top, 8)
+                    .padding(.leading, 32)
                 }
-                .padding(.top, 8)
-                .padding(.leading, 32)
+
+                
                 
                 Divider()
                     .padding(.horizontal, 76)
@@ -162,6 +164,7 @@ struct ProfileView: View {
                 })
                 .sheet(isPresented: $showSheet, content: {
                     TermsView()
+                .presentationDragIndicator(.visible)
                     
                 })
             
