@@ -21,34 +21,55 @@ struct EditProfileView: View {
        
         PhotosPicker(selection: $viewModel.selectedItem) {
             if let profileImage = viewModel.profileImage{
-                profileImage
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-                    
-                
+                VStack{
+                    profileImage
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                    Text("Change Photo")
+                        .font(
+                            Font.custom("Inter", size: 16)
+                                .weight(.semibold)
+                        )
+                        .kerning(0.16)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                        .frame(width: 150, height: 30, alignment: .center)
+                }
             } else {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: 100, height: 100)
-                    .background(
-                        Image("ProfilePicture")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipped()
-                            .opacity(0.4)
-                    )
-                    .cornerRadius(100)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 100)
-                            .inset(by: 0.25)
-                            .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
-                        
-                    )
-                        
+                VStack{
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 100, height: 100)
+                        .background(
+                            Image("ProfilePicture")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 100, height: 100)
+                                .clipped()
+                                .opacity(0.4)
+                        )
+                        .cornerRadius(100)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 0.25)
+                                .stroke(Color(red: 0.85, green: 0.85, blue: 0.85), lineWidth: 0.5)
+                            
+                            
+                        )
                     
+                    Text("Add Photo")
+                        .font(
+                            Font.custom("Inter", size: 16)
+                                .weight(.semibold)
+                        )
+                        .kerning(0.16)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                        .frame(width: 86, height: 30, alignment: .center)
+                    
+                }
             }
             
         }
@@ -73,15 +94,15 @@ struct EditProfileView: View {
 //                    
 //                )
 //        
-            Text("Add Photo")
-                .font(
-                    Font.custom("Inter", size: 16)
-                        .weight(.semibold)
-                )
-                .kerning(0.16)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
-                .frame(width: 86, height: 30, alignment: .center)
+//            Text("Add Photo")
+//                .font(
+//                    Font.custom("Inter", size: 16)
+//                        .weight(.semibold)
+//                )
+//                .kerning(0.16)
+//                .multilineTextAlignment(.center)
+//                .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+//                .frame(width: 86, height: 30, alignment: .center)
     
     
         VStack(alignment: .leading, spacing: 0) {
