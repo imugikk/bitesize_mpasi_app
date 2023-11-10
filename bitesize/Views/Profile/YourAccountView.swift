@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct YourAccountView: View {
-    @State private var selectedOption = 0
-    @State private var selectedSegment: Int = 0
+    @State private var selectedOption = 1
+    @State private var selectedSegment: Int = 1
     @State private var detailMenu: Menu?
     @State var segmentedChoice = 0
         
@@ -227,9 +227,9 @@ struct changePassword: View {
         .padding(.top, 20)
         .padding(.horizontal, 16)
     
-        Spacer()
+       Spacer()
+        
         HStack{
-          
             Text("Update Password")
               .font(
                 Font.custom("Inter", size: 14)
@@ -239,11 +239,13 @@ struct changePassword: View {
               .multilineTextAlignment(.center)
               .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
         }
+        
         .padding(.horizontal, 24)
         .padding(.vertical, 8)
         .frame(width: 358, height: 36, alignment: .center)
         .background(Color(red: 0.18, green: 0.56, blue: 0.42))
         .cornerRadius(8)
+       
     }
 }
 
