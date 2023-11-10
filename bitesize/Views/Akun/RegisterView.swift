@@ -45,7 +45,6 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
                     .padding(.leading, 16)
-                    .padding(.top, 46)
                 
                 Divider()
                     .padding(.horizontal, 16)
@@ -175,6 +174,7 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                     .padding(.horizontal, 16)
                     
                 }
+                .padding(.bottom, 16)
                 
                 HStack(alignment: .center, spacing: 12) {
                     Rectangle()
