@@ -62,6 +62,8 @@ struct UserProfileCard: View {
                   .padding(.leading, 10)
                   
             }
+            NavigationStack{
+                
                 VStack{
                     NavigationLink(value: user) {
                         Text("Edit")
