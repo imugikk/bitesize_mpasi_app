@@ -23,6 +23,8 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
     
     @State private var isRegistrationSuccessful = false
     
+    @State private var isPressed = false
+    
     @Binding var isRegister : Bool
     
     private var isSignedIn: Bool {
@@ -41,6 +43,7 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
                     .padding(.leading, 16)
+                    .padding(.top, 46)
                 
                 Divider()
                     .padding(.horizontal, 16)
@@ -87,19 +90,51 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                 SecuredTextFieldView(text: $authVM.password, parent: self, type: .password)
                 
                 VStack(alignment: .leading) {
-                    RequirementsPickerView(type: .eightChar, toggleState: $authVM.hasEightChar)
-                    RequirementsPickerView(type: .spacialChar, toggleState: $authVM.hasSpacialChar)
-                    RequirementsPickerView(type: .oneDigit, toggleState: $authVM.hasOneDigit)
-                    RequirementsPickerView(type: .upperCaseChar, toggleState: $authVM.hasOneUpperCaseChar)
+                    HStack{
+                        RequirementsPickerView(type: .eightChar, toggleState: $authVM.hasEightChar)
+                        RequirementsPickerView(type: .spacialChar, toggleState: $authVM.hasSpacialChar)
+                    }
+                    
+                    HStack{
+                        RequirementsPickerView(type: .oneDigit, toggleState: $authVM.hasOneDigit)
+                        RequirementsPickerView(type: .upperCaseChar, toggleState: $authVM.hasOneUpperCaseChar)
+                    }
                 }
+                .padding(.bottom, 14)
                 
                 TextAccountView(labelText: "Confirm New Password")
                     .edgesIgnoringSafeArea(.all)
                 
                 SecuredTextFieldView(text: $registerVM.password, parent: self, type: .repeatPassword)
                 
+                HStack(alignment: .center, spacing: 12) {
+                    Button(action: {
+                    // Toggle the state when the button is pressed
+                        isPressed.toggle()}) {
+                            Image(systemName: isPressed ? "checkmark.square.fill" : "square")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.black)
+                            }
+                    
+                    HStack {
+                        Text("I agree with")
+                            .foregroundColor(.black)
+                                
+                        Button(action: {
+                                    // Handle button tap, you can open the sheet here if needed
+                            }) {
+                                Text("terms and conditions")
+                                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                                }
+                            }
+                }
+                .padding(0)
+                .padding(.bottom, 16)
+                .frame(width: 358, height: 20, alignment: .leading)
                 
                 Spacer()
+                
                 
                 Button("Sign Up"){
                     registerVM.register {

@@ -15,11 +15,11 @@ enum RequirementsType {
         case .eightChar:
             return "8 characters"
         case .spacialChar:
-            return "One special character"
+            return "1 special character"
         case .oneDigit:
-            return "One digit"
+            return "1 number"
         case .upperCaseChar:
-           return "One uppercase letter"
+           return "1 uppercase letter"
         case .confirmation:
             return "The password and confirmation must match"
         }
@@ -37,11 +37,10 @@ struct RequirementsPickerView: View {
                 .disabled(true)
                 .frame(width: 16, height: 16)
             Text(type.description)
-//                .font(.headline)
                 .font(Font.custom("Inter", size: 11))
                 .kerning(0.5)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
+                .foregroundColor(toggleState ? Color(red: 0.18, green: 0.56, blue: 0.42) : Color(red: 0.35, green: 0.38, blue: 0.37))
             Spacer()
         }
         .padding(.horizontal, 16)
