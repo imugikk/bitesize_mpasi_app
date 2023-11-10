@@ -12,6 +12,7 @@
 		420D0F762AFE5A95004A4594 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F752AFE5A95004A4594 /* ProfileViewModel.swift */; };
 		420D0F782AFE614D004A4594 /* BabyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F772AFE614D004A4594 /* BabyUser.swift */; };
 		420D0F7E2AFE81D8004A4594 /* YourAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F7D2AFE81D8004A4594 /* YourAccountView.swift */; };
+		420D0F802AFEC270004A4594 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F7F2AFEC270004A4594 /* TermsView.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -100,6 +101,7 @@
 		420D0F752AFE5A95004A4594 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		420D0F772AFE614D004A4594 /* BabyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUser.swift; sourceTree = "<group>"; };
 		420D0F7D2AFE81D8004A4594 /* YourAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourAccountView.swift; sourceTree = "<group>"; };
+		420D0F7F2AFEC270004A4594 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				420D0F6D2AFDDCC8004A4594 /* UserProfileCard.swift */,
 				420D0F6F2AFDE217004A4594 /* EditProfileView.swift */,
 				420D0F7D2AFE81D8004A4594 /* YourAccountView.swift */,
+				420D0F7F2AFEC270004A4594 /* TermsView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				8B3E1D052AF1E9B1002B5BC6 /* ProgressView.swift in Sources */,
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
+				420D0F802AFEC270004A4594 /* TermsView.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
