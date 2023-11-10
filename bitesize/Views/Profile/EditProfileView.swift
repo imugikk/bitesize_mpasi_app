@@ -94,6 +94,7 @@ struct EditProfileView: View {
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
               .frame(width: 317, height: 22, alignment: .leading)
+              .padding(.bottom, 4)
             TextField("Input your baby name" , text: $babyName).padding(.leading, 16)
                 .padding(.vertical, 13)
                 .frame(width: 358, height: 50, alignment: .leading)
@@ -122,6 +123,7 @@ struct EditProfileView: View {
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
               .frame(width: 317, height: 22, alignment: .leading)
+              .padding(.bottom, 4)
             TextField("Input your baby age" , text: $babyName).padding(.leading, 16)
                 .padding(.vertical, 13)
                 .frame(width: 358, height: 50, alignment: .leading)
@@ -142,7 +144,7 @@ struct EditProfileView: View {
         
         VStack(alignment: .leading, spacing: 0) {
             
-            Text("Baby Age (Months)")
+            Text("Gender")
               .font(
                 Font.custom("Inter", size: 16)
                   .weight(.semibold)
@@ -150,6 +152,7 @@ struct EditProfileView: View {
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
               .frame(width: 317, height: 22, alignment: .leading)
+              .padding(.bottom, 4)
             TextField("Input your baby age" , text: $babyName).padding(.leading, 16)
                 .padding(.vertical, 13)
                 .frame(width: 358, height: 50, alignment: .leading)
