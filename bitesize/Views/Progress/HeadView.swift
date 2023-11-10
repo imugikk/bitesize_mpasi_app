@@ -119,6 +119,7 @@ struct HeadView: View {
             }
             .sheet(isPresented: $showingSheet) {
                 ZScoreSheetHeadView()
+                    .presentationDragIndicator(.visible)
             }
         }
         .padding(.horizontal, 16)

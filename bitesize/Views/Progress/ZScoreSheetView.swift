@@ -29,8 +29,9 @@ struct ZScoreSheetView: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     .padding(.bottom, 20)
+                    .padding(.top, 14)
             }
-            .padding(0)
+            .padding(.top, 14)
             .frame(width: 390, height: 42, alignment: .center)
             
             VStack(alignment: .center, spacing: 12) {

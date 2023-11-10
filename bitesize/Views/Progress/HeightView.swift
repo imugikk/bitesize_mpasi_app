@@ -118,6 +118,7 @@ struct HeightView: View {
             }
             .sheet(isPresented: $showingSheet) {
                 ZScoreSheetHeightView()
+                    .presentationDragIndicator(.visible)
             }
         }
         .padding(.horizontal, 16)

@@ -119,6 +119,7 @@ struct WeightView: View {
             }
             .sheet(isPresented: $showingSheet) {
                 ZScoreSheetView()
+                    .presentationDragIndicator(.visible)
             }
         }
         .padding(.horizontal, 16)
