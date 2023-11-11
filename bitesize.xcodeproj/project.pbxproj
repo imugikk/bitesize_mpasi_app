@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42DD91082AFF857600820AF6 /* FAQSheet2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91072AFF857600820AF6 /* FAQSheet2.swift */; };
+		42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91092AFF860800820AF6 /* FAQSheet3.swift */; };
+		42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */; };
+		42DD91102AFF8A0900820AF6 /* FAQSheet5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD910F2AFF8A0900820AF6 /* FAQSheet5.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -108,6 +112,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42DD91072AFF857600820AF6 /* FAQSheet2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet2.swift; sourceTree = "<group>"; };
+		42DD91092AFF860800820AF6 /* FAQSheet3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet3.swift; sourceTree = "<group>"; };
+		42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet4.swift; sourceTree = "<group>"; };
+		42DD910F2AFF8A0900820AF6 /* FAQSheet5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet5.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -226,6 +234,10 @@
 				8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */,
 				F1C5241C2AFF5E4D005B69FA /* EditProfileView.swift */,
 				F1C5241E2AFF5E5A005B69FA /* FAQSheet1.swift */,
+				42DD91072AFF857600820AF6 /* FAQSheet2.swift */,
+				42DD91092AFF860800820AF6 /* FAQSheet3.swift */,
+				42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */,
+				42DD910F2AFF8A0900820AF6 /* FAQSheet5.swift */,
 				F1C524202AFF5E67005B69FA /* FAQView.swift */,
 				F1C524222AFF5E78005B69FA /* SavedMenuView.swift */,
 				F1C524242AFF5E82005B69FA /* TermsView.swift */,
@@ -622,8 +634,10 @@
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */,
+				42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */,
 				F1C524302AFF60FA005B69FA /* BabyUser.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
+				42DD91082AFF857600820AF6 /* FAQSheet2.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				F1C5241D2AFF5E4D005B69FA /* EditProfileView.swift in Sources */,
 				F1C524272AFF5E93005B69FA /* UserProfileCard.swift in Sources */,
@@ -636,6 +650,7 @@
 				F1C5241B2AFF493F005B69FA /* ZScoreSheetView.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
 				F1C524232AFF5E78005B69FA /* SavedMenuView.swift in Sources */,
+				42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
@@ -647,6 +662,7 @@
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,
 				F1C524132AFF4903005B69FA /* HeightView.swift in Sources */,
 				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
+				42DD91102AFF8A0900820AF6 /* FAQSheet5.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
 				F1C5242B2AFF5F4D005B69FA /* AddDataSheet.swift in Sources */,
 				F1C524152AFF490F005B69FA /* WeightView.swift in Sources */,

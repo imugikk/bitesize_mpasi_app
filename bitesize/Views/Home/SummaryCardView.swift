@@ -168,7 +168,7 @@ struct SummaryCardView: View {
             HStack{
                 VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
                     HStack (alignment: .center, spacing: 4){
-                        Image(systemName: "bell")
+                        Image("carbo")
                             .font(.system(size: 24))
                             .foregroundColor(.green)
                         
@@ -196,7 +196,7 @@ struct SummaryCardView: View {
                 
                 VStack{
                     HStack (alignment: .center, spacing: 4){
-                        Image(systemName: "bell")
+                        Image("fat")
                             .font(.system(size: 24))
                             .foregroundColor(.green)
                         
@@ -220,7 +220,7 @@ struct SummaryCardView: View {
                 
                 VStack{
                     HStack (alignment: .center, spacing: 4){
-                        Image(systemName: "bell")
+                        Image("protein")
                             .font(.system(size: 24))
                             .foregroundColor(.green)
                         

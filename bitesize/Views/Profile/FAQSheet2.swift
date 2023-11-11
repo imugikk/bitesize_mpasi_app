@@ -1,16 +1,16 @@
 //
-//  FAQSheet1.swift
+//  FAQSheet2.swift
 //  bitesize
 //
-//  Created by Paraptughessa Premaswari on 11/11/23.
+//  Created by febriandianto prabowo on 11/11/23.
 //
 
 import SwiftUI
 
-struct FAQSheet1: View {
-    
+struct FAQSheet2: View {
     @Environment(\.presentationMode)
     private var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationStack{
                 ScrollView{
@@ -30,7 +30,7 @@ struct FAQSheet1: View {
                        
                      
                         HStack {
-                            Text("What is Z Score")
+                            Text("How to Calculate Z-Score?")
                                 .font(.title)
                               .kerning(0.16)
                               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -47,7 +47,7 @@ struct FAQSheet1: View {
                         
                       Spacer()
                         HStack {
-                            Text("The bell curve on the right illustrates the principle of z-scores. The z-score is the standard deviation (SD) above or below the mean. A z-score of 0 is at the apex of the curve and is the same as a 50th percentile, a z-score of ± 1.0 plots at the 15th or 85th percentiles, respectively, and a z-score of ± 2 plots at roughly the 3rd or 97th percentiles. At birth, Josh’s z-score was at about -3.7, or 3.7 SD below the mean. That is well below the third percentile, but Josh’s was holding his own with weight, and his weight had gradually crept up by about one SD before it was driven back down by pressured feeding.")
+                            Text("You may be so lucky as to have a program or electronic health record charting system that calculates weight for age z-scores, or standard deviations. You can purchase a program that plots growth and calculates Standard Deviations. There is also a simple web-based calculator that will allow you to calculate z-scores using the child’s gender, age (in months or by birth date and evaluation date), and weight. These calculations use an embedded statistics program and CDC parameters and data. There will be slight differences in SDs among the methods but it doesn’t matter as long as all the figures for a given child come from a single method. Plot the z-scores or SD values against age (a spreadsheet works great) and generate a graph to get a picture of the child’s z-scores over time. If you have SAS statistics program software, after the usual steep learning curve, calculating z-scores is easier. To use your SAS program to calculate weight for age z-scores, download the growth chart data and SAS programming information from the CDC.")
                               .font(Font.custom("Inter", size: 16))
                               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                           .frame(width: 358, alignment: .leading)
@@ -67,7 +67,7 @@ struct FAQSheet1: View {
                     }
                 }
                 .navigationBarBackButtonHidden(true)
-                .navigationTitle("What is Z-Score")
+                .navigationTitle("Calculate Z-Score")
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
@@ -85,10 +85,9 @@ struct FAQSheet1: View {
                 .presentationDragIndicator(.visible)
                 
             }
-        }
     }
-
+}
 
 #Preview {
-    FAQSheet1()
+    FAQSheet2()
 }

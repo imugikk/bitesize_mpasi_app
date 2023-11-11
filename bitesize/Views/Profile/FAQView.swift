@@ -13,6 +13,8 @@ struct FAQView: View {
     @State var showSheet1: Bool = false
     @State var showSheet2: Bool = false
     @State var showSheet3: Bool = false
+    @State var showSheet4: Bool = false
+    @State var showSheet5: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -49,7 +51,7 @@ struct FAQView: View {
                     .padding(.horizontal, 16)
                 
                 Button(action: {
-                    showSheet1.toggle()
+                    showSheet2.toggle()
                 }, label: {
                     HStack {
                         Text("How to Calculate Z Score ?")
@@ -71,8 +73,8 @@ struct FAQView: View {
                     .padding(.leading, 32)
                     
                 })
-                .sheet(isPresented: $showSheet1, content: {
-                    FAQSheet1()
+                .sheet(isPresented: $showSheet2, content: {
+                    FAQSheet2()
                         .presentationDragIndicator(.visible)
                 })
                 Divider()
@@ -80,7 +82,7 @@ struct FAQView: View {
                 
                 
                 Button(action: {
-                    showSheet1.toggle()
+                    showSheet3.toggle()
                 }, label: {
                     HStack {
                         Text("What is the Importance of Z Score ?")
@@ -102,8 +104,8 @@ struct FAQView: View {
                     .padding(.leading, 32)
                     
                 })
-                .sheet(isPresented: $showSheet1, content: {
-                    FAQSheet1()
+                .sheet(isPresented: $showSheet3, content: {
+                    FAQSheet3()
                         .presentationDragIndicator(.visible)
                 })
                 Divider()
@@ -112,7 +114,7 @@ struct FAQView: View {
                 
                 
                 Button(action: {
-                    showSheet1.toggle()
+                    showSheet4.toggle()
                 }, label: {
                     HStack {
                         Text("How to Calculate Calories Target ?")
@@ -134,15 +136,15 @@ struct FAQView: View {
                     .padding(.leading, 32)
                     
                 })
-                .sheet(isPresented: $showSheet1, content: {
-                    FAQSheet1()
+                .sheet(isPresented: $showSheet4, content: {
+                    FAQSheet4()
                         .presentationDragIndicator(.visible)
                 })
                 Divider()
                     .padding(.horizontal, 16)
                 
                 Button(action: {
-                    showSheet1.toggle()
+                    showSheet5.toggle()
                 }, label: {
                     HStack {
                         Text("How to Calculate Nutrition Target ?")
@@ -164,8 +166,8 @@ struct FAQView: View {
                     .padding(.leading, 32)
                     
                 })
-                .sheet(isPresented: $showSheet1, content: {
-                    FAQSheet1()
+                .sheet(isPresented: $showSheet5, content: {
+                    FAQSheet5()
                         .presentationDragIndicator(.visible)
                 })
                 Divider()
@@ -185,7 +187,7 @@ struct FAQView: View {
                 }, label: {
                     Image("BackIcon")
                         .frame(width: 18, height: 24)
-                    Text("Profile")
+                    Text("FAQ")
                         .font(Font.custom("Inter", size: 16))
                         .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     

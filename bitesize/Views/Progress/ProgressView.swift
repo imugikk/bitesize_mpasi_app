@@ -124,16 +124,16 @@ struct ProgressView: View {
                         
                         Spacer()
                         // Alternative Views and Spacers
-                        
-                        Text("See All")
-                            .font(
-                                Font.custom("Inter", size: 14)
-                                    .weight(.medium)
-                            )
-                            .kerning(0.4)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
-                        
+                        NavigationLink(destination: FAQView()) {
+                            Text("See All")
+                                .font(
+                                    Font.custom("Inter", size: 14)
+                                        .weight(.medium)
+                                )
+                                .kerning(0.4)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                        }
                     }
                     .padding(.horizontal, 16)
                     .padding(.top, 24)

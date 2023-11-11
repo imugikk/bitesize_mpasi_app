@@ -192,25 +192,27 @@ struct HomeView: View {
                     }
             }
             .tabItem{
-                Image(systemName: "star")
+                Image("SummaryIcon")
+                    .frame(width: 17.70833, height: 25)
                 Text("Summary")
             }
             
             MenuView()
                 .tabItem {
-                    Image(systemName: "star")
+                    Image("MyMenuIcon")
+                        .frame(width: 17.70833, height: 25)
                     Text("My Menu")
             }
             
             ProgressView()
                             .tabItem {
-                                Image(systemName: "star")
+                                Image("ProgressIcon")
                                 Text("Progress")
             }
             
             ProfileView()
                             .tabItem {
-                                Image(systemName: "star")
+                                Image("ProfileIcon")
                                 Text("Profile")
             }
         }
