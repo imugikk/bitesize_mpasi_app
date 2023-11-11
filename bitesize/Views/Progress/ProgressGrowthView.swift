@@ -11,9 +11,11 @@ import Charts
 struct ProgressGrowthView: View {
     
     @State var preselectedIndex = 0
+    @State private var isShowingAddDataSheet = false
     var tabMenu = ["Growth Chart", "History"]
     @State var tabIndex = 0
     let color = Color(red: 0.16, green: 0.49, blue: 0.36)
+    @EnvironmentObject var firestoreManager: FirestoreManager
     
     var body: some View {
         return ScrollView{
@@ -61,31 +63,20 @@ struct ProgressGrowthView: View {
             }
             .navigationTitle("Detail")
             .navigationBarItems(trailing: tabIndex == 1 ? AddDataButton : nil)
+            .sheet(isPresented: $isShowingAddDataSheet) {
+                // Content of your sheet goes here...
+                AddDataSheet(onDismiss: {
+                    isShowingAddDataSheet = false
+                    firestoreManager.reloadData()
+                })
+            }
         }
     }
-}
-
-var AddDataButton: some View {
-    HStack {
-        Button(action: {}) {
-            Text("Add Data")
+    
+    var AddDataButton: some View {
+        Button("Add Data") {
+            isShowingAddDataSheet = true
         }
-//        Button {
-//            showingSheet.toggle()
-//        } label: {
-//            Text("Learn More")
-//            .font(
-//            Font.custom("Inter", size: 14)
-//            .weight(.medium)
-//            )
-//            .kerning(0.4)
-//            .multilineTextAlignment(.center)
-//            .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
-//        }
-//        .sheet(isPresented: $showingSheet) {
-//            ZScoreSheetView()
-//                .presentationDragIndicator(.visible)
-//        }
     }
 }
 
@@ -171,9 +162,62 @@ struct CustomSegmentedGrowthControl: View {
 }
 
 struct CustomHistoryControl: View {
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    let zscore = ZScoreCalculator()
+    let calculator = CaloriesNeededCalculator()
+    @State private var babies: [Babies] = []
+    
     var body: some View {
         VStack{
-            
+            HStack{
+                Text("Date").font(.system(size: 12)).padding(.trailing, 30)
+                Text("Age (Months)").font(.system(size: 12))
+                Text("Weights (Kg)").font(.system(size: 12))
+                Text("Heights (Cm)").font(.system(size: 12))
+                Text("Head Circ. (Cm)").font(.system(size: 12))
+            }.padding(.bottom, 8)
+            HStack{
+                VStack(alignment: .leading){
+                    ForEach(babies.first?.timeMeasure ?? [], id: \.self) { date in
+                        Text("(\(DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)))").font(.system(size: 12))
+                    }
+                    Spacer()
+                }.padding(.bottom, 8)
+                Spacer()
+                VStack(alignment: .leading){
+                    ForEach(babies.first?.timeMeasure ?? [], id: \.self) { date in
+                        Text("5").font(.system(size: 12))
+                    }
+                    Spacer()
+                }.padding(.bottom, 8)
+                Spacer()
+                VStack(alignment: .leading){
+                    ForEach(babies.first?.weight ?? [], id: \.self) { date in
+                        Text(String(format: "%.1f", date)).font(.system(size: 12))
+                    }
+                    Spacer()
+                }.padding(.bottom, 8)
+                Spacer()
+                VStack(alignment: .leading){
+                    ForEach(babies.first?.height ?? [], id: \.self) { date in
+                        Text(String(format: "%.1f", date)).font(.system(size: 12))
+                    }
+                    Spacer()
+                }.padding(.bottom, 8)
+                Spacer()
+                VStack(alignment: .leading){
+                    ForEach(babies.first?.hc ?? [], id: \.self) { date in
+                        Text(String(format: "%.1f", date)).font(.system(size: 12))
+                    }
+                    Spacer()
+                }.padding(.bottom, 8)
+            }.padding(.horizontal, 8)
+        }
+        .padding()
+        .onAppear{
+            firestoreManager.getBabiesData(){ fetchBabies in
+                self.babies = fetchBabies
+            }
         }
     }
 }

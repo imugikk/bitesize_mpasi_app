@@ -380,4 +380,55 @@ class FirestoreManager: ObservableObject {
             }
         }
     }
+    
+    //add data baby
+    func addBabyData(height: Double, weight: Double, hc: Double, time: Date){
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babiesCollection = db.collection("Babies")
+        
+        babiesCollection.whereField("userId", isEqualTo: userId).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error querying documents: \(error)")
+                return
+            }
+            
+            print("test jg")
+            
+            if let document = querySnapshot?.documents.first {
+                // Document with userID already exists, update it
+                let docRef = babiesCollection.document(document.documentID)
+
+                let data = [
+                    "height": FieldValue.arrayUnion([height]),
+                    "weight": FieldValue.arrayUnion([weight]),
+                    "hc": FieldValue.arrayUnion([hc]),
+                    "timeMeasure": FieldValue.arrayUnion([time])
+                ]
+                
+                print("test")
+
+                docRef.updateData(data) { error in
+                    if let error = error {
+                        print("Error updating document: \(error)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                }
+            }
+        }
+
+//        docRef.setData(data, merge: true) { error in
+//            if let error = error {
+//                print("Error updating document: \(error)")
+//            } else {
+//                print("Document successfully updated")
+//            }
+//        }
+    }
+    
+    func reloadData() {
+        getBabiesData { babies in
+            self.items = babies // Update the @Published property
+        }
+    }
 }

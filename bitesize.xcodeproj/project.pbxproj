@@ -63,6 +63,16 @@
 		F1C524172AFF4920005B69FA /* ZScoreSheetHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524162AFF4920005B69FA /* ZScoreSheetHeadView.swift */; };
 		F1C524192AFF4931005B69FA /* ZScoreSheetHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524182AFF4931005B69FA /* ZScoreSheetHeightView.swift */; };
 		F1C5241B2AFF493F005B69FA /* ZScoreSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5241A2AFF493F005B69FA /* ZScoreSheetView.swift */; };
+		F1C5241D2AFF5E4D005B69FA /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5241C2AFF5E4D005B69FA /* EditProfileView.swift */; };
+		F1C5241F2AFF5E5A005B69FA /* FAQSheet1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5241E2AFF5E5A005B69FA /* FAQSheet1.swift */; };
+		F1C524212AFF5E67005B69FA /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524202AFF5E67005B69FA /* FAQView.swift */; };
+		F1C524232AFF5E78005B69FA /* SavedMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524222AFF5E78005B69FA /* SavedMenuView.swift */; };
+		F1C524252AFF5E82005B69FA /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524242AFF5E82005B69FA /* TermsView.swift */; };
+		F1C524272AFF5E93005B69FA /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524262AFF5E93005B69FA /* UserProfileCard.swift */; };
+		F1C524292AFF5E9E005B69FA /* YourAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524282AFF5E9E005B69FA /* YourAccountView.swift */; };
+		F1C5242B2AFF5F4D005B69FA /* AddDataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */; };
+		F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5242D2AFF60D0005B69FA /* ProfileViewModel.swift */; };
+		F1C524302AFF60FA005B69FA /* BabyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5242F2AFF60FA005B69FA /* BabyUser.swift */; };
 		F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CBBF392ADD621C003A6B81 /* RegisterView.swift */; };
 		F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CBBF3B2ADD622B003A6B81 /* LoginView.swift */; };
 		F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CBBF3E2ADD63FC003A6B81 /* RegisterManager.swift */; };
@@ -158,6 +168,16 @@
 		F1C524162AFF4920005B69FA /* ZScoreSheetHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeadView.swift; sourceTree = "<group>"; };
 		F1C524182AFF4931005B69FA /* ZScoreSheetHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetHeightView.swift; sourceTree = "<group>"; };
 		F1C5241A2AFF493F005B69FA /* ZScoreSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZScoreSheetView.swift; sourceTree = "<group>"; };
+		F1C5241C2AFF5E4D005B69FA /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		F1C5241E2AFF5E5A005B69FA /* FAQSheet1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet1.swift; sourceTree = "<group>"; };
+		F1C524202AFF5E67005B69FA /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		F1C524222AFF5E78005B69FA /* SavedMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMenuView.swift; sourceTree = "<group>"; };
+		F1C524242AFF5E82005B69FA /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		F1C524262AFF5E93005B69FA /* UserProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCard.swift; sourceTree = "<group>"; };
+		F1C524282AFF5E9E005B69FA /* YourAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourAccountView.swift; sourceTree = "<group>"; };
+		F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataSheet.swift; sourceTree = "<group>"; };
+		F1C5242D2AFF60D0005B69FA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F1C5242F2AFF60FA005B69FA /* BabyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUser.swift; sourceTree = "<group>"; };
 		F1CBBF392ADD621C003A6B81 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F1CBBF3B2ADD622B003A6B81 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F1CBBF3E2ADD63FC003A6B81 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
@@ -204,6 +224,13 @@
 			isa = PBXGroup;
 			children = (
 				8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */,
+				F1C5241C2AFF5E4D005B69FA /* EditProfileView.swift */,
+				F1C5241E2AFF5E5A005B69FA /* FAQSheet1.swift */,
+				F1C524202AFF5E67005B69FA /* FAQView.swift */,
+				F1C524222AFF5E78005B69FA /* SavedMenuView.swift */,
+				F1C524242AFF5E82005B69FA /* TermsView.swift */,
+				F1C524262AFF5E93005B69FA /* UserProfileCard.swift */,
+				F1C524282AFF5E9E005B69FA /* YourAccountView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -211,6 +238,7 @@
 		8B3E1D032AF1E82E002B5BC6 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */,
 				8B3E1D042AF1E9B1002B5BC6 /* ProgressView.swift */,
 				F1C5240E2AFF48A8005B69FA /* ProgressGrowthView.swift */,
 				F1C524102AFF48F7005B69FA /* HeadView.swift */,
@@ -323,6 +351,7 @@
 				F1DA470F2AD2B95A008BE71D /* Bahan.swift */,
 				F1DA47192AD30383008BE71D /* Menu.swift */,
 				F174A2F02AEA139000CDA921 /* Week.swift */,
+				F1C5242F2AFF60FA005B69FA /* BabyUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +359,7 @@
 		F1ABDF8F2AC28CD1005AAEC3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F1C5242C2AFF60BB005B69FA /* Profile */,
 				F174A2ED2AEA132D00CDA921 /* Menu */,
 				F1CBBF4F2ADD6B0B003A6B81 /* Akun */,
 				F12E59A12AC294EC0073FB1A /* FirebaseManager.swift */,
@@ -353,6 +383,14 @@
 				F1DA47132AD2DBC9008BE71D /* Kuisioner */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F1C5242C2AFF60BB005B69FA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F1C5242D2AFF60D0005B69FA /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F1CBBF362ADD6200003A6B81 /* Akun */ = {
@@ -569,8 +607,10 @@
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
 				8BD66E882AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift in Sources */,
+				F1C524252AFF5E82005B69FA /* TermsView.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
 				F1C524192AFF4931005B69FA /* ZScoreSheetHeightView.swift in Sources */,
+				F1C524292AFF5E9E005B69FA /* YourAccountView.swift in Sources */,
 				8BD66E902AFBC55200420C25 /* AutheticationViewModel.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
@@ -581,8 +621,13 @@
 				8BD66E8C2AFBC4FC00420C25 /* CheckboxToggleStyle.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
+				F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */,
+				F1C524302AFF60FA005B69FA /* BabyUser.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
+				F1C5241D2AFF5E4D005B69FA /* EditProfileView.swift in Sources */,
+				F1C524272AFF5E93005B69FA /* UserProfileCard.swift in Sources */,
+				F1C524212AFF5E67005B69FA /* FAQView.swift in Sources */,
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
 				8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */,
 				8BD66E842AF9E12300420C25 /* TextAccountView.swift in Sources */,
@@ -590,6 +635,7 @@
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				F1C5241B2AFF493F005B69FA /* ZScoreSheetView.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
+				F1C524232AFF5E78005B69FA /* SavedMenuView.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
@@ -602,6 +648,7 @@
 				F1C524132AFF4903005B69FA /* HeightView.swift in Sources */,
 				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				F12E59BA2AC341F90073FB1A /* Users.swift in Sources */,
+				F1C5242B2AFF5F4D005B69FA /* AddDataSheet.swift in Sources */,
 				F1C524152AFF490F005B69FA /* WeightView.swift in Sources */,
 				8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */,
 				F1C524112AFF48F7005B69FA /* HeadView.swift in Sources */,
@@ -612,6 +659,7 @@
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
+				F1C5241F2AFF5E5A005B69FA /* FAQSheet1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
