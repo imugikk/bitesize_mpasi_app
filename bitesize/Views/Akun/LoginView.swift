@@ -85,6 +85,7 @@ struct LoginView: View {
                         isLogin = true
                         isLoading = true
                         firestoreManager.login { shouldNavigateToHome in
+                            print(isActive)
                             isActive = shouldNavigateToHome
                             isLoading = false
                         }
@@ -96,12 +97,12 @@ struct LoginView: View {
                                         .weight(.medium)
                                 )
                                 .kerning(0.2)
-                                .foregroundColor(Color(red: 0.5, green: 0.53, blue: 0.53))
+                                .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
                         }
                         .padding(.horizontal, 24)
                         .padding(.vertical, 8)
                         .frame(maxWidth: .infinity, minHeight: 50, maxHeight: 50, alignment: .center)
-                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                        .background(Color(red: 0.18, green: 0.56, blue: 0.42))
                         .cornerRadius(12)
                         
                     }
@@ -126,7 +127,7 @@ struct LoginView: View {
                     .frame(width: 358, alignment: .leading)
                     
                     SignInWithAppleButton(.continue) { request in
-                        
+                                            
                         request.requestedScopes = [.email, .fullName]
                         
                     } onCompletion: { result in
@@ -160,11 +161,25 @@ struct LoginView: View {
                     }
                     .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
                     .frame(height: 50)
-                    .padding()
                     .cornerRadius(12)
+                    .padding(.bottom, 16)
                     
-                    NavigationLink(destination: RegisterView(isRegister: $isRegister).navigationBarHidden(true), isActive: $isPresented) {
-                        Text("Register now")
+                    HStack{
+                        Text("Don’t have an account yet?")
+                          .font(Font.custom("Inter", size: 14))
+                          .kerning(0.08)
+                          .multilineTextAlignment(.center)
+                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                        
+                        NavigationLink(destination: RegisterView(isRegister: $isRegister).navigationBarHidden(true), isActive: $isPresented) {
+                            Text("Register now")
+                                .font(Font.custom("Inter", size: 14))
+                                .kerning(0.08)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+
+
+                        }
                     }
                     
                 }.padding()
