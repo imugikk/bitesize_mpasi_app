@@ -14,6 +14,8 @@
 		420D0F7E2AFE81D8004A4594 /* YourAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F7D2AFE81D8004A4594 /* YourAccountView.swift */; };
 		420D0F802AFEC270004A4594 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F7F2AFEC270004A4594 /* TermsView.swift */; };
 		420D0F822AFF4028004A4594 /* SavedMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F812AFF4028004A4594 /* SavedMenuView.swift */; };
+		420D0F842AFF480B004A4594 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F832AFF480B004A4594 /* FAQView.swift */; };
+		420D0F862AFF4A2D004A4594 /* FAQSheet1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D0F852AFF4A2D004A4594 /* FAQSheet1.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -104,6 +106,8 @@
 		420D0F7D2AFE81D8004A4594 /* YourAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourAccountView.swift; sourceTree = "<group>"; };
 		420D0F7F2AFEC270004A4594 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		420D0F812AFF4028004A4594 /* SavedMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMenuView.swift; sourceTree = "<group>"; };
+		420D0F832AFF480B004A4594 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		420D0F852AFF4A2D004A4594 /* FAQSheet1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet1.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				420D0F6F2AFDE217004A4594 /* EditProfileView.swift */,
 				420D0F7D2AFE81D8004A4594 /* YourAccountView.swift */,
 				420D0F812AFF4028004A4594 /* SavedMenuView.swift */,
+				420D0F832AFF480B004A4594 /* FAQView.swift */,
+				420D0F852AFF4A2D004A4594 /* FAQSheet1.swift */,
 				420D0F7F2AFEC270004A4594 /* TermsView.swift */,
 			);
 			path = Profile;
@@ -586,6 +592,7 @@
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
+				420D0F862AFF4A2D004A4594 /* FAQSheet1.swift in Sources */,
 				8B7B2C702ACFB29E003F4C6F /* CaloriesNeededResult.swift in Sources */,
 				F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */,
 				8B7B2C782AD17833003F4C6F /* LMSHeadBoys.swift in Sources */,
@@ -594,6 +601,7 @@
 				8B7B2C582AC97E4F003F4C6F /* LMSLengthBoys.swift in Sources */,
 				F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
+				420D0F842AFF480B004A4594 /* FAQView.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,

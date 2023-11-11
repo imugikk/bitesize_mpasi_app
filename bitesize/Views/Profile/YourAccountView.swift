@@ -170,6 +170,7 @@ struct personalInformation: View {
 
 //page change password
 struct changePassword: View {
+    
     @State var oldPassword = ""
     @State var newPassword = ""
     @State var confirmPassword = ""
