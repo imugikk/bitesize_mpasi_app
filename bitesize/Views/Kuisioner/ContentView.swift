@@ -32,12 +32,27 @@ struct ContentView: View {
     @State private var name = ""
     @State private var gender = ""
     @State private var dob = Date.now
+    @State private var weight: Double = 0.0
     
     var body: some View {
         NavigationView{
             VStack {
-                InformationView()
-                    .edgesIgnoringSafeArea(.horizontal)
+                
+                HStack{
+                    Text("Input Baby Data")
+                        .font(
+                        Font.custom("Inter", size: 22)
+                        .weight(.medium)
+                        )
+                        .kerning(0.088)
+                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+
+                        .frame(width: 169, alignment: .leading)
+                        .padding(.horizontal, 16)
+                    
+                    InformationView()
+                        .edgesIgnoringSafeArea(.horizontal)
+                }
                 
                 VStack (alignment: .leading){
                     
@@ -46,7 +61,7 @@ struct ContentView: View {
                     
                     HStack {
                         Spacer(minLength: 16) // Left padding
-                        TextField("Name", text: $name)
+                        TextField("Input your baby name", text: $name)
                             .padding(12)
                             .frame(width: 360, alignment: .leading)
                             .cornerRadius(8)
@@ -118,25 +133,57 @@ struct ContentView: View {
                         TextView(labelText: "Date of Birth")
                             .edgesIgnoringSafeArea(.all)
                         
-                        DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}
+//                        DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}
                     }
+                    
+                    DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date){}
+                        .datePickerStyle(WheelDatePickerStyle())
+                        .labelsHidden() // Hide labels for a cleaner appearance
+                        .padding(.horizontal, 16)
+                        .frame(maxWidth: .infinity)
+                    
+                    Text("Weights")
+                    .font(
+                    Font.custom("Inter", size: 16)
+                    .weight(.semibold)
+                    )
+                    .kerning(0.16)
+                    .foregroundColor(.black)
+
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                    
+//                    TextField("weight", value: $weight, format: .number)
+                    
+                    Picker("", selection: $weight) {
+                        ForEach(30..<150, id: \.self) { weight in
+                            Text(String(format: "%.1f kg", Double(weight) / 10.0))
+                                .tag(Double(weight) / 10.0)
+                                }
+                            }
+                        .pickerStyle(WheelPickerStyle())
+//                        .frame(width: 150, height: 150)
+                        .clipped()
+                        .padding(.horizontal, 40)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    
                     
                     Spacer()
                     
                     HStack{
-                        Button(action: {
-                            
-                        }){
-                            Text("Skip")
-                                .font(
-                                    Font.custom("Work Sans", size: 12)
-                                        .weight(.medium)
-                                )
-                                .kerning(0.6)
-                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
-                        }
+//                        Button(action: {
+//                            
+//                        }){
+//                            Text("Skip")
+//                                .font(
+//                                    Font.custom("Work Sans", size: 12)
+//                                        .weight(.medium)
+//                                )
+//                                .kerning(0.6)
+//                                .foregroundColor(Color(red: 0.23, green: 0, blue: 0.9))
+//                        }
                         
-                        Spacer()
+//                        Spacer()
                         
                         Button {
         
@@ -146,18 +193,19 @@ struct ContentView: View {
                                 Text("Next")
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 8)
-                                    .frame(width: 148, alignment: .center)
-                                    .background(Color(red: 0.23, green: 0, blue: 0.9))
+                                    .frame(width: 358, height: 36 ,alignment: .center)
+                                    .background(Color(red: 0.18, green: 0.56, blue: 0.42))
                                     .cornerRadius(8)
                                     .font(
-                                    Font.custom("Work Sans", size: 12)
+                                    Font.custom("Inter", size: 14)
                                     .weight(.medium)
                                     )
-                                    .kerning(0.6)
-                                    .foregroundColor(Constants.BGWhite)
+                                    .kerning(0.4)
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
                             }
                         }
-                    }.padding(.horizontal, 38)// Left padding
+                    }.padding(.horizontal, 16)// Left padding
                 }
                 
             }

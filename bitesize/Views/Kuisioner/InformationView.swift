@@ -11,7 +11,7 @@ struct InformationView: View {
     var body: some View {
         HStack {
             Spacer() // Pushes the image to the right
-            Image(systemName: "exclamationmark.circle")
+            Image(systemName: "questionmark")
                 .font(.system(size: 24))
                 .foregroundColor(.black)
                 .padding(25)
