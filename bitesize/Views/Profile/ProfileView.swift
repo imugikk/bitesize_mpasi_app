@@ -60,7 +60,7 @@ struct ProfileView: View {
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
-                        Text("􀆊")
+                        Text(">")
                             .font(
                                 Font.custom("SF Pro", size: 17)
                                     .weight(.semibold)
@@ -76,7 +76,7 @@ struct ProfileView: View {
                 }
                
                 Divider()
-                    .padding(.leading, 76)
+                    .padding(.horizontal, 76)
                 
                 NavigationLink {
                     SavedMenuView()
@@ -91,7 +91,7 @@ struct ProfileView: View {
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
-                        Text("􀆊")
+                        Text(">")
                             .font(
                                 Font.custom("SF Pro", size: 17)
                                     .weight(.semibold)
@@ -120,7 +120,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                         .padding(.leading, 16)
                     
-                    Text("􀆊")
+                    Text(">")
                         .font(
                             Font.custom("SF Pro", size: 17)
                                 .weight(.semibold)
@@ -149,7 +149,7 @@ struct ProfileView: View {
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
-                        Text("􀆊")
+                        Text(">")
                             .font(
                                 Font.custom("SF Pro", size: 17)
                                     .weight(.semibold)
@@ -184,7 +184,7 @@ struct ProfileView: View {
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
-                        Text("􀆊")
+                        Text(">")
                             .font(
                                 Font.custom("SF Pro", size: 17)
                                     .weight(.semibold)
@@ -209,7 +209,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                         .padding(.leading, 16)
                     
-                    Text("􀆊")
+                    Text(">")
                         .font(
                             Font.custom("SF Pro", size: 17)
                                 .weight(.semibold)

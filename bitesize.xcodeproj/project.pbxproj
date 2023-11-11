@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42D22CA42B013C310091E21D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CA32B013C310091E21D /* GifImage.swift */; };
+		42D22CA82B013CED0091E21D /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CA72B013CED0091E21D /* Loading.gif */; };
+		42D22CAA2B013D0F0091E21D /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CA92B013D0F0091E21D /* LoadingAnimationView.swift */; };
+		42D22CAE2B0140FC0091E21D /* LoadingViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */; };
 		42DD91082AFF857600820AF6 /* FAQSheet2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91072AFF857600820AF6 /* FAQSheet2.swift */; };
 		42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91092AFF860800820AF6 /* FAQSheet3.swift */; };
 		42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */; };
@@ -112,6 +116,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42D22CA32B013C310091E21D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		42D22CA72B013CED0091E21D /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
+		42D22CA92B013D0F0091E21D /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
+		42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewMain.swift; sourceTree = "<group>"; };
 		42DD91072AFF857600820AF6 /* FAQSheet2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet2.swift; sourceTree = "<group>"; };
 		42DD91092AFF860800820AF6 /* FAQSheet3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet3.swift; sourceTree = "<group>"; };
 		42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet4.swift; sourceTree = "<group>"; };
@@ -434,9 +442,13 @@
 			isa = PBXGroup;
 			children = (
 				F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */,
+				42D22CA32B013C310091E21D /* GifImage.swift */,
+				42D22CA92B013D0F0091E21D /* LoadingAnimationView.swift */,
+				42D22CA72B013CED0091E21D /* Loading.gif */,
 				F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */,
 				8B7B2C632ACD1C58003F4C6F /* InformationView.swift */,
 				8B3194B32AD79DCF001DD2A1 /* TextView.swift */,
+				42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */,
 			);
 			path = Kuisioner;
 			sourceTree = "<group>";
@@ -577,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1ABDF6C2AC28CA9005AAEC3 /* Preview Assets.xcassets in Resources */,
+				42D22CA82B013CED0091E21D /* Loading.gif in Resources */,
 				F1ABDF692AC28CA9005AAEC3 /* Assets.xcassets in Resources */,
 				F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */,
 			);
@@ -603,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D22CAA2B013D0F0091E21D /* LoadingAnimationView.swift in Sources */,
 				F1C5240F2AFF48A8005B69FA /* ProgressGrowthView.swift in Sources */,
 				8B3E1D072AF1F0CF002B5BC6 /* MenuDetailView.swift in Sources */,
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
@@ -635,6 +649,7 @@
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */,
 				42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */,
+				42D22CAE2B0140FC0091E21D /* LoadingViewMain.swift in Sources */,
 				F1C524302AFF60FA005B69FA /* BabyUser.swift in Sources */,
 				8B3194D22ADCFCDA001DD2A1 /* RecommendationItemView.swift in Sources */,
 				42DD91082AFF857600820AF6 /* FAQSheet2.swift in Sources */,
@@ -675,6 +690,7 @@
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
+				42D22CA42B013C310091E21D /* GifImage.swift in Sources */,
 				F1C5241F2AFF5E5A005B69FA /* FAQSheet1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
