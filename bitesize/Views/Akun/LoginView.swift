@@ -85,6 +85,7 @@ struct LoginView: View {
                         isLogin = true
                         isLoading = true
                         firestoreManager.login { shouldNavigateToHome in
+                            print(isActive)
                             isActive = shouldNavigateToHome
                             isLoading = false
                         }
