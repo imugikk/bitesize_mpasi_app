@@ -113,6 +113,8 @@ struct TermsView: View {
                     }.padding(.top, 16)
                 }
             }
+            
+            //Custom NavToolBar
             .navigationBarBackButtonHidden(true)
             .navigationTitle("Terms & Condition")
             .toolbar(content: {
