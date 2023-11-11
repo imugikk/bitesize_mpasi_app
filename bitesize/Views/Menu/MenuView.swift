@@ -31,6 +31,7 @@ struct MenuView: View {
                     
                         .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
                         .padding(.horizontal, 16)
+                        .padding(.top, 46)
                     Spacer()
                 }
                 Divider().padding()
@@ -156,7 +157,7 @@ struct MenuView: View {
 //                    .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.05), radius: 2.5, x: 0, y: -3)
                 }
             }
-            .navigationBarBackButtonHidden()
+            .navigationBarHidden(true)
             .onAppear{
                 firestoreManager.getMenuesData() { fetchMenu in
                     self.menuUtama = fetchMenu
