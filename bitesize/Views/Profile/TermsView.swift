@@ -80,6 +80,7 @@ struct TermsView: View {
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                       .frame(width: 358, alignment: .leading)
                     } .padding(.top, 16)
+                    Spacer()
                   
                     HStack {
                         Text("In no event shall the App, its creators, or its affiliates be liable for any direct, indirect, incidental, special, or consequential damages, or damages for loss of profits, revenue, data, or use incurred by you or any third party, whether in an action in contract or tort, arising from your access to, or use of, the App.")
@@ -94,7 +95,8 @@ struct TermsView: View {
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                       .frame(width: 358, alignment: .leading)
                     } .padding(.top, 16)
-                  
+                  Spacer()
+                    
                     HStack {
                         Text("If you have any questions or concerns about this disclaimer or the information provided by the App, please contact us at appBitesize@gmail.com By using the App, you acknowledge that you have read and understood this disclaimer and agree to its terms and conditions.")
                           .font(Font.custom("Inter", size: 16))
