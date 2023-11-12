@@ -12,7 +12,7 @@ struct LoadingViewMain: View {
     
     var body: some View {
         
-         LoadingAnimationView()
+         GifImage("Loading")
     }
 }
 
