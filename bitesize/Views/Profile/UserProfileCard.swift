@@ -37,9 +37,7 @@ struct UserProfileCard: View {
                 VStack {
                     Text(user.babyName)
                         .font(
-                            Font.custom("Inter", size: 22)
-                                .weight(.medium)
-                        )
+                            Font.custom("Inter-Medium", size: 22))
                         .kerning(0.088)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -49,14 +47,14 @@ struct UserProfileCard: View {
                     
                     
                     Text("8 Bulan")
-                        .font(Font.custom("Inter", size: 14))
+                        .font(Font.custom("Inter-Regular", size: 14))
                         .kerning(0.08)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 10)
                     
                     Text("Perempuan")
-                        .font(Font.custom("Inter", size: 14))
+                        .font(Font.custom("Inter-Regular", size: 14))
                         .kerning(0.08)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         .frame(maxWidth: .infinity, alignment: .leading)

@@ -36,8 +36,8 @@ struct EditProfileView: View {
                             .clipShape(Circle())
                         Text("Change Photo")
                             .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
+                                Font.custom("Inter-SemiBold", size: 16)
+                                    
                             )
                             .kerning(0.16)
                             .multilineTextAlignment(.center)
@@ -68,8 +68,8 @@ struct EditProfileView: View {
                         
                         Text("Add Photo")
                             .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
+                                Font.custom("Inter-SemiBold", size: 16)
+                                    
                             )
                             .kerning(0.16)
                             .multilineTextAlignment(.center)
@@ -85,8 +85,8 @@ struct EditProfileView: View {
                 
                 Text("Name")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                            
                     )
                     .kerning(0.16)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -114,8 +114,8 @@ struct EditProfileView: View {
                 
                 Text("Baby Age (Months)")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                            
                     )
                     .kerning(0.16)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -143,8 +143,8 @@ struct EditProfileView: View {
                 
                 Text("Gender")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                           
                     )
                     .kerning(0.16)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -181,7 +181,7 @@ struct EditProfileView: View {
                         Image("BackIcon")
                             .frame(width: 18, height: 24)
                                 Text("Profile")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                         
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)

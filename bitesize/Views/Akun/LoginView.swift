@@ -23,6 +23,15 @@ struct LoginView: View {
     
     @AppStorage("email") var email: String = ""
     
+//    init(){
+//        UIFont.familyNames.forEach { family in
+//            print(family)
+//            UIFont.fontNames(forFamilyName: family).forEach { name in
+//                print("-",name)
+//            }
+//        }
+//    }
+    
     var body: some View {
         if email.isEmpty {
             NavigationStack{
@@ -92,9 +101,10 @@ struct LoginView: View {
                     } label: {
                         HStack(alignment: .center, spacing: 4) {
                             Text("Sign In")
+                            
                                 .font(
-                                    Font.custom("Inter", size: 16)
-                                        .weight(.medium)
+                                    Font.custom("Inter-Medium", size: 16)
+                                        
                                 )
                                 .kerning(0.2)
                                 .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
@@ -115,7 +125,7 @@ struct LoginView: View {
                             .background(Color(red: 0.08, green: 0.12, blue: 0.12))
                         
                         Text("or")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         
                         Rectangle()
@@ -166,14 +176,14 @@ struct LoginView: View {
                     
                     HStack{
                         Text("Don’t have an account yet?")
-                          .font(Font.custom("Inter", size: 14))
+                          .font(Font.custom("Inter-Regular", size: 14))
                           .kerning(0.08)
                           .multilineTextAlignment(.center)
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         
                         NavigationLink(destination: RegisterView(isRegister: $isRegister).navigationBarHidden(true), isActive: $isPresented) {
                             Text("Register now")
-                                .font(Font.custom("Inter", size: 14))
+                                .font(Font.custom("Inter-Regular", size: 14))
                                 .kerning(0.08)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))

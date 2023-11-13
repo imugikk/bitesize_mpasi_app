@@ -17,6 +17,32 @@
 		42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91092AFF860800820AF6 /* FAQSheet3.swift */; };
 		42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */; };
 		42DD91102AFF8A0900820AF6 /* FAQSheet5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD910F2AFF8A0900820AF6 /* FAQSheet5.swift */; };
+		42F8658C2B0213E500C03DC6 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CC12B020CDA0091E21D /* Inter-ExtraBold.ttf */; };
+		42F8658D2B0213E500C03DC6 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CC02B020CDA0091E21D /* Inter-ExtraLight.ttf */; };
+		42F8658E2B0213E500C03DC6 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CBB2B020CDA0091E21D /* Inter-Bold.ttf */; };
+		42F8658F2B0213E500C03DC6 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CBF2B020CDA0091E21D /* Inter-Thin.ttf */; };
+		42F865902B0213E500C03DC6 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CBD2B020CDA0091E21D /* Inter-Medium.ttf */; };
+		42F865912B0213E500C03DC6 /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CB82B020CC70091E21D /* Inter-VariableFont_slnt,wght.ttf */; };
+		42F865922B0213E500C03DC6 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CBA2B020CD90091E21D /* Inter-Black.ttf */; };
+		42F865932B0213E500C03DC6 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CB92B020CD90091E21D /* Inter-Light.ttf */; };
+		42F865942B0213E500C03DC6 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CBC2B020CDA0091E21D /* Inter-Regular.ttf */; };
+		42F865952B0213E500C03DC6 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CBE2B020CDA0091E21D /* Inter-SemiBold.ttf */; };
+		42F865A82B02187200C03DC6 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865982B02187200C03DC6 /* Nunito-Light.ttf */; };
+		42F865A92B02187200C03DC6 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865992B02187200C03DC6 /* Nunito-ExtraLight.ttf */; };
+		42F865AA2B02187200C03DC6 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8659A2B02187200C03DC6 /* Nunito-Italic.ttf */; };
+		42F865AB2B02187200C03DC6 /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8659B2B02187200C03DC6 /* Nunito-BoldItalic.ttf */; };
+		42F865AC2B02187200C03DC6 /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8659C2B02187200C03DC6 /* Nunito-BlackItalic.ttf */; };
+		42F865AD2B02187200C03DC6 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8659D2B02187200C03DC6 /* Nunito-Regular.ttf */; };
+		42F865AE2B02187200C03DC6 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8659E2B02187200C03DC6 /* Nunito-SemiBold.ttf */; };
+		42F865AF2B02187200C03DC6 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F8659F2B02187200C03DC6 /* Nunito-ExtraBold.ttf */; };
+		42F865B02B02187200C03DC6 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A02B02187200C03DC6 /* Nunito-Bold.ttf */; };
+		42F865B12B02187200C03DC6 /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A12B02187200C03DC6 /* Nunito-MediumItalic.ttf */; };
+		42F865B22B02187200C03DC6 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A22B02187200C03DC6 /* Nunito-Medium.ttf */; };
+		42F865B32B02187200C03DC6 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A32B02187200C03DC6 /* Nunito-ExtraBoldItalic.ttf */; };
+		42F865B42B02187200C03DC6 /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A42B02187200C03DC6 /* Nunito-ExtraLightItalic.ttf */; };
+		42F865B52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf */; };
+		42F865B62B02187200C03DC6 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A62B02187200C03DC6 /* Nunito-LightItalic.ttf */; };
+		42F865B72B02187200C03DC6 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A72B02187200C03DC6 /* Nunito-Black.ttf */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -124,10 +150,37 @@
 		42D22CAF2B01B7780091E21D /* LoadingBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBarView.swift; sourceTree = "<group>"; };
 		42D22CB12B01DEC60091E21D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		42D22CB32B01EBAB0091E21D /* EditDataSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataSheet.swift; sourceTree = "<group>"; };
+		42D22CB82B020CC70091E21D /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		42D22CB92B020CD90091E21D /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		42D22CBA2B020CD90091E21D /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		42D22CBB2B020CDA0091E21D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		42D22CBC2B020CDA0091E21D /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		42D22CBD2B020CDA0091E21D /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		42D22CBE2B020CDA0091E21D /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		42D22CBF2B020CDA0091E21D /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		42D22CC02B020CDA0091E21D /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		42D22CC12B020CDA0091E21D /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		42D22CC22B020D880091E21D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		42DD91072AFF857600820AF6 /* FAQSheet2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet2.swift; sourceTree = "<group>"; };
 		42DD91092AFF860800820AF6 /* FAQSheet3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet3.swift; sourceTree = "<group>"; };
 		42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet4.swift; sourceTree = "<group>"; };
 		42DD910F2AFF8A0900820AF6 /* FAQSheet5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet5.swift; sourceTree = "<group>"; };
+		42F865982B02187200C03DC6 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		42F865992B02187200C03DC6 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		42F8659A2B02187200C03DC6 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		42F8659B2B02187200C03DC6 /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
+		42F8659C2B02187200C03DC6 /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		42F8659D2B02187200C03DC6 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		42F8659E2B02187200C03DC6 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		42F8659F2B02187200C03DC6 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		42F865A02B02187200C03DC6 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		42F865A12B02187200C03DC6 /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
+		42F865A22B02187200C03DC6 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		42F865A32B02187200C03DC6 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		42F865A42B02187200C03DC6 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		42F865A52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		42F865A62B02187200C03DC6 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
+		42F865A72B02187200C03DC6 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -240,6 +293,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42D22CB72B020CB30091E21D /* Inter Font */ = {
+			isa = PBXGroup;
+			children = (
+				42D22CB82B020CC70091E21D /* Inter-VariableFont_slnt,wght.ttf */,
+				42D22CBA2B020CD90091E21D /* Inter-Black.ttf */,
+				42D22CBB2B020CDA0091E21D /* Inter-Bold.ttf */,
+				42D22CC12B020CDA0091E21D /* Inter-ExtraBold.ttf */,
+				42D22CC02B020CDA0091E21D /* Inter-ExtraLight.ttf */,
+				42D22CB92B020CD90091E21D /* Inter-Light.ttf */,
+				42D22CBD2B020CDA0091E21D /* Inter-Medium.ttf */,
+				42D22CBC2B020CDA0091E21D /* Inter-Regular.ttf */,
+				42D22CBE2B020CDA0091E21D /* Inter-SemiBold.ttf */,
+				42D22CBF2B020CDA0091E21D /* Inter-Thin.ttf */,
+			);
+			path = "Inter Font";
+			sourceTree = "<group>";
+		};
+		42F865972B02183F00C03DC6 /* Nunito Font */ = {
+			isa = PBXGroup;
+			children = (
+				42F865A72B02187200C03DC6 /* Nunito-Black.ttf */,
+				42F8659C2B02187200C03DC6 /* Nunito-BlackItalic.ttf */,
+				42F865A02B02187200C03DC6 /* Nunito-Bold.ttf */,
+				42F8659B2B02187200C03DC6 /* Nunito-BoldItalic.ttf */,
+				42F8659F2B02187200C03DC6 /* Nunito-ExtraBold.ttf */,
+				42F865A32B02187200C03DC6 /* Nunito-ExtraBoldItalic.ttf */,
+				42F865992B02187200C03DC6 /* Nunito-ExtraLight.ttf */,
+				42F865A42B02187200C03DC6 /* Nunito-ExtraLightItalic.ttf */,
+				42F8659A2B02187200C03DC6 /* Nunito-Italic.ttf */,
+				42F865982B02187200C03DC6 /* Nunito-Light.ttf */,
+				42F865A62B02187200C03DC6 /* Nunito-LightItalic.ttf */,
+				42F865A22B02187200C03DC6 /* Nunito-Medium.ttf */,
+				42F865A12B02187200C03DC6 /* Nunito-MediumItalic.ttf */,
+				42F8659D2B02187200C03DC6 /* Nunito-Regular.ttf */,
+				42F8659E2B02187200C03DC6 /* Nunito-SemiBold.ttf */,
+				42F865A52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf */,
+			);
+			path = "Nunito Font";
+			sourceTree = "<group>";
+		};
 		8B01397A2AFC9EE7001FE3DE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +415,9 @@
 		F1ABDF632AC28CA8005AAEC3 /* bitesize */ = {
 			isa = PBXGroup;
 			children = (
+				42D22CC22B020D880091E21D /* Info.plist */,
+				42D22CB72B020CB30091E21D /* Inter Font */,
+				42F865972B02183F00C03DC6 /* Nunito Font */,
 				8BD66E912AFBFD6700420C25 /* bitesize.entitlements */,
 				F1ABDF8E2AC28CC1005AAEC3 /* Models */,
 				F1ABDF902AC28CE3005AAEC3 /* Views */,
@@ -594,10 +690,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F865AE2B02187200C03DC6 /* Nunito-SemiBold.ttf in Resources */,
+				42F8658C2B0213E500C03DC6 /* Inter-ExtraBold.ttf in Resources */,
+				42F8658D2B0213E500C03DC6 /* Inter-ExtraLight.ttf in Resources */,
 				F1ABDF6C2AC28CA9005AAEC3 /* Preview Assets.xcassets in Resources */,
+				42F865B22B02187200C03DC6 /* Nunito-Medium.ttf in Resources */,
+				42F8658E2B0213E500C03DC6 /* Inter-Bold.ttf in Resources */,
+				42F8658F2B0213E500C03DC6 /* Inter-Thin.ttf in Resources */,
 				42D22CA82B013CED0091E21D /* Loading.gif in Resources */,
+				42F865B52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf in Resources */,
+				42F865952B0213E500C03DC6 /* Inter-SemiBold.ttf in Resources */,
+				42F865A92B02187200C03DC6 /* Nunito-ExtraLight.ttf in Resources */,
+				42F865B72B02187200C03DC6 /* Nunito-Black.ttf in Resources */,
+				42F865B42B02187200C03DC6 /* Nunito-ExtraLightItalic.ttf in Resources */,
+				42F865AC2B02187200C03DC6 /* Nunito-BlackItalic.ttf in Resources */,
+				42F865922B0213E500C03DC6 /* Inter-Black.ttf in Resources */,
+				42F865AF2B02187200C03DC6 /* Nunito-ExtraBold.ttf in Resources */,
+				42F865B12B02187200C03DC6 /* Nunito-MediumItalic.ttf in Resources */,
+				42F865AD2B02187200C03DC6 /* Nunito-Regular.ttf in Resources */,
+				42F865912B0213E500C03DC6 /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				42F865B62B02187200C03DC6 /* Nunito-LightItalic.ttf in Resources */,
+				42F865942B0213E500C03DC6 /* Inter-Regular.ttf in Resources */,
 				F1ABDF692AC28CA9005AAEC3 /* Assets.xcassets in Resources */,
+				42F865AB2B02187200C03DC6 /* Nunito-BoldItalic.ttf in Resources */,
+				42F865A82B02187200C03DC6 /* Nunito-Light.ttf in Resources */,
+				42F865B02B02187200C03DC6 /* Nunito-Bold.ttf in Resources */,
 				F12E59A02AC294C40073FB1A /* GoogleService-Info.plist in Resources */,
+				42F865932B0213E500C03DC6 /* Inter-Light.ttf in Resources */,
+				42F865B32B02187200C03DC6 /* Nunito-ExtraBoldItalic.ttf in Resources */,
+				42F865902B0213E500C03DC6 /* Inter-Medium.ttf in Resources */,
+				42F865AA2B02187200C03DC6 /* Nunito-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,10 +980,11 @@
 				CODE_SIGN_ENTITLEMENTS = bitesize/bitesize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"bitesize/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "bitesize/Preview\\ Content";
 				DEVELOPMENT_TEAM = 5HAHSL2Z4H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = bitesize/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -889,10 +1012,11 @@
 				CODE_SIGN_ENTITLEMENTS = bitesize/bitesize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"bitesize/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "bitesize/Preview\\ Content";
 				DEVELOPMENT_TEAM = 5HAHSL2Z4H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = bitesize/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

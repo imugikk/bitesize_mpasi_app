@@ -17,8 +17,8 @@ struct ProfileView: View {
             
             Text("Profile")
               .font(
-                Font.custom("Nunito", size: 32)
-                  .weight(.semibold)
+                Font.custom("Nunito-SemiBold", size: 32)
+                  
               )
               .kerning(0.32)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -34,8 +34,8 @@ struct ProfileView: View {
 
         Text("Your Baby")
           .font(
-            Font.custom("Nunito", size: 24)
-              .weight(.semibold)
+            Font.custom("Nunito-SemiBold", size: 24)
+             
           )
           .kerning(0.24)
           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -55,7 +55,7 @@ struct ProfileView: View {
                         
                         Text("Your Account")
                             
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
@@ -86,7 +86,7 @@ struct ProfileView: View {
                             .frame(width: 24, height: 24)
                         
                         Text("Saved Menu")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
@@ -123,7 +123,7 @@ struct ProfileView: View {
                             .frame(width: 24, height: 24)
                         
                         Text("Terms & Condition")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
@@ -158,7 +158,7 @@ struct ProfileView: View {
                             .frame(width: 24, height: 24)
                         
                         Text("Frequently Asked Questions")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
@@ -183,7 +183,7 @@ struct ProfileView: View {
                         .frame(width: 24, height: 24)
                     
                     Text("Help")
-                        .font(Font.custom("Inter", size: 16))
+                        .font(Font.custom("Inter-Regular", size: 16))
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                         .padding(.leading, 16)
@@ -213,7 +213,7 @@ struct ProfileView: View {
                             .onTapGesture {
                             email = ""
                         }
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
@@ -235,7 +235,7 @@ struct ProfileView: View {
                 Divider()
                     .padding(.horizontal, 76)
                 
-//                Spacer()
+                Spacer()
 //                NavigationLink(destination: LoginView().navigationBarHidden(true)) {
 //                    Text("Log out").onTapGesture {
 //                        email = ""
