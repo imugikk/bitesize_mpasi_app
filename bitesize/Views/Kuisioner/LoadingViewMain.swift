@@ -11,6 +11,8 @@ struct LoadingViewMain: View {
     @State var percent: CGFloat = 0
     @State var isActive: Bool = false
     
+
+    
     var body: some View {
         if isActive {
             ResultView()

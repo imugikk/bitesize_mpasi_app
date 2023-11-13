@@ -9,6 +9,9 @@ import SwiftUI
 
 struct BabyInputView: View {
     
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
+    
     @EnvironmentObject var firestoreManager: FirestoreManager
     let zscore = ZScoreCalculator()
     let nutrition = CaloriesNeededCalculator()
@@ -34,10 +37,13 @@ struct BabyInputView: View {
     @AppStorage("email") var email: String = ""
     
     var body: some View {
-        NavigationStack{
-            VStack {
-                InformationView()
+//        NavigationStack{
+            VStack{
+                VStack (alignment: .leading){
+                    InformationView()
+                }
                     .edgesIgnoringSafeArea(.horizontal)
+//                    .padding(.top, 46)
                 
                 VStack(alignment: .leading){
                 
@@ -165,11 +171,28 @@ struct BabyInputView: View {
                     }
                 .padding(.horizontal, 24)// Left padding
                 }
+                .navigationBarBackButtonHidden(false)
+             
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image("BackIconBlack")
+                                .frame(width: 18, height: 24)
+                                  
+                        })
+                    }
+                })
             }
             .navigationDestination(isPresented: $isTap){
+//            LoadingViewMain()
                 HomeView()
             }
-        }.navigationBarBackButtonHidden()
+            
+//        }
+            .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

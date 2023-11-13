@@ -447,14 +447,14 @@
 			isa = PBXGroup;
 			children = (
 				F1ABDF662AC28CA8005AAEC3 /* ContentView.swift */,
-				42D22CA32B013C310091E21D /* GifImage.swift */,
-				42D22CA72B013CED0091E21D /* Loading.gif */,
 				F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */,
 				8B7B2C632ACD1C58003F4C6F /* InformationView.swift */,
 				8B3194B32AD79DCF001DD2A1 /* TextView.swift */,
 				42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */,
 				42D22CB12B01DEC60091E21D /* ResultView.swift */,
 				42D22CAF2B01B7780091E21D /* LoadingBarView.swift */,
+				42D22CA32B013C310091E21D /* GifImage.swift */,
+				42D22CA72B013CED0091E21D /* Loading.gif */,
 			);
 			path = Kuisioner;
 			sourceTree = "<group>";

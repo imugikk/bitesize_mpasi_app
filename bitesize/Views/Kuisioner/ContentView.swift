@@ -40,10 +40,14 @@ struct ContentView: View {
     @State private var decimalPart: Int = 0
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack {
-                InformationView()
-                    .edgesIgnoringSafeArea(.horizontal)
+                VStack {
+                    InformationView()
+//                        .edgesIgnoringSafeArea(.horizontal)
+                }
+                .padding(.top, 36)
+                    
                 
                 VStack (alignment: .leading){
                     TextView(labelText: "Name")
@@ -164,6 +168,8 @@ struct ContentView: View {
                     
                     Spacer()
                     
+                    
+                    
                     Button {
     
                     } label: {
@@ -183,9 +189,11 @@ struct ContentView: View {
                                 .cornerRadius(12)
                         }
                     }.padding()
+//                    .navigationBarBackButtonHidden()
                 }
             }
         }.navigationBarBackButtonHidden()
+            
     }
     
     private var numberFormatter: NumberFormatter {
