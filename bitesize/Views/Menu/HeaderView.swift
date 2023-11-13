@@ -11,27 +11,52 @@ struct HeaderView: View {
     @StateObject var weekStore = WeekStore()
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
+    @State private var tappedIndex: Int = 0
 
     var body: some View {
         ZStack {
             ForEach(weekStore.allWeeks) { week in
                 VStack{
+                    HStack{
+                        Text(
+                            weekStore.dateToString(date: week.date[0], format: "MMM d") + " - " +  weekStore.dateToString(date: week.date[6], format: "MMM d")
+                        )
+                        Spacer()
+                        Text("See All")
+                            .font(
+                                Font.custom("Inter", size: 14)
+                                .weight(.medium)
+                            )
+                            .kerning(0.4)
+                            .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                    }.padding(.bottom, 8)
+                    .padding(.horizontal, 10)
+                    .frame(width: UIScreen.main.bounds.width)
+                    .background(
+                        Rectangle()
+                            .fill(.white)
+                    )
                     HStack {
                         ForEach(0..<7) { index in
-                            VStack(spacing: 20) {
-                                Text(weekStore.dateToString(date: week.date[index], format: "EEE"))
-                                    .font(.system(size:14))
-                                    .fontWeight(.semibold)
-                                    .frame(maxWidth:.infinity)
-
+                            VStack() {
                                 Text(weekStore.dateToString(date: week.date[index], format: "d"))
                                     .font(.system(size:14))
                                     .frame(maxWidth:.infinity)
-//                                Divider()
+                                    .foregroundColor(tappedIndex == index ? Color(red: 0.16, green: 0.49, blue: 0.36) : .black)
+                                    .padding(.top, 8)
+                                Rectangle()
+                                .frame(height: 2)
+                                .foregroundColor(tappedIndex == index ? Color(red: 0.16, green: 0.49, blue: 0.36) : Color.clear)
+                            }
+                            .onAppear{
+                                if Calendar.current.isDate(week.date[index], inSameDayAs: weekStore.currentDate) {
+                                    tappedIndex = index
+                                }
                             }
                             .onTapGesture {
                                 // Updating Current Day
                                 weekStore.currentDate = week.date[index]
+                                tappedIndex = index
                             }
                         }
                     }
@@ -46,8 +71,6 @@ struct HeaderView: View {
                 .padding(.horizontal, 20)
             }
         }
-//        .frame(maxHeight:.infinity , alignment : .top)
-//        .padding(.top,50)
         .gesture(
             DragGesture()
                 .onChanged { value in
@@ -78,6 +101,7 @@ struct HeaderView: View {
     }
     
 }
+
 
 #Preview {
     HeaderView()

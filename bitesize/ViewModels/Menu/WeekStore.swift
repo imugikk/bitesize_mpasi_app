@@ -12,7 +12,7 @@ class WeekStore : ObservableObject {
     @Published var allWeeks : [WeekValue] = []
     
     // Current chosen date indicator
-    @Published var currentDate : Date = Date()
+    @Published var currentDate : Date = Date.now
     
     // Index indicator
     @Published var currentIndex : Int = 0
@@ -22,6 +22,7 @@ class WeekStore : ObservableObject {
     @Published var currentWeek: [Date] = []
     @Published var nextWeek : [Date] = []
     @Published var previousWeek : [Date] = []
+    
     
     // Initial append of weeks
     init() {

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CategoryItemView: View {
+    
+    @State var title: String
+    @State private var isSheetPresented = false
+    
     var body: some View {
-        ZStack (alignment: .bottom){
+        ZStack (alignment: .bottom) {
             Rectangle()
                 .foregroundColor(.clear)
                 .frame(width: 300, height: 200)
@@ -33,8 +37,11 @@ struct CategoryItemView: View {
                         .clipped()
                 )
                 .cornerRadius(8)
+                .onTapGesture {
+                    isSheetPresented.toggle()
+                }
             
-            Text("High Protein")
+            Text(title)
             .font(
             Font.custom("Nunito", size: 40)
             .weight(.bold)
@@ -43,9 +50,12 @@ struct CategoryItemView: View {
             
             .padding(.vertical, 17)
         }
+        .sheet(isPresented: $isSheetPresented) {
+            CategoryDetailView(title: title)
+        }
     }
 }
 
 #Preview {
-    CategoryItemView()
+    CategoryItemView(title: "High Carbs")
 }

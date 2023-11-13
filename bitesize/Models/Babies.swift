@@ -13,6 +13,7 @@ struct Babies: Codable, Identifiable {
     var name: String
     var gender: String
     var dob: Date
+    var gizi: [Double]?
     var weight: [Double]
     var height: [Double]
     var hc: [Double]
@@ -20,4 +21,5 @@ struct Babies: Codable, Identifiable {
     var zscore: [Double]
     var nutrition: [Double]
     var timeMeasure: [Date]
+    var savedMenu: [String]?
 }

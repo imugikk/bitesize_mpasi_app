@@ -16,6 +16,8 @@ struct MenuDetailView: View {
     @State private var detailMenu: Menu?
     @EnvironmentObject var firestoreManager: FirestoreManager
     
+    @State private var isBookmarked = false
+    
     var menuId: String
 
     var body: some View {
@@ -104,8 +106,12 @@ struct MenuDetailView: View {
                 firestoreManager.getDetailMenu(menuId: menuId) { fetchMenu in
                     self.detailMenu = fetchMenu
                 }
+                
+                firestoreManager.isMenuSaved(menuId: menuId) { isSaved in
+                    // Update isBookmarked based on the result
+                    isBookmarked = isSaved
+                }
             }
-            //        .edgesIgnoringSafeArea(.top)
             
             .navigationBarBackButtonHidden(true)
             .navigationTitle("Menu Detail")
@@ -126,12 +132,19 @@ struct MenuDetailView: View {
             })
             .toolbar{
                 Button{
-                    print("save")
+                    isBookmarked.toggle()
+                    
+                    if isBookmarked {
+                        firestoreManager.savedMenu(menuId: [menuId])
+                        print("save")
+                    } else {
+                        firestoreManager.deleteSavedMenu(menuId: menuId)
+                    }
+                    
                 } label: {
                     HStack(alignment: .center, spacing: 0) {
-                                        Image(systemName: "bookmark")
-                        
-                                    }
+                        Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                    }
                 }
                 .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                 .padding(.leading, 9)

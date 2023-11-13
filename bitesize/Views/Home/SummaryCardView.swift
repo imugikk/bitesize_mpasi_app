@@ -15,8 +15,10 @@ struct SummaryCardView: View {
     
     @State private var isShowingCaloriesSheet = false
     @State private var isShowingCalculationSheet = false
+    @State private var isShowingEditSheet = false
     
     @State private var babies: [Babies] = []
+    @State private var gizi: [Double] = []
     @State private var menu: [String] = []
     @State private var zScoreView: [Double] = []
     
@@ -45,15 +47,19 @@ struct SummaryCardView: View {
                     .kerning(0.24)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                 
-                Image(systemName: "square.and.pencil")
-                    .font(.system(size: 20))
-                    .foregroundColor(.black)
-                    .padding(.trailing, 16)
+                Button(action:{
+                    isShowingEditSheet.toggle()
+                }) {
+                    Image(systemName: "square.and.pencil")
+                        .font(.system(size: 20))
+                        .foregroundColor(.black)
+                        .padding(.trailing, 16)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             
             HStack{
-                Text(String(format: "%.2f", babies.first?.nutrition.last ?? 0))
+                Text(String(format: "%.1f", babies.first?.nutrition.last ?? 0))
                     .font(
                         Font.custom("Nunito", size: 48)
                             .weight(.bold)
@@ -180,7 +186,7 @@ struct SummaryCardView: View {
                     .padding(.leading, 16)
                     
                     HStack (alignment: .center, spacing: 2.97933){
-                        Text(resultTextCarbs)
+                        Text(gizi == [] ? resultTextCarbs : String(format: "%.1f", gizi[0]) + "g")
                             .font(Font.custom("Inter", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -206,7 +212,7 @@ struct SummaryCardView: View {
                     .frame(width: 105, alignment: .center)
                     
                     HStack (alignment: .center, spacing: 2.97933){
-                        Text(resultTextFat)
+                        Text(gizi == [] ? resultTextFat : String(format: "%.1f", gizi[1]) + "g")
                             .font(Font.custom("Inter", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -232,7 +238,7 @@ struct SummaryCardView: View {
                     .padding(.trailing, 16)
                     
                     HStack (alignment: .center, spacing: 2.97933){
-                        Text(resultTextProtein)
+                        Text(gizi == [] ? resultTextProtein : String(format: "%.1f", gizi[2]) + "g")
                             .font(Font.custom("Inter", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -428,11 +434,19 @@ struct SummaryCardView: View {
                     .padding(32)
                     Spacer()
                 }
+                .sheet(isPresented: $isShowingEditSheet){
+                    EditDataSheet()
+                }
             }
         }.onAppear{
-                firestoreManager.getBabiesData(){ fetchBabies in
-                    self.babies = fetchBabies
-                }
+            firestoreManager.getBabiesData(){ fetchBabies in
+                self.babies = fetchBabies
+            }
+        
+            firestoreManager.getGiziBabies(){ fetchGizi in
+                self.gizi = fetchGizi
+            }
+
         }
         
         .padding(.vertical, 24.43835)

@@ -12,6 +12,9 @@ struct EditDataSheet: View {
     @Environment(\.presentationMode)
     private var presentationMode: Binding<PresentationMode>
     
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
+    @State var calories = ""
     @State var babyWeight = ""
     @State var babyHeight = ""
     @State var babyCircumference = ""
@@ -31,7 +34,7 @@ struct EditDataSheet: View {
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(width: 317, height: 22, alignment: .leading)
                             .padding(.bottom, 4)
-                        TextField("Input your target calories" , text: $babyWeight).padding(.leading, 16)
+                        TextField("Input your target calories" , text: $calories).padding(.leading, 16)
                             .padding(.vertical, 13)
                             .frame(width: 358, height: 50, alignment: .leading)
                             .background(.white)
@@ -89,7 +92,7 @@ struct EditDataSheet: View {
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(width: 317, height: 22, alignment: .leading)
                             .padding(.bottom, 4)
-                        TextField("Input your target protein" , text: $babyWeight).padding(.leading, 16)
+                        TextField("Input your target protein" , text: $babyHeight).padding(.leading, 16)
                             .padding(.vertical, 13)
                             .frame(width: 358, height: 50, alignment: .leading)
                             .background(.white)
@@ -118,7 +121,7 @@ struct EditDataSheet: View {
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(width: 317, height: 22, alignment: .leading)
                             .padding(.bottom, 4)
-                        TextField("Input your target fats" , text: $babyWeight).padding(.leading, 16)
+                        TextField("Input your target fats" , text: $babyCircumference).padding(.leading, 16)
                             .padding(.vertical, 13)
                             .frame(width: 358, height: 50, alignment: .leading)
                             .background(.white)
@@ -154,9 +157,22 @@ struct EditDataSheet: View {
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
+                            firestoreManager.editGiziBabies(calori: [Double(calories) ?? 0], carbs: Double(babyWeight) ?? 0, fat: Double(babyCircumference) ?? 0, protein: Double(babyHeight) ?? 0)
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
                                     Text("Done")
+                                .font(Font.custom("Inter-Regular", size: 16))
+                                .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                            
+                                .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
+                        })
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                                    Text("Cancel")
                                 .font(Font.custom("Inter-Regular", size: 16))
                                 .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                             

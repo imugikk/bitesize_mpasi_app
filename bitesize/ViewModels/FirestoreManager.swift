@@ -28,7 +28,6 @@ class FirestoreManager: ObservableObject {
                 print(error.localizedDescription)
             } else {
                 self.getBabiesData { babies in
-                    // Check if there are babies associated with the logged-in user
                     let hasBabies = !babies.isEmpty
                     completion(hasBabies)
                 }
@@ -188,7 +187,6 @@ class FirestoreManager: ObservableObject {
 
             var menues: [[Any]] = []
             for document in snapshot!.documents {
-//                print("\(document.documentID): \(document.data())")
                 let data = document.data()
                 let menuId = document.documentID as! String
                 let menuName = data["Name"] as! String
@@ -196,9 +194,7 @@ class FirestoreManager: ObservableObject {
                 let menuType = data["Jenis"] as? [String]
                 
                 menues.append([menuName, menuCalories, menuType, menuId])
-//                menues.append(data["Name"] as! String)
             }
-            print(menues)
             completion(menues)
         }
     }
@@ -215,7 +211,6 @@ class FirestoreManager: ObservableObject {
 
             var menues: [[Any]] = []
             for document in snapshot!.documents {
-//                print("\(document.documentID): \(document.data())")
                 let data = document.data()
                 let menuId = document.documentID as! String
                 let menuName = data["Name"] as! String
@@ -223,9 +218,7 @@ class FirestoreManager: ObservableObject {
                 let menuType = data["Jenis"] as! [String]
                 
                 menues.append([menuName, menuCalories, menuType, menuId])
-//                menues.append(data["Name"] as! String)
             }
-            print(menues)
             completion(menues)
         }
     }
@@ -280,18 +273,14 @@ class FirestoreManager: ObservableObject {
             
             let docRef = db.collection("Ingridients").document(i.id)
                         
-            // Check if the document with the specified ID exists
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
-                    // Document exists, update the "sumber" field by adding new data to the array
                     let currentSumber = document.data()?["Sumber"] as? [String] ?? []
-                    print(currentSumber)
                     var updatedSumber = currentSumber
                     if let newSumber = i.Sumber as? [String] {
                         updatedSumber.append(contentsOf: newSumber)
                     }
                     
-                    // Update the document with the new "sumber" array
                     docRef.updateData(["Sumber": updatedSumber]) { error in
                         if let error = error {
                             print("Error updating document: \(error)")
@@ -300,7 +289,6 @@ class FirestoreManager: ObservableObject {
                         }
                     }
                 } else {
-                    // Document doesn't exist, create a new document with the provided data
                     docRef.setData(["Berat": i.Berat, "Kalori": i.Kalori, "Kalori/g": i.KaloriG, "Protein": i.Protein, "Protein/g": i.ProteinG, "Karbo": i.Karbo, "Karbo/g": i.KarboG,"Lemak": i.Lemak, "Lemak/g": i.LemakG, "Sumber": i.Sumber]) { error in
                         if let error = error {
                             print("Error creating document: \(error)")
@@ -377,6 +365,25 @@ class FirestoreManager: ObservableObject {
                     }
                     completion(menues)
                 }
+            } else {
+                let docRef = self.db.collection("Menu")
+                    .whereField("Jenis", arrayContains: "Standar")
+                
+                docRef.getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching data: \(error.localizedDescription)")
+                        completion([])
+                        return
+                    }
+
+                    var menues: [String] = []
+                    
+                    for document in snapshot!.documents {
+                        let data = document.data()
+                        menues.append(data["Name"] as! String)
+                    }
+                    completion(menues)
+                }
             }
         }
     }
@@ -392,10 +399,7 @@ class FirestoreManager: ObservableObject {
                 return
             }
             
-            print("test jg")
-            
             if let document = querySnapshot?.documents.first {
-                // Document with userID already exists, update it
                 let docRef = babiesCollection.document(document.documentID)
 
                 let data = [
@@ -416,19 +420,209 @@ class FirestoreManager: ObservableObject {
                 }
             }
         }
-
-//        docRef.setData(data, merge: true) { error in
-//            if let error = error {
-//                print("Error updating document: \(error)")
-//            } else {
-//                print("Document successfully updated")
-//            }
-//        }
     }
     
     func reloadData() {
         getBabiesData { babies in
-            self.items = babies // Update the @Published property
+            self.items = babies
+        }
+    }
+    
+    func getCategoryMenu(jenis: String, completion: @escaping ([[Any]]) -> Void) {
+        let docRef = db.collection("Menu").whereField("Jenis", arrayContains: jenis)
+        docRef.getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching data: \(error.localizedDescription)")
+                completion([])
+                return
+            }
+
+            var menues: [[Any]] = []
+            for document in snapshot!.documents {
+                let data = document.data()
+                let menuId = document.documentID 
+                let menuName = data["Name"] as! String
+                let menuCalories = data["Calories"] as! Double
+                let menuType = data["Jenis"] as! [String]
+                
+                menues.append([menuName, menuCalories, menuType, menuId])
+            }
+            print(menues)
+            completion(menues)
+        }
+    }
+    
+    func getGiziBabies(completion: @escaping ([Double]) -> Void) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babiesCollection = db.collection("Babies").whereField("userId", isEqualTo: userId)
+        
+        babiesCollection.getDocuments { snapshot, error in
+            if let error = error {
+                print("Error querying documents: \(error)")
+                completion([])
+                return
+            }
+            
+            var gizi: [Double] = []
+            for document in snapshot!.documents {
+                let data = document.data()
+                print(data)
+                if let giziArray = data["gizi"] as? [Double] {
+                    gizi.append(contentsOf: giziArray)
+                }
+            }
+            completion(gizi)
+        }
+    }
+    
+    func editGiziBabies(calori: [Double], carbs: Double, fat: Double, protein: Double) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babiesCollection = db.collection("Babies").whereField("userId", isEqualTo: userId)
+        
+        babiesCollection.getDocuments { snapshot, error in
+            if let error = error {
+                print("Error querying documents: \(error)")
+                return
+            }
+            
+            guard let document = snapshot?.documents.first else {
+                print("Document not found")
+                return
+            }
+            
+            var giziArray = document.data()["gizi"] as? [Double] ?? []
+            
+            giziArray.append(contentsOf: [carbs, fat, protein])
+            
+            document.reference.updateData(["gizi": [carbs, fat, protein], "nutrition": calori]) { error in
+                if let error = error {
+                    print("Error updating document: \(error)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+        }
+    }
+    
+    func savedMenu(menuId: [String]) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
+        
+        babyRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    if var menuIds = document.data()["menuId"] as? [String] {
+                        menuIds.append(contentsOf: menuId)
+                        document.reference.updateData(["menuId": menuIds])
+                    } else {
+                        document.reference.setData(["menuId": menuId], merge: true)
+                    }
+                }
+            }
+        }
+    }
+    
+    func deleteSavedMenu(menuId: String) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
+        
+        babyRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                for document in querySnapshot!.documents {
+                    var menuIdArray = document["menuId"] as? [String] ?? []
+                    
+                    if let index = menuIdArray.firstIndex(of: menuId) {
+                        menuIdArray.remove(at: index)
+                        
+                        document.reference.updateData(["menuId": menuIdArray]) { error in
+                            if let error = error {
+                                print("Error updating document: \(error)")
+                            } else {
+                                print("Document updated successfully")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func isMenuSaved(menuId: String, completion: @escaping (Bool) -> Void) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
+
+        babyRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion(false)
+            } else {
+                if let document = querySnapshot?.documents.first {
+                    let savedMenuIds = document["menuId"] as? [String] ?? []
+                    let isSaved = savedMenuIds.contains(menuId)
+                    completion(isSaved)
+                } else {
+                    completion(false)
+                }
+            }
+        }
+    }
+    
+    func getSavedMenu(completion: @escaping ([[String: Any]]) -> Void) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
+        
+        babyRef.getDocuments { querySnapshot, error in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion([])
+            } else {
+                if let document = querySnapshot?.documents.first {
+                    let menuIds = document["menuId"] as? [String] ?? []
+                    var menuDataArray: [[String: Any]] = []
+                    
+                    let dispatchGroup = DispatchGroup()
+                    for menuId in menuIds {
+                        dispatchGroup.enter()
+                        let menuRef = self.db.collection("Menu").document(menuId)
+                        menuRef.getDocument { menuDocument, menuError in
+                            defer {
+                                dispatchGroup.leave()
+                            }
+
+                            if let menuError = menuError {
+                                print("Error getting menu document: \(menuError)")
+                            } else if let menuDocument = menuDocument, menuDocument.exists {
+                                // Get the menu data and add it to the array
+                                let data = menuDocument.data() ?? [:]
+                                let menuName = data["Name"] as? String ?? ""
+                                let menuCalories = data["Calories"] as? Double ?? 0.0
+                                let menuType = data["Jenis"] as? [String] ?? []
+                                let bahan = data["Bahan"] as? [String:[String: String]] ?? [:]
+
+                                let menuDictionary: [String: Any] = [
+                                    "menuId": menuId,
+                                    "menuName": menuName,
+                                    "menuCalories": menuCalories,
+                                    "menuType": menuType,
+                                    "bahan": bahan
+                                ]
+
+                                menuDataArray.append(menuDictionary)
+                            }
+                        }
+                    }
+                    
+                    dispatchGroup.notify(queue: .main) {
+                        completion(menuDataArray)
+                    }
+                } else {
+                    completion([])
+                }
+            }
         }
     }
 }

@@ -80,6 +80,14 @@
 		F12E59AD2AC33AEA0073FB1A /* Babies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59AC2AC33AEA0073FB1A /* Babies.swift */; };
 		F12E59BA2AC341F90073FB1A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59B92AC341F90073FB1A /* Users.swift */; };
 		F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */; };
+		F13B5D272B04857800341B94 /* SphereNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D202B04857800341B94 /* SphereNode.swift */; };
+		F13B5D282B04857800341B94 /* ViewController+CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D212B04857800341B94 /* ViewController+CoachingOverlay.swift */; };
+		F13B5D292B04857800341B94 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D222B04857800341B94 /* RoundedButton.swift */; };
+		F13B5D2A2B04857800341B94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F13B5D232B04857800341B94 /* Main.storyboard */; };
+		F13B5D2B2B04857800341B94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D242B04857800341B94 /* ViewController.swift */; };
+		F13B5D2C2B04857800341B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D252B04857800341B94 /* AppDelegate.swift */; };
+		F13B5D2D2B04857800341B94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D262B04857800341B94 /* Extensions.swift */; };
+		F13B5D2F2B04868100341B94 /* ARKit Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B5D2E2B04868100341B94 /* ARKit Manager.swift */; };
 		F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2E92AEA0CD800CDA921 /* MenuView.swift */; };
 		F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2EB2AEA12B700CDA921 /* HeaderView.swift */; };
 		F174A2EF2AEA135E00CDA921 /* WeekStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174A2EE2AEA135E00CDA921 /* WeekStore.swift */; };
@@ -109,6 +117,7 @@
 		F1C5242B2AFF5F4D005B69FA /* AddDataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */; };
 		F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5242D2AFF60D0005B69FA /* ProfileViewModel.swift */; };
 		F1C524302AFF60FA005B69FA /* BabyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5242F2AFF60FA005B69FA /* BabyUser.swift */; };
+		F1C524322B026B54005B69FA /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C524312B026B54005B69FA /* CategoryDetailView.swift */; };
 		F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CBBF392ADD621C003A6B81 /* RegisterView.swift */; };
 		F1CBBF3C2ADD622B003A6B81 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CBBF3B2ADD622B003A6B81 /* LoginView.swift */; };
 		F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CBBF3E2ADD63FC003A6B81 /* RegisterManager.swift */; };
@@ -219,6 +228,14 @@
 		F12E59AC2AC33AEA0073FB1A /* Babies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Babies.swift; sourceTree = "<group>"; };
 		F12E59B92AC341F90073FB1A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F12E59BB2AC3D2290073FB1A /* BabyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyInputView.swift; sourceTree = "<group>"; };
+		F13B5D202B04857800341B94 /* SphereNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereNode.swift; sourceTree = "<group>"; };
+		F13B5D212B04857800341B94 /* ViewController+CoachingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+CoachingOverlay.swift"; sourceTree = "<group>"; };
+		F13B5D222B04857800341B94 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F13B5D232B04857800341B94 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F13B5D242B04857800341B94 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F13B5D252B04857800341B94 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F13B5D262B04857800341B94 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F13B5D2E2B04868100341B94 /* ARKit Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARKit Manager.swift"; sourceTree = "<group>"; };
 		F174A2E92AEA0CD800CDA921 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F174A2EB2AEA12B700CDA921 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F174A2EE2AEA135E00CDA921 /* WeekStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStore.swift; sourceTree = "<group>"; };
@@ -251,6 +268,7 @@
 		F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataSheet.swift; sourceTree = "<group>"; };
 		F1C5242D2AFF60D0005B69FA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F1C5242F2AFF60FA005B69FA /* BabyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyUser.swift; sourceTree = "<group>"; };
+		F1C524312B026B54005B69FA /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		F1CBBF392ADD621C003A6B81 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F1CBBF3B2ADD622B003A6B81 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F1CBBF3E2ADD63FC003A6B81 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
@@ -367,6 +385,20 @@
 				42D22CB32B01EBAB0091E21D /* EditDataSheet.swift */,
 			);
 			path = Progress;
+			sourceTree = "<group>";
+		};
+		F13B5D1F2B04834000341B94 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				F13B5D252B04857800341B94 /* AppDelegate.swift */,
+				F13B5D262B04857800341B94 /* Extensions.swift */,
+				F13B5D232B04857800341B94 /* Main.storyboard */,
+				F13B5D222B04857800341B94 /* RoundedButton.swift */,
+				F13B5D202B04857800341B94 /* SphereNode.swift */,
+				F13B5D242B04857800341B94 /* ViewController.swift */,
+				F13B5D212B04857800341B94 /* ViewController+CoachingOverlay.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 		F174A2E82AEA0CAE00CDA921 /* Menu */ = {
@@ -488,6 +520,7 @@
 				8B7B2C552AC6F989003F4C6F /* ZScoreCalculator.swift */,
 				8B7B2C712ACFB85F003F4C6F /* CaloriesNeededCalculator.swift */,
 				F1CBBF502ADD6C59003A6B81 /* UserManager.swift */,
+				F13B5D2E2B04868100341B94 /* ARKit Manager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -495,6 +528,7 @@
 		F1ABDF902AC28CE3005AAEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F13B5D1F2B04834000341B94 /* AR */,
 				8B01397A2AFC9EE7001FE3DE /* Profile */,
 				8B3E1D032AF1E82E002B5BC6 /* Progress */,
 				F174A2E82AEA0CAE00CDA921 /* Menu */,
@@ -563,6 +597,7 @@
 				8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */,
 				8B3E1CF62AE0E167002B5BC6 /* CategoryItemView.swift */,
 				8B3E1D082AF1FAD3002B5BC6 /* SummaryCardView.swift */,
+				F1C524312B026B54005B69FA /* CategoryDetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -719,6 +754,7 @@
 				42F865932B0213E500C03DC6 /* Inter-Light.ttf in Resources */,
 				42F865B32B02187200C03DC6 /* Nunito-ExtraBoldItalic.ttf in Resources */,
 				42F865902B0213E500C03DC6 /* Inter-Medium.ttf in Resources */,
+				F13B5D2A2B04857800341B94 /* Main.storyboard in Resources */,
 				42F865AA2B02187200C03DC6 /* Nunito-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,10 +799,13 @@
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,
 				8BD66E882AF9FBE100420C25 /* SecureTextFieldParentProtocol.swift in Sources */,
 				F1C524252AFF5E82005B69FA /* TermsView.swift in Sources */,
+				F1C524322B026B54005B69FA /* CategoryDetailView.swift in Sources */,
 				F174A2EA2AEA0CD800CDA921 /* MenuView.swift in Sources */,
 				F1C524192AFF4931005B69FA /* ZScoreSheetHeightView.swift in Sources */,
 				F1C524292AFF5E9E005B69FA /* YourAccountView.swift in Sources */,
 				8BD66E902AFBC55200420C25 /* AutheticationViewModel.swift in Sources */,
+				F13B5D282B04857800341B94 /* ViewController+CoachingOverlay.swift in Sources */,
+				F13B5D292B04857800341B94 /* RoundedButton.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
 				8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */,
@@ -799,11 +838,15 @@
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
+				F13B5D272B04857800341B94 /* SphereNode.swift in Sources */,
 				F1CBBF3A2ADD621C003A6B81 /* RegisterView.swift in Sources */,
+				F13B5D2F2B04868100341B94 /* ARKit Manager.swift in Sources */,
+				F13B5D2C2B04857800341B94 /* AppDelegate.swift in Sources */,
 				8BD66E862AF9FB9300420C25 /* SecuredTextFieldView.swift in Sources */,
 				8BD66E8A2AFBC4C300420C25 /* RequirementsPickerView.swift in Sources */,
 				F12E59BC2AC3D2290073FB1A /* BabyInputView.swift in Sources */,
 				8B7B2C762AD176C5003F4C6F /* LMSHeadGirls.swift in Sources */,
+				F13B5D2D2B04857800341B94 /* Extensions.swift in Sources */,
 				F1C524132AFF4903005B69FA /* HeightView.swift in Sources */,
 				8B7B2C642ACD1C58003F4C6F /* InformationView.swift in Sources */,
 				42DD91102AFF8A0900820AF6 /* FAQSheet5.swift in Sources */,
@@ -813,6 +856,7 @@
 				8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */,
 				F1C524112AFF48F7005B69FA /* HeadView.swift in Sources */,
 				8B7B2C562AC6F989003F4C6F /* ZScoreCalculator.swift in Sources */,
+				F13B5D2B2B04857800341B94 /* ViewController.swift in Sources */,
 				42D22CB22B01DEC60091E21D /* ResultView.swift in Sources */,
 				F1DA471A2AD30383008BE71D /* Menu.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
@@ -985,9 +1029,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bitesize/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For AR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "armv7 arkit";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1017,9 +1067,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bitesize/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For AR";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "armv7 arkit";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

@@ -10,10 +10,22 @@ import SwiftUI
 struct SavedMenuView: View {
     @Environment(\.presentationMode)
     private var presentationMode: Binding<PresentationMode>
+    
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    @State private var savedMenu: [Any] = []
+    
     var body: some View {
         
         NavigationStack{
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            VStack{
+                Text("hello world")
+            }
+            .onAppear{
+                firestoreManager.getSavedMenu{ fetchMenu in
+                    self.savedMenu = fetchMenu
+                    print(fetchMenu)
+                }
+            }
         }
         
         
