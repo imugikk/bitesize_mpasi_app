@@ -17,10 +17,18 @@ struct Onboarding1View: View {
     var body: some View {
         
             VStack{
+                VStack(alignment: .center, spacing: 60) {
+                    
+                    Image("\(page.imageUrl)")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                        .padding(.bottom, 60)
+                        .padding(.top, 64)
+                        
+                }
+                .padding(0)
                 
-                Image("\(page.imageUrl)")
-                    .padding(.bottom, 80)
-                    .padding(.top, 46)
+                    
                 
                 
                 VStack(alignment: .leading, spacing: 20) {
@@ -82,22 +90,24 @@ struct Onboarding1View: View {
             
             //Custom Navigation Title
                 .navigationTitle("")
-                .toolbar{
-                    Button{
-                        print("save")
-                    } label: {
-                        HStack(alignment: .center, spacing: 0) {
-                            Text("Skip")
-                        
-                        }
-                    }
-                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-                    .padding(.leading, 9)
-                    .padding(.trailing, 16)
-                    .padding(.vertical, 9)
-                    .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
-
-                }
+//                .toolbar{
+//                    Button{
+//                        print("save")
+//                    } label: {
+//                        
+//                      
+//                        HStack(alignment: .center, spacing: 0) {
+//                            Text("Skip")
+//                        
+//                        }
+//                    }
+//                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+//                    .padding(.leading, 9)
+//                    .padding(.trailing, 16)
+//                    .padding(.vertical, 9)
+//                    .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
+//
+//                }
                 .navigationBarTitleDisplayMode(.inline)
         
     }

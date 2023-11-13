@@ -50,7 +50,12 @@ struct ResultView: View {
                 HStack {
                     Image("ResultBanner")
                 }
+                
+                
                 //Masukin SummaryCardView
+                
+                
+                
                 Button(action: {
                     showSheetEditData.toggle()
                 }, label: {

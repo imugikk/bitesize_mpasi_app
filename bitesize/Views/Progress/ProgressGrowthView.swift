@@ -30,6 +30,7 @@ struct ProgressGrowthView: View {
                             Rectangle()
                                 .fill(color)
                                 .cornerRadius(20)
+                            
                                 .opacity(selectedIndex ? 1 : 0.01)
                                 .onTapGesture {
                                     withAnimation(.interactiveSpring(response: 0.2,
