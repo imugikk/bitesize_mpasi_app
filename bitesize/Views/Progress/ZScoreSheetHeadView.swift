@@ -120,13 +120,14 @@ struct ZScoreSheetHeadView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
                 }
+                .frame(width: 326, height: 24.5, alignment: .topLeading)
                 
                 HStack{
                     Text("Normal")
                     .font(Font.custom("Inter", size: 12))
                     .kerning(0.2)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                    .frame(width: 152 , alignment: .leading)
+                    .frame(width: 149 , alignment: .leading)
                     
                     Text("-2 SD sampai dengan < +2 SD")
                     .font(Font.custom("Inter", size: 12))
@@ -135,6 +136,7 @@ struct ZScoreSheetHeadView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
                 }
+                .frame(width: 326, height: 24.5, alignment: .topLeading)
                 
                 HStack{
                     Text("Makrosefali")
@@ -150,9 +152,7 @@ struct ZScoreSheetHeadView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
                 }
-                
-                Spacer()
-
+                .frame(width: 326, height: 24.5, alignment: .topLeading)
             }
             .padding(16)
             .frame(maxWidth: .infinity, minHeight: 178, maxHeight: 178, alignment: .topLeading)

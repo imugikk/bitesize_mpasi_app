@@ -21,7 +21,6 @@ struct HeadView: View {
     var body: some View {
         
         HStack(){
-            Spacer()
             VStack{
                 Text("Initial Data")
                     .font(
@@ -38,7 +37,7 @@ struct HeadView: View {
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
-            }.padding(10)
+            }.padding(16)
             Spacer()
             VStack{
                 Text("Lastest Data")
@@ -56,7 +55,7 @@ struct HeadView: View {
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
-            }.padding(10)
+            }.padding(16)
             Spacer()
             VStack{
                 Text("Difference")
@@ -74,8 +73,7 @@ struct HeadView: View {
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
-            }.padding(10)
-            Spacer()
+            }.padding(16)
         }
         .navigationBarBackButtonHidden()
             .onAppear{
@@ -126,7 +124,6 @@ struct HeadView: View {
         .padding(.top, 24)
         
         HStack{
-            Spacer()
             VStack(alignment: .leading){
                 Text("\(babies.first?.name ?? "")'s Z Score:")
                     .font(
@@ -138,7 +135,7 @@ struct HeadView: View {
                         .weight(.semibold)
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-            }.padding(10)
+            }.padding(16)
             Spacer()
             VStack(alignment: .leading){
                 
@@ -161,8 +158,7 @@ struct HeadView: View {
                         Font.custom("Inter", size: 11)
                     ).foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
                     .padding(.top, 0.5)
-            }.padding(10)
-            Spacer()
+            }.padding(16)
         }
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         .cornerRadius(8)
