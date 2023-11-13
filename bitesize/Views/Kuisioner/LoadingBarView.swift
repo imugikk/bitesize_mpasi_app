@@ -9,14 +9,17 @@ import SwiftUI
 
 struct LoadingBarView: View {
     
-    @State private var containerWidth: CGFloat = 0
+    @State var containerWidth: CGFloat = 0
+    @State var progressTitle: String = ""
+    @State var progress: Int = 0
+    @Binding var isActive: Bool
     
     var maxWidth: Double {
-        return min((containerWidth / CGFloat(goal) * CGFloat(step)), containerWidth)
+        return min(Double(progress), containerWidth)
     }
     
-    private var goal = 4
-    @State private var step = 1
+     var goal = 4
+    @State var step = 1
     
     var body: some View {
         VStack {
@@ -47,13 +50,45 @@ struct LoadingBarView: View {
             }
             .fixedSize(horizontal: false, vertical: true)
             .padding(16)
+            .onAppear{
+                progress = 0
+                 
+                 Task{
+                     for i in 1...100 {
+                         try await Task.sleep(until: .now.advanced(by: .milliseconds(50)), clock: ContinuousClock())
+                         
+                         progressTitle = "\(i)%"
+                         progress = Int(Double(containerWidth) / 100 * Double(i))
+                         
+                     }
+                 }
+            }
+            .onChange(of: progress) { newValue in
+                print (newValue)
+                if newValue >= 398 {
+                    isActive = true
+                }
+            }
             
-            
+//            Button("Start") {
+//               progress = 0
+//                
+//                Task{
+//                    for i in 1...100 {
+//                        try await Task.sleep(until: .now.advanced(by: .milliseconds(50)), clock: ContinuousClock())
+//                        
+//                        progressTitle = "\(i)%"
+//                        progress = Int(Double(containerWidth) / 100 * Double(i))
+//                        
+//                    }
+//                }
+//                
+//            }
         }
         
     }
 }
 
-#Preview {
-    LoadingBarView()
-}
+//#Preview {
+//    LoadingBarView()
+//}
