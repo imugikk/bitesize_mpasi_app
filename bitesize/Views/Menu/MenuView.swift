@@ -23,8 +23,8 @@ struct MenuView: View {
                 HStack {
                     Text("My Menu")
                         .font(
-                            Font.custom("Nunito", size: 32)
-                                .weight(.semibold)
+                            Font.custom("Nunito-SemiBold", size: 32)
+                                
                         )
                         .kerning(0.32)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -40,24 +40,24 @@ struct MenuView: View {
                 HStack(alignment: .center, spacing: 8) {
                     Text("Calories Count")
                         .font(
-                            Font.custom("Nunito", size: 20)
-                                .weight(.semibold)
+                            Font.custom("Nunito-SemiBold", size: 20)
+                                
                         )
                         .kerning(0.24)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
                     Text("\(String(format: "%.2f", totalCalories))/\(String(format: "%.2f", babies.first?.nutrition.last ?? 0))")
                         .font(
-                            Font.custom("Nunito", size: 24)
-                                .weight(.bold)
+                            Font.custom("Nunito-Bold", size: 24)
+                                
                         )
                         .kerning(0.28)
                         .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     
                     Text("kcal")
                         .font(
-                            Font.custom("Nunito", size: 24)
-                                .weight(.semibold)
+                            Font.custom("Nunito-SemiBold", size: 24)
+                               
                         )
                         .kerning(0.24)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -72,8 +72,8 @@ struct MenuView: View {
                     HStack{
                         Text("Meal Entrée")
                             .font(
-                                Font.custom("Nunito", size: 24)
-                                    .weight(.semibold)
+                                Font.custom("Nunito-SemiBold", size: 24)
+                                    
                             )
                             .kerning(0.24)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -102,8 +102,8 @@ struct MenuView: View {
                     HStack{
                         Text("Nourishing Bite")
                             .font(
-                                Font.custom("Nunito", size: 24)
-                                    .weight(.semibold)
+                                Font.custom("Nunito-SemiBold", size: 24)
+                                    
                             )
                             .kerning(0.24)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
