@@ -12,6 +12,7 @@
 		42D22CAE2B0140FC0091E21D /* LoadingViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */; };
 		42D22CB02B01B7780091E21D /* LoadingBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CAF2B01B7780091E21D /* LoadingBarView.swift */; };
 		42D22CB22B01DEC60091E21D /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CB12B01DEC60091E21D /* ResultView.swift */; };
+		42D22CB42B01EBAB0091E21D /* EditDataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CB32B01EBAB0091E21D /* EditDataSheet.swift */; };
 		42DD91082AFF857600820AF6 /* FAQSheet2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91072AFF857600820AF6 /* FAQSheet2.swift */; };
 		42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD91092AFF860800820AF6 /* FAQSheet3.swift */; };
 		42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */; };
@@ -122,6 +123,7 @@
 		42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewMain.swift; sourceTree = "<group>"; };
 		42D22CAF2B01B7780091E21D /* LoadingBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBarView.swift; sourceTree = "<group>"; };
 		42D22CB12B01DEC60091E21D /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		42D22CB32B01EBAB0091E21D /* EditDataSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataSheet.swift; sourceTree = "<group>"; };
 		42DD91072AFF857600820AF6 /* FAQSheet2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet2.swift; sourceTree = "<group>"; };
 		42DD91092AFF860800820AF6 /* FAQSheet3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet3.swift; sourceTree = "<group>"; };
 		42DD910D2AFF87C300820AF6 /* FAQSheet4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSheet4.swift; sourceTree = "<group>"; };
@@ -260,7 +262,6 @@
 		8B3E1D032AF1E82E002B5BC6 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */,
 				8B3E1D042AF1E9B1002B5BC6 /* ProgressView.swift */,
 				F1C5240E2AFF48A8005B69FA /* ProgressGrowthView.swift */,
 				F1C524102AFF48F7005B69FA /* HeadView.swift */,
@@ -269,6 +270,8 @@
 				F1C524162AFF4920005B69FA /* ZScoreSheetHeadView.swift */,
 				F1C524182AFF4931005B69FA /* ZScoreSheetHeightView.swift */,
 				F1C5241A2AFF493F005B69FA /* ZScoreSheetView.swift */,
+				F1C5242A2AFF5F4D005B69FA /* AddDataSheet.swift */,
+				42D22CB32B01EBAB0091E21D /* EditDataSheet.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				8B3E1CF72AE0E167002B5BC6 /* CategoryItemView.swift in Sources */,
 				F174A2F12AEA139000CDA921 /* Week.swift in Sources */,
 				8B7B2C5E2ACA635F003F4C6F /* LMSData.swift in Sources */,
+				42D22CB42B01EBAB0091E21D /* EditDataSheet.swift in Sources */,
 				F1E51BF72ACBBFDA0083F06A /* GraphView.swift in Sources */,
 				F1ABDF672AC28CA8005AAEC3 /* ContentView.swift in Sources */,
 				8BD66E822AF89F3200420C25 /* HowToMakeView.swift in Sources */,

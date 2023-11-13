@@ -24,6 +24,8 @@ enum Gender: CaseIterable{
 }
 
 struct ContentView: View {
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
     
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var babies: [Babies] = []

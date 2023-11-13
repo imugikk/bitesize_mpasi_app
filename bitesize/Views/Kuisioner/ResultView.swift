@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ResultView: View {
+    @State var showSheetEditData: Bool = false
+
     var body: some View {
+      
+
         NavigationStack{
             
         Text("Results")
@@ -46,49 +50,57 @@ struct ResultView: View {
                 HStack {
                     Image("ResultBanner")
                 }
-               
+                Button(action: {
+                    showSheetEditData.toggle()
+                }, label: {
+                    HStack(alignment: .center, spacing: 4) {
+                        
+                        Text("I want to add my own target")
+                            .font(
+                                Font.custom("Inter", size: 14)
+                                    .weight(.medium)
+                            )
+                            .kerning(0.4)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .frame(width: 358, height: 36, alignment: .center)
+                    .background(.white)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .inset(by: 0.5)
+                            .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
+                    )
+
+                    
+                })
+                .sheet(isPresented: $showSheetEditData, content: {
+                    EditDataSheet()
+                        .presentationDragIndicator(.visible)
+                })
                 
-                HStack(alignment: .center, spacing: 4) {
-               
-                    Text("I want to add my own target")
-                      .font(
-                        Font.custom("Inter", size: 14)
-                          .weight(.medium)
-                      )
-                      .kerning(0.4)
-                      .multilineTextAlignment(.center)
-                      .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-                }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 8)
-                .frame(width: 358, height: 36, alignment: .center)
-                .background(.white)
-                .cornerRadius(8)
-                .overlay(
-                  RoundedRectangle(cornerRadius: 8)
-                    .inset(by: 0.5)
-                    .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
-                )
-                
-                HStack(alignment: .center, spacing: 4) {
-                   
+                                NavigationLink(destination: HomeView()) {
                     Text("Use this data")
-                      .font(
-                        Font.custom("Inter", size: 14)
-                          .weight(.medium)
-                      )
-                      .kerning(0.4)
-                      .multilineTextAlignment(.center)
-                      .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+                        .font(
+                            Font.custom("Inter", size: 14)
+                                .weight(.medium)
+                        )
+                        .kerning(0.4)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
                     
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 16)
                 .padding(.vertical, 8)
                 .frame(width: 358, height: 36, alignment: .center)
                 .background(Color(red: 0.18, green: 0.56, blue: 0.42))
                 .cornerRadius(8)
+                
             }
-            
+                
             
             Spacer()
             }.navigationBarHidden(true)
