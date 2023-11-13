@@ -43,6 +43,9 @@
 		42F865B52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf */; };
 		42F865B62B02187200C03DC6 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A62B02187200C03DC6 /* Nunito-LightItalic.ttf */; };
 		42F865B72B02187200C03DC6 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42F865A72B02187200C03DC6 /* Nunito-Black.ttf */; };
+		42F865BA2B0252B900C03DC6 /* Onboarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865B92B0252B900C03DC6 /* Onboarding1View.swift */; };
+		42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865BD2B025A1600C03DC6 /* Onboarding.swift */; };
+		42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -181,6 +184,9 @@
 		42F865A52B02187200C03DC6 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		42F865A62B02187200C03DC6 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		42F865A72B02187200C03DC6 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		42F865B92B0252B900C03DC6 /* Onboarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1View.swift; sourceTree = "<group>"; };
+		42F865BD2B025A1600C03DC6 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMain.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -333,6 +339,15 @@
 			path = "Nunito Font";
 			sourceTree = "<group>";
 		};
+		42F865B82B0252A100C03DC6 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				42F865B92B0252B900C03DC6 /* Onboarding1View.swift */,
+				42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		8B01397A2AFC9EE7001FE3DE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +488,7 @@
 				F1DA47192AD30383008BE71D /* Menu.swift */,
 				F174A2F02AEA139000CDA921 /* Week.swift */,
 				F1C5242F2AFF60FA005B69FA /* BabyUser.swift */,
+				42F865BD2B025A1600C03DC6 /* Onboarding.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -495,6 +511,7 @@
 		F1ABDF902AC28CE3005AAEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42F865B82B0252A100C03DC6 /* OnBoarding */,
 				8B01397A2AFC9EE7001FE3DE /* Profile */,
 				8B3E1D032AF1E82E002B5BC6 /* Progress */,
 				F174A2E82AEA0CAE00CDA921 /* Menu */,
@@ -777,6 +794,7 @@
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */,
+				42F865BA2B0252B900C03DC6 /* Onboarding1View.swift in Sources */,
 				42DD910A2AFF860800820AF6 /* FAQSheet3.swift in Sources */,
 				42D22CAE2B0140FC0091E21D /* LoadingViewMain.swift in Sources */,
 				F1C524302AFF60FA005B69FA /* BabyUser.swift in Sources */,
@@ -796,6 +814,7 @@
 				F1C524232AFF5E78005B69FA /* SavedMenuView.swift in Sources */,
 				42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
+				42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
@@ -819,6 +838,7 @@
 				8B3E1D052AF1E9B1002B5BC6 /* ProgressView.swift in Sources */,
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
+				42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
 				42D22CA42B013C310091E21D /* GifImage.swift in Sources */,
 				F1C5241F2AFF5E5A005B69FA /* FAQSheet1.swift in Sources */,
