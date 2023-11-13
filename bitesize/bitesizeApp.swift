@@ -16,10 +16,10 @@ struct bitesizeApp: App {
     
     var body: some Scene {
         WindowGroup {
-           LoadingViewMain()
+//           LoadingViewMain()
             
-//            LoginView()
-//                .environmentObject(firestoreManager)
+            LoginView()
+                .environmentObject(firestoreManager)
         }
     }
 }
