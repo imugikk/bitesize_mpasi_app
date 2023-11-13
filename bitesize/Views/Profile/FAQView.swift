@@ -24,16 +24,13 @@ struct FAQView: View {
                 }, label: {
                     HStack {
                         Text("What is Z Score ?")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
                         Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
+                            .font(.title3)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
                             .padding(.trailing, 32)
@@ -55,16 +52,13 @@ struct FAQView: View {
                 }, label: {
                     HStack {
                         Text("How to Calculate Z Score ?")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
                         Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
+                            .font(.title3)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
                             .padding(.trailing, 32)
@@ -86,16 +80,13 @@ struct FAQView: View {
                 }, label: {
                     HStack {
                         Text("What is the Importance of Z Score ?")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
                         Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
+                            .font(.title3)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
                             .padding(.trailing, 32)
@@ -118,16 +109,13 @@ struct FAQView: View {
                 }, label: {
                     HStack {
                         Text("How to Calculate Calories Target ?")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
                         Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
+                            .font(.title3)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
                             .padding(.trailing, 32)
@@ -148,16 +136,13 @@ struct FAQView: View {
                 }, label: {
                     HStack {
                         Text("How to Calculate Nutrition Target ?")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
                             .padding(.leading, 16)
                         
                         Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
+                            .font(.title3)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
                             .padding(.trailing, 32)
@@ -188,7 +173,7 @@ struct FAQView: View {
                     Image("BackIcon")
                         .frame(width: 18, height: 24)
                     Text("FAQ")
-                        .font(Font.custom("Inter", size: 16))
+                        .font(Font.custom("Inter-Regular", size: 16))
                         .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     
                         .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)

@@ -25,16 +25,16 @@ struct WeightView: View {
             VStack{
                 Text("Initial Data")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text("(\(babies.first?.timeMeasure.first.map { DateFormatter.localizedString(from: $0, dateStyle: .short, timeStyle: .none) } ?? "Now"))")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text(String(format: "%.1f", babies.first?.weight.first ?? 0) + "kg" )
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                           
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
@@ -45,16 +45,15 @@ struct WeightView: View {
             VStack{
                 Text("Lastest Data")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text("(\(babies.first?.timeMeasure.last.map { DateFormatter.localizedString(from: $0, dateStyle: .short, timeStyle: .none) } ?? "Now"))")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text(String(format: "%.1f", babies.first?.weight.last ?? 0) + "kg")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
@@ -65,16 +64,16 @@ struct WeightView: View {
             VStack{
                 Text("Difference")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text("(\(countDays()))")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text(String(format: "%.1f", (babies.first?.weight.last ?? 0) - (babies.first?.weight.first ?? 0)) + "kg")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                            
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
@@ -99,8 +98,7 @@ struct WeightView: View {
             // Space Between
             Text("Z Score")
                 .font(
-                    Font.custom("Nunito", size: 24)
-                        .weight(.semibold)
+                    Font.custom("Nunito-SemiBold", size: 24)
                 )
                 .kerning(0.24)
                 .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -114,8 +112,7 @@ struct WeightView: View {
             } label: {
                 Text("Learn More")
                     .font(
-                        Font.custom("Inter", size: 14)
-                            .weight(.medium)
+                        Font.custom("Inter-Medium", size: 14)
                     )
                     .kerning(0.4)
                     .multilineTextAlignment(.center)
@@ -134,11 +131,11 @@ struct WeightView: View {
             VStack(alignment: .leading){
                 Text("\(babies.first?.name ?? "")'s Z Score:")
                     .font(
-                        Font.custom("Inter", size: 12)
+                        Font.custom("Inter-Regular", size: 12)
                     )
                 Text(String(format: "%.2f", babies.first?.zscore[0] ?? 0))
                     .font(
-                        Font.custom("Inter", size: 32)
+                        Font.custom("Inter-Regular", size: 32)
                             .weight(.semibold)
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
@@ -150,19 +147,19 @@ struct WeightView: View {
                 
                 Text("Weight: \(weightString)")
                     .font(
-                        Font.custom("Inter", size: 11)
+                        Font.custom("Inter-Regular", size: 11)
                     ).foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
                     .padding(.top, 0.5)
                 
                 
                 Text("Age: 5 Months")
                     .font(
-                        Font.custom("Inter", size: 11)
+                        Font.custom("Inter-Regular", size: 11)
                     ).foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
                     .padding(.top, 0.5)
                 Text("Last Update: 06/06/2023")
                     .font(
-                        Font.custom("Inter", size: 11)
+                        Font.custom("Inter-Regular", size: 11)
                     ).foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
                     .padding(.top, 0.5)
             }.padding(10)

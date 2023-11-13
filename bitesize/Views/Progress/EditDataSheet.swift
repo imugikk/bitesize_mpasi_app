@@ -24,8 +24,8 @@ struct EditDataSheet: View {
                         
                         Text("Calories (ccal)")
                             .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
+                                Font.custom("Inter-SemiBold", size: 16)
+                                    
                             )
                             .kerning(0.16)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -53,8 +53,8 @@ struct EditDataSheet: View {
                         
                         Text("Carbohydrates (g)")
                             .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
+                                Font.custom("Inter-SemiBold", size: 16)
+                                    
                             )
                             .kerning(0.16)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -82,8 +82,8 @@ struct EditDataSheet: View {
                         
                         Text("Protein (g)")
                             .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
+                                Font.custom("Inter-SemiBold", size: 16)
+                                    
                             )
                             .kerning(0.16)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -111,8 +111,8 @@ struct EditDataSheet: View {
                         
                         Text("Fats (g)")
                             .font(
-                                Font.custom("Inter", size: 16)
-                                    .weight(.semibold)
+                                Font.custom("Inter-SemiBold", size: 16)
+                             
                             )
                             .kerning(0.16)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -157,7 +157,7 @@ struct EditDataSheet: View {
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
                                     Text("Done")
-                                .font(Font.custom("Inter", size: 16))
+                                .font(Font.custom("Inter-Regular", size: 16))
                                 .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                             
                                 .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)

@@ -70,7 +70,7 @@ struct YourAccountView: View {
                     Image("BackIcon")
                         .frame(width: 18, height: 24)
                             Text("Profile")
-                        .font(Font.custom("Inter", size: 16))
+                        .font(Font.custom("Inter-Regular", size: 16))
                         .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     
                         .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
@@ -111,8 +111,8 @@ struct personalInformation: View {
             
             Text("Name")
               .font(
-                Font.custom("Inter", size: 16)
-                  .weight(.semibold)
+                Font.custom("Inter-SemiBold", size: 16)
+                  
               )
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -140,8 +140,8 @@ struct personalInformation: View {
             
             Text("Email")
               .font(
-                Font.custom("Inter", size: 16)
-                  .weight(.semibold)
+                Font.custom("Inter-SemiBold", size: 16)
+                  
               )
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -180,8 +180,8 @@ struct changePassword: View {
             
             Text("Old Password")
               .font(
-                Font.custom("Inter", size: 16)
-                  .weight(.semibold)
+                Font.custom("Inter-SemiBold", size: 16)
+                 
               )
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -211,8 +211,7 @@ struct changePassword: View {
             
             Text("New Password")
               .font(
-                Font.custom("Inter", size: 16)
-                  .weight(.semibold)
+                Font.custom("Inter-SemiBold", size: 16)
               )
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -242,8 +241,7 @@ struct changePassword: View {
             
             Text("Confirm Password")
               .font(
-                Font.custom("Inter", size: 16)
-                  .weight(.semibold)
+                Font.custom("Inter-SemiBold", size: 16)
               )
               .kerning(0.16)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -274,8 +272,7 @@ struct changePassword: View {
         HStack{
             Text("Update Password")
               .font(
-                Font.custom("Inter", size: 14)
-                  .weight(.medium)
+                Font.custom("Inter-SemiBold", size: 14)
               )
               .kerning(0.4)
               .multilineTextAlignment(.center)
@@ -299,7 +296,7 @@ struct TextButtonStyle2: ViewModifier {
         content
             .padding(.horizontal, 16)
             .padding(.vertical, 4)
-            .font(Font.custom("Inter", size: 16).weight(.medium))
+            .font(Font.custom("Inter-Medium", size: 16))
             .kerning(0.2)
             .multilineTextAlignment(.center)
             .foregroundColor(selectedSegment == tag ? Color.white : Color(red: 0.16, green: 0.49, blue: 0.36))

@@ -27,8 +27,8 @@ struct AddDataSheet: View {
                 
                 Text("Weight (Kg)")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                            
                     )
                     .kerning(0.16)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -56,8 +56,8 @@ struct AddDataSheet: View {
                 
                 Text("Height (cm)")
                     .font(
-                        Font.custom("Inter", size: 16)
-                            .weight(.semibold)
+                        Font.custom("Inter-SemiBold", size: 16)
+                            
                     )
                     .kerning(0.16)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -87,7 +87,7 @@ struct AddDataSheet: View {
                 
                 Text("Head Circumference (cm)")
                     .font(
-                        Font.custom("Inter", size: 16)
+                        Font.custom("Inter-SemiBold", size: 16)
                             .weight(.semibold)
                     )
                     .kerning(0.16)
@@ -118,8 +118,8 @@ struct AddDataSheet: View {
                 DatePicker(selection: $selectedDate, displayedComponents: [.date]) {
                     Text("Date Measured")
                         .font(
-                            Font.custom("Inter", size: 16)
-                                .weight(.semibold)
+                            Font.custom("Inter-SemiBold", size: 16)
+                               
                         )
                         .kerning(0.16)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -144,7 +144,7 @@ struct AddDataSheet: View {
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
                                     Text("Add")
-                                .font(Font.custom("Inter", size: 16))
+                                .font(Font.custom("Inter-Regular", size: 16))
                                 .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                             
                                 .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)

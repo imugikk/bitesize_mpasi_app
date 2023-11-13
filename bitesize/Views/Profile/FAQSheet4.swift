@@ -62,7 +62,7 @@ struct FAQSheet4: View {
                     
                     HStack {
                         Text("6-8 months = 70% Breastmilk and 30% Weaning Food\n9-11 months = 50% Breastmilk and 50% Weaning Food\n12-24 months = 30% Breastmilk and 70% Weaning Food")
-                          .font(Font.custom("Inter", size: 16))
+                          .font(Font.custom("Inter-Regular", size: 16))
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                       .frame(width: 358, alignment: .leading)
                         
@@ -105,7 +105,7 @@ struct FAQSheet4: View {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                                 Text("Close")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                         
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)

@@ -37,8 +37,8 @@ struct ProgressView: View {
                 // Space Between
                     Text("Growth")
                     .font(
-                    Font.custom("Nunito", size: 24)
-                    .weight(.semibold)
+                    Font.custom("Nunito-SemiBold", size: 24)
+                    
                     )
                     .kerning(0.24)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -49,8 +49,8 @@ struct ProgressView: View {
                     NavigationLink(destination: ProgressGrowthView()){
                         Text("See All")
                         .font(
-                            Font.custom("Inter", size: 14)
-                            .weight(.medium)
+                            Font.custom("Inter-Medium", size: 14)
+                            
                         )
                         .kerning(0.4)
                         .multilineTextAlignment(.center)
@@ -114,8 +114,8 @@ struct ProgressView: View {
                         // Space Between
                         Text("FAQs")
                             .font(
-                                Font.custom("Nunito", size: 24)
-                                    .weight(.semibold)
+                                Font.custom("Nunito-SemiBold", size: 24)
+                                    
                             )
                             .kerning(0.24)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -127,8 +127,8 @@ struct ProgressView: View {
                         NavigationLink(destination: FAQView()) {
                             Text("See All")
                                 .font(
-                                    Font.custom("Inter", size: 14)
-                                        .weight(.medium)
+                                    Font.custom("Inter-Medium", size: 14)
+                                        
                                 )
                                 .kerning(0.4)
                                 .multilineTextAlignment(.center)
@@ -162,15 +162,15 @@ struct ProgressView: View {
                                 
                                 Text("What is Z-Score")
                                   .font(
-                                    Font.custom("Nunito", size: 28)
-                                      .weight(.semibold)
+                                    Font.custom("Nunito-SemiBold", size: 28)
+                                     
                                   )
                                   .kerning(0.28)
                                   .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                                   .frame(width: 128, alignment: .leading)
                                 
                                 Text("By Dr. Mei")
-                                  .font(Font.custom("Inter", size: 12))
+                                  .font(Font.custom("Inter-Regular", size: 12))
                                   .kerning(0.2)
                                   .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                                   .frame(width: 128, alignment: .leading)

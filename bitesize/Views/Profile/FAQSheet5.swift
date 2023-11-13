@@ -80,7 +80,7 @@ struct FAQSheet5: View {
                     
                     HStack {
                         Text("35%~45% from Daily Calories for Weaning Food. ")
-                          .font(Font.custom("Inter", size: 16))
+                          .font(Font.custom("Inter-Regular", size: 16))
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                       .frame(width: 358, alignment: .leading)
                     
@@ -90,7 +90,7 @@ struct FAQSheet5: View {
                     
                     HStack {
                         Text("Play a vital role in brain development, providing insulation and protection for organs, and aiding in fat-soluble vitamins absorption.")
-                          .font(Font.custom("Inter", size: 16))
+                          .font(Font.custom("Inter-Regular", size: 16))
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                       .frame(width: 358, alignment: .leading)
                         
@@ -117,7 +117,7 @@ struct FAQSheet5: View {
                     
                     HStack {
                         Text("Essential for building and repairing body tissues. Also crucial for supporting muscles, bones, and organs development.")
-                          .font(Font.custom("Inter", size: 16))
+                          .font(Font.custom("Inter-Regular", size: 16))
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                       .frame(width: 358, alignment: .leading)
                         
@@ -159,7 +159,7 @@ struct FAQSheet5: View {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                                 Text("Close")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                         
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)

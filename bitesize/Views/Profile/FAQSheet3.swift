@@ -74,7 +74,7 @@ struct FAQSheet3: View {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                                 Text("Close")
-                            .font(Font.custom("Inter", size: 16))
+                            .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                         
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
