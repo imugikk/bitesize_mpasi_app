@@ -199,19 +199,47 @@ struct IngredientsView: View {
 //                .padding(.horizontal, 16)
 //            }
 //        }
-        
-        VStack(alignment: .leading){
-            ForEach(bahan.sorted(by: { $0.key < $1.key }), id: \.key) { ingredient, properties in
-                HStack {
-                    Text("\(ingredient) : ")
-                        .font(.headline)
-                    
-                    ForEach(properties.sorted(by: { $0.key < $1.key }), id: \.key) { property, value in
-                        Text(value)
+        ScrollView{
+            VStack(alignment: .leading){
+                Text("Ingredients")
+                .font(
+                Font.custom("Nunito-SemiBold", size: 24)
+                .weight(.semibold)
+                )
+                .kerning(0.24)
+                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+
+                .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+                
+                ForEach(bahan.sorted(by: { $0.key < $1.key }), id: \.key) { ingredient, properties in
+                    HStack(alignment: .center, spacing: 8) {
+                        
+                        Text("\(ingredient) : ")
+                            .font(Font.custom("Inter", size: 14))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                        
+                        
+                        
+                        
+                        ForEach(properties.sorted(by: { $0.key < $1.key }), id: \.key) { property, value in
+                            Text(value)
+                                .font(Font.custom("Inter-Regular", size: 14))
+                                .kerning(0.08)
+                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                        }
+//                        .padding(0)
+                        
+                        
                     }
+                    .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
+                    .padding(.horizontal, 16)
                 }
-            }
+            }/*.padding(.horizontal, 16)*/
         }
+//
     }
 }
 

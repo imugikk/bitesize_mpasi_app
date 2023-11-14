@@ -46,7 +46,7 @@ struct MenuView: View {
                         .kerning(0.24)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
-                    Text("\(String(format: "%.2f", totalCalories))/\(String(format: "%.2f", babies.first?.nutrition.last ?? 0))")
+                    Text("\(String(format: "%.0f", totalCalories))/\(String(format: "%.0f", babies.first?.nutrition.last ?? 0))")
                         .font(
                             Font.custom("Nunito-Bold", size: 24)
                                 

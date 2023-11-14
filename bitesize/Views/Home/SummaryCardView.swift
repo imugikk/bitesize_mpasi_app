@@ -22,16 +22,16 @@ struct SummaryCardView: View {
     
     var body: some View {
         let nutrition = babies.first?.nutrition.last ?? 0
-        let lowerBoundCarbs = String(format: "%.1f", nutrition * 0.35 / 4)
-        let upperBoundCarbs = String(format: "%.1f", nutrition * 0.60 / 4)
+        let lowerBoundCarbs = String(format: "%.0f", nutrition * 0.35 / 4)
+        let upperBoundCarbs = String(format: "%.0f", nutrition * 0.60 / 4)
         let resultTextCarbs = "\(lowerBoundCarbs)~\(upperBoundCarbs)g"
         
-        let lowerBoundFat = String(format: "%.1f", nutrition * 0.30 / 9)
-        let upperBoundFat = String(format: "%.1f", nutrition * 0.45 / 9)
+        let lowerBoundFat = String(format: "%.0f", nutrition * 0.30 / 9)
+        let upperBoundFat = String(format: "%.0f", nutrition * 0.45 / 9)
         let resultTextFat = "\(lowerBoundFat)~\(upperBoundFat)g"
         
-        let lowerBoundProtein = String(format: "%.1f", nutrition * 0.10 / 4)
-        let upperBoundProtein = String(format: "%.1f", nutrition * 0.15 / 4)
+        let lowerBoundProtein = String(format: "%.0f", nutrition * 0.10 / 4)
+        let upperBoundProtein = String(format: "%.0f", nutrition * 0.15 / 4)
         let resultTextProtein = "\(lowerBoundProtein)~\(upperBoundProtein)g"
         
         //Target Card View
