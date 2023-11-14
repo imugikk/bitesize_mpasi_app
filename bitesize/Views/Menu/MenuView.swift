@@ -88,7 +88,7 @@ struct MenuView: View {
                         HStack(spacing: 20) {
                             ForEach(menuUtama.indices, id: \.self) { index in
                                 if let menuItem = menuUtama[index] as? [Any], menuItem.count == 4 {
-                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: "\(menuItem[1])", menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
                                         }
@@ -98,6 +98,8 @@ struct MenuView: View {
                         }
                         
                     }.padding(.horizontal, 16)
+                        .frame(height: 250)
+                        .scrollIndicators(.hidden)
                 
                     HStack{
                         Text("Nourishing Bite")
@@ -118,7 +120,7 @@ struct MenuView: View {
                         HStack(spacing: 20) {
                             ForEach(cemilan.indices, id: \.self) { index in
                                 if let menuItem = cemilan[index] as? [Any], menuItem.count == 4 {
-                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: "\(menuItem[1])", menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
                                         }
@@ -127,9 +129,11 @@ struct MenuView: View {
                             }
                         }
                     }.padding(.horizontal, 16)
+                        .frame(height: 250)
+                        .scrollIndicators(.hidden)
                         
                         .padding(.top, 8)
-                    
+                        
                     
 //                    HStack(alignment: .center, spacing: 86) {
 //                        Button(action: {}){

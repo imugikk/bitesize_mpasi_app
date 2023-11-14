@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+
+
 struct DescriptionView: View {
     
+    
+    
     var desc: String
+    var menuCalories: Double
     
     var body: some View {
         
@@ -44,7 +49,7 @@ struct DescriptionView: View {
                           .multilineTextAlignment(.center)
                           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         
-                        Text("200 kkal")
+                        Text("\(String(format: "%.0f", menuCalories)) ccal")
                           .font(Font.custom("Work Sans", size: 14))
                           .kerning(0.08)
                           .multilineTextAlignment(.center)
