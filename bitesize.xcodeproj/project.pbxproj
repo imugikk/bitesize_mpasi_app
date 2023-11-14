@@ -46,6 +46,7 @@
 		42F865BA2B0252B900C03DC6 /* Onboarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865B92B0252B900C03DC6 /* Onboarding1View.swift */; };
 		42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865BD2B025A1600C03DC6 /* Onboarding.swift */; };
 		42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */; };
+		42F865C42B03BBBE00C03DC6 /* SavedMenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865C32B03BBBE00C03DC6 /* SavedMenuCard.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -187,6 +188,7 @@
 		42F865B92B0252B900C03DC6 /* Onboarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1View.swift; sourceTree = "<group>"; };
 		42F865BD2B025A1600C03DC6 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMain.swift; sourceTree = "<group>"; };
+		42F865C32B03BBBE00C03DC6 /* SavedMenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMenuCard.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				F1C524242AFF5E82005B69FA /* TermsView.swift */,
 				F1C524262AFF5E93005B69FA /* UserProfileCard.swift */,
 				F1C524282AFF5E9E005B69FA /* YourAccountView.swift */,
+				42F865C32B03BBBE00C03DC6 /* SavedMenuCard.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */,
+				42F865C42B03BBBE00C03DC6 /* SavedMenuCard.swift in Sources */,
 				8B7B2C542AC68855003F4C6F /* LMSLengthGirls.swift in Sources */,
 				8B7B2C722ACFB85F003F4C6F /* CaloriesNeededCalculator.swift in Sources */,
 				F174A2EC2AEA12B700CDA921 /* HeaderView.swift in Sources */,
