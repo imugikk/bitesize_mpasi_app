@@ -96,9 +96,9 @@ struct MenuView: View {
                                 }
                             }
                         }
+                        
                     }.padding(.horizontal, 16)
-                    
-                    
+                
                     HStack{
                         Text("Nourishing Bite")
                             .font(
@@ -113,7 +113,7 @@ struct MenuView: View {
                             .padding(.top, 8)
                         
                     }
-                    
+                   
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
                             ForEach(cemilan.indices, id: \.self) { index in
@@ -127,6 +127,7 @@ struct MenuView: View {
                             }
                         }
                     }.padding(.horizontal, 16)
+                        
                         .padding(.top, 8)
                     
                     

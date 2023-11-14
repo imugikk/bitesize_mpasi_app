@@ -53,7 +53,8 @@ struct SummaryCardView: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
             
             HStack{
-                Text(String(format: "%.2f", babies.first?.nutrition.last ?? 0))
+                
+                Text(String(format: "%.0f", babies.first?.nutrition.last ?? 0))
                     .font(
                         Font.custom("Nunito", size: 48)
                             .weight(.bold)
@@ -63,12 +64,13 @@ struct SummaryCardView: View {
                 
                 Text("ccal/day")
                     .font(
-                        Font.custom("Nunito", size: 32)
-                            .weight(.semibold)
+                        Font.custom("Nunito-SemiBold", size: 32)
+                            
                     )
-                    .frame(width: 120, height: 40, alignment: .center)
+                    .frame(width: 130, height: 40, alignment: .center)
                     .kerning(0.32)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                
                 
                 Button(action: {
                     isShowingCaloriesSheet.toggle()
@@ -161,7 +163,10 @@ struct SummaryCardView: View {
                 }
                 
             }
-            .frame(width: 326, height: 56, alignment: .center)
+            .frame(maxWidth: .infinity, alignment: .center)
+
+         
+
             
             Spacer().frame(height: 16)
             
