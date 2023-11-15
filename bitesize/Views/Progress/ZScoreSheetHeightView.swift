@@ -45,7 +45,7 @@ struct ZScoreSheetHeightView: View {
                 
                 Text(zscore.statusZscoreHeight(zscore: babies.first?.zscore[1] ?? 0).rawValue)
                     .font(
-                      Font.custom("Nunito-SemiBold", size: 32)
+                      Font.custom("Nunito-SemiBold", size: 24)
                       
                     )
                     .kerning(0.32)

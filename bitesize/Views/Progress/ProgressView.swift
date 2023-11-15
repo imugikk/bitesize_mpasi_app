@@ -40,24 +40,24 @@ struct ProgressView: View {
                 // Space Between
                     Text("Growth")
                     .font(
-                    Font.custom("Nunito-SemiBold", size: 24)
-                    
+                    Font.custom("Nunito", size: 24)
+                    .weight(.semibold)
                     )
                     .kerning(0.24)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
 
                     .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
-                    .padding(.bottom, 24)
                 
                     NavigationLink(destination: ProgressGrowthView()){
                         Text("See All")
                         .font(
-                            Font.custom("Inter-Medium", size: 14)
-                            
+                            Font.custom("Inter", size: 14)
+                            .weight(.medium)
                         )
                         .kerning(0.4)
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                        .frame(minWidth: 62, maxWidth: 62, maxHeight: .infinity, alignment: .center)
                     }
                 }
                 .padding(.horizontal, 16)
@@ -150,7 +150,7 @@ struct ProgressView: View {
                                 
                                 Image("FAQThumbnail1")
                                 
-//                          
+//
 //
                             })
                             .sheet(isPresented: $showSheet1, content: {

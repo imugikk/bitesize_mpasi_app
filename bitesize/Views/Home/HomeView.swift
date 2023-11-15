@@ -17,6 +17,8 @@ struct HomeView: View {
     @State private var menu: [String] = []
     @State private var zScoreView: [Double] = []
     
+    @State var selection = 0
+    
     
     var body: some View {
         let nutrition = babies.last?.nutrition ?? [0]
@@ -32,7 +34,7 @@ struct HomeView: View {
         let upperBoundProtein = String(format: "%.1f", nutrition.last! * 0.45)
         let resultTextProtein = "\(lowerBoundProtein)~\(upperBoundProtein)g"
         
-        TabView{
+        TabView(selection: $selection){
             NavigationView{
                 ScrollView{
                     VStack{
@@ -174,30 +176,68 @@ struct HomeView: View {
                     }
             }
             .tabItem{
-                Image("SummaryIcon")
-                    .frame(width: 17.70833, height: 25)
+//                Image("SummaryIcon")
+//                    .frame(width: 17.70833, height: 25)
+//                Text("Summary")
+                
+                if selection == 0 {
+                    Image("SummaryIconActive")
+                        .frame(width: 17.70833, height: 25)
+//                    Text("Summary")
+//                        .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+                } else {
+                    Image("SummaryIcon")
+                        .frame(width: 17.70833, height: 25)
+//                    Text("Summary")
+//                        .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+                }
+                
                 Text("Summary")
-            }
+            }.tag(0)
             
             MenuView()
                 .tabItem {
-                    Image("MyMenuIcon")
-                        .frame(width: 17.70833, height: 25)
+                    if selection == 1 {
+                        Image("MyMenuIconActive")
+                            .frame(width: 17.70833, height: 25)
+                    } else {
+                        Image("MyMenuIcon")
+                            .frame(width: 17.70833, height: 25)
+                    }
+//                    Image("MyMenuIcon")
+//                        .frame(width: 17.70833, height: 25)
+                    
                     Text("My Menu")
-            }
+                }.tag(1)
             
             ProgressView()
-                            .tabItem {
-                                Image("ProgressIcon")
-                                Text("Progress")
-            }
+                .tabItem {
+                    if selection == 2 {
+                        Image("ProgressIconActive")
+                            .frame(width: 17.70833, height: 25)
+                    } else {
+                        Image("ProgressIcon")
+                            .frame(width: 17.70833, height: 25)
+                    }
+                    
+//                    Image("ProgressIcon")
+                    Text("Progress")
+                }.tag(2)
             
             ProfileView()
-                            .tabItem {
-                                Image("ProfileIcon")
-                                Text("Profile")
-            }
+                .tabItem {
+                    if selection == 3 {
+                        Image("ProfileIconActive")
+                            .frame(width: 17.70833, height: 25)
+                    } else {
+                        Image("ProfileIcon")
+                            .frame(width: 17.70833, height: 25)
+                    }
+//                    Image("ProfileIcon")
+                    Text("Profile")
+                }.tag(3)
         }
+        .tint(.accentColor)
         .navigationBarBackButtonHidden()
     }
 }
