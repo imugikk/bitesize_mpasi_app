@@ -23,6 +23,8 @@ struct bitesizeApp: App {
 //                .environmentObject(firestoreManager)
             LoginView()
                 .environmentObject(firestoreManager)
+//            HomeView()
+//                .environmentObject(firestoreManager)
         }
     }
 }

@@ -15,6 +15,8 @@ class FirestoreManager: ObservableObject {
     var zscore: [Double] = []
     var items: [Babies] = []
     
+    
+    
     init(){
         fetchAllUsers()
     }

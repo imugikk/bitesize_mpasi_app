@@ -203,7 +203,6 @@ struct LoginView: View {
                     }
                 }
             }
-            .navigationBarBackButtonHidden()
         }
         else {
             if isRegister {
