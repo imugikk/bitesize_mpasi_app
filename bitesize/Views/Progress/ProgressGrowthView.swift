@@ -169,52 +169,108 @@ struct CustomHistoryControl: View {
     @State private var babies: [Babies] = []
     
     var body: some View {
-        VStack{
-            HStack{
-                Text("Date").font(.system(size: 12)).padding(.trailing, 30)
-                Text("Age (Months)").font(.system(size: 12))
-                Text("Weights (Kg)").font(.system(size: 12))
-                Text("Heights (Cm)").font(.system(size: 12))
-                Text("Head Circ. (Cm)").font(.system(size: 12))
-            }.padding(.bottom, 8)
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 4){
+                
+                Text("Date")
+                  .font(Font.custom("Inter-Regular", size: 12))
+                  .kerning(0.2)
+                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                  .frame(maxWidth: .infinity, alignment: .leading)
+                
+       
+                Text("Age (Months)")
+                  .font(Font.custom("Inter-Regular", size: 12))
+                  .kerning(0.2)
+                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                  .frame(maxWidth: .infinity, alignment: .leading)
+                
+
+                Text("Weights (Kg)")
+                  .font(Font.custom("Inter-Regular", size: 12))
+                  .kerning(0.2)
+                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                  .frame(maxWidth: .infinity, alignment: .leading)
+                
+            
+                Text("Heights (Cm)")
+                  .font(Font.custom("Inter-Regular", size: 12))
+                  .kerning(0.2)
+                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                  .frame(maxWidth: .infinity, alignment: .leading)
+                
+     
+                Text("Head Circ..(Cm)")
+                  .font(Font.custom("Inter-Regular", size: 12))
+                  .kerning(0.2)
+                  .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                  .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .padding(0)
+            .frame(maxWidth: .infinity, alignment: .top)
+            Divider()
             HStack{
                 VStack(alignment: .leading){
                     ForEach(babies.first?.timeMeasure ?? [], id: \.self) { date in
-                        Text("(\(DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)))").font(.system(size: 12))
+                        Text("(\(DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)))")
+                            .font(Font.custom("Inter-Regular", size: 11))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            .frame(maxWidth: .infinity, minHeight: 31, maxHeight: 31, alignment: .leading)
                     }
                     Spacer()
                 }.padding(.bottom, 8)
                 Spacer()
                 VStack(alignment: .leading){
                     ForEach(babies.first?.timeMeasure ?? [], id: \.self) { date in
-                        Text("5").font(.system(size: 12))
+                        Text("5")
+                            .font(Font.custom("Inter-Regular", size: 14))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            .frame(maxWidth: .infinity, minHeight: 31, maxHeight: 31, alignment: .leading)
                     }
                     Spacer()
                 }.padding(.bottom, 8)
                 Spacer()
                 VStack(alignment: .leading){
                     ForEach(babies.first?.weight ?? [], id: \.self) { date in
-                        Text(String(format: "%.1f", date)).font(.system(size: 12))
+                        Text(String(format: "%.1f", date))
+                            .font(Font.custom("Inter-Regular", size: 14))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            .frame(maxWidth: .infinity, minHeight: 31, maxHeight: 31, alignment: .leading)
                     }
                     Spacer()
                 }.padding(.bottom, 8)
                 Spacer()
                 VStack(alignment: .leading){
                     ForEach(babies.first?.height ?? [], id: \.self) { date in
-                        Text(String(format: "%.1f", date)).font(.system(size: 12))
+                        Text(String(format: "%.1f", date))
+                            .font(Font.custom("Inter-Regular", size: 14))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            .frame(maxWidth: .infinity, minHeight: 31, maxHeight: 31, alignment: .leading)
                     }
                     Spacer()
                 }.padding(.bottom, 8)
                 Spacer()
                 VStack(alignment: .leading){
                     ForEach(babies.first?.hc ?? [], id: \.self) { date in
-                        Text(String(format: "%.1f", date)).font(.system(size: 12))
+                        Text(String(format: "%.1f", date))
+                            .font(Font.custom("Inter-Regular", size: 14))
+                            .kerning(0.08)
+                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            .frame(maxWidth: .infinity, minHeight: 31, maxHeight: 31, alignment: .leading)
                     }
                     Spacer()
                 }.padding(.bottom, 8)
             }.padding(.horizontal, 8)
         }
-        .padding()
+        .padding(16)
+        .frame(width: 358, height: 158, alignment: .topLeading)
+        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+        .cornerRadius(8)
+        
         .onAppear{
             firestoreManager.getBabiesData(){ fetchBabies in
                 self.babies = fetchBabies
