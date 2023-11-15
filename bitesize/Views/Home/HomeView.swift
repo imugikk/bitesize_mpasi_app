@@ -64,26 +64,31 @@ struct HomeView: View {
                             
                             Spacer().frame(height: 16)
                             
-                            HStack(alignment: .center, spacing: 4) {
-                                Text("Start Feeding")
-                                  .font(
-                                    Font.custom("Inter", size: 14)
-                                      .weight(.medium)
-                                  )
-                                  .kerning(0.4)
-                                  .multilineTextAlignment(.center)
-                                  .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                            
+                            NavigationLink(destination: MenuView()) {
+                                
+                                HStack(alignment: .center, spacing: 4) {
+                                    Text("Start Feeding")
+                                      .font(
+                                        Font.custom("Inter", size: 14)
+                                          .weight(.medium)
+                                      )
+                                      .kerning(0.4)
+                                      .multilineTextAlignment(.center)
+                                      .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+                                }
+                                .padding(.horizontal, 24)
+                                .padding(.vertical, 8)
+                                .frame(height: 36, alignment: .center)
+                                .background(.white)
+                                .cornerRadius(8)
+                                .overlay(
+                                  RoundedRectangle(cornerRadius: 8)
+                                    .inset(by: 0.5)
+                                    .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
+                                )
                             }
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 8)
-                            .frame(height: 36, alignment: .center)
-                            .background(.white)
-                            .cornerRadius(8)
-                            .overlay(
-                              RoundedRectangle(cornerRadius: 8)
-                                .inset(by: 0.5)
-                                .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
-                            )
+                           
                         }
                         .padding(.horizontal, 16)
                         .padding(.top, 12)

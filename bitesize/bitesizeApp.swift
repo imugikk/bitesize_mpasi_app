@@ -18,6 +18,9 @@ struct bitesizeApp: App {
         WindowGroup {
 //           LoadingViewMain()
             
+//            MenuDetailView()
+//            OnboardingMain()
+//                .environmentObject(firestoreManager)
             LoginView()
                 .environmentObject(firestoreManager)
         }

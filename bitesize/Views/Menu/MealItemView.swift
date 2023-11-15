@@ -10,12 +10,12 @@ import SwiftUI
 struct MealItemView: View {
     
     var menuName: String
-    var menuCalories: String
+    var menuCalories: Double
     var menuType: [String]
     var menuId: String
 
 
-    init(menuName: String, menuCalories: String, menuType: [String], menuId: String) {
+    init(menuName: String, menuCalories: Double, menuType: [String], menuId: String) {
         self.menuName = menuName
         self.menuCalories = menuCalories
         self.menuType = menuType
@@ -80,7 +80,7 @@ struct MealItemView: View {
                                 .kerning(0.16)
                                 .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             
-                            Text("\(menuCalories) kcal")
+                            Text("\(String(format: "%.0f", menuCalories)) ccal")
                                 .font(Font.custom("Inter", size: 14))
                                 .kerning(0.08)
                                 .multilineTextAlignment(.trailing)
@@ -114,7 +114,7 @@ struct MealItemView: View {
                                     .foregroundColor(Color.blue)
                             }
                             Spacer()
-                            NavigationLink(destination: MenuDetailView(menuId: menuId)){
+                            NavigationLink(destination: MenuDetailView(menuId: menuId, menuCalories: menuCalories)){
                                 Text("See Detail")
                                 .font(
                                     Font.custom("Inter", size: 14)

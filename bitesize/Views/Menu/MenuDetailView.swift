@@ -19,6 +19,7 @@ struct MenuDetailView: View {
     @State private var isBookmarked = false
     
     var menuId: String
+    var menuCalories: Double
 
     var body: some View {
         NavigationStack{
@@ -92,7 +93,7 @@ struct MenuDetailView: View {
                     
                     // Add views based on the selected segment
                     if selectedSegment == 0 {
-                        DescriptionView(desc: detailMenu?.desc ?? "")
+                        DescriptionView(desc: detailMenu?.desc ?? "", menuCalories: Double(menuCalories) ?? 0)
                     } else if selectedSegment == 1 {
                         IngredientsView(bahan: detailMenu?.bahan ?? [:])
                     } else if selectedSegment == 2 {
