@@ -1,13 +1,13 @@
 //
-//  SummaryCardView.swift
+//  SummaryResultCard.swift
 //  bitesize
 //
-//  Created by Michelle Annice on 01/11/23.
+//  Created by febriandianto prabowo on 16/11/23.
 //
 
 import SwiftUI
 
-struct SummaryCardView: View {
+struct SummaryResultCard: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
     let zscore = ZScoreCalculator()
@@ -488,8 +488,9 @@ struct SummaryCardView: View {
     func didDismiss(){
             
     }
+    
 }
-                
-//#Preview {
-//    SummaryCardView()
-//}
+
+#Preview {
+    SummaryResultCard()
+}

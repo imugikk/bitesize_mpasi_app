@@ -31,6 +31,8 @@ class FirestoreManager: ObservableObject {
             } else {
                 self.getBabiesData { babies in
                     let hasBabies = !babies.isEmpty
+                    print(hasBabies)
+                  
                     completion(hasBabies)
                 }
             }
