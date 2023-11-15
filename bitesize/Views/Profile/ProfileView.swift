@@ -50,7 +50,7 @@ struct ProfileView: View {
             VStack{
                 NavigationLink(destination: YourAccountView()) {
                     HStack {
-                        Image("Profiles")
+                        Image("ProfilesIcon1")
                             .frame(width: 24, height: 24)
                         
                         Text("Your Account")
@@ -82,7 +82,7 @@ struct ProfileView: View {
                     SavedMenuView()
                 } label: {
                     HStack {
-                        Image("Group")
+                        Image("SavedIcon1")
                             .frame(width: 24, height: 24)
                         
                         Text("Saved Menu")
@@ -119,7 +119,7 @@ struct ProfileView: View {
                     
                 }, label: {
                     HStack {
-                        Image("Terms")
+                        Image("DocumentIcon")
                             .frame(width: 24, height: 24)
                         
                         Text("Terms & Condition")
@@ -154,7 +154,7 @@ struct ProfileView: View {
                     FAQView()
                 } label: {
                     HStack {
-                        Image("FAQ")
+                        Image("FAQIcon1")
                             .frame(width: 24, height: 24)
                         
                         Text("Frequently Asked Questions")
@@ -179,7 +179,7 @@ struct ProfileView: View {
                 Divider()
                     .padding(.horizontal, 76)
                 HStack {
-                    Image("Questions")
+                    Image("HelpIcon1")
                         .frame(width: 24, height: 24)
                     
                     Text("Help")
@@ -201,11 +201,13 @@ struct ProfileView: View {
                 .padding(.leading, 32)
                 Divider()
                     .padding(.horizontal, 76)
+                
+             
                 NavigationLink {
                     LoginView()
                 } label: {
                     HStack {
-                        Image("LogoutIcon")
+                        Image("LogOutIcon1")
                             
                             .frame(width: 24, height: 24)
                         
