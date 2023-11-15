@@ -147,39 +147,11 @@ struct ProgressView: View {
                             Button(action: {
                                 showSheet1.toggle()
                             }, label: {
-                                ZStack{
-                                    Rectangle()
-                                        .foregroundColor(.clear)
-                                        .frame(width: 311, height: 182)
-                                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                                        .cornerRadius(8)
-                                    
-                                    HStack(alignment: .center, spacing: 32){
-                                        Image("FAQThumbnail1")
-                                           .frame(width: 80.85767, height: 173.99973)
-                                       
-                                        
-                                        VStack{
-                                            
-                                            Text("What is Z-Score")
-                                                .font(
-                                                    Font.custom("Nunito-SemiBold", size: 28)
-                                                    
-                                                )
-                                                .kerning(0.28)
-                                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                                .frame(width: 140, alignment: .leading)
-                                            
-                                            Text("By Ellyn Satter Institure")
-                                                .font(Font.custom("Inter-Regular", size: 12))
-                                                .kerning(0.2)
-                                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                                .frame(width: 140, alignment: .leading)
-                                            
-                                            
-                                        }
-                                    }.padding(0)
-                                }
+                                
+                                Image("FAQThumbnail1")
+                                
+//                          
+//
                             })
                             .sheet(isPresented: $showSheet1, content: {
                                 FAQSheet1()
@@ -190,49 +162,9 @@ struct ProgressView: View {
                                 showSheet2.toggle()
                             
                             }, label: {
-                                ZStack{
-                                    Rectangle()
-                                        .foregroundColor(.clear)
-                                        .frame(width: 311, height: 182)
-                                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                                        .cornerRadius(8)
-                                    
-                                    HStack(alignment: .center, spacing: 32){
-                                         Image("FAQThumbnail1")
-                                            .frame(width: 80.85767, height: 173.99973)
-                                        
-//                                        Rectangle()
-//                                            .foregroundColor(.clear)
-//                                            .frame(width: 156, height: 174)
-//                                            .background(
-//                                                Image("orang")
-//                                                    .resizable()
-//                                                    .aspectRatio(contentMode: .fill)
-//                                                    .frame(width: 156, height: 174)
-//                                                    .clipped()
-//                                            )
-                                        
-                                        VStack{
-                                            
-                                            Text("How to Calculate Z-Score")
-                                                .font(
-                                                    Font.custom("Nunito-SemiBold", size: 28)
-                                                    
-                                                )
-                                                .kerning(0.28)
-                                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                                .frame(width: 140, alignment: .leading)
-                                            
-                                            Text("By Ellyn Satter Institure")
-                                                .font(Font.custom("Inter-Regular", size: 12))
-                                                .kerning(0.2)
-                                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                                .frame(width: 140, alignment: .leading)
-                                            
-                                            
-                                        }
-                                    }.padding(0)
-                                }
+                                
+                                Image("FAQThumbnail2")
+//
                                 
                                 
                                 
@@ -246,46 +178,9 @@ struct ProgressView: View {
                             Button(action: {
                                 showSheet3.toggle()
                             }, label: {
-                                ZStack{
-                                    Rectangle()
-                                        .foregroundColor(.clear)
-                                        .frame(width: 311, height: 182)
-                                        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                                        .cornerRadius(8)
-                                    
-                                    HStack{
-                                        Rectangle()
-                                            .foregroundColor(.clear)
-                                            .frame(width: 156, height: 174)
-                                            .background(
-                                                Image("orang")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fill)
-                                                    .frame(width: 156, height: 174)
-                                                    .clipped()
-                                            )
-                                        
-                                        VStack{
-                                            
-                                            Text("Importance of Z-Score")
-                                                .font(
-                                                    Font.custom("Nunito-SemiBold", size: 24)
-                                                    
-                                                )
-                                                .kerning(0.28)
-                                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                                .frame(width: 150, alignment: .leading)
-                                            
-                                            Text("By Ellyn Satter Institure")
-                                                .font(Font.custom("Inter-Regular", size: 12))
-                                                .kerning(0.2)
-                                                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                                .frame(width: 140, alignment: .leading)
-                                            
-                                            
-                                        }
-                                    }
-                                }
+                                
+                                Image("FAQThumbnail3")
+//
                                 
                             })
                             .sheet(isPresented: $showSheet3, content: {
