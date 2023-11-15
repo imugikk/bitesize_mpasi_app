@@ -109,7 +109,7 @@ struct WeightView: View {
         
         HStack(alignment: .center) {
             // Space Between
-            Text("Z Score")
+            Text("Z-Score")
                 .font(
                     Font.custom("Nunito", size: 24)
                         .weight(.semibold)

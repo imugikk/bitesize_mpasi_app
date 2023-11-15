@@ -91,7 +91,7 @@ struct HeadView: View {
         
         HStack(alignment: .center) {
             // Space Between
-                Text("Z Score")
+                Text("Z-Score")
                 .font(
                 Font.custom("Nunito-SemiBold", size: 24)
                 
