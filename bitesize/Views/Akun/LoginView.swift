@@ -36,7 +36,7 @@ struct LoginView: View {
         if email.isEmpty {
             NavigationStack{
                 VStack{
-                    Text("Welcome to Bitesize")
+                    Text("Welcome to BiteSize")
                         .font(
                             Font.custom("Nunito", size: 32)
                                 .weight(.semibold)
@@ -203,6 +203,7 @@ struct LoginView: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden()
         }
         else {
             if isRegister {
