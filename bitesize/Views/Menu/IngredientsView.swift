@@ -204,7 +204,7 @@ struct IngredientsView: View {
                 Text("Ingredients")
                 .font(
                 Font.custom("Nunito-SemiBold", size: 24)
-                .weight(.semibold)
+                
                 )
                 .kerning(0.24)
                 .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -217,7 +217,7 @@ struct IngredientsView: View {
                     HStack(alignment: .center, spacing: 8) {
                         
                         Text("\(ingredient) : ")
-                            .font(Font.custom("Inter", size: 14))
+                            .font(Font.custom("Inter-Regular", size: 14))
                             .kerning(0.08)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         

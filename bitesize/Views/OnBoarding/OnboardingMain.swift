@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingMain: View {
-    @State private var pageIndex = 2
+    @State private var pageIndex = 0
     private let pages: [Page] = Page.samplePages
     private let dotAppearance = UIPageControl.appearance()
     
