@@ -111,8 +111,8 @@ struct ContentView: View {
                                         .background(selection == .female ? Color(red: 0.18, green: 0.56, blue: 0.42) : Color.white)
                                         .cornerRadius(8)
                                         .font(
-                                        Font.custom("Work Sans", size: 12)
-                                        .weight(.medium)
+                                        Font.custom("Inter-Medium", size: 12)
+                                        
                                         )
                                         .kerning(0.6)
                                         .foregroundColor(selection == .female ? Color.white : Color(red: 0.16, green: 0.49, blue: 0.36))

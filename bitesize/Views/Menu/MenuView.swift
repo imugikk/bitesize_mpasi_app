@@ -24,8 +24,8 @@ struct MenuView: View {
                 HStack {
                     Text("My Menu")
                         .font(
-                            Font.custom("Nunito", size: 32)
-                                .weight(.semibold)
+                            Font.custom("Nunito-SemiBold", size: 32)
+                                
                         )
                         .kerning(0.32)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -41,24 +41,24 @@ struct MenuView: View {
                 HStack(alignment: .center, spacing: 8) {
                     Text("Calories Count")
                         .font(
-                            Font.custom("Nunito", size: 20)
-                                .weight(.semibold)
+                            Font.custom("Nunito-SemiBold", size: 20)
+                                
                         )
                         .kerning(0.24)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     
-                    Text("\(String(format: "%.2f", totalCalories))/\(String(format: "%.2f", babies.first?.nutrition.last ?? 0))")
+                    Text("\(String(format: "%.0f", totalCalories))/\(String(format: "%.0f", babies.first?.nutrition.last ?? 0))")
                         .font(
-                            Font.custom("Nunito", size: 24)
-                                .weight(.bold)
+                            Font.custom("Nunito-Bold", size: 24)
+                                
                         )
                         .kerning(0.28)
                         .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     
                     Text("kcal")
                         .font(
-                            Font.custom("Nunito", size: 24)
-                                .weight(.semibold)
+                            Font.custom("Nunito-SemiBold", size: 24)
+                               
                         )
                         .kerning(0.24)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -73,8 +73,8 @@ struct MenuView: View {
                     HStack{
                         Text("Meal Entrée")
                             .font(
-                                Font.custom("Nunito", size: 24)
-                                    .weight(.semibold)
+                                Font.custom("Nunito-SemiBold", size: 24)
+                                    
                             )
                             .kerning(0.24)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -89,7 +89,7 @@ struct MenuView: View {
                         HStack(spacing: 20) {
                             ForEach(menuUtama.indices, id: \.self) { index in
                                 if let menuItem = menuUtama[index] as? [Any], menuItem.count == 4 {
-                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: "\(menuItem[1])", menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
                                         }
@@ -97,14 +97,16 @@ struct MenuView: View {
                                 }
                             }
                         }
+                        
                     }.padding(.horizontal, 16)
-                    
-                    
+                        .frame(height: 250)
+                        .scrollIndicators(.hidden)
+                
                     HStack{
                         Text("Nourishing Bite")
                             .font(
-                                Font.custom("Nunito", size: 24)
-                                    .weight(.semibold)
+                                Font.custom("Nunito-SemiBold", size: 24)
+                                    
                             )
                             .kerning(0.24)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -114,12 +116,12 @@ struct MenuView: View {
                             .padding(.top, 8)
                         
                     }
-                    
+                   
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
                             ForEach(cemilan.indices, id: \.self) { index in
                                 if let menuItem = cemilan[index] as? [Any], menuItem.count == 4 {
-                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: "\(menuItem[1])", menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
                                         }
@@ -128,7 +130,37 @@ struct MenuView: View {
                             }
                         }
                     }.padding(.horizontal, 16)
+                        .frame(height: 250)
+                        .scrollIndicators(.hidden)
+                        
                         .padding(.top, 8)
+                        
+                    
+//                    HStack(alignment: .center, spacing: 86) {
+//                        Button(action: {}){
+//                            HStack(alignment: .top, spacing: 4) {
+//                                Text("Purchase Meal")
+//                                    .font(
+//                                        Font.custom("Inter", size: 14)
+//                                            .weight(.medium)
+//                                    )
+//                                    .kerning(0.4)
+//                                    .multilineTextAlignment(.center)
+//                                    .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+//                            }
+//                            .padding(.horizontal, 24)
+//                            .padding(.vertical, 8)
+//                            .frame(width: 357, height: 36, alignment: .top)
+//                            .background(Color(red: 0.18, green: 0.56, blue: 0.42))
+//                            .cornerRadius(8)
+//                        }
+//                    }
+//                    .padding(.horizontal, 16)
+//                    .padding(.vertical, 0)
+//                    .frame(width: 389, height: 56, alignment: .center)
+//                    .background(.white)
+//                    .cornerRadius(8)
+//                    .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.05), radius: 2.5, x: 0, y: -3)
                 }
             }
             .navigationBarHidden(true)

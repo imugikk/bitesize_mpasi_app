@@ -27,19 +27,19 @@ struct HowToMakeView: View {
                 
                 ForEach(Array(step.enumerated()), id: \.element) { index, step in
                     
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(maxWidth: .infinity, minHeight: 223, maxHeight: 223)
-                        .background(
-                            Image("recipe")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 358, height: 223)
-                                .clipped()
-                                .cornerRadius(8)
-                        )
-                        .cornerRadius(8)
-                        .padding(.bottom, 16)
+//                    Rectangle()
+//                        .foregroundColor(.clear)
+//                        .frame(maxWidth: .infinity, minHeight: 223, maxHeight: 223)
+//                        .background(
+//                            Image("recipe")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: 358, height: 223)
+//                                .clipped()
+//                                .cornerRadius(8)
+//                        )
+//                        .cornerRadius(8)
+//                        .padding(.bottom, 16)
                     
                     HStack{
                         ZStack{

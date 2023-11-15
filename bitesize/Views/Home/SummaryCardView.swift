@@ -24,16 +24,16 @@ struct SummaryCardView: View {
     
     var body: some View {
         let nutrition = babies.first?.nutrition.last ?? 0
-        let lowerBoundCarbs = String(format: "%.1f", nutrition * 0.35 / 4)
-        let upperBoundCarbs = String(format: "%.1f", nutrition * 0.60 / 4)
+        let lowerBoundCarbs = String(format: "%.0f", nutrition * 0.35 / 4)
+        let upperBoundCarbs = String(format: "%.0f", nutrition * 0.60 / 4)
         let resultTextCarbs = "\(lowerBoundCarbs)~\(upperBoundCarbs)g"
         
-        let lowerBoundFat = String(format: "%.1f", nutrition * 0.30 / 9)
-        let upperBoundFat = String(format: "%.1f", nutrition * 0.45 / 9)
+        let lowerBoundFat = String(format: "%.0f", nutrition * 0.30 / 9)
+        let upperBoundFat = String(format: "%.0f", nutrition * 0.45 / 9)
         let resultTextFat = "\(lowerBoundFat)~\(upperBoundFat)g"
         
-        let lowerBoundProtein = String(format: "%.1f", nutrition * 0.10 / 4)
-        let upperBoundProtein = String(format: "%.1f", nutrition * 0.15 / 4)
+        let lowerBoundProtein = String(format: "%.0f", nutrition * 0.10 / 4)
+        let upperBoundProtein = String(format: "%.0f", nutrition * 0.15 / 4)
         let resultTextProtein = "\(lowerBoundProtein)~\(upperBoundProtein)g"
         
         //Target Card View
@@ -59,7 +59,8 @@ struct SummaryCardView: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
             
             HStack{
-                Text(String(format: "%.1f", babies.first?.nutrition.last ?? 0))
+                
+                Text(String(format: "%.0f", babies.first?.nutrition.last ?? 0))
                     .font(
                         Font.custom("Nunito", size: 48)
                             .weight(.bold)
@@ -69,12 +70,13 @@ struct SummaryCardView: View {
                 
                 Text("ccal/day")
                     .font(
-                        Font.custom("Nunito", size: 32)
-                            .weight(.semibold)
+                        Font.custom("Nunito-SemiBold", size: 32)
+                            
                     )
-                    .frame(width: 120, height: 40, alignment: .center)
+                    .frame(width: 130, height: 40, alignment: .center)
                     .kerning(0.32)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                
                 
                 Button(action: {
                     isShowingCaloriesSheet.toggle()
@@ -167,7 +169,10 @@ struct SummaryCardView: View {
                 }
                 
             }
-            .frame(width: 326, height: 56, alignment: .center)
+            .frame(maxWidth: .infinity, alignment: .center)
+
+         
+
             
             Spacer().frame(height: 16)
             
