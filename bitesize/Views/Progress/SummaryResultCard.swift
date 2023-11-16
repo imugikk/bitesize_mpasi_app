@@ -44,7 +44,7 @@ struct SummaryResultCard: View {
             VStack(alignment: .leading, spacing: 24) {
                 HStack(alignment: .center, spacing: 56) {
                   
-                    Text("Brianna Needs")
+                    Text("\(babies.first?.name ?? "") Needs")
                       .font(
                         Font.custom("Nunito", size: 24)
                           .weight(.semibold)
@@ -59,12 +59,13 @@ struct SummaryResultCard: View {
             
                 HStack(alignment: .center, spacing: 8) {
                   
-                    Text("200")
+                    Text(String(format: "%.0f", babies.first?.nutrition.last ?? 0))
                       .font(
                         Font.custom("Nunito", size: 48)
                           .weight(.bold)
                       )
                       .kerning(0.48)
+                      .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
                     
                     Text("ccal/day")
                       .font(
@@ -119,13 +120,7 @@ struct SummaryResultCard: View {
                         .frame(width: 16, height: 16, alignment: .center)
                       
                       
-                        Text("Carbs")
-                          .font(
-                            Font.custom("Inter", size: 12)
-                              .weight(.medium)
-                          )
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        
+                        TextCarbsFatProteinView(labelText: "Carbs")
                         
                     }
                     .padding(0)
@@ -133,21 +128,13 @@ struct SummaryResultCard: View {
                     
                     HStack(alignment: .center, spacing: 4) {
                         
-                        Text("24,0")
+                        Text(gizi == [] ? resultTextCarbs : String(format: "%.1f", gizi[0]) + "g")
                           .font(
                             Font.custom("Inter", size: 22)
                               .weight(.medium)
                           )
                           .kerning(0.088)
                     
-                        Text("g")
-                          .font(
-                            Font.custom("Inter", size: 16)
-                              .weight(.semibold)
-                          )
-                          .kerning(0.16)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        
                     }
                     .padding(0)
                     
@@ -187,12 +174,7 @@ struct SummaryResultCard: View {
                             .frame(width: 16, height: 16, alignment: .center)
                             
                        
-                            Text("Fat")
-                              .font(
-                                Font.custom("Inter", size: 12)
-                                  .weight(.medium)
-                              )
-                              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                            TextCarbsFatProteinView(labelText: "Fat")
                             
                         }
                         .padding(0)
@@ -200,22 +182,12 @@ struct SummaryResultCard: View {
                         
                         HStack(alignment: .center, spacing: 4) {
                             // HIGH FIDELITY/Title Large
-                            Text("24,0")
+                            Text(gizi == [] ? resultTextCarbs : String(format: "%.1f", gizi[1]) + "g")
                               .font(
                                 Font.custom("Inter", size: 22)
                                   .weight(.medium)
                               )
                               .kerning(0.088)
-                            
-                            // HIGH FIDELITY/Title Medium
-                            Text("g")
-                              .font(
-                                Font.custom("Inter", size: 16)
-                                  .weight(.semibold)
-                              )
-                              .kerning(0.16)
-                              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                            
                         }
                         .padding(0)
                         
@@ -255,37 +227,20 @@ struct SummaryResultCard: View {
                         }
                         .padding(1.33333)
                         .frame(width: 16, height: 16, alignment: .center)
-                        // HIGH FIDELITY/Label Small
-                        Text("Protein")
-                          .font(
-                            Font.custom("Inter", size: 12)
-                              .weight(.medium)
-                          )
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         
+                        TextCarbsFatProteinView(labelText: "Protein")
                         
                     }
                     .padding(0)
                     .frame(width: 105, alignment: .center)
                     
                     HStack(alignment: .center, spacing: 4) {
-                        // HIGH FIDELITY/Title Large
-                        Text("24,0")
+                        Text(gizi == [] ? resultTextCarbs : String(format: "%.1f", gizi[2]) + "g")
                           .font(
                             Font.custom("Inter", size: 22)
                               .weight(.medium)
                           )
                           .kerning(0.088)
-                          
-                        // HIGH FIDELITY/Title Medium
-                        Text("g")
-                          .font(
-                            Font.custom("Inter", size: 16)
-                              .weight(.semibold)
-                          )
-                          .kerning(0.16)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        
                         
                     }
                     .padding(0)
@@ -314,6 +269,18 @@ struct SummaryResultCard: View {
         }
         .padding(0)
         .frame(width: 358, alignment: .topLeading)
+        .onAppear{
+            firestoreManager.getBabiesData(){ fetchBabies in
+                self.babies = fetchBabies
+            }
+            
+            firestoreManager.getGiziBabies(){ fetchGizi in
+                self.gizi = fetchGizi
+            }
+        }
+    }
+    func didDismiss(){
+            
     }
 }
 
