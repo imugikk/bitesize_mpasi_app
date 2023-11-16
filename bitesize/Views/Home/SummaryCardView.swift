@@ -482,7 +482,7 @@ struct SummaryCardView: View {
         )
         .shadow(color: Color(red: 0.18, green: 0.56, blue: 0.42).opacity(0.20), radius: 2, x: 0, y: 0)
         
-        .padding(.horizontal, 16)
+//        .padding(.horizontal, 16)
     }
     
     func didDismiss(){

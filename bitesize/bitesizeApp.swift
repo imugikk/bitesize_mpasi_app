@@ -19,10 +19,10 @@ struct bitesizeApp: App {
 //           LoadingViewMain()
             
 //            MenuDetailView()
-//            OnboardingMain()
-//                .environmentObject(firestoreManager)
-            LoginView()
+            OnboardingMain()
                 .environmentObject(firestoreManager)
+//            LoginView()
+//                .environmentObject(firestoreManager)
 //            HomeView()
 //                .environmentObject(firestoreManager)
         }

@@ -33,7 +33,8 @@ struct ProgressView: View {
         NavigationView{
             ScrollView{
             VStack{
-                SummaryCardView().frame(width: 358, height: 228)
+                SummaryCardView()
+                    .padding(.horizontal, 16)
                     .environmentObject(firestoreManager)
                 
                 HStack(alignment: .center) {
