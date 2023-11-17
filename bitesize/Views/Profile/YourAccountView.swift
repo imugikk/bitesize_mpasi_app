@@ -62,7 +62,7 @@ struct YourAccountView: View {
         }
     // CUSTOM NAVIGATION TOOLBAR
         .navigationBarBackButtonHidden(true)
-        .navigationTitle("Edit Baby Profile")
+        .navigationTitle("Edit Your Account")
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
