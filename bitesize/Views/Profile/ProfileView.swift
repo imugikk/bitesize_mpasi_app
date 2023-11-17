@@ -199,11 +199,13 @@ struct ProfileView: View {
                 }
                 .padding(.top, 8)
                 .padding(.leading, 32)
+                
+                
                 Divider()
                     .padding(.horizontal, 76)
                 
              
-//                
+                
 //                    HStack {
 //                        Image("LogOutIcon1")
 //                            
@@ -228,12 +230,7 @@ struct ProfileView: View {
 //                    email = ""}
 //                    .padding(.top, 8)
 //                    .padding(.leading, 32)
-//                    
-//                
-//                
-//                Divider()
-//                    .padding(.horizontal, 76)
-                
+                    
                 Spacer()
                 
                 Button(action: {
@@ -257,6 +254,8 @@ struct ProfileView: View {
                     .cornerRadius(8)
                 })
                 .padding(.bottom, 24)
+                
+                
 //                NavigationLink(destination: LoginView().navigationBarHidden(true)) {
 //                    Text("Log out").onTapGesture {
 //                        email = ""
