@@ -15,6 +15,7 @@ struct DescriptionView: View {
     
     var desc: String
     var menuCalories: Double
+    var menuNutrisi: [String: Double]
     
     var body: some View {
         
@@ -103,66 +104,89 @@ struct DescriptionView: View {
                 .padding(.bottom, 16)
                 
                 HStack{
-                    VStack (alignment:.center){
-                        Text("Fat:")
-                          .font(
-                            Font.custom("Inter", size: 16)
-                              .weight(.medium)
-                          )
-                          .kerning(0.2)
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                          .frame(width: 60, alignment: .center)
-                        
-                        Text("2g")
-                          .font(Font.custom("Work Sans", size: 14))
-                          .kerning(0.08)
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                          .frame(width: 60, alignment: .center)
+                    ForEach(menuNutrisi.sorted(by: { $0.key < $1.key }), id: \.key) { nutrient, value in
+                        VStack (alignment:.center){
+                            Text(nutrient == "Karbohidrat" ? "Carbs" : nutrient == "Lemak" ? "Fat" : "Protein")
+                              .font(
+                                Font.custom("Inter", size: 16)
+                                  .weight(.medium)
+                              )
+                              .kerning(0.2)
+                              .multilineTextAlignment(.center)
+                              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                              .frame(width: 60, alignment: .center)
+
+                            Text(String(value) + "g")
+                              .font(Font.custom("Work Sans", size: 14))
+                              .kerning(0.08)
+                              .multilineTextAlignment(.center)
+                              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                              .frame(width: 60, alignment: .center)
+                        }
+                        if nutrient != menuNutrisi.sorted(by: { $0.key < $1.key }).last?.key {
+                            Spacer()
+                        }
                     }
-                    
-                    Spacer()
-                    
-                    VStack{
-                        Text("Carbohydrate:")
-                          .font(
-                            Font.custom("Inter", size: 16)
-                              .weight(.medium)
-                          )
-                          .kerning(0.2)
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                          .frame(width: 157, alignment: .center)
-                        
-                        Text("80g")
-                          .font(Font.custom("Work Sans", size: 14))
-                          .kerning(0.08)
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                          .frame(width: 157, alignment: .center)
-                    }
-                    
-                    Spacer()
-                    
-                    VStack{
-                        Text("Protein:")
-                          .font(
-                            Font.custom("Inter", size: 16)
-                              .weight(.medium)
-                          )
-                          .kerning(0.2)
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                          .frame(width: 87, alignment: .center)
-                        
-                        Text("9g")
-                          .font(Font.custom("Work Sans", size: 14))
-                          .kerning(0.08)
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                          .frame(width: 87, alignment: .center)
-                    }
+//                    VStack (alignment:.center){
+//                        Text("Fat:")
+//                          .font(
+//                            Font.custom("Inter", size: 16)
+//                              .weight(.medium)
+//                          )
+//                          .kerning(0.2)
+//                          .multilineTextAlignment(.center)
+//                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                          .frame(width: 60, alignment: .center)
+//                        
+//                        Text(String(menuNutrisi) + "g")
+//                          .font(Font.custom("Work Sans", size: 14))
+//                          .kerning(0.08)
+//                          .multilineTextAlignment(.center)
+//                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                          .frame(width: 60, alignment: .center)
+//                    }
+//                    
+//                    Spacer()
+//                    
+//                    VStack{
+//                        Text("Carbohydrate:")
+//                          .font(
+//                            Font.custom("Inter", size: 16)
+//                              .weight(.medium)
+//                          )
+//                          .kerning(0.2)
+//                          .multilineTextAlignment(.center)
+//                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                          .frame(width: 157, alignment: .center)
+//                        
+//                        Text(String(menuNutrisi[0]) + "g")
+//                          .font(Font.custom("Work Sans", size: 14))
+//                          .kerning(0.08)
+//                          .multilineTextAlignment(.center)
+//                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                          .frame(width: 157, alignment: .center)
+//                    }
+//                    
+//                    Spacer()
+//                    
+//                    VStack{
+//                        Text("Protein:")
+//                          .font(
+//                            Font.custom("Inter", size: 16)
+//                              .weight(.medium)
+//                          )
+//                          .kerning(0.2)
+//                          .multilineTextAlignment(.center)
+//                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                          .frame(width: 87, alignment: .center)
+//                        
+//                        Text(String(menuNutrisi[1]) + "g")
+//                          .font(Font.custom("Work Sans", size: 14))
+//                          .kerning(0.08)
+//                          .multilineTextAlignment(.center)
+//                          .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                          .frame(width: 87, alignment: .center)
+//                    }
                 }
                 .padding(.horizontal, 16)
             }

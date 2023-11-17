@@ -19,13 +19,34 @@ struct MenuDetailView: View {
     @State private var isBookmarked = false
     
     var menuId: String
-    var menuCalories: Double
+//    var menuCalories: Double
+    var menuImage: String?
 
     var body: some View {
         NavigationStack{
             ScrollView {
-                MenuDetailTabView()
-                    .cornerRadius(8)
+//                MenuDetailTabView()
+//                    .cornerRadius(8)
+                
+                if let menuImage = menuImage {
+                    let imageURL = URL(string: menuImage) ?? URL(string: "")
+                    
+//                    Rectangle()
+//                        .foregroundColor(.clear)
+//                        .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+//                        .background(
+                    AsyncImage(url: imageURL) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+//                            .frame(width: 294, height: 151.51553)
+//                            .clipped()
+//                            .cornerRadius(8)
+                    } placeholder: {
+                        //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
+                    }
+//                        ).padding(.top, 8)
+                }
                 
                 HStack {
                     Text(detailMenu?.name ?? "")
@@ -93,7 +114,7 @@ struct MenuDetailView: View {
                     
                     // Add views based on the selected segment
                     if selectedSegment == 0 {
-                        DescriptionView(desc: detailMenu?.desc ?? "", menuCalories: Double(menuCalories) ?? 0)
+                        DescriptionView(desc: detailMenu?.desc ?? "", menuCalories: detailMenu?.kalori ?? 0, menuNutrisi: detailMenu?.nutrisi ?? [:])
                     } else if selectedSegment == 1 {
                         IngredientsView(bahan: detailMenu?.bahan ?? [:])
                     } else if selectedSegment == 2 {

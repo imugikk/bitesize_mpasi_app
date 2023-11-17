@@ -136,7 +136,9 @@ struct HomeView: View {
                             HStack(spacing: 20) {
                                 ForEach(menu.indices, id: \.self) { index in
                                     if let menuItem = menu[index] as? [Any] {
-                                        RecommendationItemView(menuName: menuItem[0] as! String, menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
+                                        NavigationLink(destination: MenuDetailView(menuId: menuItem[3] as! String, menuImage: menuItem[5] as! String?)){
+                                            RecommendationItemView(menuName: menuItem[0] as! String, menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
+                                        }
                                     }
                                 }
                             }

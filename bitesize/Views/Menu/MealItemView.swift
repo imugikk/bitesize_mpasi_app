@@ -123,7 +123,7 @@ struct MealItemView: View {
                                 }
                             }.frame(width: 160, height: 30, alignment: .leading)
                             Spacer()
-                            NavigationLink(destination: MenuDetailView(menuId: menuId, menuCalories: menuCalories)){
+                            NavigationLink(destination: MenuDetailView(menuId: menuId, menuImage: menuImage)){
                                 Text("See Detail")
                                 .font(
                                     Font.custom("Inter", size: 14)

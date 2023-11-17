@@ -611,7 +611,7 @@ class FirestoreManager: ObservableObject {
         }
     }
     
-    func getSavedMenu(completion: @escaping ([[String: Any]]) -> Void) {
+    func getSavedMenu(completion: @escaping ([[Any]]) -> Void) {
         let userId = Auth.auth().currentUser?.uid ?? ""
         let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
         
@@ -622,7 +622,7 @@ class FirestoreManager: ObservableObject {
             } else {
                 if let document = querySnapshot?.documents.first {
                     let menuIds = document["menuId"] as? [String] ?? []
-                    var menuDataArray: [[String: Any]] = []
+                    var menuDataArray: [[Any]] = []
                     
                     let dispatchGroup = DispatchGroup()
                     for menuId in menuIds {
@@ -642,13 +642,11 @@ class FirestoreManager: ObservableObject {
                                 let menuCalories = data["Calories"] as? Double ?? 0.0
                                 let menuType = data["Jenis"] as? [String] ?? []
                                 let bahan = data["Bahan"] as? [String:[String: String]] ?? [:]
+                                let image = data["imageUrl"] as? String ?? ""
+                                let alergi = data["Allergies"] as? [String] ?? []
 
-                                let menuDictionary: [String: Any] = [
-                                    "menuId": menuId,
-                                    "menuName": menuName,
-                                    "menuCalories": menuCalories,
-                                    "menuType": menuType,
-                                    "bahan": bahan
+                                let menuDictionary: [Any] = [
+                                    menuId,menuName,menuCalories,menuType,bahan,image,alergi
                                 ]
 
                                 menuDataArray.append(menuDictionary)
