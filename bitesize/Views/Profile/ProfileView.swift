@@ -199,48 +199,69 @@ struct ProfileView: View {
                 }
                 .padding(.top, 8)
                 .padding(.leading, 32)
+                
+                
                 Divider()
                     .padding(.horizontal, 76)
                 
              
                 
-                    HStack {
-                        Image("LogOutIcon1")
-                            
-                            .frame(width: 24, height: 24)
-                        
-                        Text("Log Out")
-                            .font(Font.custom("Inter-Regular", size: 16))
-                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
-                            .padding(.leading, 16)
-                        
-                        Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
-                            .padding(.trailing, 32)
-                    }
-                    .onTapGesture {
-                    email = ""}
-                    .padding(.top, 8)
-                    .padding(.leading, 32)
+//                    HStack {
+//                        Image("LogOutIcon1")
+//                            
+//                            .frame(width: 24, height: 24)
+//                        
+//                        Text("Log Out")
+//                            .font(Font.custom("Inter-Regular", size: 16))
+//                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
+//                            .padding(.leading, 16)
+//                        
+//                        Text(">")
+//                            .font(
+//                                Font.custom("SF Pro", size: 17)
+//                                    .weight(.semibold)
+//                            )
+//                            .multilineTextAlignment(.center)
+//                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
+//                            .padding(.trailing, 32)
+//                    }
+//                    .onTapGesture {
+//                    email = ""}
+//                    .padding(.top, 8)
+//                    .padding(.leading, 32)
                     
-                
-                
-                Divider()
-                    .padding(.horizontal, 76)
-                
                 Spacer()
+                
+                Button(action: {
+                    email = ""
+                }, label: {
+                    HStack(alignment: .top, spacing: 4) {
+                        Text("Log Out")
+                        .font(
+                        Font.custom("Inter", size: 14)
+                        .weight(.medium)
+                        )
+                        .kerning(0.4)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 8)
+                    .frame(width: 357, height: 36, alignment: .top)
+                    .background(Color(red: 0.18, green: 0.56, blue: 0.42))
+
+                    .cornerRadius(8)
+                })
+                .padding(.bottom, 24)
+                
+                
 //                NavigationLink(destination: LoginView().navigationBarHidden(true)) {
 //                    Text("Log out").onTapGesture {
 //                        email = ""
 //                    }
 //                }
-Spacer()
+
             }.navigationBarHidden(true)
                
                 
