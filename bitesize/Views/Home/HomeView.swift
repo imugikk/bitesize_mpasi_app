@@ -39,10 +39,9 @@ struct HomeView: View {
         
         TabView(selection: $selection){
             NavigationView{
-                ScrollView{
-                    VStack{
+                VStack{
+                    
                         SummaryCardView()
-                            .padding(.horizontal, 16)
                             .environmentObject(firestoreManager)
                         
                         Spacer().frame(height: 20)
@@ -117,7 +116,6 @@ struct HomeView: View {
 //                            .padding(.horizontal, 16)
                         
 //                        Spacer().frame(height: 20)
-                        
                         //Recommendation
                         Text("Recommendation")
                             .font(Font.custom("Inter", size: 22)
@@ -171,10 +169,7 @@ struct HomeView: View {
 //                            Text("AR Kit")
 //                        }
                         
-                    }
-                }.navigationBarBackButtonHidden()
-                
-                    .onAppear{
+                    }.onAppear{
                         firestoreManager.getBabiesData(){ fetchBabies in
                             self.babies = fetchBabies
                         }
@@ -183,11 +178,9 @@ struct HomeView: View {
                             self.menu = fetchMenu
                         }
                     }
-                    
-               
-                   
-                    
+                    .navigationBarBackButtonHidden()
                     .navigationBarTitleDisplayMode(.inline)
+               
                     
             }
             .tabItem{

@@ -20,12 +20,33 @@ struct MenuDetailView: View {
     
     var menuId: String
     var menuCalories: Double
+    var menuImage: String?
 
     var body: some View {
         NavigationStack{
             ScrollView {
-                MenuDetailTabView()
-                    .cornerRadius(8)
+//                MenuDetailTabView()
+//                    .cornerRadius(8)
+                
+                if let menuImage = menuImage {
+                    let imageURL = URL(string: menuImage) ?? URL(string: "")
+                    
+//                    Rectangle()
+//                        .foregroundColor(.clear)
+//                        .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+//                        .background(
+                    AsyncImage(url: imageURL) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+//                            .frame(width: 294, height: 151.51553)
+//                            .clipped()
+//                            .cornerRadius(8)
+                    } placeholder: {
+                       Text("Image Loading")
+                    }
+//                        ).padding(.top, 8)
+                }
                 
                 HStack {
                     Text(detailMenu?.name ?? "")
@@ -154,7 +175,8 @@ struct MenuDetailView: View {
                 .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
 
             }
-        }
+          
+        }.navigationBarBackButtonHidden()
     }
 }
 
