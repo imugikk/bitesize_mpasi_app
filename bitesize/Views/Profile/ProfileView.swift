@@ -203,18 +203,13 @@ struct ProfileView: View {
                     .padding(.horizontal, 76)
                 
              
-                NavigationLink {
-                    LoginView()
-                } label: {
+                
                     HStack {
                         Image("LogOutIcon1")
                             
                             .frame(width: 24, height: 24)
                         
                         Text("Log Out")
-                            .onTapGesture {
-                            email = ""
-                        }
                             .font(Font.custom("Inter-Regular", size: 16))
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
@@ -229,10 +224,12 @@ struct ProfileView: View {
                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
                             .padding(.trailing, 32)
                     }
+                    .onTapGesture {
+                    email = ""}
                     .padding(.top, 8)
                     .padding(.leading, 32)
                     
-                }
+                
                 
                 Divider()
                     .padding(.horizontal, 76)

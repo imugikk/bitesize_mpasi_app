@@ -17,9 +17,11 @@ struct OnboardingMain: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
     
+    @AppStorage ("isOnboardingShown") var isOnboardingShown = false
+    
     
     var body: some View {
-        if isPresented {
+        if isPresented || isOnboardingShown {
             LoginView()
             .environmentObject(firestoreManager)
         } else {
@@ -104,7 +106,7 @@ struct OnboardingMain: View {
                 
                 Button(action: {
                     isPresented = true
-                    
+                    isOnboardingShown = true
                 }, label: {
                     HStack(alignment: .center, spacing: 4) {
                         
