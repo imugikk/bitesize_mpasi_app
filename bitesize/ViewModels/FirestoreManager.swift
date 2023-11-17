@@ -17,6 +17,8 @@ class FirestoreManager: ObservableObject {
     var zscore: [Double] = []
     var items: [Babies] = []
     
+    
+    
     init(){
         fetchAllUsers()
     }
@@ -31,6 +33,8 @@ class FirestoreManager: ObservableObject {
             } else {
                 self.getBabiesData { babies in
                     let hasBabies = !babies.isEmpty
+                    print(hasBabies)
+                  
                     completion(hasBabies)
                 }
             }

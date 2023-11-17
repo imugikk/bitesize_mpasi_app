@@ -17,8 +17,8 @@ struct ResultView: View {
             
         Text("Results")
               .font(
-                Font.custom("Nunito", size: 32)
-                  .weight(.semibold)
+                Font.custom("Nunito-SemiBold", size: 32)
+                
               )
               .kerning(0.32)
               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -34,8 +34,8 @@ struct ResultView: View {
 
         Text("Below is the nutritions needed for your baby based on the measurement.")
           .font(
-            Font.custom("Inter", size: 16)
-            .weight(.medium)
+            Font.custom("Inter-Medium", size: 16)
+           
             )
           .kerning(0.24)
           .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -51,10 +51,7 @@ struct ResultView: View {
                     Image("ResultBanner")
                 }
                 
-                
-                //Masukin SummaryCardView
-                
-                
+                SummaryResultCard()
                 
                 Button(action: {
                     showSheetEditData.toggle()
@@ -63,8 +60,8 @@ struct ResultView: View {
                         
                         Text("I want to add my own target")
                             .font(
-                                Font.custom("Inter", size: 14)
-                                    .weight(.medium)
+                                Font.custom("Inter-Medium", size: 14)
+                                   
                             )
                             .kerning(0.4)
                             .multilineTextAlignment(.center)
@@ -91,8 +88,8 @@ struct ResultView: View {
                                 NavigationLink(destination: HomeView()) {
                     Text("Use this data")
                         .font(
-                            Font.custom("Inter", size: 14)
-                                .weight(.medium)
+                            Font.custom("Inter-Medium", size: 14)
+                                
                         )
                         .kerning(0.4)
                         .multilineTextAlignment(.center)
@@ -116,6 +113,6 @@ struct ResultView: View {
         }
 }
 
-#Preview {
-    ResultView()
-}
+//#Preview {
+//    ResultView()
+//}

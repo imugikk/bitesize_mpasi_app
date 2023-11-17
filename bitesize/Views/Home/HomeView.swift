@@ -9,6 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
+    
     @EnvironmentObject var firestoreManager: FirestoreManager
     let zscore = ZScoreCalculator()
     let calculator = CaloriesNeededCalculator()
@@ -16,6 +19,8 @@ struct HomeView: View {
     @State private var babies: [Babies] = []
     @State private var menu: [Any] = []
     @State private var zScoreView: [Double] = []
+    
+    @State var selection = 0
     
     
     var body: some View {
@@ -32,83 +37,86 @@ struct HomeView: View {
         let upperBoundProtein = String(format: "%.1f", nutrition.last! * 0.45)
         let resultTextProtein = "\(lowerBoundProtein)~\(upperBoundProtein)g"
         
-        TabView{
+        TabView(selection: $selection){
             NavigationView{
                 ScrollView{
                     VStack{
-                        SummaryCardView().frame(width: 358, height: 228)
+                        SummaryCardView()
+                            .padding(.horizontal, 16)
                             .environmentObject(firestoreManager)
                         
                         Spacer().frame(height: 20)
                         
-                        VStack(alignment: .leading) {
-                            VStack (alignment: .leading){
-                                Text("Enjoy Stress-Free Weaning")
-                                    .frame(width: 304, height: 32)
-                                    .font(
-                                        Font.custom("Nunito", size: 24)
-                                            .weight(.semibold)
-                                    )
-                                    .kerning(0.24)
-                                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-                                
-                                Spacer().frame(height: 4)
-                                
-                                Text("Reimagine mealtimes with our expertly curated kits, tailored to your baby's individual nutritional needs.")
-                                    .font(Font.custom("Inter", size: 12))
-                                    .kerning(0.2)
-                                    .foregroundColor(Color(red: 0.13, green: 0.16, blue: 0.16))
-                                    .frame(width: 326, height: 32 , alignment: .leading)
-                            }
-                            .frame(width: 326, height: 68)
-                            
-                            Spacer().frame(height: 16)
-                            
-                            
-                            NavigationLink(destination: MenuView()) {
-                                
-                                HStack(alignment: .center, spacing: 4) {
-                                    Text("Start Feeding")
-                                      .font(
-                                        Font.custom("Inter", size: 14)
-                                          .weight(.medium)
-                                      )
-                                      .kerning(0.4)
-                                      .multilineTextAlignment(.center)
-                                      .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-                                }
-                                .padding(.horizontal, 24)
-                                .padding(.vertical, 8)
-                                .frame(height: 36, alignment: .center)
-                                .background(.white)
-                                .cornerRadius(8)
-                                .overlay(
-                                  RoundedRectangle(cornerRadius: 8)
-                                    .inset(by: 0.5)
-                                    .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
-                                )
-                            }
-                           
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 12)
-                        .padding(.bottom, 16)
-                        .frame(width: 358, height: 148, alignment: .leading)
-                        .background(
-                        LinearGradient(
-                        stops: [
-                        Gradient.Stop(color: Color(red: 0.93, green: 0.98, blue: 0.96), location: 0.00),
-                        Gradient.Stop(color: Color(red: 0.69, green: 0.92, blue: 0.83), location: 1.00),
-                        ],
-                        startPoint: UnitPoint(x: 0.57, y: 1),
-                        endPoint: UnitPoint(x: 1.07, y: 1)
-                        )
-                        )
-                        .cornerRadius(8)
+//                        VStack(alignment: .leading) {
+//                            VStack (alignment: .leading){
+//                                Text("Enjoy Stress-Free Weaning")
+//                                    .frame(width: 304, height: 32)
+//                                    .font(
+//                                        Font.custom("Nunito", size: 24)
+//                                            .weight(.semibold)
+//                                    )
+//                                    .kerning(0.24)
+//                                    .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+//                                
+//                                Spacer().frame(height: 4)
+//                                
+//                                Text("Reimagine mealtimes with our expertly curated kits, tailored to your baby's individual nutritional needs.")
+//                                    .font(Font.custom("Inter", size: 12))
+//                                    .kerning(0.2)
+//                                    .foregroundColor(Color(red: 0.13, green: 0.16, blue: 0.16))
+//                                    .frame(width: 326, height: 32 , alignment: .leading)
+//                            }
+//                            .frame(width: 326, height: 68)
+//                            
+//                            Spacer().frame(height: 16)
+//                            
+//                            
+//                            NavigationLink(destination: MenuView()) {
+//                                
+//                                HStack(alignment: .center, spacing: 4) {
+//                                    Text("Start Feeding")
+//                                      .font(
+//                                        Font.custom("Inter", size: 14)
+//                                          .weight(.medium)
+//                                      )
+//                                      .kerning(0.4)
+//                                      .multilineTextAlignment(.center)
+//                                      .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
+//                                }
+//                                .padding(.horizontal, 24)
+//                                .padding(.vertical, 8)
+//                                .frame(maxWidth: .infinity, minHeight: 36, maxHeight: 36, alignment: .center)
+//                                .background(.white)
+//
+//                                .cornerRadius(8)
+//                                .overlay(
+//                                RoundedRectangle(cornerRadius: 8)
+//                                .inset(by: 0.5)
+//                                .stroke(Color(red: 0.16, green: 0.49, blue: 0.36), lineWidth: 1)
+//
+//                                )
+//                            }
+//                           
+//                        }
+//                        .padding(.horizontal, 16)
+//                        .padding(.top, 12)
+//                        .padding(.bottom, 16)
+//                        .frame(width: 358, height: 148, alignment: .leading)
+//                        .background(
+//                            LinearGradient(
+//                                stops: [
+//                                    Gradient.Stop(color: Color(red: 0.93, green: 0.98, blue: 0.96), location: 0.00),
+//                                    Gradient.Stop(color: Color(red: 0.69, green: 0.92, blue: 0.83), location: 1.00),
+//                                        ],
+//                                            startPoint: UnitPoint(x: 0.57, y: 1),
+//                                            endPoint: UnitPoint(x: 1.07, y: 1)
+//                                    )
+//                            )
+//                            .cornerRadius(8)
+//                        
+//                            .padding(.horizontal, 16)
                         
-                        .padding(.horizontal, 16)
-                        
-                        Spacer().frame(height: 20)
+//                        Spacer().frame(height: 20)
                         
                         //Recommendation
                         Text("Recommendation")
@@ -165,6 +173,7 @@ struct HomeView: View {
                         
                     }
                 }.navigationBarBackButtonHidden()
+                
                     .onAppear{
                         firestoreManager.getBabiesData(){ fetchBabies in
                             self.babies = fetchBabies
@@ -174,32 +183,76 @@ struct HomeView: View {
                             self.menu = fetchMenu
                         }
                     }
+                    
+               
+                   
+                    
+                    .navigationBarTitleDisplayMode(.inline)
+                    
             }
             .tabItem{
-                Image("SummaryIcon")
-                    .frame(width: 17.70833, height: 25)
+//                Image("SummaryIcon")
+//                    .frame(width: 17.70833, height: 25)
+//                Text("Summary")
+                
+                if selection == 0 {
+                    Image("SummaryIconActive")
+                        .frame(width: 17.70833, height: 25)
+//                    Text("Summary")
+//                        .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+                } else {
+                    Image("SummaryIcon")
+                        .frame(width: 17.70833, height: 25)
+//                    Text("Summary")
+//                        .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+                }
+                
                 Text("Summary")
-            }
+            }.tag(0)
             
             MenuView()
                 .tabItem {
-                    Image("MyMenuIcon")
-                        .frame(width: 17.70833, height: 25)
+                    if selection == 1 {
+                        Image("MyMenuIconActive")
+                            .frame(width: 17.70833, height: 25)
+                    } else {
+                        Image("MyMenuIcon")
+                            .frame(width: 17.70833, height: 25)
+                    }
+//                    Image("MyMenuIcon")
+//                        .frame(width: 17.70833, height: 25)
+                    
                     Text("My Menu")
-            }
+                }.tag(1)
             
             ProgressView()
-                            .tabItem {
-                                Image("ProgressIcon")
-                                Text("Progress")
-            }
+                .tabItem {
+                    if selection == 2 {
+                        Image("ProgressIconActive")
+                            .frame(width: 17.70833, height: 25)
+                    } else {
+                        Image("ProgressIcon")
+                            .frame(width: 17.70833, height: 25)
+                    }
+                    
+//                    Image("ProgressIcon")
+                    Text("Progress")
+                }.tag(2)
             
             ProfileView()
-                            .tabItem {
-                                Image("ProfileIcon")
-                                Text("Profile")
-            }
+                .tabItem {
+                    if selection == 3 {
+                        Image("ProfileIconActive")
+                            .frame(width: 17.70833, height: 25)
+                    } else {
+                        Image("ProfileIcon")
+                            .frame(width: 17.70833, height: 25)
+                    }
+//                    Image("ProfileIcon")
+                    Text("Profile")
+                }.tag(3)
         }
+        .tint(.accentColor)
         .navigationBarBackButtonHidden()
     }
 }

@@ -192,7 +192,7 @@ struct BabyInputView: View {
             }
             .navigationDestination(isPresented: $isTap){
             LoadingViewMain()
-                HomeView()
+//                HomeView()
             }
             
 //        }

@@ -20,7 +20,6 @@ struct HeadView: View {
     var body: some View {
         
         HStack(){
-            Spacer()
             VStack{
                 Text("Initial Data")
                     .font(
@@ -32,12 +31,12 @@ struct HeadView: View {
                     )
                 Text(String(format: "%.1f", babies.first?.hc.first ?? 0) + "cm")
                     .font(
-                        Font.custom("Inter-SemiBold", size: 16)
-                       
+                        Font.custom("Inter-Regular", size: 16)
+                        .weight(.semibold)
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
-            }.padding(10)
+            }.padding(16)
             Spacer()
             VStack{
                 Text("Lastest Data")
@@ -50,12 +49,12 @@ struct HeadView: View {
                     )
                 Text(String(format: "%.1f", babies.first?.hc.last ?? 0) + "cm")
                     .font(
-                        Font.custom("Inter-Regular", size: 16)
-                        .weight(.semibold)
+                        Font.custom("Inter-SemiBOld", size: 16)
+                     
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
-            }.padding(10)
+            }.padding(16)
             Spacer()
             VStack{
                 Text("Difference")
@@ -73,8 +72,7 @@ struct HeadView: View {
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
                     .padding(.top, 8)
-            }.padding(10)
-            Spacer()
+            }.padding(16)
         }
         .navigationBarBackButtonHidden()
             .onAppear{
@@ -82,58 +80,57 @@ struct HeadView: View {
                     self.babies = fetchBabies
                 }
             }
-        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-        .cornerRadius(8)
-        .padding(.horizontal, 16)
+            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            .cornerRadius(8)
+            .padding(.horizontal, 16)
         
         HStack(alignment: .center) {
-        // Space Between
-            Text("Z Score")
-            .font(
-            Font.custom("Nunito-SemiBold", size: 24)
-            
-            )
-            .kerning(0.24)
-            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-
-            .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
-            
-            Spacer()
-            
-            Button {
-                showingSheet.toggle()
-            } label: {
-                Text("Learn More")
+            // Space Between
+                Text("Z-Score")
                 .font(
-                Font.custom("Inter-Medium", size: 14)
+                Font.custom("Nunito-SemiBold", size: 24)
                 
                 )
-                .kerning(0.4)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                .kerning(0.24)
+                .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+
+                .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
+                
+                Spacer()
+                
+                Button {
+                    showingSheet.toggle()
+                } label: {
+                    Text("Learn More")
+                    .font(
+                    Font.custom("Inter-Medium", size: 14)
+                    
+                    )
+                    .kerning(0.4)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                }
+                .sheet(isPresented: $showingSheet) {
+                    ZScoreSheetHeadView()
+                        .presentationDragIndicator(.visible)
+                }
             }
-            .sheet(isPresented: $showingSheet) {
-                ZScoreSheetHeadView()
-                    .presentationDragIndicator(.visible)
-            }
-        }
         .padding(.horizontal, 16)
         .padding(.top, 24)
         
         HStack{
-            Spacer()
             VStack(alignment: .leading){
                 Text("\(babies.first?.name ?? "")'s Z Score:")
                     .font(
-                        Font.custom("Inter-Regular", size: 12)
+                        Font.custom("Inter", size: 12)
                     )
                 Text(String(format: "%.2f", babies.first?.zscore[2] ?? 0))
                     .font(
-                        Font.custom("Inter-Regular", size: 32)
+                        Font.custom("Inter", size: 32)
                         .weight(.semibold)
                     )
                     .foregroundColor(Color(red: 0.16, green: 0.49, blue: 0.36))
-            }.padding(10)
+            }.padding(16)
             Spacer()
             VStack(alignment: .leading){
                 
@@ -156,8 +153,7 @@ struct HeadView: View {
                         Font.custom("Inter-Regular", size: 11)
                     ).foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
                     .padding(.top, 0.5)
-            }.padding(10)
-            Spacer()
+            }.padding(16)
         }
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         .cornerRadius(8)

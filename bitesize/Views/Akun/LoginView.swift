@@ -202,6 +202,7 @@ struct LoginView: View {
                         ContentView()
                     }
                 }
+                .navigationBarBackButtonHidden()
             }
         }
         else {

@@ -18,8 +18,8 @@ struct TextAccountView: View {
         HStack(alignment: .top, spacing: 4) {
             Text(labelText)
             .font(
-            Font.custom("Inter", size: 16)
-            .weight(.semibold)
+            Font.custom("Inter-SemiBold", size: 16)
+           
             )
             .kerning(0.16)
             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))

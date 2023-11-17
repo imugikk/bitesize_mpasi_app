@@ -33,8 +33,8 @@ struct LoadingViewMain: View {
                 
                 Text("Formulating Weaning Food Calories Target")
                   .font(
-                    Font.custom("Inter", size: 16)
-                      .weight(.semibold)
+                    Font.custom("Inter-SemiBold", size: 16)
+                     
                   )
                   .kerning(0.16)
                   .multilineTextAlignment(.center)
@@ -42,10 +42,10 @@ struct LoadingViewMain: View {
             }
             .padding(.top, 100)
             Spacer()
-            
+                .navigationBarBackButtonHidden()
         }
             
-        
+          
     }
 }
 

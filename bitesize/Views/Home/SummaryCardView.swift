@@ -41,8 +41,8 @@ struct SummaryCardView: View {
             HStack (alignment: .center, spacing: 56){
                 Text("\(babies.first?.name ?? "") Needs")
                     .font(
-                        Font.custom("Nunito", size: 24)
-                            .weight(.semibold)
+                        Font.custom("Nunito-SemiBold", size: 24)
+                        
                     )
                     .kerning(0.24)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -56,14 +56,16 @@ struct SummaryCardView: View {
                         .padding(.trailing, 16)
                 }
             }
+            
             .frame(maxWidth: .infinity, alignment: .trailing)
+            
             
             HStack{
                 
                 Text(String(format: "%.0f", babies.first?.nutrition.last ?? 0))
                     .font(
-                        Font.custom("Nunito", size: 48)
-                            .weight(.bold)
+                        Font.custom("Nunito-Bold", size: 48)
+                        
                     )
                     .kerning(0.48)
                     .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
@@ -71,7 +73,7 @@ struct SummaryCardView: View {
                 Text("ccal/day")
                     .font(
                         Font.custom("Nunito-SemiBold", size: 32)
-                            
+                        
                     )
                     .frame(width: 130, height: 40, alignment: .center)
                     .kerning(0.32)
@@ -91,8 +93,8 @@ struct SummaryCardView: View {
                                 Spacer()
                                 Text("Info")
                                     .font(
-                                        Font.custom("Inter", size: 16)
-                                        .weight(.semibold)
+                                        Font.custom("Inter-SemiBold", size: 16)
+                                        
                                     )
                                 Spacer() // Spacer to push the Image to the right
                             }
@@ -111,8 +113,8 @@ struct SummaryCardView: View {
                         VStack(alignment: .leading){
                             Text("Calories")
                                 .font(
-                                    Font.custom("Inter", size: 22)
-                                    .weight(.medium)
+                                    Font.custom("Inter-Medium", size: 22)
+                                    
                                 )
                                 .padding(.bottom, 12)
                             Text("The app determines the estimated daily calorie target for weaning based on the baby’s age. The equation result provides the total calorie target for both breastmilk and weaning food. However, the app specifically displays and focuses on the amount of calories needed daily from weaning food.")
@@ -120,8 +122,8 @@ struct SummaryCardView: View {
                                 .padding(.bottom, 12)
                             Text("Daily Calories Target*")
                                 .font(
-                                    Font.custom("Inter", size: 14)
-                                    .weight(.medium)
+                                    Font.custom("Inter-Medium", size: 14)
+                                    
                                 )
                                 .padding(.bottom, 10)
                             VStack(alignment: .leading){
@@ -131,11 +133,11 @@ struct SummaryCardView: View {
                             }
                             .font(Font.custom("Inter", size: 12))
                             .padding(.bottom, 12)
-
+                            
                             Text("Breastmilk to Weaning Food Ratio**")
                                 .font(
-                                    Font.custom("Inter", size: 14)
-                                    .weight(.medium)
+                                    Font.custom("Inter-Medium", size: 14)
+                                    
                                 )
                                 .padding(.bottom, 10)
                             
@@ -144,7 +146,7 @@ struct SummaryCardView: View {
                                 Text("9-11 months = 50% Breastmilk and 50% Weaning Food")
                                 Text("12-24 months = 30% Breastmilk and 70% Weaning Food")
                             }
-                            .font(Font.custom("Inter", size: 12))
+                            .font(Font.custom("Inter-Regular", size: 12))
                             .padding(.bottom, 12)
                             
                             VStack(alignment: .leading){
@@ -170,14 +172,14 @@ struct SummaryCardView: View {
                 
             }
             .frame(maxWidth: .infinity, alignment: .center)
-
-         
-
+            
+            
+            
             
             Spacer().frame(height: 16)
             
             HStack{
-                VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
+                VStack (alignment: .center){
                     HStack (alignment: .center, spacing: 4){
                         Image("carbo")
                             .font(.system(size: 24))
@@ -192,7 +194,7 @@ struct SummaryCardView: View {
                     
                     HStack (alignment: .center, spacing: 2.97933){
                         Text(gizi == [] ? resultTextCarbs : String(format: "%.1f", gizi[0]) + "g")
-                            .font(Font.custom("Inter", size: 12))
+                            .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     }
@@ -218,7 +220,7 @@ struct SummaryCardView: View {
                     
                     HStack (alignment: .center, spacing: 2.97933){
                         Text(gizi == [] ? resultTextFat : String(format: "%.1f", gizi[1]) + "g")
-                            .font(Font.custom("Inter", size: 12))
+                            .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     }
@@ -273,7 +275,7 @@ struct SummaryCardView: View {
                                 Text("Info")
                                     .font(
                                         Font.custom("Inter", size: 16)
-                                        .weight(.semibold)
+                                            .weight(.semibold)
                                     )
                                 Spacer() // Spacer to push the Image to the right
                             }
@@ -293,7 +295,7 @@ struct SummaryCardView: View {
                             Text("Calories")
                                 .font(
                                     Font.custom("Inter", size: 22)
-                                    .weight(.medium)
+                                        .weight(.medium)
                                 )
                                 .padding(.bottom, 12)
                             Text("The app determines the estimated daily calorie target for weaning based on the baby’s age. The equation result provides the total calorie target for both breastmilk and weaning food. However, the app specifically displays and focuses on the amount of calories needed daily from weaning food.")
@@ -302,7 +304,7 @@ struct SummaryCardView: View {
                             Text("Daily Calories Target*")
                                 .font(
                                     Font.custom("Inter", size: 14)
-                                    .weight(.medium)
+                                        .weight(.medium)
                                 )
                                 .padding(.bottom, 10)
                             VStack(alignment: .leading){
@@ -312,11 +314,11 @@ struct SummaryCardView: View {
                             }
                             .font(Font.custom("Inter", size: 12))
                             .padding(.bottom, 12)
-
+                            
                             Text("Breastmilk to Weaning Food Ratio**")
                                 .font(
                                     Font.custom("Inter", size: 14)
-                                    .weight(.medium)
+                                        .weight(.medium)
                                 )
                                 .padding(.bottom, 10)
                             
@@ -350,7 +352,7 @@ struct SummaryCardView: View {
                 }
                 
                 Text("Find out how we do the calculations.")
-                    .font(Font.custom("Inter", size: 11))
+                    .font(Font.custom("Inter-Regular", size: 11))
                     .kerning(0.5)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                 
@@ -370,8 +372,8 @@ struct SummaryCardView: View {
                                 Spacer()
                                 Text("Info")
                                     .font(
-                                        Font.custom("Inter", size: 16)
-                                        .weight(.semibold)
+                                        Font.custom("Inter-SemiBold", size: 16)
+                                        
                                     )
                                 Spacer() // Spacer to push the Image to the right
                             }
@@ -386,34 +388,34 @@ struct SummaryCardView: View {
                         }.padding(.bottom, 18)
                         VStack(alignment: .leading){
                             Text("As baby grows, breast milk alone starts to fall short of providing sufficient nutritional requirements. This is where introducing weaning foods help bridge the gaps. Quality balanced diet, consisting of a combination of carbohydrates, proteins, and fats, is critical to provide energy for activity, growth, and normal development support of the baby.")
-                                .font(Font.custom("Inter", size: 12))
+                                .font(Font.custom("Inter-Regular", size: 12))
                                 .padding(.bottom, 20)
                             Text("By providing a balance macronutrients intake through a diverse nutritious diet, parents can ensure their baby aim for optimal growth and development.")
-                                .font(Font.custom("Inter", size: 12))
+                                .font(Font.custom("Inter-Regular", size: 12))
                                 .padding(.bottom, 20)
                             VStack(alignment: .leading){
                                 Text("Carbohydrates")
                                     .font(
-                                        Font.custom("Inter", size: 22)
-                                        .weight(.medium)
+                                        Font.custom("Inter-Medium", size: 22)
+                                        
                                     )
                                     .padding(.bottom, 10)
                                 Text("35%~60% from Daily Calories for Weaning Food.")
-                                    .font(Font.custom("Inter", size: 12))
+                                    .font(Font.custom("Inter-Regular", size: 12))
                                     .padding(.bottom, 10)
                                 Text("Serve as the main source of energy, providing fuel for daily activities and growth.")
-                                    .font(Font.custom("Inter", size: 12))
+                                    .font(Font.custom("Inter-Regular", size: 12))
                             }.padding(.bottom, 20)
                             
                             VStack(alignment: .leading){
                                 Text("Fat")
                                     .font(
-                                        Font.custom("Inter", size: 22)
-                                        .weight(.medium)
+                                        Font.custom("Inter-Medium", size: 22)
+                                        
                                     )
                                     .padding(.bottom, 10)
                                 Text("30%~45% from Daily Calories for Weaning Food.")
-                                    .font(Font.custom("Inter", size: 12))
+                                    .font(Font.custom("Inter-Regular", size: 12))
                                     .padding(.bottom, 10)
                                 Text("Play a vital role in brain development, providing insulation and protection for organs, and aiding in fat-soluble vitamins absorption.")
                                     .font(Font.custom("Inter", size: 12))
@@ -422,15 +424,15 @@ struct SummaryCardView: View {
                             VStack(alignment: .leading){
                                 Text("Protein")
                                     .font(
-                                        Font.custom("Inter", size: 22)
+                                        Font.custom("Inter-Regular", size: 22)
                                             .weight(.medium)
                                     )
                                     .padding(.bottom, 10)
                                 Text("10%~15% from Daily Calories for Weaning Food.")
-                                    .font(Font.custom("Inter", size: 12))
+                                    .font(Font.custom("Inter-Regular", size: 12))
                                     .padding(.bottom, 10)
                                 Text("Essential for building and repairing body tissues. Also crucial for supporting muscles, bones, and organs development.")
-                                    .font(Font.custom("Inter", size: 12))
+                                    .font(Font.custom("Inter-Regular", size: 12))
                             }.padding(.bottom, 20)
                         }
                         .presentationDetents([.large])
@@ -443,6 +445,7 @@ struct SummaryCardView: View {
                     EditDataSheet()
                 }
             }
+        
         }.onAppear{
             firestoreManager.getBabiesData(){ fetchBabies in
                 self.babies = fetchBabies
@@ -456,7 +459,18 @@ struct SummaryCardView: View {
         
         .padding(.vertical, 24.43835)
         .frame(maxWidth: .infinity, minHeight: 223, maxHeight: 223, alignment: .center)
-        .background(Color.white)
+        .background(
+            LinearGradient(
+                stops: [
+                    Gradient.Stop(color: Color(red: 0.93, green: 0.98, blue: 0.96), location: 0.00),
+                    Gradient.Stop(color: Color(red: 0.69, green: 0.92, blue: 0.83), location: 1.00),
+                        ],
+                startPoint: UnitPoint(x: 0.57, y: 1),
+                endPoint: UnitPoint(x: 1.07, y: 1)
+            )
+            )
+
+
         .cornerRadius(8)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
@@ -468,7 +482,7 @@ struct SummaryCardView: View {
         )
         .shadow(color: Color(red: 0.18, green: 0.56, blue: 0.42).opacity(0.20), radius: 2, x: 0, y: 0)
         
-        .padding(.horizontal, 16)
+//        .padding(.horizontal, 16)
     }
     
     func didDismiss(){

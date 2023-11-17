@@ -47,6 +47,9 @@
 		42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865BD2B025A1600C03DC6 /* Onboarding.swift */; };
 		42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */; };
 		42F865C42B03BBBE00C03DC6 /* SavedMenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865C32B03BBBE00C03DC6 /* SavedMenuCard.swift */; };
+		42F865C82B049EC200C03DC6 /* FAQTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865C72B049EC200C03DC6 /* FAQTabView.swift */; };
+		42F865CA2B04AA8100C03DC6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865C92B04AA8100C03DC6 /* HistoryView.swift */; };
+		42F865D02B05AFE900C03DC6 /* SummaryResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F865CF2B05AFE900C03DC6 /* SummaryResultCard.swift */; };
 		8B01397C2AFC9EFD001FE3DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */; };
 		8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194B32AD79DCF001DD2A1 /* TextView.swift */; };
 		8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */; };
@@ -207,6 +210,9 @@
 		42F865BD2B025A1600C03DC6 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		42F865BF2B026B8C00C03DC6 /* OnboardingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMain.swift; sourceTree = "<group>"; };
 		42F865C32B03BBBE00C03DC6 /* SavedMenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMenuCard.swift; sourceTree = "<group>"; };
+		42F865C72B049EC200C03DC6 /* FAQTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTabView.swift; sourceTree = "<group>"; };
+		42F865C92B04AA8100C03DC6 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		42F865CF2B05AFE900C03DC6 /* SummaryResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResultCard.swift; sourceTree = "<group>"; };
 		8B01397B2AFC9EFD001FE3DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B3194B32AD79DCF001DD2A1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B3194BD2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCarbsFatProteinView.swift; sourceTree = "<group>"; };
@@ -412,6 +418,9 @@
 				F13B5D342B04E5FE00341B94 /* Graph */,
 				8B3E1D042AF1E9B1002B5BC6 /* ProgressView.swift */,
 				F1C5240E2AFF48A8005B69FA /* ProgressGrowthView.swift */,
+				42F865CF2B05AFE900C03DC6 /* SummaryResultCard.swift */,
+				42F865C92B04AA8100C03DC6 /* HistoryView.swift */,
+				42F865C72B049EC200C03DC6 /* FAQTabView.swift */,
 				F1C524102AFF48F7005B69FA /* HeadView.swift */,
 				F1C524122AFF4903005B69FA /* HeightView.swift */,
 				F1C524142AFF490F005B69FA /* WeightView.swift */,
@@ -843,6 +852,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C5240F2AFF48A8005B69FA /* ProgressGrowthView.swift in Sources */,
+				42F865C82B049EC200C03DC6 /* FAQTabView.swift in Sources */,
 				8B3E1D072AF1F0CF002B5BC6 /* MenuDetailView.swift in Sources */,
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
 				F12E59A22AC294EC0073FB1A /* FirebaseManager.swift in Sources */,
@@ -870,12 +880,14 @@
 				F13B5D292B04857800341B94 /* RoundedButton.swift in Sources */,
 				8B7B2C602ACB10F1003F4C6F /* ZScoreResult.swift in Sources */,
 				F1CBBF512ADD6C59003A6B81 /* UserManager.swift in Sources */,
+				42F865CA2B04AA8100C03DC6 /* HistoryView.swift in Sources */,
 				8BD66E7E2AF89DF400420C25 /* DescriptionView.swift in Sources */,
 				8B7B2C5A2AC98E4A003F4C6F /* LMSWeightGirls.swift in Sources */,
 				F1C524172AFF4920005B69FA /* ZScoreSheetHeadView.swift in Sources */,
 				8B3194BE2AD9CA83001DD2A1 /* TextCarbsFatProteinView.swift in Sources */,
 				8BD66E8C2AFBC4FC00420C25 /* CheckboxToggleStyle.swift in Sources */,
 				F1ABDF652AC28CA8005AAEC3 /* bitesizeApp.swift in Sources */,
+				42F865D02B05AFE900C03DC6 /* SummaryResultCard.swift in Sources */,
 				F1CBBF4E2ADD6859003A6B81 /* LoginManager.swift in Sources */,
 				F1C5242E2AFF60D0005B69FA /* ProfileViewModel.swift in Sources */,
 				42F865BA2B0252B900C03DC6 /* Onboarding1View.swift in Sources */,

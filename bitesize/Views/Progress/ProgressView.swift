@@ -12,6 +12,9 @@ struct ProgressView: View {
     
     @State private var selectedOption = 0
     @State private var selectedSegment: Int?
+    @State var showSheet1: Bool = false
+    @State var showSheet2: Bool = false
+    @State var showSheet3: Bool = false
     
     @EnvironmentObject var firestoreManager: FirestoreManager
     let zscore = ZScoreCalculator()
@@ -30,31 +33,32 @@ struct ProgressView: View {
         NavigationView{
             ScrollView{
             VStack{
-                SummaryCardView().frame(width: 358, height: 228)
+                SummaryCardView()
+                    .padding(.horizontal, 16)
                     .environmentObject(firestoreManager)
                 
                 HStack(alignment: .center) {
                 // Space Between
                     Text("Growth")
                     .font(
-                    Font.custom("Nunito-SemiBold", size: 24)
-                    
+                    Font.custom("Nunito", size: 24)
+                    .weight(.semibold)
                     )
                     .kerning(0.24)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
 
                     .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 30, alignment: .leading)
-                    .padding(.bottom, 24)
                 
                     NavigationLink(destination: ProgressGrowthView()){
                         Text("See All")
                         .font(
-                            Font.custom("Inter-Medium", size: 14)
-                            
+                            Font.custom("Inter", size: 14)
+                            .weight(.medium)
                         )
                         .kerning(0.4)
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color(red: 0.18, green: 0.56, blue: 0.42))
+                        .frame(minWidth: 62, maxWidth: 62, maxHeight: .infinity, alignment: .center)
                     }
                 }
                 .padding(.horizontal, 16)
@@ -138,47 +142,98 @@ struct ProgressView: View {
                     .padding(.horizontal, 16)
                     .padding(.top, 24)
                     
-                    
-                    ZStack{
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 311, height: 182)
-                            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                            .cornerRadius(8)
-                        
+                    ScrollView(.horizontal){
                         HStack{
-                            Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 156, height: 174)
-                            .background(
-                            Image("orang")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 156, height: 174)
-                            .clipped()
-                            )
                             
-                            VStack{
+                            Button(action: {
+                                showSheet1.toggle()
+                            }, label: {
                                 
-                                Text("What is Z-Score")
-                                  .font(
-                                    Font.custom("Nunito-SemiBold", size: 28)
-                                     
-                                  )
-                                  .kerning(0.28)
-                                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                  .frame(width: 128, alignment: .leading)
+                                Image("FAQThumbnail1")
                                 
-                                Text("By Dr. Mei")
-                                  .font(Font.custom("Inter-Regular", size: 12))
-                                  .kerning(0.2)
-                                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                                  .frame(width: 128, alignment: .leading)
+//
+//
+                            })
+                            .sheet(isPresented: $showSheet1, content: {
+                                FAQSheet1()
+                                    .presentationDragIndicator(.visible)
+                            })
+                            
+                            Button(action: {
+                                showSheet2.toggle()
+                            
+                            }, label: {
+                                
+                                Image("FAQThumbnail2")
+//
                                 
                                 
-                            }
+                                
+                            })
+                            .sheet(isPresented: $showSheet2, content: {
+                                FAQSheet2()
+                                    .presentationDragIndicator(.visible)
+                            })
+                            
+                            
+                            Button(action: {
+                                showSheet3.toggle()
+                            }, label: {
+                                
+                                Image("FAQThumbnail3")
+//
+                                
+                            })
+                            .sheet(isPresented: $showSheet3, content: {
+                                FAQSheet3()
+                                    .presentationDragIndicator(.visible)
+                            })
+                            
                         }
                     }
+                        .padding(.horizontal, 16)
+                       
+                        .scrollIndicators(.hidden)
+//                    ZStack{
+//                        Rectangle()
+//                            .foregroundColor(.clear)
+//                            .frame(width: 311, height: 182)
+//                            .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+//                            .cornerRadius(8)
+//                        
+//                        HStack{
+//                            Rectangle()
+//                            .foregroundColor(.clear)
+//                            .frame(width: 156, height: 174)
+//                            .background(
+//                            Image("orang")
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fill)
+//                            .frame(width: 156, height: 174)
+//                            .clipped()
+//                            )
+//                            
+//                            VStack{
+//                                
+//                                Text("What is Z-Score")
+//                                  .font(
+//                                    Font.custom("Nunito-SemiBold", size: 28)
+//                                     
+//                                  )
+//                                  .kerning(0.28)
+//                                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                                  .frame(width: 128, alignment: .leading)
+//                                
+//                                Text("By Dr. Mei")
+//                                  .font(Font.custom("Inter-Regular", size: 12))
+//                                  .kerning(0.2)
+//                                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                                  .frame(width: 128, alignment: .leading)
+//                                
+//                                
+//                            }
+//                        }
+//                    }
                     
 //                    Spacer()
                 }

@@ -8,23 +8,23 @@
 import Foundation
 
 enum ZScoreCategoryHeight: String {
-    case reallyShort = "Sangat Pendek"
-    case short = "Pendek"
-    case normal = "Normal"
-    case tall = "Tinggi"
+    case reallyShort = "Risk Severe Stunting"
+    case short = "Risk Stunting"
+    case normal = "Normal Height"
+    case tall = "Tall"
 }
 
 enum ZScoreCategoryWeight: String {
-    case reallyUnderweight = "Berat Badan Sangat Kurang"
-    case underweight = "Berat Badan Kurang"
-    case normal = "Berat Badan Normal"
-    case overweight = "Resiko Berat Badan Lebih"
+    case reallyUnderweight = "Risk Severe Underweight"
+    case underweight = "Risk Underweight"
+    case normal = "Normal Weight"
+    case overweight = "Risk of Overweight"
 }
 
 enum ZScoreCategoryHead: String {
-    case microcephaly = "Mikrosefali"
+    case microcephaly = "Microcephaly"
     case normal = "Normal"
-    case macrocephaly = "Makrosefali"
+    case macrocephaly = "Macrocephaly"
 }
 
 class ZScoreCalculator {

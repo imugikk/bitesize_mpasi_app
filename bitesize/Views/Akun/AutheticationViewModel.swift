@@ -7,8 +7,15 @@
 
 import Combine
 import Foundation
+import Firebase
 
 final class AuthenticationViewModel: ObservableObject {
+    //AUTH USER LOGGED IN
+    @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
+    
+    
+    
     // MARK: - Password input
     @Published var password = ""
     @Published var confirmPassword = ""
@@ -64,5 +71,10 @@ final class AuthenticationViewModel: ObservableObject {
                 return self.hasEightChar && self.hasSpacialChar && self.hasOneDigit && self.hasOneUpperCaseChar && self.confirmationMatch
             }
             .assign(to: &$areAllFieldsValid)
+    }
+    
+    func signIn(withEmail email: String, password: String) async throws {
+        
+        
     }
 }
