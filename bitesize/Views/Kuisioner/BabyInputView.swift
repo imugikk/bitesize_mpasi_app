@@ -74,7 +74,7 @@ struct BabyInputView: View {
                             .frame(width: 80)
                             .clipped()
                             
-                            Text("kg")
+                            Text("cm")
                             Spacer()
                         }
                         .pickerStyle(WheelPickerStyle())
@@ -104,7 +104,7 @@ struct BabyInputView: View {
                             .frame(width: 80)
                             .clipped()
                             
-                            Text("kg")
+                            Text("cm")
                             Spacer()
                         }
                         .pickerStyle(WheelPickerStyle())

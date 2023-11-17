@@ -39,12 +39,15 @@ struct SummaryCardView: View {
         //Target Card View
         VStack(alignment: .center) {
             HStack (alignment: .center, spacing: 56){
+                Spacer()
+                
                 Text("\(babies.first?.name ?? "") Needs")
                     .font(
                         Font.custom("Nunito-SemiBold", size: 24)
                         
                     )
                     .kerning(0.24)
+                    .padding(.top, 20)
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                 
                 Button(action:{
@@ -445,6 +448,9 @@ struct SummaryCardView: View {
                     EditDataSheet()
                 }
             }
+            .padding(.bottom, 20)
+            
+            Spacer()
         
         }.onAppear{
             firestoreManager.getBabiesData(){ fetchBabies in
