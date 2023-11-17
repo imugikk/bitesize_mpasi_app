@@ -18,6 +18,8 @@ struct Menu: Codable {
     var bahan: [String:[String: String]]
     var usia: Int
     var jenis: [String]
+    var allergies: [String]?
+    var imageUrl: String?
 }
 
 //var menu = [

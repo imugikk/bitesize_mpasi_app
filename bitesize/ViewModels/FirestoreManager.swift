@@ -6,6 +6,8 @@
 //
 
 import Firebase
+import FirebaseCore
+import FirebaseStorage
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -188,12 +190,14 @@ class FirestoreManager: ObservableObject {
             var menues: [[Any]] = []
             for document in snapshot!.documents {
                 let data = document.data()
-                let menuId = document.documentID as! String
+                let menuId = document.documentID 
                 let menuName = data["Name"] as! String
                 let menuCalories = data["Calories"] as! Double
-                let menuType = data["Jenis"] as? [String]
+                let menuType = data["Jenis"] as! [String]
+                let menuAllergy = data["Allergies"] as? [String]
+                let menuImage = data["imageUrl"] as? String
                 
-                menues.append([menuName, menuCalories, menuType, menuId])
+                menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
             }
             completion(menues)
         }
@@ -216,8 +220,10 @@ class FirestoreManager: ObservableObject {
                 let menuName = data["Name"] as! String
                 let menuCalories = data["Calories"] as! Double
                 let menuType = data["Jenis"] as! [String]
+                let menuAllergy = data["Allergies"] as? [String]
+                let menuImage = data["imageUrl"] as? String
                 
-                menues.append([menuName, menuCalories, menuType, menuId])
+                menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
             }
             completion(menues)
         }
@@ -302,7 +308,7 @@ class FirestoreManager: ObservableObject {
     }
     
     //get menu recommendation
-    func getMenuRecommendation(completion: @escaping ([String]) -> Void) {
+    func getMenuRecommendation(completion: @escaping ([[Any]]) -> Void) {
         getBabiesData() { fetchBabies in
             self.items = fetchBabies
             
@@ -319,11 +325,19 @@ class FirestoreManager: ObservableObject {
                         return
                     }
 
-                    var menues: [String] = []
+                    var menues: [[Any]] = []
                     
                     for document in snapshot!.documents {
                         let data = document.data()
-                        menues.append(data["Name"] as! String)
+                        let menuId = document.documentID
+                        let menuName = data["Name"] as! String
+                        let menuCalories = data["Calories"] as! Double
+                        let menuType = data["Jenis"] as! [String]
+                        let menuAllergy = data["Allergies"] as? [String]
+                        let menuImage = data["imageUrl"] as? String
+                        
+                        
+                        menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
                     }
                     completion(menues)
                 }
@@ -338,11 +352,19 @@ class FirestoreManager: ObservableObject {
                         return
                     }
 
-                    var menues: [String] = []
+                    var menues: [[Any]] = []
                     
                     for document in snapshot!.documents {
                         let data = document.data()
-                        menues.append(data["Name"] as! String)
+                        let menuId = document.documentID
+                        let menuName = data["Name"] as! String
+                        let menuCalories = data["Calories"] as! Double
+                        let menuType = data["Jenis"] as! [String]
+                        let menuAllergy = data["Allergies"] as? [String]
+                        let menuImage = data["imageUrl"] as? String
+                        
+                        
+                        menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
                     }
                     completion(menues)
                 }
@@ -357,11 +379,18 @@ class FirestoreManager: ObservableObject {
                         return
                     }
 
-                    var menues: [String] = []
+                    var menues: [[Any]] = []
                     
                     for document in snapshot!.documents {
                         let data = document.data()
-                        menues.append(data["Name"] as! String)
+                        let menuId = document.documentID
+                        let menuName = data["Name"] as! String
+                        let menuCalories = data["Calories"] as! Double
+                        let menuType = data["Jenis"] as! [String]
+                        let menuAllergy = data["Allergies"] as? [String]
+                        let menuImage = data["imageUrl"] as? String
+                        
+                        menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
                     }
                     completion(menues)
                 }
@@ -376,11 +405,18 @@ class FirestoreManager: ObservableObject {
                         return
                     }
 
-                    var menues: [String] = []
+                    var menues: [[Any]] = []
                     
                     for document in snapshot!.documents {
                         let data = document.data()
-                        menues.append(data["Name"] as! String)
+                        let menuId = document.documentID
+                        let menuName = data["Name"] as! String
+                        let menuCalories = data["Calories"] as! Double
+                        let menuType = data["Jenis"] as! [String]
+                        let menuAllergy = data["Allergies"] as? [String]
+                        let menuImage = data["imageUrl"] as? String
+                        
+                        menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
                     }
                     completion(menues)
                 }
@@ -444,10 +480,11 @@ class FirestoreManager: ObservableObject {
                 let menuName = data["Name"] as! String
                 let menuCalories = data["Calories"] as! Double
                 let menuType = data["Jenis"] as! [String]
+                let menuAllergy = data["Allergies"] as? [String]
+                let menuImage = data["imageUrl"] as? String
                 
-                menues.append([menuName, menuCalories, menuType, menuId])
+                menues.append([menuName, menuCalories, menuType, menuId, menuAllergy, menuImage])
             }
-            print(menues)
             completion(menues)
         }
     }
@@ -466,7 +503,6 @@ class FirestoreManager: ObservableObject {
             var gizi: [Double] = []
             for document in snapshot!.documents {
                 let data = document.data()
-                print(data)
                 if let giziArray = data["gizi"] as? [Double] {
                     gizi.append(contentsOf: giziArray)
                 }
@@ -621,6 +657,39 @@ class FirestoreManager: ObservableObject {
                     }
                 } else {
                     completion([])
+                }
+            }
+        }
+    }
+    
+    func updateBabiesData(name: String, gender: String) {
+        let userId = Auth.auth().currentUser?.uid ?? ""
+        let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
+        
+        babyRef.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents found")
+                    return
+                }
+                
+                print(name)
+
+                for document in documents {
+                    let documentRef = document.reference
+
+                    documentRef.updateData([
+                        "name": name,
+                        "gender": gender,
+                    ]) { error in
+                        if let error = error {
+                            print("Error updating document: \(error)")
+                        } else {
+                            print("Document successfully updated")
+                        }
+                    }
                 }
             }
         }

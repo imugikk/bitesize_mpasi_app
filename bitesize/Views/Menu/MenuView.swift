@@ -88,8 +88,8 @@ struct MenuView: View {
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
                             ForEach(menuUtama.indices, id: \.self) { index in
-                                if let menuItem = menuUtama[index] as? [Any], menuItem.count == 4 {
-                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                if let menuItem = menuUtama[index] as? [Any]{
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
                                         }
@@ -120,8 +120,8 @@ struct MenuView: View {
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
                             ForEach(cemilan.indices, id: \.self) { index in
-                                if let menuItem = cemilan[index] as? [Any], menuItem.count == 4 {
-                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String)
+                                if let menuItem = cemilan[index] as? [Any]{
+                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
                                         }

@@ -36,6 +36,8 @@ struct BabyInputView: View {
     
     @AppStorage("email") var email: String = ""
     
+    @State private var showingAlert = false
+    
     var body: some View {
 //        NavigationStack{
             VStack{
@@ -74,7 +76,7 @@ struct BabyInputView: View {
                             .frame(width: 80)
                             .clipped()
                             
-                            Text("kg")
+                            Text("cm")
                             Spacer()
                         }
                         .pickerStyle(WheelPickerStyle())
@@ -104,7 +106,7 @@ struct BabyInputView: View {
                             .frame(width: 80)
                             .clipped()
                             
-                            Text("kg")
+                            Text("cm")
                             Spacer()
                         }
                         .pickerStyle(WheelPickerStyle())
@@ -126,7 +128,7 @@ struct BabyInputView: View {
                     Spacer()
                     
                     Button(){
-                        
+                        showingAlert = true
                     } label: {
                         Text("Measure with AR")
                             .padding(.horizontal, 24)
@@ -134,7 +136,10 @@ struct BabyInputView: View {
                             .background(Color(red: 0.96, green: 0.96, blue: 0.96))
                             .cornerRadius(12)
                     }.padding(.horizontal, 24)
-                        .padding(.top, 30)
+                    .padding(.top, 30)
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Important message"), message: Text("This feature will be coming soon"), dismissButton: .default(Text("Got it!")))
+                    }
                     
                     Button{
                         let diffs = Calendar.current.dateComponents([.month], from: self.dob, to: Date.now)
@@ -157,7 +162,7 @@ struct BabyInputView: View {
                             userId: firestoreManager.fetchUserId(),
                             zscore: zscoreResult,
                             nutrition: [nutritionResult],
-                            timeMeasure: [self.time_measured])
+                            timeMeasure: [self.time_measured], profileImageURL: "")
                         
                         firestoreManager.createBaby(baby: babyData)
                         

@@ -4,7 +4,6 @@ import RealityKit
 class ViewController: UIViewController, ARSessionDelegate {
     
     @IBOutlet var arView: ARView!
-    @IBOutlet weak var hideMeshButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var planeDetectionButton: UIButton!
     
@@ -179,7 +178,7 @@ class ViewController: UIViewController, ARSessionDelegate {
         }
         if configuration.planeDetection == [] {
             configuration.planeDetection = [.horizontal, .vertical]
-            button.setTitle("Stop Detection", for: [])
+            button.setTitle("Save Measuring", for: [])
 //            nodes = []
 //            totalDistance = 0.0
             arView.scene.anchors.removeAll()
@@ -187,7 +186,7 @@ class ViewController: UIViewController, ARSessionDelegate {
             configuration.planeDetection = []
             totalDistance = 0.0
             lengthLabel.text = String(format: "Distance: %.1f cm", totalDistance)
-            button.setTitle("Start Detection", for: [])
+            button.setTitle("Start Measuring", for: [])
         }
         arView.session.run(configuration)
     }

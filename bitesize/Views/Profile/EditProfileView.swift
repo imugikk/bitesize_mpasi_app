@@ -14,17 +14,17 @@ struct EditProfileView: View {
     private var presentationMode: Binding<PresentationMode>
     //
     @StateObject var viewModel = ProfileViewModel()
-    let user: User
+//    let user: User
     
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    @State var name: String
+    @State var age: String
+    @State var gender: String
+    @State var showingActionSheet = false
     
     var body: some View {
-        @State var babyName = ""
-        @State var babyAge = ""
-        @State var babyGender = ""
-        @State var showingActionSheet = false
        
         NavigationStack{
-            
             PhotosPicker(selection: $viewModel.selectedItem) {
                 if let profileImage = viewModel.profileImage{
                     
@@ -92,7 +92,7 @@ struct EditProfileView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     .frame(width: 317, height: 22, alignment: .leading)
                     .padding(.bottom, 4)
-                TextField("Input your baby name" , text: $babyName).padding(.leading, 16)
+                TextField("Input your baby name" , text: $name).padding(.leading, 16)
                     .padding(.vertical, 13)
                     .frame(width: 358, height: 50, alignment: .leading)
                     .background(.white)
@@ -121,7 +121,7 @@ struct EditProfileView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     .frame(width: 317, height: 22, alignment: .leading)
                     .padding(.bottom, 4)
-                TextField("Input your baby age" , text: $babyName).padding(.leading, 16)
+                TextField("Input your baby age" , text: $age).padding(.leading, 16)
                     .padding(.vertical, 13)
                     .frame(width: 358, height: 50, alignment: .leading)
                     .background(.white)
@@ -150,7 +150,7 @@ struct EditProfileView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                     .frame(width: 317, height: 22, alignment: .leading)
                     .padding(.bottom, 4)
-                TextField("Input your baby age" , text: $babyName).padding(.leading, 16)
+                TextField("Input your baby gender" , text: $gender).padding(.leading, 16)
                     .padding(.vertical, 13)
                     .frame(width: 358, height: 50, alignment: .leading)
                     .background(.white)
@@ -190,7 +190,7 @@ struct EditProfileView: View {
             })
             .toolbar{
                 Button{
-                    print("save")
+                    firestoreManager.updateBabiesData(name: name, gender: gender)
                 } label: {
                     HStack(alignment: .center, spacing: 0) {
                                         Text("Done")
@@ -214,5 +214,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView(user: User.MOCK_USER)
+    EditProfileView(name: "Jiajia", age: "8", gender: "Female")
 }

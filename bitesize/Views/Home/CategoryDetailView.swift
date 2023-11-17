@@ -26,8 +26,8 @@ struct CategoryDetailView: View {
                     .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
                     ForEach(menu.indices, id: \.self) { index in
-                        if let menuItem = menu[index] as? [Any]{
-                            RecommendationItemView(name: menuItem[0] as! String)
+                        if let menuItem = menu[index] as? [Any] {
+                            RecommendationItemView(menuName: menuItem[0] as! String, menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
                         }
                     }
                 }
@@ -46,6 +46,7 @@ struct CategoryDetailView: View {
                         }
                     }
                 }
+                Spacer()
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 20)

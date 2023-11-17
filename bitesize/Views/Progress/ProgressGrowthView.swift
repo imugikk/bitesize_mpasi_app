@@ -125,19 +125,7 @@ struct CustomSegmentedGrowthControl: View {
             .padding(.horizontal, 16)
             .padding(.top, 8)
             
-            Chart(babies) { item in
-
-                ForEach(item.weight.indices, id: \.self) {index in
-                    LineMark(x: .value("Time Measured", item.timeMeasure[index]), y: .value("Weight", item.weight[index]))
-                }
-            }
-            .chartXAxis {
-                AxisMarks(values: .stride(by: .month)) { value in
-                    AxisGridLine()
-                    AxisValueLabel(format: .dateTime.month(.defaultDigits))
-                }
-            }
-            .frame(height: 400)
+            GraphView(source: "b_age_length.csv")
             .padding(.top, 20)
             .padding(.horizontal, 16)
             
@@ -156,10 +144,11 @@ struct CustomSegmentedGrowthControl: View {
         .onAppear{
             firestoreManager.getBabiesData(){ fetchBabies in
                 self.babies = fetchBabies
-                print(self.babies)
             }
+            
         }
     }
+    
 }
 
 struct CustomHistoryControl: View {

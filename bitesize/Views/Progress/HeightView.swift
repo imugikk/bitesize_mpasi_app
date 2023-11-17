@@ -13,7 +13,6 @@ struct HeightView: View {
     let calculator = CaloriesNeededCalculator()
     
     @State private var babies: [Babies] = []
-    @State private var menu: [String] = []
     @State private var zScoreView: [Double] = []
     @State private var showingSheet = false
     
@@ -80,10 +79,6 @@ struct HeightView: View {
             .onAppear{
                 firestoreManager.getBabiesData(){ fetchBabies in
                     self.babies = fetchBabies
-                }
-                
-                firestoreManager.getMenuRecommendation() { fetchMenu in
-                    self.menu = fetchMenu
                 }
             }
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))

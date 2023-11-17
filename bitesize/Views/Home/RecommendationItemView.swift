@@ -9,10 +9,17 @@ import SwiftUI
 
 struct RecommendationItemView: View {
     
-    let name: String
+    var menuName: String
+    var menuId: String
+    var menuAllergy: [String]?
+    var menuImage: String?
 
-    init(name: String) {
-        self.name = name
+
+    init(menuName: String, menuId: String, menuAllergy: [String]?, menuImage: String?) {
+        self.menuName = menuName
+        self.menuId = menuId
+        self.menuAllergy = menuAllergy
+        self.menuImage = menuImage
     }
     
     var body: some View {
@@ -25,24 +32,44 @@ struct RecommendationItemView: View {
             VStack{
                 Spacer().frame(height: 8)
                 
-                Rectangle()
-                .foregroundColor(.clear)
-                .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
-                .background(
-                    Image("pasta")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 158, height: 130)
-                        .clipped()
-                        .cornerRadius(8)
-                )
+                if let menuImage = menuImage {
+                    let imageURL = URL(string: menuImage) ?? URL(string: "")
+                    
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+                        .background(
+                            AsyncImage(url: imageURL) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 158, height: 130)
+                                    .clipped()
+                                    .cornerRadius(8)
+                            } placeholder: {
+                                //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
+                            }
+                        )
+                } else {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+                        .background(
+                            Image("pasta")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 158, height: 130)
+                                .clipped()
+                                .cornerRadius(8)
+                        )
+                }
                 
                 Spacer().frame(height: 8)
                 
                 HStack{
                     Spacer().frame(width: 8)
                     
-                    Text(name)
+                    Text(menuName)
                         .font(
                             Font.custom("Inter", size: 16)
                                 .weight(.semibold)
@@ -59,31 +86,15 @@ struct RecommendationItemView: View {
                 }
                 
                 HStack (spacing: 2){
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.blue)
-                    
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.blue)
-                    
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.blue)
-                    
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.blue)
-                    
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(Color.blue)
-                }
+                    ForEach(menuAllergy ?? [], id: \.self) { item in
+                        AllergyView(allergy: item)
+                    }
+                }.frame(width: 160, height: 30, alignment: .leading)
             }
         }
     }
 }
 
-#Preview {
-    RecommendationItemView(name: "Makanan Pagi")
-}
+//#Preview {
+//    RecommendationItemView(menuName: "Makanan Pagi", menuId: "1", menuAllergy: ["Nuts", "Egg"])
+//}

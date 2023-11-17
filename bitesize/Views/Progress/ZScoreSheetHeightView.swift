@@ -13,7 +13,6 @@ struct ZScoreSheetHeightView: View {
     let calculator = CaloriesNeededCalculator()
     
     @State private var babies: [Babies] = []
-    @State private var menu: [String] = []
     @State private var zScoreView: [Double] = []
     
     var body: some View {
@@ -179,10 +178,6 @@ struct ZScoreSheetHeightView: View {
             .onAppear{
                 firestoreManager.getBabiesData(){ fetchBabies in
                     self.babies = fetchBabies
-                }
-                
-                firestoreManager.getMenuRecommendation() { fetchMenu in
-                    self.menu = fetchMenu
                 }
             }
     }

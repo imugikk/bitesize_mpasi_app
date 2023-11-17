@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct YourAccountView: View {
     //Custom Toolbar Wrapper
@@ -171,120 +172,160 @@ struct personalInformation: View {
 //page change password
 struct changePassword: View {
     
-    @State var oldPassword = ""
-    @State var newPassword = ""
-    @State var confirmPassword = ""
+    @State private var currentPassword = ""
+    @State private var newPassword = ""
+    @State private var confirmPassword = ""
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
     @State var selectedSegment = 1
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack{
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Old Password")
+                  .font(
+                    Font.custom("Inter-SemiBold", size: 16)
+                     
+                  )
+                  .kerning(0.16)
+                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                  .frame(width: 317, height: 22, alignment: .leading)
+                  .padding(.bottom, 4)
+              
+                TextField("Input your name" , text: $currentPassword)
+                    .padding(.leading, 16)
+                    .padding(.vertical, 13)
+                    .frame(width: 358, height: 50, alignment: .leading)
+                    .background(.white)
+                
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .inset(by: 0.25)
+                            .stroke(Color(red: 0.71, green: 0.73, blue: 0.73), lineWidth: 0.5)
+                    )
+                
+            }
+            .padding(0)
+            .frame(width: 358, alignment: .topLeading)
+            .padding(.top, 20)
+            .padding(.horizontal, 16)
             
-            Text("Old Password")
-              .font(
-                Font.custom("Inter-SemiBold", size: 16)
-                 
-              )
-              .kerning(0.16)
-              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-              .frame(width: 317, height: 22, alignment: .leading)
-              .padding(.bottom, 4)
-          
-            TextField("Input your name" , text: $oldPassword)
-                .padding(.leading, 16)
-                .padding(.vertical, 13)
-                .frame(width: 358, height: 50, alignment: .leading)
-                .background(.white)
+            VStack(alignment: .leading, spacing: 0) {
+                
+                Text("New Password")
+                  .font(
+                    Font.custom("Inter-SemiBold", size: 16)
+                  )
+                  .kerning(0.16)
+                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                  .frame(width: 317, height: 22, alignment: .leading)
+                  .padding(.bottom, 4)
+              
+                TextField("New Password" , text: $newPassword)
+                    .padding(.leading, 16)
+                    .padding(.vertical, 13)
+                    .frame(width: 358, height: 50, alignment: .leading)
+                    .background(.white)
+                
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .inset(by: 0.25)
+                            .stroke(Color(red: 0.71, green: 0.73, blue: 0.73), lineWidth: 0.5)
+                    )
+                
+            }
+            .padding(0)
+            .frame(width: 358, alignment: .topLeading)
+            .padding(.top, 20)
+            .padding(.horizontal, 16)
             
-                .cornerRadius(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .inset(by: 0.25)
-                        .stroke(Color(red: 0.71, green: 0.73, blue: 0.73), lineWidth: 0.5)
-                )
-            
-        }
-        .padding(0)
-        .frame(width: 358, alignment: .topLeading)
-        .padding(.top, 20)
-        .padding(.horizontal, 16)
+            VStack(alignment: .leading, spacing: 0) {
+                
+                Text("Confirm Password")
+                  .font(
+                    Font.custom("Inter-SemiBold", size: 16)
+                  )
+                  .kerning(0.16)
+                  .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+                  .frame(width: 317, height: 22, alignment: .leading)
+                  .padding(.bottom, 4)
+              
+                TextField("Confirm Password" , text: $confirmPassword)
+                    .padding(.leading, 16)
+                    .padding(.vertical, 13)
+                    .frame(width: 358, height: 50, alignment: .leading)
+                    .background(.white)
+                
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .inset(by: 0.25)
+                            .stroke(Color(red: 0.71, green: 0.73, blue: 0.73), lineWidth: 0.5)
+                    )
+                
+            }
+            .padding(0)
+            .frame(width: 358, alignment: .topLeading)
+            .padding(.top, 20)
+            .padding(.horizontal, 16)
         
-        VStack(alignment: .leading, spacing: 0) {
+           Spacer()
             
-            Text("New Password")
-              .font(
-                Font.custom("Inter-SemiBold", size: 16)
-              )
-              .kerning(0.16)
-              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-              .frame(width: 317, height: 22, alignment: .leading)
-              .padding(.bottom, 4)
-          
-            TextField("New Password" , text: $newPassword)
-                .padding(.leading, 16)
-                .padding(.vertical, 13)
-                .frame(width: 358, height: 50, alignment: .leading)
-                .background(.white)
-            
-                .cornerRadius(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .inset(by: 0.25)
-                        .stroke(Color(red: 0.71, green: 0.73, blue: 0.73), lineWidth: 0.5)
-                )
-            
+            Button("Update Password"){
+                changePassword()
+            }
+//            HStack{
+//                Text("Update Password")
+//                  .font(
+//                    Font.custom("Inter-SemiBold", size: 14)
+//                  )
+//                  .kerning(0.4)
+//                  .multilineTextAlignment(.center)
+//                  .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+//            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 8)
+            .frame(width: 358, height: 36, alignment: .center)
+            .background(Color(red: 0.18, green: 0.56, blue: 0.42))
+            .cornerRadius(8)
         }
-        .padding(0)
-        .frame(width: 358, alignment: .topLeading)
-        .padding(.top, 20)
-        .padding(.horizontal, 16)
-        
-        VStack(alignment: .leading, spacing: 0) {
-            
-            Text("Confirm Password")
-              .font(
-                Font.custom("Inter-SemiBold", size: 16)
-              )
-              .kerning(0.16)
-              .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-              .frame(width: 317, height: 22, alignment: .leading)
-              .padding(.bottom, 4)
-          
-            TextField("Confirm Password" , text: $newPassword)
-                .padding(.leading, 16)
-                .padding(.vertical, 13)
-                .frame(width: 358, height: 50, alignment: .leading)
-                .background(.white)
-            
-                .cornerRadius(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .inset(by: 0.25)
-                        .stroke(Color(red: 0.71, green: 0.73, blue: 0.73), lineWidth: 0.5)
-                )
-            
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Password Change"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
-        .padding(0)
-        .frame(width: 358, alignment: .topLeading)
-        .padding(.top, 20)
-        .padding(.horizontal, 16)
+    }
     
-       Spacer()
-        
-        HStack{
-            Text("Update Password")
-              .font(
-                Font.custom("Inter-SemiBold", size: 14)
-              )
-              .kerning(0.4)
-              .multilineTextAlignment(.center)
-              .foregroundColor(Color(red: 0.93, green: 0.98, blue: 0.96))
+    func changePassword() {
+        guard let user = Auth.auth().currentUser,
+              !currentPassword.isEmpty,
+              !newPassword.isEmpty,
+              newPassword == confirmPassword else {
+            showAlert(message: "Invalid input. Please check your entries.")
+            return
         }
-        
-        .padding(.horizontal, 24)
-        .padding(.vertical, 8)
-        .frame(width: 358, height: 36, alignment: .center)
-        .background(Color(red: 0.18, green: 0.56, blue: 0.42))
-        .cornerRadius(8)
-       
+
+        let credential = EmailAuthProvider.credential(withEmail: user.email!, password: currentPassword)
+
+        user.reauthenticate(with: credential) { _, reauthError in
+            if let reauthError = reauthError {
+                showAlert(message: "Reauthentication failed. \(reauthError.localizedDescription)")
+            } else {
+                user.updatePassword(to: newPassword) { updateError in
+                    if let updateError = updateError {
+                        showAlert(message: "Password change failed. \(updateError.localizedDescription)")
+                    } else {
+                        showAlert(message: "Password successfully changed.")
+                        // Auth.auth().signOut()
+                    }
+                }
+            }
+        }
+    }
+
+    func showAlert(message: String) {
+        alertMessage = message
+        showAlert = true
     }
 }
 

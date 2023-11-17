@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct UserProfileCard: View {
+    
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    @State private var babies: [Babies] = []
+    let calendar = Calendar.current
+    
     @State private var user = User.MOCK_USER
+    @State private var profileImage: UIImage?
     
     var body: some View {
         NavigationStack{
             
             HStack(alignment: .top, spacing: 10) {
                 VStack {
+                    let imageURL = URL(string: babies.first?.profileImageURL ?? "") ?? URL(string: "")
+                    
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 100, height: 100)
                         .background(
-                            Image(user.profileImageURL ?? "")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
-                                .clipped()
-                                .opacity(0.8)
+                            AsyncImage(url: imageURL) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .clipped()
+                                    .cornerRadius(8)
+                            } placeholder: {
+                                //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
+                            }
                         )
                         .cornerRadius(100)
                         .overlay(
@@ -35,7 +47,7 @@ struct UserProfileCard: View {
                 }
                 
                 VStack {
-                    Text(user.babyName)
+                    Text(babies.first?.name ?? "")
                         .font(
                             Font.custom("Inter-Medium", size: 22))
                         .kerning(0.088)
@@ -46,14 +58,14 @@ struct UserProfileCard: View {
                         .padding(.bottom, 5)
                     
                     
-                    Text("8 Bulan")
+                    Text("\(monthsSinceBirth(dob: babies.first?.dob)) months")
                         .font(Font.custom("Inter-Regular", size: 14))
                         .kerning(0.08)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 10)
                     
-                    Text("Perempuan")
+                    Text(babies.first?.gender ?? "")
                         .font(Font.custom("Inter-Regular", size: 14))
                         .kerning(0.08)
                         .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -64,7 +76,7 @@ struct UserProfileCard: View {
                                     
                     VStack{
                         NavigationLink("Edit") {
-                            EditProfileView(user: User.MOCK_USER)
+                            EditProfileView(name: babies.first?.name ?? "", age: "\(monthsSinceBirth(dob: babies.first?.dob))", gender: babies.first?.gender ?? "" )
                             
 //
                                 
@@ -92,10 +104,21 @@ struct UserProfileCard: View {
             .background(Color(red: 0.96, green: 0.96, blue: 0.96))
             .cornerRadius(8)
         }
+        .onAppear{
+            firestoreManager.getBabiesData(){ fetchBabies in
+                self.babies = fetchBabies
+            }
+        }
 //        .padding(10)
 //        .frame(maxWidth: .infinity, alignment: .top)
 //        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
 //        .cornerRadius(8)
+    }
+    
+    func monthsSinceBirth(dob: Date?) -> Int {
+        let currentDate = Date()
+        let components = calendar.dateComponents([.month], from: dob ?? Date.now, to: currentDate)
+        return components.month ?? 0
     }
 }
 

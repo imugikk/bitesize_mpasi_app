@@ -13,13 +13,17 @@ struct MealItemView: View {
     var menuCalories: Double
     var menuType: [String]
     var menuId: String
+    var menuAllergy: [String]?
+    var menuImage: String?
 
 
-    init(menuName: String, menuCalories: Double, menuType: [String], menuId: String) {
+    init(menuName: String, menuCalories: Double, menuType: [String], menuId: String, menuAllergy: [String]?, menuImage: String?) {
         self.menuName = menuName
         self.menuCalories = menuCalories
         self.menuType = menuType
         self.menuId = menuId
+        self.menuAllergy = menuAllergy
+        self.menuImage = menuImage
     }
     
     var body: some View {
@@ -34,17 +38,38 @@ struct MealItemView: View {
                         Spacer().frame(height: 8)
                         
                         ZStack (alignment: .topLeading){
-                            Rectangle()
-                                .foregroundColor(.clear)
-                                .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
-                                .background(
-                                    Image("pasta")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 294, height: 151.51553)
-                                        .clipped()
-                                        .cornerRadius(8)
-                                ).padding(.top, 8)
+                            
+                            if let menuImage = menuImage {
+                                let imageURL = URL(string: menuImage) ?? URL(string: "")
+                                
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+                                    .background(
+                                        AsyncImage(url: imageURL) { image in
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 294, height: 151.51553)
+                                                .clipped()
+                                                .cornerRadius(8)
+                                        } placeholder: {
+                                            //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
+                                        }
+                                    ).padding(.top, 8)
+                            } else {
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(maxWidth: .infinity, minHeight: 130, maxHeight: 130)
+                                    .background(
+                                        Image("pasta")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 294, height: 151.51553)
+                                            .clipped()
+                                            .cornerRadius(8)
+                                    ).padding(.top, 8)
+                            }
                             
                             HStack(alignment: .center, spacing: 10) {
                                 Text(menuType[0])
@@ -93,26 +118,10 @@ struct MealItemView: View {
                         
                         HStack{
                             HStack (spacing: 8){
-                                Circle()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.blue)
-                                
-                                Circle()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.blue)
-                                
-                                Circle()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.blue)
-                                
-                                Circle()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.blue)
-                                
-                                Circle()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.blue)
-                            }
+                                ForEach(menuAllergy ?? [], id: \.self) { item in
+                                    AllergyView(allergy: item)
+                                }
+                            }.frame(width: 160, height: 30, alignment: .leading)
                             Spacer()
                             NavigationLink(destination: MenuDetailView(menuId: menuId, menuCalories: menuCalories)){
                                 Text("See Detail")

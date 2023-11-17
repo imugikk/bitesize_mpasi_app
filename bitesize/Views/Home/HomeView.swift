@@ -14,7 +14,7 @@ struct HomeView: View {
     let calculator = CaloriesNeededCalculator()
     
     @State private var babies: [Babies] = []
-    @State private var menu: [String] = []
+    @State private var menu: [Any] = []
     @State private var zScoreView: [Double] = []
     
     
@@ -126,8 +126,10 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal) {
                             HStack(spacing: 20) {
-                                ForEach(menu, id: \.self) { menuItem in
-                                    RecommendationItemView(name: menuItem)
+                                ForEach(menu.indices, id: \.self) { index in
+                                    if let menuItem = menu[index] as? [Any] {
+                                        RecommendationItemView(menuName: menuItem[0] as! String, menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
+                                    }
                                 }
                             }
                         }.padding(.horizontal, 16)
@@ -157,9 +159,9 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: ARViewForSwiftUI()) {
-                            Text("AR Kit")
-                        }
+//                        NavigationLink(destination: ARViewForSwiftUI().edgesIgnoringSafeArea(.all)) {
+//                            Text("AR Kit")
+//                        }
                         
                     }
                 }.navigationBarBackButtonHidden()
