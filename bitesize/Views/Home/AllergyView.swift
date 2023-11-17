@@ -24,19 +24,19 @@ struct AllergyView: View {
                 .foregroundColor(.white)
                 .font(.system(size: 9))
 
-            Path { path in
-                let angle: CGFloat = .pi / 4
-                let radius: CGFloat = 15
-                let center = CGPoint(x: 15, y: 15)
-                let startPoint = CGPoint(x: center.x - radius * cos(angle),
-                                         y: center.y - radius * sin(angle))
-                let endPoint = CGPoint(x: center.x + radius * cos(angle),
-                                       y: center.y + radius * sin(angle))
-                
-                path.move(to: startPoint)
-                path.addLine(to: endPoint)
-            }
-            .stroke(Color.black, lineWidth: 1)
+//            Path { path in
+//                let angle: CGFloat = .pi / 4
+//                let radius: CGFloat = 15
+//                let center = CGPoint(x: 15, y: 15)
+//                let startPoint = CGPoint(x: center.x - radius * cos(angle),
+//                                         y: center.y - radius * sin(angle))
+//                let endPoint = CGPoint(x: center.x + radius * cos(angle),
+//                                       y: center.y + radius * sin(angle))
+//                
+//                path.move(to: startPoint)
+//                path.addLine(to: endPoint)
+//            }
+//            .stroke(Color.black, lineWidth: 1)
         }
         .frame(width: 30, height: 30)
     }

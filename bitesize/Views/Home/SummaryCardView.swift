@@ -41,15 +41,15 @@ struct SummaryCardView: View {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .center, spacing: 16) {
                     VStack(alignment: .center, spacing: 4) {
-                        HStack (alignment: .center, spacing: 56){
+                        HStack (alignment: .center, spacing: 30){
                            
-                            Text("\(babies.first?.name ?? "") Needs")
+                            Text("\(babies.first?.name ?? "")'s Nutrition Need")
                                 .font(
                                     Font.custom("Nunito-SemiBold", size: 24)
                                     
                                 )
                                 .kerning(0.24)
-                                .padding(.top, 20)
+                                .padding(.top, 10)
                                 .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             
                             Button(action:{
