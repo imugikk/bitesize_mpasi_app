@@ -154,7 +154,7 @@ struct MenuDetailView: View {
                 .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
 
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
