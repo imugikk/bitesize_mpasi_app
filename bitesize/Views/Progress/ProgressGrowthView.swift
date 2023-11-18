@@ -20,34 +20,83 @@ struct ProgressGrowthView: View {
     @State var segmentedChoice = 0
     @State private var selectedOption = 0
     @State private var selectedSegment: Int = 0
-  
-    @State var selectedIndex: Int = 0
-
-    let titles: [String] =
-        ["Growth Chart",
-         "History"
-        ]
-    
-    
     
     var body: some View {
-//        return 
-        
-//        SegmentedControlView(selectedIndex: $selectedIndex, titles: titles)
-//        ScrollView{
+        return 
+        ScrollView{
             VStack{
-                
-                Picker("", selection: $segmentedChoice){
-                    Text("Growth Chart").tag(0)
-                    Text("History").tag(1)
+                LazyHStack(spacing: 0){
+                    Button(action: {
+                        selectedSegment = 0
+                    }) {
+                        HStack {
+                            Text("Growth Progress")
+                        }
+                        .modifier(TextButtonStyleTab(selectedSegment: selectedSegment, tag: 0))
+                    }
                     
-                }.padding()
-                    .pickerStyle(SegmentedPickerStyle())
+                    Spacer()
+                    
+                    Button(action: {
+                        selectedSegment = 1
+                    }) {
+                        HStack {
+                            Text("History")
+                        }
+                        .modifier(TextButtonStyleTab(selectedSegment: selectedSegment, tag: 1))
+                    }
+                    
+                    Spacer()
+                    
+                    
+                    
+                }
                 
+//                HStack{
+//                    ForEach(tabMenu.indices, id:\.self) { index in
+//                        let selectedIndex = tabIndex == index
+//                        ZStack{
+//                            Rectangle()
+//                                .fill(color.opacity(0))
+//                            
+//                            Rectangle()
+//                                .fill(color)
+//                                .cornerRadius(20)
+//                            
+//                                .opacity(selectedIndex ? 1 : 0.01)
+//                                .onTapGesture {
+//                                    withAnimation(.interactiveSpring(response: 0.2,
+//                                                                     dampingFraction: 2,
+//                                                                     blendDuration: 0.5)) {
+//                                        tabIndex = index
+//                                    }
+//                                }
+//                        }
+//                        .overlay(
+//                            Text(tabMenu[index])
+//                                .font(.system(size: 16))
+//                                .fontWeight(.medium)
+//                                .foregroundColor(selectedIndex ? .white : Color(red: 0.16, green: 0.49, blue: 0.36))
+//                        )
+//                    }
+//                }
+                .frame(width: UIScreen.main.bounds.width)
+//                .background(
+//                    Rectangle()
+//                        .fill(.white)
+//                )
+//                
+//                if(tabIndex == 0){
+//                    CustomSegmentedGrowthControl(preselectedIndex: $preselectedIndex, options: ["Weight", "Height", "Head Circ."])
+//                } else {
+//                    CustomHistoryControl()
+//                }
+//                
+//                Spacer()
             }
 //            .frame(height: 30, alignment: .center)
             .navigationTitle("Detail")
-            .navigationBarItems(trailing: tabIndex == 1 ? AddDataButton : nil)
+            .navigationBarItems(trailing: selectedSegment == 1 ? AddDataButton : nil)
             .sheet(isPresented: $isShowingAddDataSheet) {
                 // Content of your sheet goes here...
                 AddDataSheet(onDismiss: {
@@ -57,17 +106,17 @@ struct ProgressGrowthView: View {
             }
             
             
-            if(segmentedChoice == 0){
+            if(selectedSegment == 0){
                 CustomSegmentedGrowthControl(preselectedIndex: $preselectedIndex, options: ["Weight", "Height", "Head Circ."])
             }
             
-            if(segmentedChoice == 1){
+            if(selectedSegment == 1){
                 CustomHistoryControl()
             }
             
             Spacer()
             
-//        }
+        }
     }
     
     var AddDataButton: some View {
@@ -316,8 +365,8 @@ struct CustomHistoryControl: View {
             }.padding(.horizontal, 8)
         }
         .padding(16)
-        .frame(width: 358, height: 158, alignment: .topLeading)
-//        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+        .frame(width: 358, height: .infinity, alignment: .topLeading)
+        .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         .cornerRadius(8)
         
         .onAppear{
@@ -355,7 +404,7 @@ struct TextButtonStyleTab: ViewModifier {
         content
             .padding(.horizontal, 16)
             .padding(.vertical, 4)
-            .font(Font.custom("Inter-Medium", size: 16))
+            .font(Font.custom("Inter-Medium", size: 20))
             .kerning(0.2)
             .multilineTextAlignment(.center)
             .foregroundColor(selectedSegment == tag ? Color.white : Color(red: 0.16, green: 0.49, blue: 0.36))
