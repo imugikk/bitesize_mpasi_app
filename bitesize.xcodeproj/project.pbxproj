@@ -13,7 +13,6 @@
 		428034E62B088A9600237FDD /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E02B088A9600237FDD /* Test.swift */; };
 		428034E72B088A9600237FDD /* RectPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E12B088A9600237FDD /* RectPreference.swift */; };
 		428034E82B088A9600237FDD /* UnderlineModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E22B088A9600237FDD /* UnderlineModifier.swift */; };
-		428034EA2B08D1CB00237FDD /* ManageAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E92B08D1CB00237FDD /* ManageAccountView.swift */; };
 		42D22CA42B013C310091E21D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CA32B013C310091E21D /* GifImage.swift */; };
 		42D22CA82B013CED0091E21D /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CA72B013CED0091E21D /* Loading.gif */; };
 		42D22CAE2B0140FC0091E21D /* LoadingViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */; };

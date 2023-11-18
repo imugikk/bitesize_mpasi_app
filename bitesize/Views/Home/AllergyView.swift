@@ -22,7 +22,7 @@ struct AllergyView: View {
             
             Text(allergy)
                 .foregroundColor(.white)
-                .font(.system(size: 9))
+                .font(.system(size: 8.5))
 
 //            Path { path in
 //                let angle: CGFloat = .pi / 4
@@ -38,7 +38,7 @@ struct AllergyView: View {
 //            }
 //            .stroke(Color.black, lineWidth: 1)
         }
-        .frame(width: 30, height: 30)
+        .frame(width: 35, height: 35)
     }
 }
 
