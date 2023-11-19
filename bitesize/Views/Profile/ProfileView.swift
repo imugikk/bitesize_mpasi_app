@@ -10,6 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     @AppStorage("email") var email: String = ""
     @State var showSheet: Bool = false
+    @State private var isShowing = false
+    @State private var text = "..."
+    @State private var color = Color.black
     
     var body: some View {
         
@@ -178,61 +181,55 @@ struct ProfileView: View {
 
                 Divider()
                     .padding(.horizontal, 76)
-                HStack {
-                    Image("HelpIcon1")
-                        .frame(width: 24, height: 24)
-                    
-                    Text("Help")
-                        .font(Font.custom("Inter-Regular", size: 16))
-                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
-                        .padding(.leading, 16)
-                    
-                    Text(">")
-                        .font(
-                            Font.custom("SF Pro", size: 17)
-                                .weight(.semibold)
-                        )
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
-                        .padding(.trailing, 32)
-                }
-                .padding(.top, 8)
-                .padding(.leading, 32)
-                Divider()
-                    .padding(.horizontal, 76)
                 
-             
                 
-                    HStack {
-                        Image("LogOutIcon1")
-                            
-                            .frame(width: 24, height: 24)
-                        
-                        Text("Log Out")
-                            .font(Font.custom("Inter-Regular", size: 16))
-                            .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                            .frame(maxWidth: .infinity, minHeight: 22, maxHeight: 22, alignment: .leading)
-                            .padding(.leading, 16)
-                        
-                        Text(">")
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.3))
-                            .padding(.trailing, 32)
+                VStack{
+                    Button("Log Out") {
+                        isShowing.toggle()
                     }
-                    .onTapGesture {
-                    email = ""}
-                    .padding(.top, 8)
-                    .padding(.leading, 32)
-                    
+                    .confirmationDialog("Your profile will be saved. Looking forward to see you again", isPresented: $isShowing, titleVisibility: .visible) {
+                        
+                        Button(action: {
+                            email = ""
+                        }, label: {
+                            //                    HStack(alignment: .top, spacing: 4) {
+                            Text("Log Out")
+                                .font(
+                                    Font.custom("Inter-Bold", size: 14)
+                                    
+                                )
+                                .kerning(0.4)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.red)
+                           
+                        })
+                        
+                    }
+                }.foregroundStyle(Color.red)
+                    .padding(.top, 28)
                 
                 
-                Divider()
-                    .padding(.horizontal, 76)
+//                Button(action: {
+//                    email = ""
+//                }, label: {
+////                    HStack(alignment: .top, spacing: 4) {
+//                        Text("Log Out")
+//                        .font(
+//                        Font.custom("Inter-Bold", size: 14)
+//                        
+//                        )
+//                        .kerning(0.4)
+//                        .multilineTextAlignment(.center)
+//                        .foregroundColor(.red)
+////                    }
+////                    .padding(.horizontal, 24)
+////                    .padding(.vertical, 8)
+////                    .frame(width: 357, height: 36, alignment: .top)
+////                    .background(Color(red: 0.18, green: 0.56, blue: 0.42))
+////
+////                    .cornerRadius(8)
+//                })
+//                .padding(.top, 28)
                 
                 Spacer()
 //                NavigationLink(destination: LoginView().navigationBarHidden(true)) {
@@ -240,7 +237,7 @@ struct ProfileView: View {
 //                        email = ""
 //                    }
 //                }
-Spacer()
+
             }.navigationBarHidden(true)
                
                 
@@ -257,6 +254,6 @@ Spacer()
     }
 }
 
-#Preview {
-    ProfileView()
-}
+//#Preview {
+//    ProfileView()
+//}

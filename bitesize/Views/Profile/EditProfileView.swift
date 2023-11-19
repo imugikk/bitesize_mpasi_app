@@ -83,7 +83,7 @@ struct EditProfileView: View {
             
             VStack(alignment: .leading, spacing: 0) {
                 
-                Text("Name")
+                Text("Baby Nickname")
                     .font(
                         Font.custom("Inter-SemiBold", size: 16)
                             
@@ -189,8 +189,10 @@ struct EditProfileView: View {
                 }
             })
             .toolbar{
+                
                 Button{
                     firestoreManager.updateBabiesData(name: name, gender: gender)
+                    
                 } label: {
                     HStack(alignment: .center, spacing: 0) {
                                         Text("Done")

@@ -75,6 +75,8 @@ struct UserProfileCard: View {
                 }
                                     
                     VStack{
+                        
+                        
                         NavigationLink("Edit") {
                             EditProfileView(name: babies.first?.name ?? "", age: "\(monthsSinceBirth(dob: babies.first?.dob))", gender: babies.first?.gender ?? "" )
                             

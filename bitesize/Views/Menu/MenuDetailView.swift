@@ -43,7 +43,7 @@ struct MenuDetailView: View {
 //                            .clipped()
 //                            .cornerRadius(8)
                     } placeholder: {
-                        //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
+                       Text("Image Loading")
                     }
 //                        ).padding(.top, 8)
                 }
@@ -175,7 +175,8 @@ struct MenuDetailView: View {
                 .frame(maxWidth: .infinity, minHeight: 42, maxHeight: 42, alignment: .trailing)
 
             }
-        }
+          
+        }.navigationBarBackButtonHidden()
     }
 }
 

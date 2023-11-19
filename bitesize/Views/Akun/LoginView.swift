@@ -39,6 +39,14 @@ struct LoginView: View {
                         .padding(.top, 12)
                         .padding(.bottom, 20)
                     
+                    Spacer()
+                    
+                    Image("BiteSizeLogo")
+                        .resizable()
+                        .frame(width: 300, height: 250)
+                    
+                    Spacer()
+                    
 //                    TextAccountView(labelText: "Email")
 //                        .edgesIgnoringSafeArea(.all)
 //                    
@@ -173,6 +181,7 @@ struct LoginView: View {
                     }
                     
                 }.padding()
+                    .background(Color(red: 0.93, green: 0.98, blue: 0.96))
                 //                .sheet(isPresented: $isPresented, content: {
                 //                    RegisterView()
                 //                })

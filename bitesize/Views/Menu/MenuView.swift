@@ -19,7 +19,7 @@ struct MenuView: View {
     @State private var totalCalories: Double = 0
     
     var body: some View {
-        NavigationStack{
+        NavigationView{
             VStack {
                 HStack {
                     Text("My Menu")

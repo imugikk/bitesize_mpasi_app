@@ -51,6 +51,14 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                     .padding(.top, 12)
                     .padding(.bottom, 20)
                 
+                Spacer()
+                
+                Image("BiteSizeLogo")
+                    .resizable()
+                    .frame(width: 300, height: 250)
+                
+                Spacer()
+                
 //                TextAccountView(labelText: "Full Name")
 //                    .edgesIgnoringSafeArea(.all)
 //                
@@ -242,6 +250,7 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                 .cornerRadius(12)
                 
             }/*.padding()*/
+            .background(Color(red: 0.93, green: 0.98, blue: 0.96))
             .onAppear {
                 if isRegistrationSuccessful {
                     // Navigate to ContentView after successful registration

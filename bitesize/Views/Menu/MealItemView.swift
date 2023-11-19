@@ -139,7 +139,7 @@ struct MealItemView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .shadow(color: Color(red: 0.08, green: 0.12, blue: 0.12).opacity(0.25), radius: 3, x: 0, y: 0)
-            }
+            }.navigationBarBackButtonHidden(true)
     }
 }
 
