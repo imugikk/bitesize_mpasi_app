@@ -377,6 +377,8 @@ struct SummaryCardView: View {
                     .padding(.leading, 1)
                     .padding(.trailing, 2)
                     .padding(.vertical, 2)
+                    
+                    
                     Text("Find out how we do the calculations.")
                         .font(Font.custom("Inter-Regular", size: 11))
                         .kerning(0.5)
@@ -472,6 +474,7 @@ struct SummaryCardView: View {
                     }
                     
                 }
+                .padding(.horizontal, 16)
                 .padding(0)
                 
                
@@ -492,9 +495,10 @@ struct SummaryCardView: View {
         
         .padding(.horizontal, 16)
         .padding(.vertical, 16)
-        .padding(.top, 10)
-        .padding(.bottom, 24)
-        .frame(width: 400, alignment: .topLeading)
+//        .padding(.top, 5)
+//        .padding(.bottom, 24)
+        .frame(width: .infinity, alignment: .topLeading)
+        
         .background(
             LinearGradient(
                     stops: [
