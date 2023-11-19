@@ -41,7 +41,7 @@ struct MenuDetailView: View {
                             .scaledToFill()
 //                            .frame(width: 294, height: 151.51553)
 //                            .clipped()
-//                            .cornerRadius(8)
+                            .cornerRadius(8)
                     } placeholder: {
                        Text("Image Loading")
                     }

@@ -106,7 +106,7 @@ struct DescriptionView: View {
                 HStack{
                     ForEach(menuNutrisi.sorted(by: { $0.key < $1.key }), id: \.key) { nutrient, value in
                         VStack (alignment:.center){
-                            Text(nutrient == "Karbohidrat" ? "Carbs" : nutrient == "Lemak" ? "Fat" : "Protein")
+                            Text(nutrient == "Karbohidrat" ? "Carbs:" : nutrient == "Lemak" ? "Fat:" : "Protein:")
                               .font(
                                 Font.custom("Inter", size: 16)
                                   .weight(.medium)
@@ -114,16 +114,15 @@ struct DescriptionView: View {
                               .kerning(0.2)
                               .multilineTextAlignment(.center)
                               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                              .frame(width: 60, alignment: .center)
+                              .frame(width: 87, alignment: .center)
 
                             Text(String(value) + "g")
                               .font(Font.custom("Work Sans", size: 14))
                               .kerning(0.08)
                               .multilineTextAlignment(.center)
                               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                              .frame(width: 60, alignment: .center)
+                              .frame(width: 87, alignment: .center)
                         }
-                        .padding(.horizontal, 16)
                         if nutrient != menuNutrisi.sorted(by: { $0.key < $1.key }).last?.key {
                             Spacer()
                         }
