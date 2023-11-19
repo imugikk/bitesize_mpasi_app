@@ -48,26 +48,26 @@ struct ZScoreSheetView: View {
                 .cornerRadius(8)
                 .padding(.horizontal, 16)
                 
-                VStack(alignment: .center, spacing: 8) {
-                    
-                    Text("WHO Standard")
-                        .font(
-                            Font.custom("Inter-SemiBold", size: 16)
-                            
-                        )
-                        .kerning(0.16)
-                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Image("ZScore")
-                    
-                    
-                }
-                .padding(16)
-                .frame(maxWidth: .infinity, minHeight: 87, maxHeight: 87, alignment: .topLeading)
-                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                .cornerRadius(8)
-                .padding(.horizontal, 16)
+//                VStack(alignment: .center, spacing: 8) {
+//                    
+//                    Text("WHO Standard")
+//                        .font(
+//                            Font.custom("Inter-SemiBold", size: 16)
+//                            
+//                        )
+//                        .kerning(0.16)
+//                        .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                    
+//                    Image("ZScore")
+//                    
+//                    
+//                }
+//                .padding(16)
+//                .frame(maxWidth: .infinity, minHeight: 87, maxHeight: 87, alignment: .topLeading)
+//                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+//                .cornerRadius(8)
+//                .padding(.horizontal, 16)
                 
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(alignment: .center) {

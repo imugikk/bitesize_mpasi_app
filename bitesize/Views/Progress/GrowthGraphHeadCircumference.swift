@@ -12,10 +12,17 @@ struct GrowthGraphHeadCircumference: View {
     @State private var babies: [Babies] = []
     var body: some View {
         VStack {
-            GraphView(source: "b_age_head.csv")
-            .padding(.top, 20)
-            .padding(.horizontal, 16)
-            .frame(height: 400)
+            if babies.first?.gender == "Female" {
+                GraphView(source: "g_age_headc.csv", type: "headc")
+                .padding(.top, 20)
+                .padding(.horizontal, 16)
+                .frame(height: 400)
+            } else {
+                GraphView(source: "b_age_headc.csv", type: "headc")
+                .padding(.top, 20)
+                .padding(.horizontal, 16)
+                .frame(height: 400)
+            }
             
             Text("Head Circumference against Baby Age (Months) Graph")
                 .font(

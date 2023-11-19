@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     @AppStorage("email") var email: String = ""
     @State var showSheet: Bool = false
     @State private var isShowing = false
@@ -82,7 +83,7 @@ struct ProfileView: View {
                     .padding(.horizontal, 76)
                 
                 NavigationLink {
-                    SavedMenuView()
+                    SavedMenuCard()
                 } label: {
                     HStack {
                         Image("SavedIcon1")
