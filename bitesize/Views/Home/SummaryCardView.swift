@@ -496,7 +496,7 @@ struct SummaryCardView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 16)
 //        .padding(.top, 5)
-//        .padding(.bottom, 24)
+        .padding(.bottom, 5)
         .frame(width: .infinity, alignment: .topLeading)
         
         .background(
