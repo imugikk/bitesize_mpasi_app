@@ -11,6 +11,7 @@ struct UserProfileCard: View {
     
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var babies: [Babies] = []
+    @State private var photo: URL?
     let calendar = Calendar.current
     
     @State private var user = User.MOCK_USER
@@ -21,13 +22,13 @@ struct UserProfileCard: View {
             
             HStack(alignment: .top, spacing: 10) {
                 VStack {
-                    let imageURL = URL(string: babies.first?.profileImageURL ?? "") ?? URL(string: "")
+//                    let imageURL = URL(string: String(photo) ?? URL(string: ""),
                     
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 100, height: 100)
                         .background(
-                            AsyncImage(url: imageURL) { image in
+                            AsyncImage(url: photo) { image in
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
@@ -109,6 +110,10 @@ struct UserProfileCard: View {
         .onAppear{
             firestoreManager.getBabiesData(){ fetchBabies in
                 self.babies = fetchBabies
+            }
+            
+            firestoreManager.getPhoto() { url in
+                self.photo = url
             }
         }
 //        .padding(10)

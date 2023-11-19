@@ -611,7 +611,7 @@ class FirestoreManager: ObservableObject {
         }
     }
     
-    func getSavedMenu(completion: @escaping ([[String: Any]]) -> Void) {
+    func getSavedMenu(completion: @escaping ([[Any]]) -> Void) {
         let userId = Auth.auth().currentUser?.uid ?? ""
         let babyRef = db.collection("Babies").whereField("userId", isEqualTo: userId)
         
@@ -622,7 +622,7 @@ class FirestoreManager: ObservableObject {
             } else {
                 if let document = querySnapshot?.documents.first {
                     let menuIds = document["menuId"] as? [String] ?? []
-                    var menuDataArray: [[String: Any]] = []
+                    var menuDataArray: [[Any]] = []
                     
                     let dispatchGroup = DispatchGroup()
                     for menuId in menuIds {
@@ -642,13 +642,11 @@ class FirestoreManager: ObservableObject {
                                 let menuCalories = data["Calories"] as? Double ?? 0.0
                                 let menuType = data["Jenis"] as? [String] ?? []
                                 let bahan = data["Bahan"] as? [String:[String: String]] ?? [:]
+                                let image = data["imageUrl"] as? String ?? ""
+                                let alergi = data["Allergies"] as? [String] ?? []
 
-                                let menuDictionary: [String: Any] = [
-                                    "menuId": menuId,
-                                    "menuName": menuName,
-                                    "menuCalories": menuCalories,
-                                    "menuType": menuType,
-                                    "bahan": bahan
+                                let menuDictionary: [Any] = [
+                                    menuId,menuName,menuCalories,menuType,bahan,image,alergi
                                 ]
 
                                 menuDataArray.append(menuDictionary)
@@ -696,6 +694,32 @@ class FirestoreManager: ObservableObject {
                     }
                 }
             }
+        }
+    }
+    
+    func getPhoto(completion: @escaping (URL?) -> Void) {
+        getBabiesData{ babies in
+            let photoBabies = babies.first?.profileImageURL
+            let storage = Storage.storage().reference().child(photoBabies ?? "")
+               
+           storage.getData(maxSize: 1 * 2048 * 2048) { data, error in
+               if error != nil {
+                   print(error?.localizedDescription ?? "error")
+                   completion(nil)
+               }else{
+                   storage.downloadURL { url, error in
+                       if error != nil {
+                           print(error?.localizedDescription ?? "error")
+                           completion(nil)
+                       }else {
+                           print(url ?? "url")
+                           completion(url)
+                           //https://firebasestorage.googleapis.com/v0/b/epeycompare.appspot.com/o/Images%2FCorleone.jpg?alt=media&token=04c6369d-8036-4aef-8052-bac21c89eeda
+
+                       }
+                   }
+               }
+           }
         }
     }
 }
