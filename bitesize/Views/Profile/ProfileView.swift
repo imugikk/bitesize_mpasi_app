@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     @AppStorage("email") var email: String = ""
     @State var showSheet: Bool = false
     @State private var isShowing = false

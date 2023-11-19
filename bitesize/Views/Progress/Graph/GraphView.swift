@@ -9,11 +9,16 @@ import SwiftUI
 import Charts
 
 struct GraphView: View {
+    
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    @State private var babies: [Babies] = []
+    
     @State var weights: [[Double]] = []
     var monthsLabel: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
-    var gradeLabel: [String] = ["2nd", "5th", "10th", "15th", "25th", "50th", "75th", "85th", "90th", "95th", "98th"]
+    
     
     @State var source: String
+    @State var type: String
         
     var body: some View {
         NavigationView{
@@ -28,20 +33,53 @@ struct GraphView: View {
                             )
                         }
                         .foregroundStyle(by: .value("color", column[index]))
+                        
+                        if (index == 0) {
+                            if(type == "weight"){
+                                ForEach(babies.first?.weight ?? [], id: \.self) { rowIndex in
+                                    LineMark(
+                                        x: .value("months", 1),
+                                        y: .value("grade", rowIndex),
+                                        series: .value("weight", "0")
+                                    )
+                                }
+                                .foregroundStyle(.red)
+                            } else if (type == "height") {
+                                ForEach(babies.first?.height ?? [], id: \.self) { rowIndex in
+                                    LineMark(
+                                        x: .value("months", 1),
+                                        y: .value("grade", rowIndex),
+                                        series: .value("height", "0")
+                                    )
+                                }
+                                .foregroundStyle(.red)
+                            } else {
+                                ForEach(babies.first?.hc ?? [], id: \.self) { rowIndex in
+                                    LineMark(
+                                        x: .value("months", 1),
+                                        y: .value("grade", rowIndex),
+                                        series: .value("hc", "0")
+                                    )
+                                }
+                                .foregroundStyle(.red)
+                            }
+                        }
                     }
                     .chartLegend(.hidden)
                     .aspectRatio(1, contentMode: .fit)
                     .chartYAxis {
-                        AxisMarks(values: .automatic(desiredCount: 20))
+                        AxisMarks(values: .automatic(desiredCount: 30))
                     }
                     .chartXAxis {
                         AxisMarks(values: .automatic(desiredCount: 25))
                     }.padding()
-                        
                 }
             }.onAppear {
+                firestoreManager.getBabiesData(){ fetchBabies in
+                    self.babies = fetchBabies
+                }
+                
                 weights = readCSV(inputFile: source)
-                print(weights)
             }
         }
     }
@@ -100,5 +138,5 @@ struct GraphView: View {
 }
 
 #Preview {
-    GraphView(source: "b_age_length.csv")
+    GraphView(source: "b_age_length.csv", type: "weight")
 }

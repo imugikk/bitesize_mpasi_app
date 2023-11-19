@@ -696,4 +696,30 @@ class FirestoreManager: ObservableObject {
             }
         }
     }
+    
+    func getPhoto(completion: @escaping (URL?) -> Void) {
+        getBabiesData{ babies in
+            let photoBabies = babies.first?.profileImageURL
+            let storage = Storage.storage().reference().child(photoBabies ?? "")
+               
+           storage.getData(maxSize: 1 * 2048 * 2048) { data, error in
+               if error != nil {
+                   print(error?.localizedDescription ?? "error")
+                   completion(nil)
+               }else{
+                   storage.downloadURL { url, error in
+                       if error != nil {
+                           print(error?.localizedDescription ?? "error")
+                           completion(nil)
+                       }else {
+                           print(url ?? "url")
+                           completion(url)
+                           //https://firebasestorage.googleapis.com/v0/b/epeycompare.appspot.com/o/Images%2FCorleone.jpg?alt=media&token=04c6369d-8036-4aef-8052-bac21c89eeda
+
+                       }
+                   }
+               }
+           }
+        }
+    }
 }
