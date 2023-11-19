@@ -13,6 +13,7 @@
 		428034E62B088A9600237FDD /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E02B088A9600237FDD /* Test.swift */; };
 		428034E72B088A9600237FDD /* RectPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E12B088A9600237FDD /* RectPreference.swift */; };
 		428034E82B088A9600237FDD /* UnderlineModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034E22B088A9600237FDD /* UnderlineModifier.swift */; };
+		428034EC2B0A7A5800237FDD /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428034EB2B0A7A5800237FDD /* LoadingAnimation.swift */; };
 		42D22CA42B013C310091E21D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CA32B013C310091E21D /* GifImage.swift */; };
 		42D22CA82B013CED0091E21D /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 42D22CA72B013CED0091E21D /* Loading.gif */; };
 		42D22CAE2B0140FC0091E21D /* LoadingViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */; };
@@ -184,6 +185,7 @@
 		428034E12B088A9600237FDD /* RectPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectPreference.swift; sourceTree = "<group>"; };
 		428034E22B088A9600237FDD /* UnderlineModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineModifier.swift; sourceTree = "<group>"; };
 		428034E92B08D1CB00237FDD /* ManageAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountView.swift; sourceTree = "<group>"; };
+		428034EB2B0A7A5800237FDD /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		42D22CA32B013C310091E21D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		42D22CA72B013CED0091E21D /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
 		42D22CAD2B0140FC0091E21D /* LoadingViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewMain.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 				F174A2E92AEA0CD800CDA921 /* MenuView.swift */,
 				F174A2EB2AEA12B700CDA921 /* HeaderView.swift */,
 				8B3E1D012AEF54C8002B5BC6 /* MealItemView.swift */,
+				428034EB2B0A7A5800237FDD /* LoadingAnimation.swift */,
 				8B3E1D062AF1F0CF002B5BC6 /* MenuDetailView.swift */,
 				8B3E1D0A2AF20164002B5BC6 /* MenuDetailTabView.swift */,
 				8BD66E7D2AF89DF400420C25 /* DescriptionView.swift */,
@@ -946,7 +949,6 @@
 				F1C5241B2AFF493F005B69FA /* ZScoreSheetView.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
 				F1C524232AFF5E78005B69FA /* SavedMenuView.swift in Sources */,
-				428034EA2B08D1CB00237FDD /* ManageAccountView.swift in Sources */,
 				42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */,
@@ -981,6 +983,7 @@
 				F1DA471A2AD30383008BE71D /* Menu.swift in Sources */,
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
 				42F865D62B08745600C03DC6 /* GrowthGraphHeight.swift in Sources */,
+				428034EC2B0A7A5800237FDD /* LoadingAnimation.swift in Sources */,
 				8B3E1D052AF1E9B1002B5BC6 /* ProgressView.swift in Sources */,
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,

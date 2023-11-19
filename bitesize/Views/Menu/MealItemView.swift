@@ -15,8 +15,7 @@ struct MealItemView: View {
     var menuId: String
     var menuAllergy: [String]?
     var menuImage: String?
-
-
+    
     init(menuName: String, menuCalories: Double, menuType: [String], menuId: String, menuAllergy: [String]?, menuImage: String?) {
         self.menuName = menuName
         self.menuCalories = menuCalories
@@ -54,7 +53,11 @@ struct MealItemView: View {
                                                 .clipped()
                                                 .cornerRadius(8)
                                         } placeholder: {
-                                            //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
+                                            LoadingAnimation()
+//                                                .frame(width: 5, height: 5)
+//                                            Image(systemName: "rays")
+//                                                .resizable()
+//                                                .frame(width: 30, height: 30)
                                         }
                                     ).padding(.top, 8)
                             } else {
@@ -105,6 +108,7 @@ struct MealItemView: View {
                                 .kerning(0.16)
                                 .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             
+                            
                             Text("\(String(format: "%.0f", menuCalories)) ccal")
                                 .font(Font.custom("Inter", size: 14))
                                 .kerning(0.08)
@@ -112,8 +116,9 @@ struct MealItemView: View {
                                 .foregroundColor(Color(red: 0.35, green: 0.38, blue: 0.37))
                             
                                 .frame(maxWidth: .infinity, alignment: .trailing)
+                                .padding(.trailing, 8)
                             
-                            Spacer().frame(width: 8)
+//                            Spacer().frame(width: 8)
                         }.padding(.top, 8)
                         
                         HStack{

@@ -39,7 +39,7 @@ struct MenuView: View {
                 HeaderView()
                 
                 HStack(alignment: .center, spacing: 8) {
-                    Text("Calories Count")
+                    Text("Target Calories")
                         .font(
                             Font.custom("Nunito-SemiBold", size: 24)
                             

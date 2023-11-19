@@ -47,6 +47,7 @@ struct RecommendationItemView: View {
                                     .clipped()
                                     .cornerRadius(8)
                             } placeholder: {
+                                LoadingAnimation()
                                 //tempat taruh loading gambarnya biar ga cuma kosong doang viewnya
                             }
                         )
@@ -71,7 +72,7 @@ struct RecommendationItemView: View {
                     
                     Text(menuName)
                         .font(
-                            Font.custom("Inter", size: 16)
+                            Font.custom("Inter", size: 12)
                                 .weight(.semibold)
                         )
                         .kerning(0.16)

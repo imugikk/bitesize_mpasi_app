@@ -123,6 +123,7 @@ struct DescriptionView: View {
                               .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                               .frame(width: 60, alignment: .center)
                         }
+                        .padding(.horizontal, 16)
                         if nutrient != menuNutrisi.sorted(by: { $0.key < $1.key }).last?.key {
                             Spacer()
                         }
