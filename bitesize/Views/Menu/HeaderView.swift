@@ -12,6 +12,9 @@ struct HeaderView: View {
     @State private var snappedItem = 0.0
     @State private var draggingItem = 0.0
     @State private var tappedIndex: Int = 0
+    
+    @Binding var totalCalories: Double
+    @Binding var clearSelection: Bool
 
     var body: some View {
         ZStack {
@@ -57,6 +60,8 @@ struct HeaderView: View {
                                 // Updating Current Day
                                 weekStore.currentDate = week.date[index]
                                 tappedIndex = index
+                                totalCalories = 0
+                                clearSelection.toggle()
                             }
                         }
                     }
@@ -103,6 +108,6 @@ struct HeaderView: View {
 }
 
 
-#Preview {
-    HeaderView()
-}
+//#Preview {
+//    HeaderView(totalCalories: .constant(2))
+//}

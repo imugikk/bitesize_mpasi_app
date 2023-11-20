@@ -41,6 +41,14 @@ struct SummaryCardView: View {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .center, spacing: 16) {
                     VStack(alignment: .center, spacing: 4) {
+                        
+                        Button {
+                            fetchData()
+                        } label: {
+                            Text("Refresh")
+                        }
+
+                        
                         HStack (alignment: .center, spacing: 30){
                            
                             Text("\(babies.first?.name ?? "")'s Nutrition Need")
@@ -483,13 +491,7 @@ struct SummaryCardView: View {
             .frame(maxWidth: .infinity, alignment: .topLeading)
                     
         }.onAppear{
-            firestoreManager.getBabiesData(){ fetchBabies in
-                self.babies = fetchBabies
-            }
-        
-            firestoreManager.getGiziBabies(){ fetchGizi in
-                self.gizi = fetchGizi
-            }
+            fetchData()
 
         }
         
@@ -517,6 +519,16 @@ struct SummaryCardView: View {
                     .stroke(Color(red: 0.25, green: 0.8, blue: 0.59), lineWidth: 2)
 
         )
+    }
+    
+    func fetchData() {
+        firestoreManager.getBabiesData(){ fetchBabies in
+            self.babies = fetchBabies
+        }
+    
+        firestoreManager.getGiziBabies(){ fetchGizi in
+            self.gizi = fetchGizi
+        }
     }
     
     func didDismiss(){

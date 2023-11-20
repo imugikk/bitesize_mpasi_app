@@ -18,6 +18,8 @@ struct MenuView: View {
     @State private var selectedCards: Set<String> = Set()
     @State private var totalCalories: Double = 0
     
+    @State var isClearSelection: Bool = false
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -37,7 +39,7 @@ struct MenuView: View {
                 }
                 Divider().padding()
                 
-                HeaderView()
+                HeaderView(totalCalories: $totalCalories, clearSelection: $isClearSelection)
                 
                 
                 HStack(alignment: .center, spacing: 8) {
@@ -194,6 +196,10 @@ struct MenuView: View {
                 }
                 
             }
+            
+            .onChange(of: isClearSelection) { newValue in
+                clearSelection()
+            }
         }
     }
     
@@ -210,6 +216,10 @@ struct MenuView: View {
             selectedCards.insert(menuId)
             totalCalories += calories
         }
+    }
+    
+    func clearSelection(){
+        selectedCards.removeAll()
     }
 }
 
