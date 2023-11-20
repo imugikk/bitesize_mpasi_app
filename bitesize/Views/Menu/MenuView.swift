@@ -36,7 +36,9 @@ struct MenuView: View {
                     Spacer()
                 }
                 Divider().padding()
+                
                 HeaderView()
+                
                 
                 HStack(alignment: .center, spacing: 8) {
                     Text("Target Calories")
@@ -71,6 +73,9 @@ struct MenuView: View {
                 
                 ScrollView{
                     HStack{
+                        Spacer()
+                            .frame(width: 16)
+                        
                         Text("Meal Entrée")
                             .font(
                                 Font.custom("Nunito-SemiBold", size: 24)
@@ -86,7 +91,10 @@ struct MenuView: View {
                     }
                     
                     ScrollView(.horizontal) {
-                        HStack(spacing: 20) {
+                        HStack(spacing: 16) {
+                            Spacer()
+                                .frame(width: 0)
+                            
                             ForEach(menuUtama.indices, id: \.self) { index in
                                 if let menuItem = menuUtama[index] as? [Any]{
                                     MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
@@ -98,11 +106,15 @@ struct MenuView: View {
                             }
                         }
                         
-                    }.padding(.horizontal, 16)
+                    }
+                    .padding(.horizontal, 16)
                         .frame(height: 250)
                         .scrollIndicators(.hidden)
                     
                     HStack{
+                        Spacer()
+                            .frame(width: 16)
+                        
                         Text("Nourishing Bite")
                             .font(
                                 Font.custom("Nunito-SemiBold", size: 24)
@@ -118,7 +130,10 @@ struct MenuView: View {
                     }
                     
                     ScrollView(.horizontal) {
-                        HStack(spacing: 20) {
+                        HStack(spacing: 16) {
+                            Spacer()
+                                .frame(width: 0)
+                            
                             ForEach(cemilan.indices, id: \.self) { index in
                                 if let menuItem = cemilan[index] as? [Any]{
                                     MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
@@ -129,10 +144,11 @@ struct MenuView: View {
                                 }
                             }
                         }
-                    }.padding(.horizontal, 16)
+                    }
+                    .frame(width: UIScreen.main.bounds.width)
+                    .padding(.horizontal, 16)
                         .frame(height: 250)
                         .scrollIndicators(.hidden)
-                    
                         .padding(.top, 8)
                     
                     
