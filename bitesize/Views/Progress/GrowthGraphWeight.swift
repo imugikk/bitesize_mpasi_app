@@ -14,12 +14,12 @@ struct GrowthGraphWeight: View {
     var body: some View {
         VStack {
             if babies.first?.gender == "Female" {
-                GraphView(source: "g_age_weight.csv", type: "weight")
+                GraphView(source: "g_age_weight.csv")
                 .padding(.top, 20)
                 .padding(.horizontal, 16)
                 .frame(height: 400)
             } else {
-                GraphView(source: "b_age_weight.csv", type: "weight")
+                GraphView(source: "b_age_weight.csv")
                 .padding(.top, 20)
                 .padding(.horizontal, 16)
                 .frame(height: 400)
@@ -49,9 +49,6 @@ struct GrowthGraphWeight: View {
                 self.babies = fetchBabies
             }
         }
-        Spacer()
-        
-
     }
 }
 

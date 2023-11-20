@@ -39,6 +39,7 @@ struct AllergyView: View {
 //            .stroke(Color.black, lineWidth: 1)
         }
         .frame(width: 35, height: 35)
+        .padding(.vertical, 5)
     }
 }
 

@@ -22,5 +22,6 @@ struct Babies: Codable, Identifiable {
     var nutrition: [Double]
     var timeMeasure: [Date]
     var savedMenu: [String]?
-    let profileImageURL: String?
+    var profileImageURL: String?
+    var months: [Int]?
 }

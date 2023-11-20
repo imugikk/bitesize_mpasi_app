@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ResultView: View {
     @State var showSheetEditData: Bool = false
+    @State var dummy1: Bool = true
+    
 
     var body: some View {
       
@@ -81,7 +83,7 @@ struct ResultView: View {
                     
                 })
                 .sheet(isPresented: $showSheetEditData, content: {
-                    EditDataSheet()
+                    EditDataSheet(refreshData: $dummy1)
                         .presentationDragIndicator(.visible)
                 })
                 

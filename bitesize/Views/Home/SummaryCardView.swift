@@ -21,6 +21,8 @@ struct SummaryCardView: View {
     @State private var gizi: [Double] = []
     @State private var menu: [String] = []
     @State private var zScoreView: [Double] = []
+    @Binding var refreshSummary: Bool
+    
     
     var body: some View {
         let nutrition = babies.first?.nutrition.last ?? 0
@@ -41,12 +43,12 @@ struct SummaryCardView: View {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .center, spacing: 16) {
                     VStack(alignment: .center, spacing: 4) {
-                        
-                        Button {
-                            fetchData()
-                        } label: {
-                            Text("Refresh")
-                        }
+//                        
+//                        Button {
+//                            fetchData()
+//                        } label: {
+//                            Text("Refresh")
+//                        }
 
                         
                         HStack (alignment: .center, spacing: 30){
@@ -478,7 +480,7 @@ struct SummaryCardView: View {
                         Spacer()
                     }
                     .sheet(isPresented: $isShowingEditSheet){
-                        EditDataSheet()
+                        EditDataSheet(refreshData: $refreshSummary)
                     }
                     
                 }
@@ -490,11 +492,12 @@ struct SummaryCardView: View {
             .padding(0)
             .frame(maxWidth: .infinity, alignment: .topLeading)
                     
-        }.onAppear{
+        }
+        .onAppear{
             fetchData()
 
         }
-        
+                
         .padding(.horizontal, 16)
         .padding(.vertical, 16)
 //        .padding(.top, 5)
@@ -519,6 +522,10 @@ struct SummaryCardView: View {
                     .stroke(Color(red: 0.25, green: 0.8, blue: 0.59), lineWidth: 2)
 
         )
+        .onChange(of: refreshSummary) { newValue in
+            fetchData()
+        }
+
     }
     
     func fetchData() {
