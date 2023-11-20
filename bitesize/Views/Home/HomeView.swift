@@ -19,6 +19,7 @@ struct HomeView: View {
     @State private var babies: [Babies] = []
     @State private var menu: [Any] = []
     @State private var zScoreView: [Double] = []
+    @State var refreshSummary: Bool = false
     
     @State var selection = 0
     
@@ -42,7 +43,7 @@ struct HomeView: View {
                 ScrollView{
                     VStack{
                         
-                        SummaryCardView()
+                        SummaryCardView(refreshSummary: $refreshSummary)
                             .environmentObject(firestoreManager)
                             .padding(.horizontal, 16)
                         
@@ -184,6 +185,8 @@ struct HomeView: View {
                     }
                     .navigationBarBackButtonHidden()
                     .navigationBarTitleDisplayMode(.inline)
+                }.refreshable {
+                    refreshSummary.toggle()
                 }
                     
                 }

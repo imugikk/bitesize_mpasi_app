@@ -158,6 +158,8 @@
 		F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA470F2AD2B95A008BE71D /* Bahan.swift */; };
 		F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47112AD2DBBB008BE71D /* HomeView.swift */; };
 		F1DA471A2AD30383008BE71D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47192AD30383008BE71D /* Menu.swift */; };
+		F1FE2EB62B0B044C00A77B90 /* GraphViewHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */; };
+		F1FE2EB82B0B045A00A77B90 /* GraphViewHeadc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,6 +329,8 @@
 		F1DA470F2AD2B95A008BE71D /* Bahan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bahan.swift; sourceTree = "<group>"; };
 		F1DA47112AD2DBBB008BE71D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DA47192AD30383008BE71D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewHeight.swift; sourceTree = "<group>"; };
+		F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewHeadc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				F13B5D352B04E79900341B94 /* GraphView.swift */,
+				F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */,
+				F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C5240F2AFF48A8005B69FA /* ProgressGrowthView.swift in Sources */,
+				F1FE2EB82B0B045A00A77B90 /* GraphViewHeadc.swift in Sources */,
 				42F865C82B049EC200C03DC6 /* FAQTabView.swift in Sources */,
 				8B3E1D072AF1F0CF002B5BC6 /* MenuDetailView.swift in Sources */,
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
@@ -985,6 +992,7 @@
 				42F865D62B08745600C03DC6 /* GrowthGraphHeight.swift in Sources */,
 				428034EC2B0A7A5800237FDD /* LoadingAnimation.swift in Sources */,
 				8B3E1D052AF1E9B1002B5BC6 /* ProgressView.swift in Sources */,
+				F1FE2EB62B0B044C00A77B90 /* GraphViewHeight.swift in Sources */,
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
 				42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */,
@@ -1148,7 +1156,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bitesize/bitesize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "bitesize/Preview\\ Content";
 				DEVELOPMENT_TEAM = 5HAHSL2Z4H;
 				ENABLE_PREVIEWS = YES;
@@ -1186,7 +1194,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = bitesize/bitesize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "bitesize/Preview\\ Content";
 				DEVELOPMENT_TEAM = 5HAHSL2Z4H;
 				ENABLE_PREVIEWS = YES;

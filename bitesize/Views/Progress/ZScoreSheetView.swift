@@ -71,7 +71,7 @@ struct ZScoreSheetView: View {
                 
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(alignment: .center) {
-                        Text("Kategori Status Gizi")
+                        Text("Nutrition Status Category")
                             .font(
                                 Font.custom("Inter-SemiBold", size: 16)
                                 
@@ -96,7 +96,7 @@ struct ZScoreSheetView: View {
                     Divider()
                     
                     HStack{
-                        Text("BB Sangat Kurang")
+                        Text("Risk Severe Underweight")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -112,13 +112,13 @@ struct ZScoreSheetView: View {
                     }
                     
                     HStack{
-                        Text("BB Kurang")
+                        Text("Risk Underweight")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(width: 155 , alignment: .leading)
                         
-                        Text("-3 SD sampai dengan < -2 SD")
+                        Text("-3 SD to < -2 SD")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .multilineTextAlignment(.center)
@@ -127,13 +127,13 @@ struct ZScoreSheetView: View {
                     }
                     
                     HStack{
-                        Text("BB Normal")
+                        Text("Normal Weight")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(maxWidth: .infinity , alignment: .leading)
                         
-                        Text("-2 SD sampai dengan +1 SD")
+                        Text("-2 SD to +1 SD")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .multilineTextAlignment(.center)
@@ -142,7 +142,7 @@ struct ZScoreSheetView: View {
                     }
                     
                     HStack{
-                        Text("BB Lebih")
+                        Text("Risk of Overweight")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))

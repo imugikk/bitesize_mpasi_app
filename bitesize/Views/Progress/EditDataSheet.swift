@@ -19,6 +19,7 @@ struct EditDataSheet: View {
     @State var babyHeight = ""
     @State var babyCircumference = ""
     @State private var selectedDate : Date = .now
+    @Binding var refreshData: Bool
     
     var body: some View {
         NavigationStack{
@@ -157,8 +158,14 @@ struct EditDataSheet: View {
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            firestoreManager.editGiziBabies(calori: [Double(calories) ?? 0], carbs: Double(babyWeight) ?? 0, fat: Double(babyCircumference) ?? 0, protein: Double(babyHeight) ?? 0)
+                            firestoreManager.editGiziBabies(calori: [Double(calories) ?? 0], carbs: Double(babyWeight) ?? 0, fat: Double(babyCircumference) ?? 0, protein: Double(babyHeight) ?? 0) { newValue in
+                                self.refreshData.toggle()
+                            }
+                            
+                           
+                            
                             presentationMode.wrappedValue.dismiss()
+                            
                         }, label: {
                                     Text("Done")
                                 .font(Font.custom("Inter-Regular", size: 16))
@@ -187,6 +194,6 @@ struct EditDataSheet: View {
     }
 }
 
-#Preview {
-    EditDataSheet()
-}
+//#Preview {
+//    EditDataSheet()
+//}

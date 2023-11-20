@@ -13,12 +13,12 @@ struct GrowthGraphHeadCircumference: View {
     var body: some View {
         VStack {
             if babies.first?.gender == "Female" {
-                GraphView(source: "g_age_headc.csv", type: "headc")
+                GraphViewHeadc(source: "g_age_headc.csv")
                 .padding(.top, 20)
                 .padding(.horizontal, 16)
                 .frame(height: 400)
             } else {
-                GraphView(source: "b_age_headc.csv", type: "headc")
+                GraphViewHeadc(source: "b_age_headc.csv")
                 .padding(.top, 20)
                 .padding(.horizontal, 16)
                 .frame(height: 400)

@@ -25,6 +25,7 @@ struct ProgressView: View {
     @State private var zScoreView: [Double] = []
     
     @State var preselectedIndex = 0
+    @State var dummy: Bool = false
     
 
     @State private var showingSheet = false
@@ -33,7 +34,7 @@ struct ProgressView: View {
         NavigationView{
             ScrollView{
             VStack{
-                SummaryCardView()
+                SummaryCardView(refreshSummary: $dummy)
                     .padding(.horizontal, 16)
                     .environmentObject(firestoreManager)
                 

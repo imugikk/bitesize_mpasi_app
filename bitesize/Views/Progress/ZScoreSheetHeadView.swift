@@ -71,7 +71,7 @@ struct ZScoreSheetHeadView: View {
                 
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(alignment: .center) {
-                        Text("Kategori Status Gizi")
+                        Text("Nutrition Status Category")
                             .font(
                                 Font.custom("Inter-SemiBold", size: 16)
                             )
@@ -95,7 +95,7 @@ struct ZScoreSheetHeadView: View {
                     Divider()
                     
                     HStack{
-                        Text("Mikrosefali")
+                        Text("Microcephaly")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
@@ -117,7 +117,7 @@ struct ZScoreSheetHeadView: View {
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
                             .frame(width: 152 , alignment: .leading)
                         
-                        Text("-2 SD sampai dengan < +2 SD")
+                        Text("-2 SD to < +2 SD")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .multilineTextAlignment(.center)
@@ -126,7 +126,7 @@ struct ZScoreSheetHeadView: View {
                     }
                     
                     HStack{
-                        Text("Makrosefali")
+                        Text("Macrocephaly")
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))

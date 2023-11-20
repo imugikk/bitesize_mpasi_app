@@ -441,15 +441,13 @@ class FirestoreManager: ObservableObject {
             
             if let document = querySnapshot?.documents.first {
                 let docRef = babiesCollection.document(document.documentID)
-
+                
                 let data = [
                     "height": FieldValue.arrayUnion([height]),
                     "weight": FieldValue.arrayUnion([weight]),
                     "hc": FieldValue.arrayUnion([hc]),
-                    "timeMeasure": FieldValue.arrayUnion([time])
+                    "timeMeasure": FieldValue.arrayUnion([time]),
                 ]
-                
-                print("test")
 
                 docRef.updateData(data) { error in
                     if let error = error {
@@ -515,7 +513,7 @@ class FirestoreManager: ObservableObject {
         }
     }
     
-    func editGiziBabies(calori: [Double], carbs: Double, fat: Double, protein: Double) {
+    func editGiziBabies(calori: [Double], carbs: Double, fat: Double, protein: Double, completion: @escaping ([Double]) -> Void) {
         let userId = Auth.auth().currentUser?.uid ?? ""
         let babiesCollection = db.collection("Babies").whereField("userId", isEqualTo: userId)
         
@@ -539,6 +537,7 @@ class FirestoreManager: ObservableObject {
                     print("Error updating document: \(error)")
                 } else {
                     print("Document successfully updated")
+                completion([])
                 }
             }
         }

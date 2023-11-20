@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-
 struct GrowthGraphHeight: View {
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var babies: [Babies] = []
     var body: some View {
         VStack {
             if babies.first?.gender == "Female" {
-                GraphView(source: "g_age_length.csv", type: "height")
+                GraphViewHeight(source: "g_age_length.csv")
                 .padding(.top, 20)
                 .padding(.horizontal, 16)
                 .frame(height: 400)
             } else {
-                GraphView(source: "b_age_length.csv", type: "height")
+                GraphViewHeight(source: "b_age_length.csv")
                 .padding(.top, 20)
                 .padding(.horizontal, 16)
                 .frame(height: 400)

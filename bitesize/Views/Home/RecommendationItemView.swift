@@ -91,6 +91,7 @@ struct RecommendationItemView: View {
                         AllergyView(allergy: item)
                     }
                 }.frame(width: 160, height: 30, alignment: .leading)
+                
             }
         }
     }

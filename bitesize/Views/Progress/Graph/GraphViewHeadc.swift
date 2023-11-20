@@ -1,15 +1,14 @@
 //
-//  GraphView.swift
+//  GraphViewHeadc.swift
 //  bitesize
 //
-//  Created by Paraptughessa Premaswari on 15/11/23.
+//  Created by Paraptughessa Premaswari on 20/11/23.
 //
 
 import SwiftUI
 import Charts
 
-struct GraphView: View {
-    
+struct GraphViewHeadc: View {
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var babies: [Babies] = []
     
@@ -17,8 +16,9 @@ struct GraphView: View {
     var monthsLabel: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     
     
-    @State var source: String
+    @State var source: String    
     @State var months: [Int]?
+    
         
     var body: some View {
         NavigationView{
@@ -35,7 +35,7 @@ struct GraphView: View {
                         .foregroundStyle(by: .value("color", column[index]))
                         
                         if (index == 0) {
-                            let babyHeights: [Double] = babies.first?.weight ?? []
+                            let babyHeights: [Double] = babies.first?.hc ?? []
                             let birthday = babies.first?.dob as? Date ?? Date()
                             ForEach(Array(babyHeights.enumerated()), id: \.element) {index, rowIndex in
                                 let ageComponents = Calendar.current.dateComponents([.month], from: birthday, to: babies.first!.timeMeasure[index])
@@ -120,7 +120,7 @@ struct GraphView: View {
         return result
     }
 }
-
-#Preview {
-    GraphView(source: "b_age_length.csv")
-}
+//
+//#Preview {
+//    GraphViewHeadc()
+//}
