@@ -23,6 +23,12 @@ class ProfileViewModel: ObservableObject {
         guard let imageData = try await item.loadTransferable(type: Data.self) else {return}
         guard let uiImage = UIImage(data: imageData) else {return}
         
+        // Resize and compress the image
+        guard let compressedImageData = compressImage(uiImage, compressionQuality: 0.5) else {
+            print("Error compressing image.")
+            return
+        }
+        
         // Save image data to Firebase Storage
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -30,7 +36,7 @@ class ProfileViewModel: ObservableObject {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
-        _ = profileImage.putData(imageData, metadata: metadata) { (metadata, error) in
+        _ = profileImage.putData(compressedImageData, metadata: metadata) { (metadata, error) in
             guard let _ = metadata else {
                 print("Error uploading image: \(error?.localizedDescription ?? "")")
                 return
@@ -43,7 +49,13 @@ class ProfileViewModel: ObservableObject {
         self.profileImage = Image(uiImage: uiImage)
     }
     
+    // Function to resize and compress the image
+    func compressImage(_ image: UIImage, compressionQuality: CGFloat) -> Data? {
+        return image.jpegData(compressionQuality: compressionQuality)
+    }
+    
     func saveProfileData(imageURL: String) {
+
         // Save additional profile data to Firestore (or Realtime Database)
         let db = Firestore.firestore()
         let userId = Auth.auth().currentUser?.uid ?? ""

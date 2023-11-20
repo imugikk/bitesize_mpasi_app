@@ -1,15 +1,14 @@
 //
-//  GraphView.swift
+//  GraphViewHeight.swift
 //  bitesize
 //
-//  Created by Paraptughessa Premaswari on 15/11/23.
+//  Created by Paraptughessa Premaswari on 20/11/23.
 //
 
 import SwiftUI
 import Charts
 
-struct GraphView: View {
-    
+struct GraphViewHeight: View {
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var babies: [Babies] = []
     
@@ -35,7 +34,7 @@ struct GraphView: View {
                         .foregroundStyle(by: .value("color", column[index]))
                         
                         if (index == 0) {
-                            let babyHeights: [Double] = babies.first?.weight ?? []
+                            let babyHeights: [Double] = babies.first?.height ?? []
                             let birthday = babies.first?.dob as? Date ?? Date()
                             ForEach(Array(babyHeights.enumerated()), id: \.element) {index, rowIndex in
                                 let ageComponents = Calendar.current.dateComponents([.month], from: birthday, to: babies.first!.timeMeasure[index])
@@ -60,7 +59,6 @@ struct GraphView: View {
             }.onAppear {
                 firestoreManager.getBabiesData(){ fetchBabies in
                     self.babies = fetchBabies
-                    self.months = fetchBabies.first?.months
                 }
                 
                 weights = readCSV(inputFile: source)
@@ -121,6 +119,6 @@ struct GraphView: View {
     }
 }
 
-#Preview {
-    GraphView(source: "b_age_length.csv")
-}
+//#Preview {
+//    GraphViewHeight()
+//}

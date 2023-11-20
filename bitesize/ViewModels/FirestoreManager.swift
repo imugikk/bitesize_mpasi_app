@@ -441,15 +441,13 @@ class FirestoreManager: ObservableObject {
             
             if let document = querySnapshot?.documents.first {
                 let docRef = babiesCollection.document(document.documentID)
-
+                
                 let data = [
                     "height": FieldValue.arrayUnion([height]),
                     "weight": FieldValue.arrayUnion([weight]),
                     "hc": FieldValue.arrayUnion([hc]),
-                    "timeMeasure": FieldValue.arrayUnion([time])
+                    "timeMeasure": FieldValue.arrayUnion([time]),
                 ]
-                
-                print("test")
 
                 docRef.updateData(data) { error in
                     if let error = error {

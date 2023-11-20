@@ -157,6 +157,8 @@
 		F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA470F2AD2B95A008BE71D /* Bahan.swift */; };
 		F1DA47122AD2DBBB008BE71D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47112AD2DBBB008BE71D /* HomeView.swift */; };
 		F1DA471A2AD30383008BE71D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47192AD30383008BE71D /* Menu.swift */; };
+		F1FE2EB62B0B044C00A77B90 /* GraphViewHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */; };
+		F1FE2EB82B0B045A00A77B90 /* GraphViewHeadc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +327,8 @@
 		F1DA470F2AD2B95A008BE71D /* Bahan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bahan.swift; sourceTree = "<group>"; };
 		F1DA47112AD2DBBB008BE71D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DA47192AD30383008BE71D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewHeight.swift; sourceTree = "<group>"; };
+		F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewHeadc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +502,8 @@
 			isa = PBXGroup;
 			children = (
 				F13B5D352B04E79900341B94 /* GraphView.swift */,
+				F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */,
+				F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -886,6 +892,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C5240F2AFF48A8005B69FA /* ProgressGrowthView.swift in Sources */,
+				F1FE2EB82B0B045A00A77B90 /* GraphViewHeadc.swift in Sources */,
 				42F865C82B049EC200C03DC6 /* FAQTabView.swift in Sources */,
 				8B3E1D072AF1F0CF002B5BC6 /* MenuDetailView.swift in Sources */,
 				F1DA47102AD2B95A008BE71D /* Bahan.swift in Sources */,
@@ -946,7 +953,6 @@
 				F1C5241B2AFF493F005B69FA /* ZScoreSheetView.swift in Sources */,
 				8B3E1D022AEF54C8002B5BC6 /* MealItemView.swift in Sources */,
 				F1C524232AFF5E78005B69FA /* SavedMenuView.swift in Sources */,
-				428034EA2B08D1CB00237FDD /* ManageAccountView.swift in Sources */,
 				42DD910E2AFF87C300820AF6 /* FAQSheet4.swift in Sources */,
 				F1CBBF3F2ADD63FC003A6B81 /* RegisterManager.swift in Sources */,
 				42F865BE2B025A1600C03DC6 /* Onboarding.swift in Sources */,
@@ -982,6 +988,7 @@
 				F12E59A42AC299E90073FB1A /* FirestoreManager.swift in Sources */,
 				42F865D62B08745600C03DC6 /* GrowthGraphHeight.swift in Sources */,
 				8B3E1D052AF1E9B1002B5BC6 /* ProgressView.swift in Sources */,
+				F1FE2EB62B0B044C00A77B90 /* GraphViewHeight.swift in Sources */,
 				8BD66E802AF89F2200420C25 /* IngredientsView.swift in Sources */,
 				8B3194B42AD79DCF001DD2A1 /* TextView.swift in Sources */,
 				42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */,
