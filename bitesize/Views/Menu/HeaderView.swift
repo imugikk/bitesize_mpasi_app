@@ -15,6 +15,7 @@ struct HeaderView: View {
     
     @Binding var totalCalories: Double
     @Binding var clearSelection: Bool
+    @Binding var currentDay: Int
 
     var body: some View {
         ZStack {
@@ -62,6 +63,8 @@ struct HeaderView: View {
                                 tappedIndex = index
                                 totalCalories = 0
                                 clearSelection.toggle()
+                                currentDay = (Int(weekStore.dateToString(date: week.date[index], format: "d")) ?? 0) % 7
+                                print(currentDay)
                             }
                         }
                     }

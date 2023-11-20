@@ -18,6 +18,10 @@ struct MenuView: View {
     @State private var selectedCards: Set<String> = Set()
     @State private var totalCalories: Double = 0
     
+    @State var weeklyMenu: [[Any]] = [[],[],[],[],[],[],[]]
+    @State var currentDay: Int = 0
+    @State var displayedMenu = []
+    
     @State var isClearSelection: Bool = false
     
     var body: some View {
@@ -39,7 +43,7 @@ struct MenuView: View {
                 }
                 Divider().padding()
                 
-                HeaderView(totalCalories: $totalCalories, clearSelection: $isClearSelection)
+                HeaderView(totalCalories: $totalCalories, clearSelection: $isClearSelection, currentDay: $currentDay)
                 
                 
                 HStack(alignment: .center, spacing: 8) {
@@ -97,8 +101,8 @@ struct MenuView: View {
                             Spacer()
                                 .frame(width: 0)
                             
-                            ForEach(menuUtama.indices, id: \.self) { index in
-                                if let menuItem = menuUtama[index] as? [Any]{
+                            ForEach(weeklyMenu[currentDay].indices, id: \.self) { index in
+                                if let menuItem = weeklyMenu[currentDay][index] as? [Any]{
                                     MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
                                         .onTapGesture {
                                             handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
@@ -106,6 +110,16 @@ struct MenuView: View {
                                         .shadow(radius: selectedCards.contains(menuItem[3] as! String) ? 5 : 0)
                                 }
                             }
+                            
+//                            ForEach(menuUtama.indices, id: \.self) { index in
+//                                if let menuItem = menuUtama[index] as? [Any]{
+//                                    MealItemView(menuName: menuItem[0] as! String, menuCalories: (menuItem[1]) as! Double, menuType: menuItem[2] as! [String], menuId: menuItem[3] as! String, menuAllergy: menuItem[4] as! [String]?, menuImage: menuItem[5] as! String?)
+//                                        .onTapGesture {
+//                                            handleCardSelection(menuId: menuItem[3] as! String, calories: menuItem[1] as! Double)
+//                                        }
+//                                        .shadow(radius: selectedCards.contains(menuItem[3] as! String) ? 5 : 0)
+//                                }
+//                            }
                         }
                         
                     }
@@ -185,6 +199,15 @@ struct MenuView: View {
             .onAppear{
                 firestoreManager.getMenuesData() { fetchMenu in
                     self.menuUtama = fetchMenu
+                    for i  in 0...6 {
+//                        self.weeklyMenu[i] = fetchMenu
+                        let randomInt = Array(0..<fetchMenu.count).shuffled()
+                        print(randomInt)
+                        for value in 0..<6 {
+                            self.weeklyMenu[i].append(fetchMenu[randomInt[value]])
+                        }
+                    }
+                    self.displayedMenu = self.weeklyMenu[currentDay]
                 }
                 
                 firestoreManager.getMenuCemilanData() { fetchMenu in
