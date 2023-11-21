@@ -70,6 +70,8 @@ private struct SegmentedControlButtonView: View {
 	@Binding private var backgroundFrame: CGRect
 	@Binding private var isScrollable: Bool
     @State var preselectedIndex = 0
+    
+    @State var refreshAddData: Bool = false
 
 	private let titles: [String]
 	let checkIsScrollable: (() -> Void)
@@ -112,7 +114,7 @@ private struct SegmentedControlButtonView: View {
             CustomSegmentedGrowthControl(preselectedIndex: $preselectedIndex, options: ["Weight", "Height", "Head Circ."])
         }
         if(selectedIndex == 1){
-            CustomHistoryControl()
+            CustomHistoryControl(refreshAddData: $refreshAddData)
         }
 	}
 

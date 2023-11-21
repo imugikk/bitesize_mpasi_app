@@ -20,6 +20,7 @@ struct ProgressGrowthView: View {
     @State var segmentedChoice = 0
     @State private var selectedOption = 0
     @State private var selectedSegment: Int = 0
+    @State var refreshAddData: Bool = false
     
     var body: some View {
         return 
@@ -101,7 +102,8 @@ struct ProgressGrowthView: View {
                 // Content of your sheet goes here...
                 AddDataSheet(onDismiss: {
                     isShowingAddDataSheet = false
-                    firestoreManager.reloadData()
+//                    firestoreManager.reloadData()
+                    refreshAddData.toggle()
                 })
             }
             
@@ -111,7 +113,7 @@ struct ProgressGrowthView: View {
             }
             
             if(selectedSegment == 1){
-                CustomHistoryControl()
+                CustomHistoryControl(refreshAddData: $refreshAddData)
             }
             
             Spacer()
@@ -266,6 +268,8 @@ struct CustomHistoryControl: View {
     let calculator = CaloriesNeededCalculator()
     @State private var babies: [Babies] = []
     
+    @Binding var refreshAddData: Bool
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .top, spacing: 4){
@@ -368,6 +372,11 @@ struct CustomHistoryControl: View {
         .frame(width: 358, height: .infinity, alignment: .topLeading)
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         .cornerRadius(8)
+        
+        .onChange(of: refreshAddData, perform: { newData in
+            firestoreManager.getBabiesData(){ fetchBabies in
+                self.babies = fetchBabies}
+        })
         
         .onAppear{
             firestoreManager.getBabiesData(){ fetchBabies in
