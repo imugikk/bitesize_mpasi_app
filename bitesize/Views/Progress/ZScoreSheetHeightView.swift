@@ -117,7 +117,7 @@ struct ZScoreSheetHeightView: View {
                             .font(Font.custom("Inter-Regular", size: 12))
                             .kerning(0.2)
                             .foregroundColor(Color(red: 0.08, green: 0.12, blue: 0.12))
-                            .frame(width: 155 , alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Text("-3 SD to < -2 SD")
                             .font(Font.custom("Inter-Regular", size: 12))
