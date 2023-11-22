@@ -429,7 +429,7 @@ class FirestoreManager: ObservableObject {
     }
     
     //add data baby
-    func addBabyData(height: Double, weight: Double, hc: Double, time: Date){
+    func addBabyData(height: Double, weight: Double, hc: Double, time: Date, completion: @escaping () -> Void){
         let userId = Auth.auth().currentUser?.uid ?? ""
         let babiesCollection = db.collection("Babies")
         
@@ -454,6 +454,7 @@ class FirestoreManager: ObservableObject {
                         print("Error updating document: \(error)")
                     } else {
                         print("Document successfully updated")
+                        completion()
                     }
                 }
             }
