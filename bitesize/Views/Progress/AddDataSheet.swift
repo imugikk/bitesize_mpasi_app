@@ -140,8 +140,10 @@ struct AddDataSheet: View {
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            firestoreManager.addBabyData(height: Double(babyHeight) ?? 0, weight: Double(babyWeight) ?? 0, hc: Double(babyCircumference) ?? 0, time: selectedDate)
-                            presentationMode.wrappedValue.dismiss()
+                            firestoreManager.addBabyData(height: Double(babyHeight) ?? 0, weight: Double(babyWeight) ?? 0, hc: Double(babyCircumference) ?? 0, time: selectedDate) {
+                                onDismiss()
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         }, label: {
                                     Text("Add")
                                 .font(Font.custom("Inter-Regular", size: 16))
