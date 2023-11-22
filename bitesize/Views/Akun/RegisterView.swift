@@ -202,6 +202,8 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
 //                .padding(0)
 //                .frame(width: 358, alignment: .leading)
                 
+                Spacer()
+                
                 SignInWithAppleButton(.continue) { request in
                     
                     request.requestedScopes = [.email, .fullName]
