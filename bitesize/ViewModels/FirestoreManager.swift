@@ -438,23 +438,42 @@ class FirestoreManager: ObservableObject {
                 print("Error querying documents: \(error)")
                 return
             }
-            
+
             if let document = querySnapshot?.documents.first {
                 let docRef = babiesCollection.document(document.documentID)
-                
-                let data = [
-                    "height": FieldValue.arrayUnion([height]),
-                    "weight": FieldValue.arrayUnion([weight]),
-                    "hc": FieldValue.arrayUnion([hc]),
-                    "timeMeasure": FieldValue.arrayUnion([time]),
-                ]
 
-                docRef.updateData(data) { error in
+                docRef.getDocument { (documentSnapshot, error) in
                     if let error = error {
-                        print("Error updating document: \(error)")
-                    } else {
-                        print("Document successfully updated")
-                        completion()
+                        print("Error getting document: \(error)")
+                        return
+                    }
+
+                    if let document = documentSnapshot, document.exists {
+                        var heightArray = document["height"] as? [Double] ?? []
+                        var weightArray = document["weight"] as? [Double] ?? []
+                        var hcArray = document["hc"] as? [Double] ?? []
+                        var timeArray = document["timeMeasure"] as? [Timestamp] ?? []
+
+                        heightArray.append(height)
+                        weightArray.append(weight)
+                        hcArray.append(hc)
+                        let timestamp = Timestamp(date: time)
+                        timeArray.append(timestamp)
+
+                        let data = [
+                            "height": heightArray,
+                            "weight": weightArray,
+                            "hc": hcArray,
+                            "timeMeasure": timeArray,
+                        ]
+
+                        docRef.setData(data, merge: true) { error in
+                            if let error = error {
+                                print("Error updating document: \(error)")
+                            } else {
+                                print("Document successfully updated")
+                            }
+                        }
                     }
                 }
             }
