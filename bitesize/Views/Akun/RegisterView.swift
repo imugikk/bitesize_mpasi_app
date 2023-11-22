@@ -34,7 +34,7 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
     }
     
     var body: some View {
-        ScrollView{
+//        ScrollView{
             VStack{
                 Text("Register to Bitesize")
                     .font(
@@ -265,7 +265,7 @@ struct RegisterView: View, SecuredTextFieldParentProtocol {
                     .hidden()
                 }
             }
-        }
+//        }
     }
 }
         
