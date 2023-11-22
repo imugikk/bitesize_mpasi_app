@@ -160,6 +160,7 @@
 		F1DA471A2AD30383008BE71D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA47192AD30383008BE71D /* Menu.swift */; };
 		F1FE2EB62B0B044C00A77B90 /* GraphViewHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */; };
 		F1FE2EB82B0B045A00A77B90 /* GraphViewHeadc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */; };
+		F1FE2EBB2B0D9CE200A77B90 /* AllergiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FE2EBA2B0D9CE200A77B90 /* AllergiesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -331,6 +332,7 @@
 		F1DA47192AD30383008BE71D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		F1FE2EB52B0B044C00A77B90 /* GraphViewHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewHeight.swift; sourceTree = "<group>"; };
 		F1FE2EB72B0B045A00A77B90 /* GraphViewHeadc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewHeadc.swift; sourceTree = "<group>"; };
+		F1FE2EBA2B0D9CE200A77B90 /* AllergiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergiesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,6 +515,7 @@
 		F174A2E82AEA0CAE00CDA921 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				F1FE2EB92B0D9CD200A77B90 /* Allergies */,
 				F174A2E92AEA0CD800CDA921 /* MenuView.swift */,
 				F174A2EB2AEA12B700CDA921 /* HeaderView.swift */,
 				8B3E1D012AEF54C8002B5BC6 /* MealItemView.swift */,
@@ -713,6 +716,14 @@
 				F13B5D492B065DF400341B94 /* AllergyView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F1FE2EB92B0D9CD200A77B90 /* Allergies */ = {
+			isa = PBXGroup;
+			children = (
+				F1FE2EBA2B0D9CE200A77B90 /* AllergiesView.swift */,
+			);
+			path = Allergies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -998,6 +1009,7 @@
 				42F865C02B026B8C00C03DC6 /* OnboardingMain.swift in Sources */,
 				8B7B2C5C2AC99033003F4C6F /* LMSWeightBoys.swift in Sources */,
 				42D22CA42B013C310091E21D /* GifImage.swift in Sources */,
+				F1FE2EBB2B0D9CE200A77B90 /* AllergiesView.swift in Sources */,
 				F1C5241F2AFF5E5A005B69FA /* FAQSheet1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
